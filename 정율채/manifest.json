@@ -1,0 +1,12 @@
+{
+  "name": "K-VISA센터 | 정율채 행정사",
+  "short_name": "K-VISA센터",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#003964",
+  "theme_color": "#003964",
+  "icons": [
+    { "src": "logo.jpg", "sizes": "192x192", "type": "image/jpeg" },
+    { "src": "logo.jpg", "sizes": "512x512", "type": "image/jpeg" }
+  ]
+}
