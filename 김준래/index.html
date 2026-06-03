@@ -396,6 +396,7 @@ body {
 .fade-d1 { transition-delay: 0.1s; }
 .fade-d2 { transition-delay: 0.2s; }
 .fade-d3 { transition-delay: 0.3s; }
+.lang-inline{display:none}.lang-inline.active{display:inline}
 </style>
 </head>
 <body>
@@ -602,19 +603,19 @@ body {
 <!-- ══════════ 저장 버튼 ══════════ -->
 <section class="save-sec">
   <div class="save-wrap">
-    <a class="save-btn save-contact" onclick="saveContact()" href="#">
-      <span class="save-icon">👤</span>
-      <div class="save-info">
-        <strong>연락처 저장</strong>
-        <span>이름·상호·전화번호 저장</span>
-      </div>
-    </a>
-    <button class="save-btn save-home" onclick="saveToCardHolder()">
-      <span class="save-icon">📋</span>
-      <div class="save-info">
-        <strong>명함첩에 저장</strong>
-        <span>내 명함첩에 보관하기</span>
-      </div>
+    <button onclick="savePhone({name:'김준래',company:'무늬디자인',title:'대표',phone:'010-7366-8555',email:''})" class="save-btn btn-primary">
+      <span>📞</span>
+      <span class="lang-inline active" data-lang="ko">전화번호 저장하기</span>
+      <span class="lang-inline" data-lang="en">Save Contact</span>
+      <span class="lang-inline" data-lang="jp">連絡先を保存</span>
+      <span class="lang-inline" data-lang="cn">保存联系人</span>
+    </button>
+    <button onclick="saveToCardbook({id:'kimjunrae',name:'김준래',nameEn:'Kim Junrae',company:'무늬디자인',title:'대표',phone:'010-7366-8555',email:'',chapter:'자이언츠',bni:'BNI 자이언츠 챕터',url:'https://jinjjabg-hub.github.io/bni-giants/김준래/'})" class="save-btn btn-secondary">
+      <span>🗂️</span>
+      <span class="lang-inline active" data-lang="ko">명함 저장하기</span>
+      <span class="lang-inline" data-lang="en">Save to Cardbook</span>
+      <span class="lang-inline" data-lang="jp">名刺帳に保存</span>
+      <span class="lang-inline" data-lang="cn">保存到名片册</span>
     </button>
   </div>
 </section>
@@ -911,9 +912,11 @@ const T = {
   }
 };
 
+document.querySelectorAll('.lang-inline[data-lang="ko"]').forEach(e=>e.classList.add('active'));
 function setLang(lang, btn) {
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('on'));
   btn.classList.add('on');
+  document.querySelectorAll('.lang-inline').forEach(e=>{e.classList.remove('active');const m={kr:'ko',en:'en',jp:'jp',cn:'cn'};if(e.dataset.lang===(m[lang]||lang))e.classList.add('active');});
   const langMap = { kr: 'ko', en: 'en', jp: 'ja', cn: 'zh' };
   document.documentElement.lang = langMap[lang] || 'ko';
   const t = T[lang];
@@ -928,59 +931,6 @@ function setLang(lang, btn) {
   });
 }
 
-// 연락처 저장
-function saveContact() {
-  const vcard = [
-    'BEGIN:VCARD',
-    'VERSION:3.0',
-    'FN:무늬디자인 / 인테리어 / 김준래',
-    'N:김;준래;;;',
-    'ORG:무늬디자인',
-    'TITLE:대표',
-    'TEL;TYPE=CELL:010-7366-8555',
-    'URL:https://jinjjabg-hub.github.io/bni-giants/김준래/',
-    'NOTE:BNI 자이언츠 챕터 · 인테리어/실내디자인/3D모델링',
-    'END:VCARD'
-  ].join('\n');
-
-  const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
-  const url  = URL.createObjectURL(blob);
-  const a    = document.createElement('a');
-  a.href     = url;
-  a.download = '무늬디자인/인테리어/김준래.vcf';
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-}
-
-// 명함첩에 저장
-function saveToCardHolder() {
-  const card = {
-    id: 'kimjunrae',
-    name: '김준래',
-    company: '무늬디자인',
-    role: '대표',
-    phone: '010-7366-8555',
-    field: '인테리어 / 실내디자인 / 3D모델링',
-    chapter: 'BNI 자이언츠 챕터',
-    url: window.location.href,
-    photo: 'profile.jpg',
-    savedAt: new Date().toLocaleDateString('ko-KR')
-  };
-  let cards = JSON.parse(localStorage.getItem('bni_cards') || '[]');
-  const exists = cards.find(c => c.id === card.id);
-  if (exists) {
-    window.location.href = '/';
-    return;
-  }
-  cards.push(card);
-  localStorage.setItem('bni_cards', JSON.stringify(cards));
-  sessionStorage.setItem('auto_install', '1');
-  if (confirm('✅ 명함첩에 저장되었습니다!\n명함첩 앱도 설치할까요?')) {
-    window.location.href = '/';
-  }
-}
 
 // 스크롤 페이드 인
 const io = new IntersectionObserver(e => e.forEach(el => {
@@ -988,5 +938,6 @@ const io = new IntersectionObserver(e => e.forEach(el => {
 }), { threshold: 0.12 });
 document.querySelectorAll('.fade').forEach(el => io.observe(el));
 </script>
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
 </body>
 </html>
