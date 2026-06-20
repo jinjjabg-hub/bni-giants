@@ -163,7 +163,7 @@ nav {
 .slide-wrap { position:relative; overflow:hidden; border-radius:10px; background:#111; }
 .slide-track { display:flex; transition:transform 0.35s ease; }
 .slide-item { min-width:100%; }
-.slide-item img { width:100%; display:block; aspect-ratio:16/9; object-fit:cover; }
+.slide-item img { width:100%; display:block; aspect-ratio:4/7; object-fit:cover; }
 .slide-btn {
   position:absolute; top:50%; transform:translateY(-50%);
   background:rgba(0,0,0,0.55); color:#fff; border:none;
@@ -512,7 +512,13 @@ footer {
   </div>
 </div>
 
+
 <div class="gold-line"></div>
+
+<!-- RESULT IMAGE -->
+<div style="background:#0a0a0a; padding:0;">
+  <img src="result.png" alt="3500개 업체 유치 실적" style="width:100%; display:block;">
+</div>
 
 <!-- CAREER -->
 <div class="sec sec-light">
@@ -640,6 +646,9 @@ footer {
 
 <!-- BUTTONS -->
 <div class="btn-wrap">
+  <button class="btn btn-blue" onclick="shareCard()">
+    📤 <span data-lang="kr" class="active">명함 공유하기</span><span data-lang="en">Share Card</span><span data-lang="jp">名刺を共有</span><span data-lang="cn">分享名片</span>
+  </button>
   <button class="btn btn-out" onclick="saveContact()">
     📞 <span data-lang="kr" class="active">연락처 저장</span><span data-lang="en">Save Contact</span><span data-lang="jp">連絡先保存</span><span data-lang="cn">保存联系人</span>
   </button>
@@ -711,6 +720,20 @@ function portSlide(dir) { goPortSlide(portIdx + dir); }
 })();
 
 document.addEventListener('DOMContentLoaded', initPortSlide);
+
+function shareCard() {
+  if (navigator.share) {
+    navigator.share({
+      title: '박진호 대표 | 미라클',
+      text: '기업 인터넷·보안·네트워크 전문 25년, 미라클 박진호 대표 디지털 명함입니다.',
+      url: window.location.href
+    });
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      alert('링크가 복사되었습니다!');
+    });
+  }
+}
 
 function saveContact() {
   const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:박진호\nN:박;진호;;;\nORG:미라클\nTITLE:대표\nTEL;TYPE=CELL:010-8111-3388\nEMAIL:jh33888@naver.com\nURL:https://jinjjabg-hub.github.io/BNI-PIONEER-cards/박진호/\nEND:VCARD`;
