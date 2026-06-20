@@ -640,9 +640,6 @@ footer {
 
 <!-- BUTTONS -->
 <div class="btn-wrap">
-  <button class="btn btn-blue" onclick="shareCard()">
-    📤 <span data-lang="kr" class="active">명함 공유하기</span><span data-lang="en">Share Card</span><span data-lang="jp">名刺を共有</span><span data-lang="cn">分享名片</span>
-  </button>
   <button class="btn btn-out" onclick="saveContact()">
     📞 <span data-lang="kr" class="active">연락처 저장</span><span data-lang="en">Save Contact</span><span data-lang="jp">連絡先保存</span><span data-lang="cn">保存联系人</span>
   </button>
@@ -714,20 +711,6 @@ function portSlide(dir) { goPortSlide(portIdx + dir); }
 })();
 
 document.addEventListener('DOMContentLoaded', initPortSlide);
-
-function shareCard() {
-  if (navigator.share) {
-    navigator.share({
-      title: '박진호 대표 | 미라클',
-      text: '기업 인터넷·보안·네트워크 전문 25년, 미라클 박진호 대표 디지털 명함입니다.',
-      url: window.location.href
-    });
-  } else {
-    navigator.clipboard.writeText(window.location.href).then(() => {
-      alert('링크가 복사되었습니다!');
-    });
-  }
-}
 
 function saveContact() {
   const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:박진호\nN:박;진호;;;\nORG:미라클\nTITLE:대표\nTEL;TYPE=CELL:010-8111-3388\nEMAIL:jh33888@naver.com\nURL:https://jinjjabg-hub.github.io/BNI-PIONEER-cards/박진호/\nEND:VCARD`;
