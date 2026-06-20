@@ -51,8 +51,8 @@ nav {
 .lang-btn.active { background:var(--blue); color:#fff; border-color:var(--blue); }
 
 /* HERO */
-.hero { position:relative; aspect-ratio:4/7; overflow:hidden; }
-.hero img { width:100%; height:100%; object-fit:cover; object-position:center top; }
+.hero { position:relative; aspect-ratio:16/9; overflow:hidden; }
+.hero img { width:100%; height:100%; object-fit:cover; object-position:center center; }
 .hero-overlay {
   position:absolute; inset:0;
   background:linear-gradient(to bottom,
@@ -507,7 +507,9 @@ footer {
         <span data-lang="jp">📡 ネット速度が遅い・障害が多い事業所</span>
         <span data-lang="cn">📡 网速慢或频繁故障的企业</span>
       </div>
-   
+    </div>
+
+  </div>
 </div>
 
 <div class="gold-line"></div>
@@ -585,7 +587,7 @@ footer {
   </div>
   <div class="slide-wrap" id="slide-port">
     <div class="slide-track" id="slide-track-port">
-      <div class="slide-item"><img src="portfolio1.png." alt="가정용 인터넷"></div>
+      <div class="slide-item"><img src="portfolio1.png" alt="가정용 인터넷"></div>
       <div class="slide-item"><img src="portfolio2.png" alt="소상공인 사업장"></div>
       <div class="slide-item"><img src="portfolio3.png" alt="기업·관공서·병원·호텔"></div>
     </div>
@@ -638,7 +640,10 @@ footer {
 
 <!-- BUTTONS -->
 <div class="btn-wrap">
-  <button class="btn btn-blue" onclick="saveContact()">
+  <button class="btn btn-blue" onclick="shareCard()">
+    📤 <span data-lang="kr" class="active">명함 공유하기</span><span data-lang="en">Share Card</span><span data-lang="jp">名刺を共有</span><span data-lang="cn">分享名片</span>
+  </button>
+  <button class="btn btn-out" onclick="saveContact()">
     📞 <span data-lang="kr" class="active">연락처 저장</span><span data-lang="en">Save Contact</span><span data-lang="jp">連絡先保存</span><span data-lang="cn">保存联系人</span>
   </button>
   <button class="btn btn-out" onclick="saveToCardbook({id:'parkjinho',name:'박진호',nameEn:'Park Jin-ho',title:'대표',company:'미라클',phone:'010-8111-3388',email:'jh33888@naver.com',chapter:'파이오니어',bni:'멤버',url:window.location.href})">
@@ -709,6 +714,20 @@ function portSlide(dir) { goPortSlide(portIdx + dir); }
 })();
 
 document.addEventListener('DOMContentLoaded', initPortSlide);
+
+function shareCard() {
+  if (navigator.share) {
+    navigator.share({
+      title: '박진호 대표 | 미라클',
+      text: '기업 인터넷·보안·네트워크 전문 25년, 미라클 박진호 대표 디지털 명함입니다.',
+      url: window.location.href
+    });
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      alert('링크가 복사되었습니다!');
+    });
+  }
+}
 
 function saveContact() {
   const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:박진호\nN:박;진호;;;\nORG:미라클\nTITLE:대표\nTEL;TYPE=CELL:010-8111-3388\nEMAIL:jh33888@naver.com\nURL:https://jinjjabg-hub.github.io/BNI-PIONEER-cards/박진호/\nEND:VCARD`;
