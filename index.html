@@ -3,219 +3,753 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>BNI 자이언츠 챕터 | 멤버 카드</title>
-<meta property="og:image" content="https://jinjjabg-hub.github.io/bni-giants/og_giants.jpg">
-<meta name="description" content="BNI 자이언츠 챕터 디지털 명함 모음">
-<meta property="og:title" content="BNI 자이언츠 챕터 | 멤버 카드">
-<meta property="og:description" content="BNI 자이언츠 챕터 디지털 명함 모음">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<title>박진호 | 미라클</title>
+<meta property="og:title" content="박진호 | 대표 · 미라클">
+<meta property="og:description" content="기업 인터넷·보안·네트워크 전문 25년, 미라클이 속도와 안정으로 함께합니다.">
+<meta property="og:image" content="og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jinjjabg-hub.github.io/BNI-PIONEER-cards/박진호/">
 <style>
 :root {
-  --navy:  #0d1f3c;
-  --navy2: #152844;
-  --navy3: #1a3056;
-  --red:   #ef314f;
-  --gold:  #cca132;
-  --white: #ffffff;
-  --cream: #faf8f4;
-  --line:  rgba(255,255,255,0.08);
+  --bg-dark:  #0145F2;
+  --bg-dark2: #0a3bc4;
+  --bg-dark3: #0336a8;
+  --bg-light: #f0f4ff;
+  --blue:  #0a0a0a;
+  --blue2: #1a1a1a;
+  --text-dark:  #ffffff;
+  --text-light: #0a0a0a;
+  --muted-dark:  #a0c0ff;
+  --muted-light: #333333;
+  --gold: #0a0a0a;
+  --gold2: #1a1a1a;
 }
-* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
-html { scroll-behavior:smooth; }
-body {
-  font-family:'Noto Sans KR',sans-serif;
-  background:var(--navy);
-  color:var(--white);
-  min-height:100vh;
-  -webkit-font-smoothing:antialiased;
-  max-width:480px;
-  margin:0 auto;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { background:#0145F2; font-family:'Noto Sans KR',sans-serif; }
+.card-wrap { max-width:430px; margin:0 auto; background:var(--bg-dark); min-height:100vh; }
+[data-lang] { display:none !important; }
+[data-lang].active { display:block !important; }
+span[data-lang].active { display:inline !important; }
+div[data-lang].active { display:block !important; }
 
-/* 헤더 */
-.header {
-  padding:52px 20px 32px;
-  text-align:center;
-  background:linear-gradient(180deg, var(--navy2) 0%, var(--navy) 100%);
-  border-bottom:1px solid var(--line);
+/* NAV */
+nav {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 18px; background:var(--bg-dark);
+  position:sticky; top:0; z-index:100;
+  border-bottom:1px solid rgba(1,69,242,0.25);
 }
-.chapter-badge {
-  display:inline-flex; align-items:center; gap:6px;
-  background:var(--red); color:#fff;
-  font-size:11px; font-weight:700;
-  padding:5px 14px; border-radius:20px;
-  margin-bottom:16px; letter-spacing:0.5px;
+.nav-brand { color:var(--blue2); font-size:1rem; font-weight:700; letter-spacing:2px; }
+.lang-btns { display:flex; gap:4px; }
+.lang-btn {
+  border:1px solid rgba(1,69,242,0.35); background:transparent;
+  color:var(--muted-dark); font-size:0.7rem; padding:4px 7px;
+  border-radius:4px; cursor:pointer; transition:all .2s;
 }
-.header-title {
-  font-size:26px; font-weight:900;
-  color:var(--white); letter-spacing:2px;
-  margin-bottom:6px;
-}
-.header-sub {
-  font-size:13px; color:rgba(255,255,255,.45);
-  letter-spacing:1px;
-}
-.gold-line {
-  width:40px; height:2px;
-  background:var(--gold);
-  margin:16px auto 0;
-  border-radius:2px;
-}
+.lang-btn.active { background:var(--blue); color:#fff; border-color:var(--blue); }
 
-/* 멤버 리스트 */
-.member-list {
-  padding:24px 16px 48px;
-  display:flex; flex-direction:column; gap:12px;
+/* HERO */
+.hero { position:relative; aspect-ratio:4/7; overflow:hidden; }
+.hero img { width:100%; height:100%; object-fit:cover; object-position:center center; }
+.hero-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to bottom,
+    rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.15) 40%,
+    rgba(0,0,0,0.8) 75%, rgba(0,0,0,0.95) 100%);
 }
+.hero-content { position:absolute; bottom:0; left:0; right:0; padding:28px 20px; }
+.hero-badge {
+  display:inline-block; border:1px solid var(--blue2);
+  color:var(--blue2); font-size:0.7rem; padding:4px 12px;
+  border-radius:20px; margin-bottom:12px; letter-spacing:1px;
+}
+.hero-name { font-size:2.2rem; font-weight:800; color:#fff; line-height:1.1; margin-bottom:6px; }
+.hero-title { color:rgba(255,255,255,0.75); font-size:0.95rem; letter-spacing:1px; }
 
-/* 멤버 카드 */
-.member-card {
+/* PROFILE ROW */
+.profile-row {
   display:flex; align-items:center; gap:14px;
-  background:var(--navy2);
-  border:1px solid rgba(255,255,255,.07);
-  border-radius:16px;
-  padding:16px;
-  text-decoration:none; color:var(--white);
+  padding:22px 18px; background:var(--bg-dark2);
+  border-bottom:1px solid rgba(1,69,242,0.15);
+}
+.profile-img {
+  width:68px; height:68px; border-radius:50%;
+  object-fit:cover; object-position:center top;
+  border:2px solid var(--blue); flex-shrink:0;
+}
+.profile-name { font-size:1.1rem; font-weight:700; color:var(--text-dark); margin-bottom:3px; }
+.profile-sub { font-size:0.8rem; color:var(--muted-dark); margin-bottom:6px; }
+.profile-tag {
+  display:inline-block; background:rgba(1,69,242,0.15);
+  color:var(--blue2); font-size:0.7rem; padding:3px 10px; border-radius:20px;
+}
+
+/* GOLD LINE */
+.gold-line { height:1px; background:linear-gradient(to right, transparent, var(--blue), transparent); }
+
+/* SECTION BASE */
+.sec { padding:36px 18px; }
+.sec-dark { background:var(--bg-dark); color:var(--text-dark); }
+.sec-dark2 { background:var(--bg-dark2); color:var(--text-dark); }
+.sec-dark3 { background:var(--bg-dark3); color:var(--text-dark); }
+.sec-light { background:var(--bg-light); color:var(--text-light); }
+.sec-label {
+  font-size:0.7rem; letter-spacing:3px; text-transform:uppercase;
+  color:var(--blue2); margin-bottom:8px; font-weight:700;
+}
+.sec-title { font-size:1.4rem; font-weight:800; margin-bottom:18px; line-height:1.3; }
+.sec-light .sec-title { color:var(--text-light); }
+.sec-dark .sec-title, .sec-dark2 .sec-title, .sec-dark3 .sec-title { color:var(--text-dark); }
+
+/* ABOUT */
+.slogan-box {
+  border-left:3px solid var(--blue); padding:14px 16px;
+  background:rgba(1,69,242,0.08); border-radius:0 8px 8px 0;
+  font-size:1rem; font-weight:700; color:var(--text-dark);
+  margin-bottom:16px; line-height:1.5;
+}
+.about-desc { font-size:0.9rem; line-height:1.8; color:rgba(238,242,255,0.75); }
+
+/* WHY */
+.why-cards { display:flex; flex-direction:column; gap:14px; }
+.why-card {
+  background:#fff; border-radius:12px; padding:18px;
+  box-shadow:0 2px 12px rgba(1,69,242,0.08);
+  display:flex; gap:14px; align-items:flex-start;
+}
+.why-num {
+  font-size:0.7rem; font-weight:800; color:#fff;
+  background:var(--blue); border-radius:50%;
+  width:28px; height:28px; display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; letter-spacing:0;
+}
+.why-title { font-size:0.95rem; font-weight:700; color:var(--text-light); margin-bottom:4px; }
+.why-desc { font-size:0.82rem; color:#5a7aaa; line-height:1.6; }
+
+/* DIFFERENCE */
+.diff-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.diff-card {
+  background:var(--bg-dark2); border:1px solid rgba(1,69,242,0.2);
+  border-radius:10px; padding:16px 14px;
+}
+.diff-icon { font-size:1.4rem; margin-bottom:8px; }
+.diff-title { font-size:0.85rem; font-weight:700; color:var(--text-dark); margin-bottom:4px; }
+.diff-desc { font-size:0.75rem; color:var(--muted-dark); line-height:1.5; }
+
+/* REFERRAL */
+.ref-list { display:flex; flex-direction:column; gap:12px; }
+.ref-item { display:flex; align-items:flex-start; gap:12px; }
+.ref-num {
+  width:28px; height:28px; border-radius:50%; background:var(--blue);
+  color:#fff; font-size:0.75rem; font-weight:700; display:flex;
+  align-items:center; justify-content:center; flex-shrink:0; margin-top:1px;
+}
+.ref-text { font-size:0.9rem; color:var(--text-light); line-height:1.6; font-weight:500; }
+
+/* CAREER */
+.car-list { display:flex; flex-direction:column; gap:12px; }
+.car-item { display:flex; gap:12px; align-items:flex-start; }
+.car-badge {
+  background:var(--blue); color:#fff; font-size:0.7rem;
+  font-weight:700; padding:3px 10px; border-radius:20px; white-space:nowrap; flex-shrink:0;
+}
+.car-title { font-size:0.9rem; font-weight:600; color:var(--text-light); line-height:1.4; }
+.car-sub { font-size:0.8rem; color:#5a7aaa; margin-top:2px; }
+
+/* PORTFOLIO SLIDE */
+.slide-label { font-size:0.7rem; letter-spacing:3px; color:var(--blue2); font-weight:700; margin-bottom:12px; }
+.slide-wrap { position:relative; overflow:hidden; border-radius:10px; background:#111; }
+.slide-track { display:flex; transition:transform 0.35s ease; }
+.slide-item { min-width:100%; }
+.slide-item img { width:100%; display:block; aspect-ratio:16/9; object-fit:cover; }
+.slide-btn {
+  position:absolute; top:50%; transform:translateY(-50%);
+  background:rgba(0,0,0,0.55); color:#fff; border:none;
+  width:36px; height:36px; border-radius:50%; font-size:1.2rem;
+  cursor:pointer; z-index:10; display:flex; align-items:center; justify-content:center;
+}
+.slide-btn-l { left:8px; }
+.slide-btn-r { right:8px; }
+.slide-dots { display:flex; justify-content:center; gap:6px; margin-top:10px; }
+.slide-dot { width:6px; height:6px; border-radius:50%; background:rgba(1,69,242,0.3); cursor:pointer; transition:all .2s; }
+.slide-dot.active { background:var(--blue); width:18px; border-radius:3px; }
+
+/* CONTACT */
+.con-list { display:flex; flex-direction:column; gap:0; }
+.con-item {
+  display:flex; align-items:center; gap:14px;
+  padding:16px 0; text-decoration:none; color:inherit;
+  border-bottom:1px solid rgba(1,69,242,0.1);
+}
+.con-item:last-child { border-bottom:none; }
+.con-icon {
+  width:42px; height:42px; border-radius:10px;
+  background:rgba(1,69,242,0.1); display:flex;
+  align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0;
+}
+.con-lbl { font-size:0.75rem; color:#5a7aaa; margin-bottom:2px; }
+.con-val { font-size:0.95rem; font-weight:600; color:var(--text-light); }
+
+/* BUTTONS */
+.btn-wrap { padding:28px 18px; background:var(--bg-dark); display:flex; flex-direction:column; gap:10px; }
+.btn {
+  display:block; width:100%; min-height:50px; border:none; border-radius:12px;
+  font-size:1rem; font-weight:700; cursor:pointer; text-align:center;
+  text-decoration:none; display:flex; align-items:center; justify-content:center; gap:8px;
   transition:all .2s;
-  position:relative; overflow:hidden;
 }
-.member-card::after {
-  content:'›';
-  position:absolute; right:16px; top:50%;
-  transform:translateY(-50%);
-  font-size:20px; color:rgba(255,255,255,.3);
-}
-.member-card:active { background:var(--navy3); transform:scale(.98); }
+.btn-blue { background:var(--blue); color:#fff; }
+.btn-blue:active { opacity:.85; transform:scale(.98); }
+.btn-out { background:transparent; color:var(--blue2); border:1.5px solid var(--blue2); }
+.btn-out:active { background:rgba(1,69,242,0.1); }
+.btn-dark { background:var(--bg-dark3); color:var(--text-dark); border:1px solid rgba(1,69,242,0.2); }
 
-/* 아바타 */
-.avatar {
-  width:56px; height:56px; border-radius:50%;
-  object-fit:cover; object-position:top;
-  border:2px solid var(--gold);
-  flex-shrink:0; background:var(--navy3);
-}
-.avatar-placeholder {
-  width:56px; height:56px; border-radius:50%;
-  background:var(--navy3);
-  border:2px solid rgba(204,161,50,.4);
-  flex-shrink:0;
-  display:flex; align-items:center; justify-content:center;
-  font-size:20px; font-weight:900; color:var(--gold);
-}
-
-/* 멤버 정보 */
-.member-info { flex:1; min-width:0; padding-right:24px; }
-.member-name {
-  font-size:17px; font-weight:700;
-  color:var(--white); margin-bottom:3px; letter-spacing:1px;
-}
-.member-company {
-  font-size:12px; color:rgba(255,255,255,.5);
-  margin-bottom:8px; white-space:nowrap;
-  overflow:hidden; text-overflow:ellipsis;
-}
-.member-tags { display:flex; flex-wrap:wrap; gap:5px; }
-.member-tag {
-  background:rgba(204,161,50,.12);
-  border:1px solid rgba(204,161,50,.3);
-  color:var(--gold);
-  font-size:10px; font-weight:500;
-  padding:3px 9px; border-radius:20px;
-}
-.member-tag.red {
-  background:rgba(239,49,79,.12);
-  border-color:rgba(239,49,79,.3);
-  color:#ef8fa0;
-}
-
-/* 카운트 */
-.member-count {
-  text-align:center; padding-top:8px;
-  font-size:11px; color:rgba(255,255,255,.25);
-  letter-spacing:1px;
-}
-
-/* 푸터 */
+/* FOOTER */
 footer {
-  text-align:center; padding:24px 20px 40px;
-  border-top:1px solid var(--line);
+  background:var(--bg-dark); text-align:center;
+  padding:28px 18px 40px; border-top:1px solid rgba(1,69,242,0.15);
 }
-footer p { font-size:11px; color:rgba(255,255,255,.25); line-height:1.8; }
-footer strong { color:var(--gold); }
+.foot-brand { font-size:1rem; font-weight:700; color:var(--blue2); letter-spacing:2px; margin-bottom:6px; }
+.foot-sub { font-size:0.8rem; color:var(--muted-dark); margin-bottom:10px; }
+.foot-copy { font-size:0.7rem; color:rgba(107,134,196,0.4); }
 </style>
 </head>
 <body>
+<div class="card-wrap">
 
-<div class="header">
-  <div class="chapter-badge">★ BNI 자이언츠 챕터</div>
-  <div class="header-title">멤버 카드</div>
-  <div class="header-sub">디지털 명함 모음</div>
-  <div class="gold-line"></div>
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">MIRACLE</div>
+  <div class="lang-btns">
+    <button class="lang-btn active" onclick="setLang('kr')">KR</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('jp')">JP</button>
+    <button class="lang-btn" onclick="setLang('cn')">CN</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <img src="hero.png" alt="미라클 히어로">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span data-lang="kr" class="active">기업 인터넷 · 보안 · 네트워크</span>
+      <span data-lang="en">Enterprise Internet · Security · Network</span>
+      <span data-lang="jp">企業インターネット・セキュリティ</span>
+      <span data-lang="cn">企业互联网 · 安防 · 网络</span>
+    </div>
+    <div class="hero-name">
+      <span data-lang="kr" class="active">박진호</span>
+      <span data-lang="en">Park Jin-ho</span>
+      <span data-lang="jp">朴 津鎬</span>
+      <span data-lang="cn">朴 津鎬</span>
+    </div>
+    <div class="hero-title">
+      <span data-lang="kr" class="active">대표 · CEO | 미라클</span>
+      <span data-lang="en">CEO | MIRACLE</span>
+      <span data-lang="jp">代表 · CEO | ミラクル</span>
+      <span data-lang="cn">代表 · CEO | 米拉科</span>
+    </div>
+  </div>
 </div>
 
-<div class="member-list">
-
-  <!-- 김준래 -->
-<a class="member-card" href="김준래/index.html">
-  <img class="avatar" src="김준래/profile.jpg" alt="김준래" onerror="this.outerHTML='<div class=\'avatar-placeholder\'>김</div>'">
-  <div class="member-info">
-    <div class="member-name">김준래 대표</div>
-    <div class="member-company">무늬디자인 | 인테리어</div>
-    <div class="member-tags">
-      <span class="member-tag">인테리어</span>
-      <span class="member-tag">실내디자인</span>
+<!-- PROFILE ROW -->
+<div class="profile-row">
+  <img src="profil.png" alt="프로필" class="profile-img">
+  <div>
+    <div class="profile-name">
+      <span data-lang="kr" class="active">박진호 대표</span>
+      <span data-lang="en">CEO Park Jin-ho</span>
+      <span data-lang="jp">朴津鎬 代表</span>
+      <span data-lang="cn">朴津鎬 代表</span>
+    </div>
+    <div class="profile-sub">
+      <span data-lang="kr" class="active">미라클 · 기업 인터넷 전문</span>
+      <span data-lang="en">MIRACLE · Enterprise Internet Expert</span>
+      <span data-lang="jp">ミラクル · 企業インターネット専門</span>
+      <span data-lang="cn">米拉科 · 企业互联网专家</span>
+    </div>
+    <div class="profile-tag">
+      <span data-lang="kr" class="active">⚡ 신속 · 정확 · 철저</span>
+      <span data-lang="en">⚡ Fast · Precise · Thorough</span>
+      <span data-lang="jp">⚡ 迅速・正確・徹底</span>
+      <span data-lang="cn">⚡ 迅速 · 精准 · 彻底</span>
     </div>
   </div>
-</a>
+</div>
 
-  <!-- 박성준 -->
- <a class="member-card" href="박성준/index.html">
-  <img class="avatar" src="박성준/profile1.jpg" alt="박성준" onerror="this.outerHTML='<div class=\'avatar-placeholder\'>박</div>'"> <div class="member-info">
-    <div class="member-name">박성준 대표</div>
-    <div class="member-company">엘로이미디어 | 방송장비</div>
-    <div class="member-tags">
-      <span class="member-tag">방송장비</span>
-      <span class="member-tag">미디어</span>
-    </div>
+<div class="gold-line"></div>
+
+<!-- ABOUT -->
+<div class="sec sec-dark">
+  <div class="sec-label">ABOUT</div>
+  <div class="slogan-box">
+    <span data-lang="kr" class="active">"미라클은 기업의 성장·안정·업무효율로<br>신뢰를 구축합니다"</span>
+    <span data-lang="en">"MIRACLE builds trust through<br>business growth, stability & efficiency"</span>
+    <span data-lang="jp">「ミラクルは成長・安定・業務効率で<br>信頼を築きます」</span>
+    <span data-lang="cn">"米拉科以增长·稳定·效率<br>构建企业信任"</span>
   </div>
-</a>
+  <div class="about-desc">
+    <span data-lang="kr" class="active">
+      25년 경력의 기업 인터넷 전문가.<br>
+      인터넷 속도는 곧 업무와 사업 성장의 속도입니다.<br><br>
+      더 빠르고 안정적인 인터넷으로 사업의 경쟁력에 우위를 선점 하실려면<br><br>
+      저희 「미라클」을 선택해 주십시요<br><br>
+      대표님의 비즈니스 성공을 위해 최선을 다하겠습니다.<br><br>
+      시작부터 과정, 결과까지 — 확인! 확인! 확인!<br>
+      디테일이 미라클의 경쟁력입니다.
+    </span>
+    <span data-lang="en">
+      25 years of expertise in enterprise internet solutions.<br><br>
+      Internet speed is the speed of your work and business growth.<br><br>
+      For a competitive edge with faster, more stable internet —<br><br>
+      Choose 「MIRACLE」<br><br>
+      We are committed to your business success.
+    </span>
+    <span data-lang="jp">
+      企業インターネット専門家として25年のキャリア。<br><br>
+      インターネットの速度は、業務と事業成長の速度です。<br><br>
+      より速く、より安定したインターネットで<br>ビジネスの競争力を先取りするなら —<br><br>
+      「ミラクル」をお選びください<br><br>
+      お客様のビジネス成功のため、全力を尽くします。
+    </span>
+    <span data-lang="cn">
+      拥有25年企业互联网专业经验。<br><br>
+      网络速度，就是您业务与事业成长的速度。<br><br>
+      想以更快、更稳定的网络抢占竞争优势 —<br><br>
+      请选择「米拉科」<br><br>
+      我们将竭尽全力，助力您的商业成功。
+    </span>
+  </div>
+</div>
 
-  <!-- 정율채 -->
-  <a class="member-card" href="정율채/index.html">
-    <img class="avatar" src="정율채/profile.jpg" alt="정율채"
-         onerror="this.outerHTML='<div class=\'avatar-placeholder\'>정</div>'">
-    <div class="member-info">
-      <div class="member-name">정율채 행정사</div>
-      <div class="member-company">K-VISA센터 행정사사무소</div>
-      <div class="member-tags">
-        <span class="member-tag">행정사</span>
-        <span class="member-tag">K-VISA</span>
-        <span class="member-tag red">출입국 전문</span>
+<div class="gold-line"></div>
+
+<!-- WHY -->
+<div class="sec sec-light">
+  <div class="sec-label" style="color:var(--muted-light)">WHY MIRACLE</div>
+  <div class="sec-title">
+    <span data-lang="kr" class="active">미라클을 선택하는 이유</span>
+    <span data-lang="en">Why Choose MIRACLE</span>
+    <span data-lang="jp">ミラクルを選ぶ理由</span>
+    <span data-lang="cn">选择米拉科的理由</span>
+  </div>
+  <div class="why-cards">
+    <div class="why-card">
+      <div class="why-num">1</div>
+      <div>
+        <div class="why-title">
+          <span data-lang="kr" class="active">인터넷 없인 비즈니스가 없다</span>
+          <span data-lang="en">No Business Without Internet</span>
+          <span data-lang="jp">インターネットなしにビジネスなし</span>
+          <span data-lang="cn">没有网络就没有业务</span>
+        </div>
+        <div class="why-desc">
+          <span data-lang="kr" class="active">아날로그 TV처럼, 인터넷은 이제 기업 운영의 핵심 인프라입니다. 25년 전부터 이 확신으로 전문성을 쌓아왔습니다.</span>
+          <span data-lang="en">Like analog TV once was, internet is now the core infrastructure of business. We've built our expertise on this conviction for 25 years.</span>
+          <span data-lang="jp">インターネットは今や企業運営の中核インフラ。25年前からこの確信で専門性を築いてきました。</span>
+          <span data-lang="cn">互联网是企业运营的核心基础设施。25年来我们始终秉持这一信念。</span>
+        </div>
       </div>
     </div>
-  </a>
-
-   <!-- 박진호 -->
-<a class="member-card" href="박진호/index.html">
-  <img class="avatar" src="박진호/profile.png" alt="박진호" onerror="this.outerHTML='<div class=\'avatar-placeholder\'>박</div>'">
-  <div class="member-info">
-    <div class="member-name">박진호 대표</div>
-    <div class="member-company">미라클 인터넷</div>
-    <div class="member-tags">
-      <span class="member-tag">기업 인터넷 설치</span>
-      <span class="member-tag">CCTV,경비,보안</span>
+    <div class="why-card">
+      <div class="why-num">2</div>
+      <div>
+        <div class="why-title">
+          <span data-lang="kr" class="active">통신 3사 전체 비교 컨설팅</span>
+          <span data-lang="en">All 3 Carriers Comparison</span>
+          <span data-lang="jp">通信3社 全比較コンサルティング</span>
+          <span data-lang="cn">三大运营商全面比较咨询</span>
+        </div>
+        <div class="why-desc">
+          <span data-lang="kr" class="active">SK, KT, LGU+ 전 상품을 비교해 고객사 니즈에 맞는 최적 인터넷 상품을 제안합니다. 특정 통신사에 치우치지 않습니다.</span>
+          <span data-lang="en">We compare all SK, KT, and LGU+ products to recommend the best fit for your business needs — without bias.</span>
+          <span data-lang="jp">SK・KT・LGU+の全商品を比較し、最適なプランをご提案します。</span>
+          <span data-lang="cn">比较SK、KT、LGU+所有产品，为客户推荐最优方案。</span>
+        </div>
+      </div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">3</div>
+      <div>
+        <div class="why-title">
+          <span data-lang="kr" class="active">신속 · 정확 · 철저한 사후관리</span>
+          <span data-lang="en">Fast, Precise & Complete After-Service</span>
+          <span data-lang="jp">迅速・正確・徹底したアフターサービス</span>
+          <span data-lang="cn">迅速·精准·彻底的售后服务</span>
+        </div>
+        <div class="why-desc">
+          <span data-lang="kr" class="active">남들보다 신속하게, 남들보다 정확하게, 후속 대처까지 철저히. 고객 만족이 자연스러운 소개로 이어지는 이유입니다.</span>
+          <span data-lang="en">Faster, more precise, more thorough than anyone else. Customer satisfaction naturally leads to referrals.</span>
+          <span data-lang="jp">誰よりも迅速・正確・徹底的に。顧客満足が自然な紹介につながります。</span>
+          <span data-lang="cn">比任何人都快、准、彻底。客户满意自然带来口碑介绍。</span>
+        </div>
+      </div>
     </div>
   </div>
-</a>
+</div>
+
+<div class="gold-line"></div>
+
+<!-- DIFFERENCE -->
+<div class="sec sec-dark3">
+  <div class="sec-label">SERVICES</div>
+  <div class="sec-title">
+    <span data-lang="kr" class="active">취급 상품 & 서비스</span>
+    <span data-lang="en">Products & Services</span>
+    <span data-lang="jp">取扱商品・サービス</span>
+    <span data-lang="cn">产品与服务</span>
+  </div>
+  <div class="diff-grid">
+    <div class="diff-card">
+      <div class="diff-icon">🌐</div>
+      <div class="diff-title">
+        <span data-lang="kr" class="active">기업 인터넷</span>
+        <span data-lang="en">Enterprise Internet</span>
+        <span data-lang="jp">企業インターネット</span>
+        <span data-lang="cn">企业互联网</span>
+      </div>
+      <div class="diff-desc">
+        <span data-lang="kr" class="active">SK·KT·LGU+ 신규가입 및 통신사 전환</span>
+        <span data-lang="en">SK·KT·LGU+ New & Switching</span>
+        <span data-lang="jp">SK·KT·LGU+ 新規·切替</span>
+        <span data-lang="cn">SK·KT·LGU+ 新签及转换</span>
+      </div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-icon">🔒</div>
+      <div class="diff-title">
+        <span data-lang="kr" class="active">경비·CCTV 보안</span>
+        <span data-lang="en">Security & CCTV</span>
+        <span data-lang="jp">警備・CCTV防犯</span>
+        <span data-lang="cn">安防·CCTV监控</span>
+      </div>
+      <div class="diff-desc">
+        <span data-lang="kr" class="active">에스원·캡스·텔레캅 / CCTV 설치·교체</span>
+        <span data-lang="en">S1·CAPS·Telecop / CCTV Install</span>
+        <span data-lang="jp">エスワン·キャップス / CCTV設置</span>
+        <span data-lang="cn">S1·CAPS·Telecop / CCTV安装</span>
+      </div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-icon">🔧</div>
+      <div class="diff-title">
+        <span data-lang="kr" class="active">네트워크 공사</span>
+        <span data-lang="en">Network Construction</span>
+        <span data-lang="jp">ネットワーク工事</span>
+        <span data-lang="cn">网络工程施工</span>
+      </div>
+      <div class="diff-desc">
+        <span data-lang="kr" class="active">네트워크 공사 · 유지보수 · 장애 대응</span>
+        <span data-lang="en">Network Work · Maintenance · Repair</span>
+        <span data-lang="jp">工事·保守·障害対応</span>
+        <span data-lang="cn">施工·维护·故障响应</span>
+      </div>
+    </div>
+    <div class="diff-card">
+      <div class="diff-icon">🤖</div>
+      <div class="diff-title">
+        <span data-lang="kr" class="active">AI · 법인폰</span>
+        <span data-lang="en">AI & Corp. Phone</span>
+        <span data-lang="jp">AI・法人携帯</span>
+        <span data-lang="cn">AI产品·法人手机</span>
+      </div>
+      <div class="diff-desc">
+        <span data-lang="kr" class="active">AI로봇 · AI상품 컨설팅 / 법인폰 도매가</span>
+        <span data-lang="en">AI Robot·Product / Corp. Phone Wholesale</span>
+        <span data-lang="jp">AIロボット·商品 / 法人携帯卸価格</span>
+        <span data-lang="cn">AI机器人·产品咨询 / 法人手机批发</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gold-line"></div>
+
+<!-- REFERRAL -->
+<div class="sec sec-light">
+  <div class="sec-label" style="color:var(--muted-light)">REFERRAL</div>
+  <div class="sec-title">
+    <span data-lang="kr" class="active">이런 분께 소개해 주세요</span>
+    <span data-lang="en">Ideal Referrals</span>
+    <span data-lang="jp">こんな方をご紹介ください</span>
+    <span data-lang="cn">请为我介绍这样的客户</span>
+  </div>
+  <div class="ref-list">
+    <div class="ref-item">
+      <div class="ref-num">1</div>
+      <div class="ref-text">
+        <span data-lang="kr" class="active">🏪 1인 이상 ~ 10인 이하의 모든 소상공인 사업장</span>
+        <span data-lang="en">🏪 All small businesses with 1–10 employees</span>
+        <span data-lang="jp">🏪 従業員1〜10名以下の小規模事業者</span>
+        <span data-lang="cn">🏪 1至10人的所有小微企业主</span>
+      </div>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">2</div>
+      <div class="ref-text">
+        <span data-lang="kr" class="active">🏢 10인 이상의 기업 모든 사업장</span>
+        <span data-lang="en">🏢 All businesses with 10+ employees</span>
+        <span data-lang="jp">🏢 従業員10名以上の全ての企業</span>
+        <span data-lang="cn">🏢 10人以上的所有企业</span>
+      </div>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">3</div>
+      <div class="ref-text">
+        <span data-lang="kr" class="active">🏥 관공서 · 병원 · 호텔 · 주거형 오피스텔</span>
+        <span data-lang="en">🏥 Government · Hospital · Hotel · Officetel</span>
+        <span data-lang="jp">🏥 官公庁・病院・ホテル・オフィステル</span>
+        <span data-lang="cn">🏥 政府机关·医院·酒店·公寓式办公楼</span>
+      </div>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">4</div>
+      <div class="ref-text">
+        <span data-lang="kr" class="active">📡 네트워크 속도가 느리거나 장애가 잦은 사업장</span>
+        <span data-lang="en">📡 Businesses with slow or unstable internet</span>
+        <span data-lang="jp">📡 ネット速度が遅い・障害が多い事業所</span>
+        <span data-lang="cn">📡 网速慢或频繁故障的企业</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="gold-line"></div>
+
+<!-- RESULT IMAGE -->
+<div style="background:#0a0a0a; padding:0;">
+  <img src="result.png" alt="3500개 업체 유치 실적" style="width:100%; display:block;">
+</div>
+
+<!-- CAREER -->
+<div class="sec sec-light">
+  <div class="sec-label" style="color:var(--muted-light)">CAREER</div>
+  <div class="sec-title">
+    <span data-lang="kr" class="active">경력 & 성취</span>
+    <span data-lang="en">Career & Achievements</span>
+    <span data-lang="jp">経歴・実績</span>
+    <span data-lang="cn">经历与成就</span>
+  </div>
+  <div class="car-list">
+    <div class="car-item">
+      <div class="car-badge"><span data-lang="kr" class="active">25년</span><span data-lang="en">25yr</span><span data-lang="jp">25年</span><span data-lang="cn">25年</span></div>
+      <div>
+        <div class="car-title">
+          <span data-lang="kr" class="active">기업 인터넷 전문 경력</span>
+          <span data-lang="en">Enterprise Internet Expert</span>
+          <span data-lang="jp">企業インターネット専門キャリア</span>
+          <span data-lang="cn">企业互联网专业经历</span>
+        </div>
+        <div class="car-sub"><span data-lang="kr" class="active">이전 직업: LGU+ 마케팅</span><span data-lang="en">Former: LGU+ Marketing</span><span data-lang="jp">前職: LGU+マーケティング</span><span data-lang="cn">前职: LGU+市场营销</span></div>
+      </div>
+    </div>
+    <div class="car-item">
+      <div class="car-badge"><span data-lang="kr" class="active">1위</span><span data-lang="en">Top</span><span data-lang="jp">1位</span><span data-lang="cn">第1</span></div>
+      <div>
+        <div class="car-title">
+          <span data-lang="kr" class="active">KT 팀 매출 부울경 1위 달성</span>
+          <span data-lang="en">KT Team Sales #1 in Busan/Ulsan/Gyeongnam</span>
+          <span data-lang="jp">KTチーム売上 釜山·蔚山·慶南1位達成</span>
+          <span data-lang="cn">KT团队业绩釜山·蔚山·庆南第一</span>
+        </div>
+        <div class="car-sub"><span data-lang="kr" class="active">직원 승진 성과</span><span data-lang="en">Including team promotions</span><span data-lang="jp">スタッフ昇進も達成</span><span data-lang="cn">含团队晋升成果</span></div>
+      </div>
+    </div>
+    <div class="car-item">
+      <div class="car-badge"><span data-lang="kr" class="active">계약</span><span data-lang="en">Deal</span><span data-lang="jp">契約</span><span data-lang="cn">合约</span></div>
+      <div>
+        <div class="car-title">
+          <span data-lang="kr" class="active">대형 고객사 네트워크 공사 후 유지보수 장기계약</span>
+          <span data-lang="en">Long-term maintenance contracts after major network projects</span>
+          <span data-lang="jp">大手顧客のネットワーク工事後に長期保守契約締結</span>
+          <span data-lang="cn">大型客户网络施工后签署长期维护合同</span>
+        </div>
+        <div class="car-sub"><span data-lang="kr" class="active">최근 1년 대형 고객사 3곳 계약 완료</span><span data-lang="en">3 major clients contracted in the past year</span><span data-lang="jp">直近1年で大手3社と契約</span><span data-lang="cn">近1年完成3家大型客户合同</span></div>
+      </div>
+    </div>
+    <div class="car-item">
+      <div class="car-badge"><span data-lang="kr" class="active">고객사</span><span data-lang="en">Client</span><span data-lang="jp">顧客</span><span data-lang="cn">客户</span></div>
+      <div>
+        <div class="car-title">
+          <span data-lang="kr" class="active">삼성 메디슨 · 볼보 해운대 · 아르반 호텔 등</span>
+          <span data-lang="en">Samsung Medison · Volvo Haeundae · Arban Hotel etc.</span>
+          <span data-lang="jp">サムスンメディソン·ボルボ海雲台·アルバンホテルほか</span>
+          <span data-lang="cn">三星美迪生·沃尔沃海云台·Arban酒店等</span>
+        </div>
+        <div class="car-sub"><span data-lang="kr" class="active">병원·호텔·제조·자동차 전시장 등 다양한 업종</span><span data-lang="en">Hospital · Hotel · Manufacturing · Auto Showroom</span><span data-lang="jp">病院·ホテル·製造·自動車展示場など</span><span data-lang="cn">医院·酒店·制造·汽车展厅等多行业</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="gold-line"></div>
+
+<!-- PORTFOLIO SLIDE -->
+<div class="sec sec-dark3">
+  <div class="slide-label">
+    <span data-lang="kr" class="active">📸 주요 고객사 업종</span>
+    <span data-lang="en">📸 Key Client Industries</span>
+    <span data-lang="jp">📸 主要顧客業種</span>
+    <span data-lang="cn">📸 主要客户行业</span>
+  </div>
+  <div class="slide-wrap" id="slide-port">
+    <div class="slide-track" id="slide-track-port">
+      <div class="slide-item"><img src="portfolio1.png" alt="가정용 인터넷"></div>
+      <div class="slide-item"><img src="portfolio2.png" alt="소상공인 사업장"></div>
+      <div class="slide-item"><img src="portfolio3.png" alt="기업·관공서·병원·호텔"></div>
+    </div>
+    <button class="slide-btn slide-btn-l" onclick="portSlide(-1)">‹</button>
+    <button class="slide-btn slide-btn-r" onclick="portSlide(1)">›</button>
+  </div>
+  <div class="slide-dots" id="slide-dots-port"></div>
+</div>
+
+<div class="gold-line"></div>
+
+<!-- CONTACT -->
+<div class="sec sec-light">
+  <div class="sec-label" style="color:var(--muted-light)">CONTACT</div>
+  <div class="sec-title">
+    <span data-lang="kr" class="active">연락처</span>
+    <span data-lang="en">Contact</span>
+    <span data-lang="jp">連絡先</span>
+    <span data-lang="cn">联系方式</span>
+  </div>
+  <div class="con-list">
+    <a href="tel:010-8111-3388" class="con-item">
+      <div class="con-icon">📞</div>
+      <div>
+        <div class="con-lbl"><span data-lang="kr" class="active">전화</span><span data-lang="en">Phone</span><span data-lang="jp">電話</span><span data-lang="cn">电话</span></div>
+        <div class="con-val">010-8111-3388</div>
+      </div>
+    </a>
+    <a href="mailto:jh33888@naver.com" class="con-item">
+      <div class="con-icon">✉️</div>
+      <div>
+        <div class="con-lbl"><span data-lang="kr" class="active">이메일</span><span data-lang="en">Email</span><span data-lang="jp">メール</span><span data-lang="cn">邮箱</span></div>
+        <div class="con-val">jh33888@naver.com</div>
+      </div>
+    </a>
+    <div class="con-item">
+      <div class="con-icon">📍</div>
+      <div>
+        <div class="con-lbl"><span data-lang="kr" class="active">위치</span><span data-lang="en">Location</span><span data-lang="jp">所在地</span><span data-lang="cn">地址</span></div>
+        <div class="con-val">
+          <span data-lang="kr" class="active">부산 서면, 경남 김해</span>
+          <span data-lang="en">Seomyeon Busan, Gimhae Gyeongnam</span>
+          <span data-lang="jp">釜山 西面, 慶南 金海</span>
+          <span data-lang="cn">釜山 西面, 庆南 金海</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BUTTONS -->
+<div class="btn-wrap">
+  <button class="btn btn-blue" onclick="shareCard()">
+    📤 <span data-lang="kr" class="active">명함 공유하기</span><span data-lang="en">Share Card</span><span data-lang="jp">名刺を共有</span><span data-lang="cn">分享名片</span>
+  </button>
+  <button class="btn btn-out" onclick="saveContact()">
+    📞 <span data-lang="kr" class="active">연락처 저장</span><span data-lang="en">Save Contact</span><span data-lang="jp">連絡先保存</span><span data-lang="cn">保存联系人</span>
+  </button>
+  <button class="btn btn-out" onclick="saveToCardbook({id:'parkjinho',name:'박진호',nameEn:'Park Jin-ho',title:'대표',company:'미라클',phone:'010-8111-3388',email:'jh33888@naver.com',chapter:'파이오니어',bni:'멤버',url:window.location.href})">
+    🗂️ <span data-lang="kr" class="active">명함 저장</span><span data-lang="en">Save Card</span><span data-lang="jp">名刺保存</span><span data-lang="cn">保存名片</span>
+  </button>
+  <a href="tel:010-8111-3388" class="btn btn-dark">
+    💬 <span data-lang="kr" class="active">상담 문의하기</span><span data-lang="en">Contact for Consultation</span><span data-lang="jp">相談はこちら</span><span data-lang="cn">咨询联系</span>
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-brand">MIRACLE · 미라클</div>
+  <div class="foot-sub">
+    <span data-lang="kr" class="active">신속 · 정확 · 철저 · 박진호 대표</span>
+    <span data-lang="en">Fast · Precise · Thorough · CEO Park Jin-ho</span>
+    <span data-lang="jp">迅速・正確・徹底 · 朴津鎬 代表</span>
+    <span data-lang="cn">迅速 · 精准 · 彻底 · 朴津鎬 代表</span>
+  </div>
+  <div class="foot-copy">© 2025 미라클 · Powered by DiCA</div>
+</footer>
 
 </div>
 
-<div class="member-count">현재 4명 · 멤버 추가 예정</div>
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach((btn, i) => {
+    btn.classList.toggle('active', ['kr','en','jp','cn'][i] === lang);
+  });
+}
 
-<footer>
-  <p><strong>BNI 자이언츠 챕터</strong><br>
-  jinjjabg-hub.github.io/bni-giants</p>
-</footer>
+let portIdx = 0;
+const portTotal = 3;
 
+function initPortSlide() {
+  const dots = document.getElementById('slide-dots-port');
+  if (!dots) return;
+  dots.innerHTML = '';
+  for (let i = 0; i < portTotal; i++) {
+    const d = document.createElement('div');
+    d.className = 'slide-dot' + (i === 0 ? ' active' : '');
+    d.onclick = () => goPortSlide(i);
+    dots.appendChild(d);
+  }
+}
+function goPortSlide(idx) {
+  portIdx = (idx + portTotal) % portTotal;
+  document.getElementById('slide-track-port').style.transform = `translateX(-${portIdx * 100}%)`;
+  document.querySelectorAll('#slide-dots-port .slide-dot').forEach((d, i) => {
+    d.classList.toggle('active', i === portIdx);
+  });
+}
+function portSlide(dir) { goPortSlide(portIdx + dir); }
+
+(function() {
+  let sx = 0;
+  const track = document.getElementById('slide-track-port');
+  if (!track) return;
+  track.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, {passive:true});
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) > 40) portSlide(dx < 0 ? 1 : -1);
+  }, {passive:true});
+})();
+
+document.addEventListener('DOMContentLoaded', initPortSlide);
+
+function shareCard() {
+  if (navigator.share) {
+    navigator.share({
+      title: '박진호 대표 | 미라클',
+      text: '기업 인터넷·보안·네트워크 전문 25년, 미라클 박진호 대표 디지털 명함입니다.',
+      url: window.location.href
+    });
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      alert('링크가 복사되었습니다!');
+    });
+  }
+}
+
+function saveContact() {
+  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:박진호\nN:박;진호;;;\nORG:미라클\nTITLE:대표\nTEL;TYPE=CELL:010-8111-3388\nEMAIL:jh33888@naver.com\nURL:https://jinjjabg-hub.github.io/BNI-PIONEER-cards/박진호/\nEND:VCARD`;
+  const blob = new Blob([vcard], {type:'text/vcard'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'ParkJinho_Miracle.vcf';
+  a.click();
+}
+</script>
 </body>
 </html>
