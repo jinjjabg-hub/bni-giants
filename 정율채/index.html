@@ -6,7 +6,7 @@
 <title>K-VISA센터 행정사사무소 | 정율채 행정사</title>
 <meta name="description" content="한국에서 일하고 투자하고 살고 싶은 외국인의 비자를 끝까지 책임지는 행정사">
 <meta property="og:title" content="정율채 행정사 | K-VISA센터">
-<meta property="og:image" content="og_final4.jpg">
+<meta property="og:image" content="og_final.jpg">
 <meta property="og:url" content="https://jinjjabg-hub.github.io/bni-giants/정율채/">
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#0a2e2c">
@@ -360,10 +360,6 @@ footer strong { color:var(--g2); font-size:13px; }
 /* 페이드 */
 .fi { opacity:0; transform:translateY(18px); transition:opacity .5s ease,transform .5s ease; }
 .fi.on { opacity:1; transform:none; }
-
-/* 다국어 인라인 토글 */
-.lang-inline { display: none; }
-.lang-inline.active { display: inline; }
 </style>
 </head>
 <body>
@@ -372,17 +368,20 @@ footer strong { color:var(--g2); font-size:13px; }
 <div class="lang-bar">
   <div class="lang-btns">
     <button class="lang-btn on" onclick="setLang('kr',this)">KR</button>
-    <button class="lang-btn" onclick="setLang('en',this)">EN</button>
-    <button class="lang-btn" onclick="setLang('jp',this)">JP</button>
+    <button class="lang-btn" onclick="setLang('id',this)">ID</button>
+    <button class="lang-btn" onclick="setLang('np',this)">NP</button>
     <button class="lang-btn" onclick="setLang('cn',this)">CN</button>
   </div>
 </div>
 
 <!-- HERO -->
 <section class="hero">
+  <!-- 상단: 로고 + BNI 배지 -->
   <div class="hero-top">
     <span class="bni-hero-badge">★ <span id="bni-hero-txt">BNI 자이언츠</span></span>
   </div>
+
+  <!-- 중앙: K-VISA 센터 타이포 -->
   <div class="hero-mid fi">
     <div class="hero-kvisa-row">
       <img src="logo.png" alt="행정사 로고" class="hero-inline-logo">
@@ -394,6 +393,8 @@ footer strong { color:var(--g2); font-size:13px; }
     <div class="hero-gold-line"></div>
     <div class="hero-eng">YOUR TOMORROW, MY COMMITMENT</div>
   </div>
+
+  <!-- 하단: 이름 + 슬로건 + 법무부 -->
   <div class="hero-bottom fi">
     <div class="hero-dash-label">— <span id="hero-label">대표 행정사</span></div>
     <div class="hero-name" id="hero-name"><span style="color:#ffffff">정</span><span style="color:#E8C97A">&nbsp;&nbsp;율&nbsp;&nbsp;채</span></div>
@@ -509,22 +510,10 @@ footer strong { color:var(--g2); font-size:13px; }
   </div>
 </section>
 
-<!-- 저장 버튼 (교체 완료) -->
+<!-- 저장 버튼 -->
 <section class="save-sec">
-  <button onclick="savePhone({name:'정율채', company:'K-VISA센터 행정사사무소', title:'행정사', phone:'010-9828-2212', email:'achimgrim@naver.com'})" class="btn-save btn-c">
-    <span>📞</span>
-    <span class="lang-inline active" data-lang="ko">전화번호 저장하기</span>
-    <span class="lang-inline" data-lang="en">Save Contact</span>
-    <span class="lang-inline" data-lang="jp">連絡先を保存</span>
-    <span class="lang-inline" data-lang="cn">保存联系人</span>
-  </button>
-  <button onclick="saveToCardbook({id:'jung_yulchae_kvisa', name:'정율채', nameEn:'Jung Yulchae', company:'K-VISA센터 행정사사무소', title:'행정사', phone:'010-9828-2212', email:'achimgrim@naver.com', chapter:'BNI 자이언츠 챕터', bni:'파운딩 멤버 / ST', url:'https://jinjjabg-hub.github.io/bni-giants/정율채/'})" class="btn-save btn-h">
-    <span>🗂️</span>
-    <span class="lang-inline active" data-lang="ko">명함 저장하기</span>
-    <span class="lang-inline" data-lang="en">Save to Cardbook</span>
-    <span class="lang-inline" data-lang="jp">名刺帳に保存</span>
-    <span class="lang-inline" data-lang="cn">保存到名片册</span>
-  </button>
+  <button class="btn-save btn-c" onclick="saveContact()">👤 <span id="btn-c">연락처 저장</span></button>
+  <button class="btn-save btn-h" onclick="saveToCardHolder()">📋 <span id="btn-h">명함첩에 저장</span></button>
   <a class="btn-save btn-k" href="https://open.kakao.com/o/sHkiYupf" target="_blank">💬 <span id="btn-k">카카오 오픈채팅 상담</span></a>
 </section>
 
@@ -536,7 +525,6 @@ footer strong { color:var(--g2); font-size:13px; }
     <a class="conn-btn" href="https://blog.naver.com/achimgrim" target="_blank"><span class="conn-icon">🌐</span><span id="c2">홈페이지</span></a>
     <a class="conn-btn" href="https://instagram.com/jung_yulchae" target="_blank"><span class="conn-icon">📷</span><span id="c3">인스타그램</span><span class="conn-sub">@jung_yulchae</span></a>
     <a class="conn-btn" href="mailto:achimgrim@naver.com"><span class="conn-icon">✉️</span><span id="c4">이메일</span></a>
-    <a class="conn-btn" href="https://jinjjabg-hub.github.io/MANDU/?u=jyc_kvisa" target="_blank"><span class="conn-icon">🥟</span><span id="c5">만두</span><span class="conn-sub">실시간 번역앱</span></a>
   </div>
 </section>
 
@@ -551,19 +539,11 @@ footer strong { color:var(--g2); font-size:13px; }
   </p>
 </footer>
 
-<!-- 플로팅 CTA (동일 교체) -->
 <div class="float-cta">
-  <button class="float-btn" onclick="savePhone({name:'정율채', company:'K-VISA센터 행정사사무소', title:'행정사', phone:'010-9828-2212', email:'achimgrim@naver.com'})">
-    👤 
-    <span class="lang-inline active" data-lang="ko">연락처 저장</span>
-    <span class="lang-inline" data-lang="en">Save Contact</span>
-    <span class="lang-inline" data-lang="jp">連絡先を保存</span>
-    <span class="lang-inline" data-lang="cn">保存联系人</span>
-  </button>
+  <button class="float-btn" onclick="saveContact()">👤 <span id="fl-cta">연락처 저장</span></button>
 </div>
 
 <script>
-// ---------- 다국어 데이터 (기존 유지) ----------
 const T = {
   kr: {
     "bni-badge-txt":"BNI 자이언츠 챕터","bni-hero-txt":"BNI 자이언츠",
@@ -591,72 +571,72 @@ const T = {
     "ref-lbl":"REFERRAL","ref-ttl":"이런 분을 소개해 주세요",
     "ref-tags":["한국 사업을 준비하는 중국·일본인을 위한 한국 사업 컨설팅 업체","한국 파견비자가 필요한 인도 IT 회사 또는 인도 법인의 한국 지사","외국인투자기업 전문 세무사","외국인 직원이 있는 기업의 교육 및 컨설팅업체","외국인 취업 컨설팅 업체"],
     "qr-lbl":"QR CODE","qr-desc":"QR 스캔으로 이 명함을<br>바로 저장하세요",
-    "btn-c":"전화번호 저장하기","btn-h":"명함 저장하기","btn-k":"카카오 오픈채팅 상담",
+    "btn-c":"연락처 저장","btn-h":"명함첩에 저장","btn-k":"카카오 오픈채팅 상담",
     "conn-lbl":"CONNECT","c1":"전화","c2":"홈페이지","c3":"인스타그램","c4":"이메일",
     "ft-company":"K-VISA센터 행정사사무소","ft-name":"행정사 정율채",
     "ft-reg":"법무부 지정 출입국민원 대행기관","ft-bni":"BNI 자이언츠 챕터","fl-cta":"연락처 저장"
   },
-  en: {
+  id: {
     "bni-badge-txt":"BNI Giants Chapter","bni-hero-txt":"BNI Giants",
-    "hero-logo-name":"Administrative Office","hero-center":"Center","hero-admin":"Administrative Office",
-    "hero-label":"Administrative Attorney","hero-name":"<span style='color:#ffffff'>Jung</span><span style='color:#E8C97A'> Yulchae</span>",
-    "hero-slogan":"Responsible for every visa need of foreigners who want to work, invest, and live in Korea",
-    "hero-moj-txt":"Ministry of Justice Designated Immigration Agency",
-    "about-lbl":"ABOUT","about-ttl":"Why Choose<br>Jung Yulchae?",
-    "w1t":"1st Exam Pass","w1d":"Passed the inaugural Administrative Attorney Exam (2% pass rate)",
-    "w2t":"Award","w2d":"Minister of Interior Commendation Award, 2017",
-    "w3t":"Educator","w3d":"Curriculum author & practical training instructor",
-    "quote":"\"Every visa case entrusted to me<br>will be resolved without fail.\"",
-    "stats-lbl":"TRACK RECORD",
-    "s1u":"yrs","s1l":"Years of Practice","s2u":"st","s2l":"1st Exam Pass","s3l":"Pass Rate","s4u":"","s4l":"Ministerial Award (1/yr)",
-    "diff-lbl":"DIFFERENCE","diff-ttl":"What Sets Us Apart",
-    "d1":"+1 Attorney: Always delivering more than promised",
-    "d2":"Accountable: Full responsibility with no extra charges",
-    "d3":"Client-first: Always finding the best solution for you",
-    "d4":"Nationally recognized Ministerial Award recipient (only 1 per year)",
-    "bni-lbl":"BNI PROFILE","p-name":"Jung Yulchae","p-role":"BNI Giants Chapter",
-    "pt1":"Att'y","pt2":"K-VISA","pt3":"Immigration",
-    "g1n":"Gen.1","g1r":"Founding Member","g2n":"Gen.3","g2r":"ST",
-    "philo-txt":"\"Complex visa issues for foreign clients,<br>resolved fastest and most accurately.\"",
-    "philo-cite":"— Jung Yulchae, Administrative Attorney",
-    "ref-lbl":"REFERRAL","ref-ttl":"Ideal Referrals",
-    "ref-tags":["Korea business consulting firms for Chinese/Japanese clients","Indian IT companies or Korean branches needing dispatch visas","Tax accountants specializing in foreign-invested companies","Companies with foreign employees (education/consulting)","Foreign employment consulting agencies"],
-    "qr-lbl":"QR CODE","qr-desc":"Scan QR to save<br>this card instantly",
-    "btn-c":"Save Contact","btn-h":"Save to Cardbook","btn-k":"KakaoTalk Consultation",
-    "conn-lbl":"CONNECT","c1":"Call","c2":"Website","c3":"Instagram","c4":"Email",
-    "ft-company":"K-VISA Center Administrative Office","ft-name":"Att'y Jung Yulchae",
-    "ft-reg":"Ministry of Justice Designated Immigration Agency","ft-bni":"BNI Giants Chapter","fl-cta":"Save Contact"
+    "hero-logo-name":"Kantor Administrasi","hero-center":"Pusat","hero-admin":"Kantor Administrasi",
+    "hero-label":"Pengacara Administrasi","hero-name":"<span style='color:#ffffff'>Jung</span><span style='color:#E8C97A'> Yulchae</span>",
+    "hero-slogan":"Mengurus setiap visa untuk warga asing yang ingin bekerja, berinvestasi, dan tinggal di Korea",
+    "hero-moj-txt":"Lembaga Imigrasi Resmi Kementerian Kehakiman",
+    "about-lbl":"TENTANG","about-ttl":"Mengapa Memilih<br>Jung Yulchae?",
+    "w1t":"Lulus Ujian Pertama","w1d":"Lulus Ujian Pengacara Administrasi ke-1 (tingkat kelulusan 2%)",
+    "w2t":"Penghargaan","w2d":"Penghargaan Menteri Dalam Negeri, 2017",
+    "w3t":"Pengajar","w3d":"Penulis kurikulum & instruktur pelatihan praktis",
+    "quote":""Setiap kasus visa yang dipercayakan kepada saya<br>akan diselesaikan tanpa gagal."",
+    "stats-lbl":"REKAM JEJAK",
+    "s1u":"thn","s1l":"Pengalaman","s2u":"ke-1","s2l":"Lulus Pertama","s3l":"Tingkat Lulus","s4u":"","s4l":"Penghargaan Menteri",
+    "diff-lbl":"KEUNGGULAN","diff-ttl":"Yang Membedakan Kami",
+    "d1":"+1 Pengacara: Selalu memberikan lebih dari yang dijanjikan",
+    "d2":"Bertanggung jawab: Tanggung jawab penuh tanpa biaya tambahan",
+    "d3":"Klien utama: Selalu mencari solusi terbaik untuk Anda",
+    "d4":"Penerima Penghargaan Menteri yang diakui nasional (hanya 1 per tahun)",
+    "bni-lbl":"PROFIL BNI","p-name":"Jung Yulchae","p-role":"BNI Giants Chapter",
+    "pt1":"Pengacara","pt2":"K-VISA","pt3":"Imigrasi",
+    "g1n":"Gen.1","g1r":"Anggota Pendiri","g2n":"Gen.3","g2r":"ST",
+    "philo-txt":""Masalah visa kompleks klien asing,<br>diselesaikan dengan paling cepat dan akurat."",
+    "philo-cite":"— Jung Yulchae, Pengacara Administrasi",
+    "ref-lbl":"REFERRAL","ref-ttl":"Referral yang Ideal",
+    "ref-tags":["Konsultan bisnis Korea untuk klien China/Jepang","Perusahaan IT India yang membutuhkan visa penugasan ke Korea","Akuntan pajak untuk perusahaan investasi asing","Perusahaan dengan karyawan asing (pendidikan/konsultasi)","Agen konsultasi ketenagakerjaan asing"],
+    "qr-lbl":"QR CODE","qr-desc":"Scan QR untuk menyimpan<br>kartu ini sekarang",
+    "btn-c":"Simpan Kontak","btn-h":"Tambah ke Kartu","btn-k":"Konsultasi KakaoTalk",
+    "conn-lbl":"HUBUNGI","c1":"Telepon","c2":"Website","c3":"Instagram","c4":"Email",
+    "ft-company":"K-VISA Center Kantor Administrasi","ft-name":"Pengacara Jung Yulchae",
+    "ft-reg":"Lembaga Imigrasi Resmi Kementerian Kehakiman","ft-bni":"BNI Giants Chapter","fl-cta":"Simpan Kontak"
   },
-  jp: {
-    "bni-badge-txt":"BNI ジャイアンツ チャプター","bni-hero-txt":"BNI ジャイアンツ",
-    "hero-logo-name":"行政書士事務所","hero-center":"セン&nbsp;&nbsp;ター","hero-admin":"行政書士事務所",
-    "hero-label":"代表行政書士","hero-name":"<span style='color:#ffffff'>チョン</span><span style='color:#E8C97A'>・ユルチェ</span>",
-    "hero-slogan":"韓国で働き、投資し、生活したい外国人のビザを最後まで責任を持ってサポートします",
-    "hero-moj-txt":"法務部指定 出入国民願代行機関",
-    "about-lbl":"ABOUT","about-ttl":"チョン・ユルチェを<br>選ぶ理由",
-    "w1t":"行政書士試験 第1回合格","w1d":"第1回行政書士試験合格（合格率2%）",
-    "w2t":"受賞歴","w2d":"2017年 行政安全部長官表彰受賞",
-    "w3t":"行政書士教育講師","w3d":"教材編纂委員 / 行政書士実務教育講師",
-    "quote":"\"お任せいただいたビザは必ず解決し、<br>その信頼を次のお客様へ繋げます。\"",
-    "stats-lbl":"実績",
-    "s1u":"年","s1l":"行政書士歴","s2u":"回","s2l":"第1回合格","s3l":"合格率","s4u":"名","s4l":"長官賞（年1名）",
-    "diff-lbl":"強み","diff-ttl":"他との違い",
-    "d1":"+1 行政書士：約束以上のサービスを提供",
-    "d2":"責任ある対応：追加費用なしで最後まで",
-    "d3":"顧客中心：常に最善の解決策を提案",
-    "d4":"韓国政府公認 長官表彰受賞者（年1名のみ）",
-    "bni-lbl":"BNI プロフィール","p-name":"チョン・ユルチェ","p-role":"BNI ジャイアンツ チャプター",
-    "pt1":"行政書士","pt2":"K-VISA","pt3":"出入国専門",
-    "g1n":"第1期","g1r":"創立メンバー","g2n":"第3期","g2r":"ST",
-    "philo-txt":"\"外国人のお客様の複雑なビザ問題を<br>最も迅速かつ正確に解決します。\"",
-    "philo-cite":"— チョン・ユルチェ 行政書士",
-    "ref-lbl":"ご紹介","ref-ttl":"こんな方をご紹介ください",
-    "ref-tags":["中国・日本人向け韓国ビジネスコンサルティング会社","韓国赴任ビザが必要なインドのIT企業や韓国法人","外国投資企業専門の税理士","外国人従業員がいる企業の教育・コンサル会社","外国人就職コンサルティング会社"],
-    "qr-lbl":"QR CODE","qr-desc":"QRスキャンで<br>この名刺を保存",
-    "btn-c":"連絡先保存","btn-h":"名刺帳に保存","btn-k":"カカオトーク相談",
-    "conn-lbl":"連絡先","c1":"電話","c2":"ホームページ","c3":"Instagram","c4":"メール",
-    "ft-company":"K-VISAセンター 行政書士事務所","ft-name":"行政書士 チョン・ユルチェ",
-    "ft-reg":"法務部指定 出入国民願代行機関","ft-bni":"BNI ジャイアンツ チャプター","fl-cta":"連絡先を保存"
+  np: {
+    "bni-badge-txt":"BNI Giants Chapter","bni-hero-txt":"BNI Giants",
+    "hero-logo-name":"प्रशासनिक कार्यालय","hero-center":"केन्द्र","hero-admin":"प्रशासनिक कार्यालय",
+    "hero-label":"प्रशासनिक वकिल","hero-name":"<span style='color:#ffffff'>Jung</span><span style='color:#E8C97A'> Yulchae</span>",
+    "hero-slogan":"कोरियामा काम गर्न, लगानी गर्न र बस्न चाहने विदेशीहरूको भिसाको जिम्मेवारी लिने प्रशासनिक वकिल",
+    "hero-moj-txt":"न्याय मन्त्रालय मान्यता प्राप्त आप्रवासन एजेन्सी",
+    "about-lbl":"परिचय","about-ttl":"Jung Yulchae लाई<br>किन रोज्ने?",
+    "w1t":"पहिलो परीक्षा उत्तीर्ण","w1d":"पहिलो प्रशासनिक वकिल परीक्षा उत्तीर्ण (उत्तीर्ण दर २%)",
+    "w2t":"पुरस्कार","w2d":"२०१७ मा गृह मन्त्रालयको मन्त्री पुरस्कार",
+    "w3t":"शिक्षक","w3d":"पाठ्यक्रम लेखक र व्यावहारिक प्रशिक्षण प्रशिक्षक",
+    "quote":""मलाई सुम्पिएको हरेक भिसा केस<br>अवश्य समाधान हुनेछ।"",
+    "stats-lbl":"ट्र्याक रेकर्ड",
+    "s1u":"वर्ष","s1l":"अनुभव","s2u":"औं","s2l":"पहिलो उत्तीर्ण","s3l":"उत्तीर्ण दर","s4u":"","s4l":"मन्त्री पुरस्कार",
+    "diff-lbl":"विशेषता","diff-ttl":"हाम्रो भिन्नता",
+    "d1":"+१ वकिल: वाचा भन्दा बढी सेवा प्रदान",
+    "d2":"जिम्मेवार: थप शुल्क बिना पूर्ण जिम्मेवारी",
+    "d3":"ग्राहक केन्द्रित: सधैं उत्तम समाधान खोज्ने",
+    "d4":"राष्ट्रिय मान्यता प्राप्त मन्त्री पुरस्कार विजेता (वार्षिक १ जना)",
+    "bni-lbl":"BNI प्रोफाइल","p-name":"Jung Yulchae","p-role":"BNI Giants Chapter",
+    "pt1":"वकिल","pt2":"K-VISA","pt3":"आप्रवासन",
+    "g1n":"Gen.1","g1r":"संस्थापक सदस्य","g2n":"Gen.3","g2r":"ST",
+    "philo-txt":""विदेशी ग्राहकहरूको जटिल भिसा समस्या,<br>सबैभन्दा छिटो र सटीक रूपमा समाधान।"",
+    "philo-cite":"— Jung Yulchae, प्रशासनिक वकिल",
+    "ref-lbl":"रेफरल","ref-ttl":"यस्ता व्यक्ति सिफारिस गर्नुहोस्",
+    "ref-tags":["चिनियाँ/जापानी ग्राहकहरूका लागि कोरिया व्यापार परामर्श कम्पनी","कोरियामा डिस्पाच भिसा चाहिने भारतीय IT कम्पनी","विदेशी लगानी कम्पनीका लागि कर सल्लाहकार","विदेशी कर्मचारी भएका कम्पनीहरू","विदेशी रोजगार परामर्श एजेन्सी"],
+    "qr-lbl":"QR CODE","qr-desc":"QR स्क्यान गरेर<br>यो कार्ड सेभ गर्नुहोस्",
+    "btn-c":"सम्पर्क सेभ","btn-h":"कार्ड होल्डरमा थप्नुस्","btn-k":"KakaoTalk परामर्श",
+    "conn-lbl":"सम्पर्क","c1":"फोन","c2":"वेबसाइट","c3":"Instagram","c4":"इमेल",
+    "ft-company":"K-VISA Center प्रशासनिक कार्यालय","ft-name":"वकिल Jung Yulchae",
+    "ft-reg":"न्याय मन्त्रालय मान्यता प्राप्त आप्रवासन एजेन्सी","ft-bni":"BNI Giants Chapter","fl-cta":"सम्पर्क सेभ"
   },
   cn: {
     "bni-badge-txt":"BNI 巨人分会","bni-hero-txt":"BNI 巨人分会",
@@ -684,7 +664,7 @@ const T = {
     "ref-lbl":"推荐","ref-ttl":"希望您介绍这样的客户",
     "ref-tags":["面向中日客户的韩国商务咨询公司","需要韩国派遣签证的印度IT公司或在韩法人","外国投资企业专业税务师","拥有外籍员工的企业教育/咨询公司","外籍人士就业咨询机构"],
     "qr-lbl":"QR CODE","qr-desc":"扫描QR码<br>立即保存名片",
-    "btn-c":"保存联系方式","btn-h":"保存到名片册","btn-k":"KakaoTalk咨询",
+    "btn-c":"保存联系方式","btn-h":"保存到名片夹","btn-k":"KakaoTalk咨询",
     "conn-lbl":"联系方式","c1":"电话","c2":"网站","c3":"Instagram","c4":"邮件",
     "ft-company":"K-VISA中心 行政士事务所","ft-name":"行政士 鄭潏琗",
     "ft-reg":"法务部指定 出入境民愿代理机构","ft-bni":"BNI 巨人分会","fl-cta":"保存联系方式"
@@ -704,39 +684,47 @@ function setLang(lang, btn) {
       if (el) el.innerHTML = t[id];
     }
   });
-  // 다국어 인라인 처리
-  document.querySelectorAll('.lang-inline').forEach(el => {
-    const langValue = el.getAttribute('data-lang');
-    if (langValue === lang) el.classList.add('active');
-    else el.classList.remove('active');
-  });
 }
 
-// savePhone: vcf 다운로드
-function savePhone(data) {
+function saveContact() {
   const vcard = [
     'BEGIN:VCARD','VERSION:3.0',
-    `FN:${data.name}`,
-    `ORG:${data.company}`,
-    `TITLE:${data.title}`,
-    `TEL;TYPE=CELL:${data.phone}`,
-    `EMAIL:${data.email}`,
+    'FN:정율채','N:정;율채;;;',
+    'ORG:K-VISA센터 행정사사무소','TITLE:행정사',
+    'TEL;TYPE=CELL:010-9828-2212',
+    'EMAIL:achimgrim@naver.com',
+    'URL:https://blog.naver.com/achimgrim',
+    'NOTE:출입국·비자·체류허가 | BNI 자이언츠 챕터 | 법무부 지정 13101070338',
     'END:VCARD'
   ].join('\n');
   const blob = new Blob([vcard],{type:'text/vcard;charset=utf-8'});
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
-  a.href=url; a.download=`${data.name}_contact.vcf`;
+  a.href=url; a.download='정율채_KVISA센터.vcf';
   document.body.appendChild(a); a.click();
   document.body.removeChild(a); URL.revokeObjectURL(url);
 }
 
-// Intersection Observer
+function saveToCardHolder() {
+  const card = {
+    id:'jung-yulchae-kvisa', name:'정율채',
+    company:'K-VISA센터 행정사사무소', role:'행정사',
+    phone:'010-9828-2212', field:'행정사',
+    chapter:'BNI 자이언츠 챕터',
+    url:window.location.href, photo:'profile.jpg',
+    savedAt:new Date().toLocaleDateString('ko-KR')
+  };
+  let cards = JSON.parse(localStorage.getItem('bni_cards')||'[]');
+  if (cards.find(c=>c.id===card.id)) { window.location.href='/'; return; }
+  cards.push(card);
+  localStorage.setItem('bni_cards',JSON.stringify(cards));
+  if (confirm('✅ 명함첩에 저장되었습니다!\n명함첩 바로 보기?')) window.location.href='/';
+}
+
 const obs = new IntersectionObserver(entries=>{
   entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('on'); });
 },{threshold:0.1});
 document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
 </script>
-<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
 </body>
 </html>
