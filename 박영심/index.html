@@ -13,18 +13,13 @@
 <meta property="og:url" content="https://jinjjabg-hub.github.io/bni-giants/%EB%B0%95%EC%98%81%EC%8B%AC/">
 <style>
 :root {
-  --bg-dark:  #0a0a0a;
-  --bg-dark2: #141414;
-  --bg-dark3: #1a1a1a;
-  --bg-light: #f5f5f5;
-  --red:      #e00000;
-  --red2:     #c00000;
-  --text-dark:  #ffffff;
-  --text-light: #0a0a0a;
-  --muted-dark:  rgba(255,255,255,0.7);
-  --muted-light: #555555;
+  --red: #e00000;
+  --red2: #c00000;
+  --dark: #0a0a0a;
+  --dark2: #141414;
+  --dark3: #1a1a1a;
+  --light: #f5f5f5;
 }
-
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:'Apple SD Gothic Neo','Noto Sans KR',sans-serif; background:#0a0a0a; color:#fff; }
 
@@ -36,397 +31,181 @@ div[data-lang].active { display:block !important; }
 /* NAV */
 nav {
   position:sticky; top:0; z-index:100;
-  background:rgba(10,10,10,0.95);
-  backdrop-filter:blur(10px);
+  background:rgba(10,10,10,0.95); backdrop-filter:blur(10px);
   display:flex; align-items:center; justify-content:space-between;
   padding:12px 20px;
   border-bottom:1px solid rgba(224,0,0,0.3);
 }
-.nav-brand {
-  font-size:11px; font-weight:700; letter-spacing:0.05em;
-  color:#fff;
-}
+.nav-brand { font-size:11px; font-weight:700; letter-spacing:0.05em; color:#fff; }
 .nav-brand span { color:var(--red); }
 .lang-btns { display:flex; gap:6px; }
 .lang-btn {
   background:transparent; border:1px solid rgba(255,255,255,0.3);
   color:rgba(255,255,255,0.6); font-size:11px;
-  padding:4px 9px; border-radius:20px; cursor:pointer;
-  transition:all 0.2s;
+  padding:4px 9px; border-radius:20px; cursor:pointer; transition:all 0.2s;
 }
-.lang-btn.active {
-  background:var(--red); border-color:var(--red);
-  color:#fff; font-weight:700;
-}
+.lang-btn.active { background:var(--red); border-color:var(--red); color:#fff; font-weight:700; }
 
 /* HERO */
 .hero { position:relative; aspect-ratio:2/3; overflow:hidden; }
 .hero img { width:100%; height:100%; object-fit:cover; object-position:center top; }
 .hero-overlay {
   position:absolute; inset:0;
-  background:linear-gradient(to bottom,
-    rgba(0,0,0,0.0) 0%, rgba(0,0,0,0.1) 40%,
-    rgba(0,0,0,0.75) 70%, rgba(0,0,0,0.95) 100%);
+  background:linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.75) 70%, rgba(0,0,0,0.95) 100%);
 }
-.hero-content {
-  position:absolute; bottom:0; left:0; right:0;
-  padding:28px 24px 32px;
-}
+.hero-content { position:absolute; bottom:0; left:0; right:0; padding:28px 24px 32px; }
 .hero-badge {
-  display:inline-block;
-  background:var(--red); color:#fff;
+  display:inline-block; background:var(--red); color:#fff;
   font-size:11px; font-weight:700; letter-spacing:0.08em;
-  padding:4px 12px; border-radius:20px;
-  margin-bottom:12px;
+  padding:4px 12px; border-radius:20px; margin-bottom:12px;
 }
-.hero-name {
-  font-size:32px; font-weight:900; color:#fff;
-  letter-spacing:-0.02em; line-height:1.1;
-  margin-bottom:6px;
-}
-.hero-title {
-  font-size:13px; color:rgba(255,255,255,0.75);
-  letter-spacing:0.03em; line-height:1.5;
-}
-.hero-line {
-  width:40px; height:2px; background:var(--red);
-  margin:14px 0;
-}
+.hero-name { font-size:32px; font-weight:900; color:#fff; letter-spacing:-0.02em; line-height:1.1; margin-bottom:6px; }
+.hero-title { font-size:13px; color:rgba(255,255,255,0.75); letter-spacing:0.03em; line-height:1.5; }
+.hero-line { width:40px; height:2px; background:var(--red); margin:14px 0; }
 
 /* PROFILE ROW */
 .profile-row {
-  background:var(--bg-dark2);
+  background:var(--dark2);
   display:flex; align-items:center; gap:16px;
   padding:20px 24px;
   border-bottom:1px solid rgba(224,0,0,0.2);
 }
-.profile-img {
-  width:64px; height:64px;
-  border-radius:50%; object-fit:cover;
-  border:2px solid var(--red);
-  flex-shrink:0;
-}
+.profile-img { width:64px; height:64px; border-radius:50%; object-fit:cover; border:2px solid var(--red); flex-shrink:0; }
 .profile-name { font-size:15px; font-weight:700; color:#fff; }
-.profile-sub { font-size:11px; color:var(--muted-dark); margin-top:2px; }
-.profile-tag {
-  display:inline-block; margin-top:6px;
-  font-size:10px; color:var(--red);
-  border:1px solid var(--red);
-  padding:2px 8px; border-radius:10px;
-}
+.profile-sub { font-size:11px; color:rgba(255,255,255,0.65); margin-top:2px; }
+.profile-tag { display:inline-block; margin-top:6px; font-size:10px; color:var(--red); border:1px solid var(--red); padding:2px 8px; border-radius:10px; }
 
 /* 섹션 공통 */
-.section { padding:52px 24px; }
-.sec-label {
-  font-size:10px; font-weight:700; letter-spacing:0.15em;
-  color:var(--red); text-transform:uppercase;
-  margin-bottom:6px;
-}
-.sec-title {
-  font-size:22px; font-weight:900;
-  line-height:1.25; letter-spacing:-0.02em;
-}
-.sec-title.light { color:var(--text-light); }
-.sec-title.dark { color:var(--text-dark); }
-.sec-divider {
-  width:36px; height:3px; background:var(--red);
-  margin:14px 0 20px;
-}
+.sec-label { font-size:10px; font-weight:700; letter-spacing:0.15em; color:var(--red); text-transform:uppercase; margin-bottom:6px; }
+.sec-title { font-size:20px; font-weight:900; line-height:1.25; letter-spacing:-0.02em; }
+.sec-divider { width:36px; height:3px; background:var(--red); margin:12px 0 18px; }
 
-/* ABOUT — 배경이미지 */
-.about-wrap {
-  position:relative; overflow:hidden;
-}
-.about-bg {
-  position:absolute; inset:0;
-  background-image:url('bg_about.png');
-  background-size:cover; background-position:center;
-  filter:grayscale(20%);
-}
-.about-overlay {
-  position:absolute; inset:0;
-  background:rgba(10,10,10,0.82);
-}
-.about-content { position:relative; z-index:1; }
-.quote-box {
-  border-left:3px solid var(--red);
-  padding:14px 16px;
-  background:rgba(224,0,0,0.08);
-  border-radius:0 8px 8px 0;
-  margin-bottom:20px;
-}
-.quote-text {
-  font-size:14px; font-weight:700; color:#fff;
-  line-height:1.6;
-}
-.about-body {
-  font-size:13px; color:rgba(255,255,255,0.82);
-  line-height:1.8;
-}
-.about-keyword {
-  display:flex; flex-wrap:wrap; gap:8px;
-  margin-top:20px;
-}
-.kw-tag {
-  background:rgba(224,0,0,0.15);
-  border:1px solid rgba(224,0,0,0.4);
-  color:var(--red); font-size:11px; font-weight:700;
-  padding:5px 12px; border-radius:20px;
-}
+/* BG 섹션 공통 */
+.bg-section { position:relative; overflow:hidden; }
+.bg-section .bg-img { position:absolute; inset:0; background-size:cover; background-position:center; }
+.bg-section .bg-ov { position:absolute; inset:0; }
+.bg-section .sec-inner { position:relative; z-index:1; padding:44px 24px; }
 
-/* WHY — 배경이미지 */
-.why-wrap {
-  position:relative; overflow:hidden;
-}
-.why-bg {
-  position:absolute; inset:0;
-  background-image:url('bg_why.jpg');
-  background-size:cover; background-position:center;
-}
-.why-overlay {
-  position:absolute; inset:0;
-  background:rgba(245,245,245,0.91);
-}
-.why-content { position:relative; z-index:1; }
-.why-cards { display:flex; flex-direction:column; gap:14px; margin-top:4px; }
-.why-card {
-  background:#fff;
-  border-radius:12px; padding:18px;
-  border-left:4px solid var(--red);
-  box-shadow:0 2px 12px rgba(0,0,0,0.08);
-}
-.why-num {
-  font-size:11px; font-weight:900; color:var(--red);
-  letter-spacing:0.1em; margin-bottom:6px;
-}
-.why-card-title {
-  font-size:14px; font-weight:800; color:#0a0a0a;
-  line-height:1.4; margin-bottom:6px;
-}
-.why-card-body {
-  font-size:12px; color:#555; line-height:1.6;
-}
+/* ABOUT */
+.about-bg { background-image:url('bg_about.png'); }
+.about-ov { background:rgba(10,10,10,0.80); }
+.quote-box { border-left:3px solid var(--red); padding:12px 14px; background:rgba(224,0,0,0.08); border-radius:0 8px 8px 0; margin-bottom:16px; }
+.quote-text { font-size:14px; font-weight:700; color:#fff; line-height:1.65; }
+.about-body { font-size:12.5px; color:rgba(255,255,255,0.78); line-height:1.8; }
+.kw-row { display:flex; flex-wrap:wrap; gap:7px; margin-top:16px; }
+.kw-tag { background:rgba(224,0,0,0.12); border:1px solid rgba(224,0,0,0.4); color:var(--red); font-size:10px; font-weight:700; padding:4px 10px; border-radius:20px; }
 
-/* SERVICES — 배경이미지 */
-.services-wrap {
-  position:relative; overflow:hidden;
-}
-.services-bg {
-  position:absolute; inset:0;
-  background-image:url('bg_services.png');
-  background-size:cover; background-position:center;
-}
-.services-overlay {
-  position:absolute; inset:0;
-  background:rgba(10,10,10,0.88);
-}
-.services-content { position:relative; z-index:1; }
-.services-grid {
-  display:grid; grid-template-columns:1fr 1fr;
-  gap:12px; margin-top:4px;
-}
-.svc-card {
-  background:rgba(255,255,255,0.06);
-  border:1px solid rgba(224,0,0,0.25);
-  border-radius:12px; padding:16px;
-  transition:background 0.2s;
-}
-.svc-icon { font-size:22px; margin-bottom:10px; }
-.svc-title {
-  font-size:12px; font-weight:800; color:#fff;
-  line-height:1.4; margin-bottom:6px;
-}
-.svc-body { font-size:11px; color:rgba(255,255,255,0.65); line-height:1.5; }
+/* WHY */
+.why-bg { background-image:url('bg_why.jpg'); }
+.why-ov { background:rgba(245,245,245,0.90); }
+.why-cards { display:flex; flex-direction:column; gap:12px; }
+.why-card { background:#fff; border-radius:12px; padding:16px 16px 14px; border-left:4px solid var(--red); box-shadow:0 2px 10px rgba(0,0,0,0.07); }
+.why-num { font-size:10px; font-weight:900; color:var(--red); letter-spacing:0.1em; margin-bottom:5px; }
+.why-title { font-size:13px; font-weight:800; color:#0a0a0a; line-height:1.4; margin-bottom:4px; }
+.why-body { font-size:11.5px; color:#555; line-height:1.55; }
 
-/* REFERRAL 슬라이더 */
-.referral-wrap { background:var(--bg-light); }
-.ref-slider-outer { position:relative; overflow:hidden; margin-top:4px; }
-.ref-track {
-  display:flex; transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
-}
-.ref-card {
-  min-width:100%; padding:0 4px;
-}
-.ref-card-inner {
-  background:#fff; border-radius:14px;
-  padding:22px 20px;
-  border-top:4px solid var(--red);
-  box-shadow:0 2px 16px rgba(0,0,0,0.08);
-  min-height:220px;
-}
-.ref-num {
-  font-size:10px; font-weight:900; color:var(--red);
-  letter-spacing:0.12em; margin-bottom:8px;
-}
-.ref-title {
-  font-size:15px; font-weight:900; color:#0a0a0a;
-  line-height:1.35; margin-bottom:12px;
-}
+/* SERVICES */
+.svc-bg { background-image:url('bg_services.png'); }
+.svc-ov { background:rgba(10,10,10,0.86); }
+.svc-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.svc-card { background:rgba(255,255,255,0.06); border:1px solid rgba(224,0,0,0.22); border-radius:12px; padding:14px; }
+.svc-icon { font-size:20px; margin-bottom:8px; }
+.svc-title { font-size:11.5px; font-weight:800; color:#fff; line-height:1.4; margin-bottom:5px; }
+.svc-body { font-size:10.5px; color:rgba(255,255,255,0.62); line-height:1.5; }
+
+/* REFERRAL */
+.ref-bg { background-image:url('bg_about.png'); /* 무지개눈 */ }
+.ref-ov { background:rgba(10,10,10,0.78); }
+.ref-track-wrap { overflow:hidden; }
+.ref-track { display:flex; transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94); }
+.ref-card { min-width:100%; padding:0 2px; }
+.ref-inner { background:rgba(255,255,255,0.07); border:1px solid rgba(224,0,0,0.3); border-radius:14px; padding:20px 18px; border-top:4px solid var(--red); min-height:200px; }
+.ref-num { font-size:10px; font-weight:900; color:var(--red); letter-spacing:0.12em; margin-bottom:7px; }
+.ref-title { font-size:14px; font-weight:900; color:#fff; line-height:1.35; margin-bottom:11px; }
 .ref-items { display:flex; flex-direction:column; gap:7px; }
-.ref-item {
-  display:flex; align-items:flex-start; gap:8px;
-  font-size:12.5px; color:#333; line-height:1.5;
-}
-.ref-check {
-  color:var(--red); font-weight:900; flex-shrink:0;
-  margin-top:1px;
-}
-.ref-nav {
-  display:flex; justify-content:center; align-items:center;
-  gap:16px; margin-top:16px;
-}
-.ref-btn {
-  width:36px; height:36px; border-radius:50%;
-  background:var(--red); border:none; color:#fff;
-  font-size:18px; cursor:pointer;
-  display:flex; align-items:center; justify-content:center;
-  transition:background 0.2s;
-}
-.ref-btn:hover { background:var(--red2); }
+.ref-item { display:flex; align-items:flex-start; gap:7px; font-size:12px; color:rgba(255,255,255,0.85); line-height:1.5; }
+.ref-check { color:var(--red); font-weight:900; flex-shrink:0; }
+.ref-nav { display:flex; justify-content:center; align-items:center; gap:14px; margin-top:14px; }
+.ref-btn { width:34px; height:34px; border-radius:50%; background:var(--red); border:none; color:#fff; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
 .ref-dots { display:flex; gap:6px; }
-.ref-dot {
-  width:7px; height:7px; border-radius:50%;
-  background:#ccc; cursor:pointer; transition:background 0.2s;
-}
+.ref-dot { width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,0.3); cursor:pointer; transition:background 0.2s; }
 .ref-dot.active { background:var(--red); }
-.ref-counter {
-  font-size:12px; color:#888; text-align:center; margin-top:8px;
-}
+.ref-counter { font-size:11px; color:rgba(255,255,255,0.5); text-align:center; margin-top:6px; }
+.ref-cta { margin-top:18px; background:rgba(224,0,0,0.12); border:1px solid rgba(224,0,0,0.3); border-radius:10px; padding:14px 16px; font-size:12px; color:rgba(255,255,255,0.85); line-height:1.7; }
+.ref-cta strong { color:#fff; }
 
-/* CAREER — 배경이미지 */
-.career-wrap {
-  position:relative; overflow:hidden;
-}
-.career-bg {
-  position:absolute; inset:0;
-  background-image:url('bg_career.jpg');
-  background-size:cover; background-position:center;
-}
-.career-overlay {
-  position:absolute; inset:0;
-  background:rgba(10,10,10,0.86);
-}
-.career-content { position:relative; z-index:1; }
-.career-items { display:flex; flex-direction:column; gap:10px; margin-top:4px; }
-.career-item {
-  display:flex; align-items:flex-start; gap:12px;
-  background:rgba(255,255,255,0.06);
-  border-radius:10px; padding:14px 16px;
-  border-left:3px solid var(--red);
-}
-.career-icon { font-size:18px; flex-shrink:0; }
-.career-label {
-  font-size:10px; font-weight:700; color:var(--red);
-  letter-spacing:0.08em; margin-bottom:4px;
-}
-.career-text {
-  font-size:12px; color:rgba(255,255,255,0.85);
-  line-height:1.6;
-}
-.activity-list {
-  margin-top:10px;
-  display:flex; flex-direction:column; gap:6px;
-}
-.activity-item {
-  font-size:11.5px; color:rgba(255,255,255,0.75);
-  padding-left:12px; position:relative; line-height:1.5;
-}
-.activity-item::before {
-  content:'—'; position:absolute; left:0;
-  color:var(--red); font-size:10px;
-}
+/* CAREER */
+.career-bg { background-image:url('bg_career.jpg'); }
+.career-ov { background:rgba(10,10,10,0.84); }
+.career-items { display:flex; flex-direction:column; gap:10px; }
+.career-item { display:flex; align-items:flex-start; gap:11px; background:rgba(255,255,255,0.05); border-radius:10px; padding:13px 14px; border-left:3px solid var(--red); }
+.career-icon { font-size:17px; flex-shrink:0; }
+.career-label { font-size:9px; font-weight:700; color:var(--red); letter-spacing:0.1em; margin-bottom:4px; }
+.career-text { font-size:11.5px; color:rgba(255,255,255,0.82); line-height:1.65; }
+.act-list { margin-top:8px; display:flex; flex-direction:column; gap:5px; }
+.act-item { font-size:11px; color:rgba(255,255,255,0.7); padding-left:11px; position:relative; line-height:1.5; }
+.act-item::before { content:'—'; position:absolute; left:0; color:var(--red); font-size:9px; }
 
 /* PORTFOLIO */
-.port-wrap { background:var(--bg-dark3); padding:52px 0; }
-.port-header { padding:0 24px; margin-bottom:20px; }
+.port-wrap { background:var(--dark3); padding:44px 0; }
+.port-header { padding:0 24px; margin-bottom:18px; }
+
+/* 섹션 내 이미지 2개 그리드 */
+.img-duo { display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:14px; }
+.img-duo img { width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:8px; }
+.img-single { margin-top:14px; }
+.img-single img { width:100%; border-radius:8px; }
+
+/* 슬라이더 */
 .slide-wrap { position:relative; overflow:hidden; }
-.slide-track {
-  display:flex; transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
-}
+.slide-track { display:flex; transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94); }
 .slide-item { min-width:100%; }
-.slide-item img {
-  width:100%; aspect-ratio:4/3; object-fit:cover; display:block;
-}
-.slide-btn {
-  position:absolute; top:50%; transform:translateY(-50%);
-  width:40px; height:40px; border-radius:50%;
-  background:rgba(224,0,0,0.85); border:none; color:#fff;
-  font-size:20px; cursor:pointer; z-index:10;
-  display:flex; align-items:center; justify-content:center;
-}
-.slide-btn-l { left:12px; }
-.slide-btn-r { right:12px; }
-.slide-dots {
-  display:flex; justify-content:center; gap:7px;
-  padding:16px 0;
-}
-.slide-dot {
-  width:7px; height:7px; border-radius:50%;
-  background:rgba(255,255,255,0.3); cursor:pointer;
-  transition:background 0.2s;
-}
+.slide-item img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; }
+.slide-btn { position:absolute; top:50%; transform:translateY(-50%); width:38px; height:38px; border-radius:50%; background:rgba(224,0,0,0.85); border:none; color:#fff; font-size:20px; cursor:pointer; z-index:10; display:flex; align-items:center; justify-content:center; }
+.slide-btn-l { left:10px; }
+.slide-btn-r { right:10px; }
+.slide-dots { display:flex; justify-content:center; gap:7px; padding:14px 0; }
+.slide-dot { width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,0.3); cursor:pointer; transition:background 0.2s; }
 .slide-dot.active { background:var(--red); }
 
-/* CONTACT — 배경이미지 */
-.contact-wrap {
-  position:relative; overflow:hidden;
-}
-.contact-bg {
-  position:absolute; inset:0;
-  background-image:url('bg_contact.jpg');
-  background-size:cover; background-position:center;
-}
-.contact-overlay {
-  position:absolute; inset:0;
-  background:rgba(245,245,245,0.92);
-}
-.contact-content { position:relative; z-index:1; }
-.con-items { display:flex; flex-direction:column; gap:10px; margin-top:4px; }
+/* CONTACT */
+.contact-bg { background-image:url('bg_contact.jpg'); }
+.contact-ov { background:rgba(245,245,245,0.91); }
+.con-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
 .con-item {
-  display:flex; align-items:center; gap:12px;
-  background:#fff; border-radius:10px; padding:14px 16px;
-  text-decoration:none;
+  display:flex; flex-direction:column; gap:3px;
+  background:#fff; border-radius:10px; padding:13px 14px;
+  text-decoration:none; color:#0a0a0a;
   box-shadow:0 1px 8px rgba(0,0,0,0.06);
-  color:#0a0a0a; font-size:13px;
   transition:transform 0.15s;
 }
-.con-item:hover { transform:translateX(4px); }
-.con-icon { font-size:18px; flex-shrink:0; }
-.con-label { font-size:10px; color:#888; margin-bottom:2px; }
-.con-value { font-size:13px; font-weight:600; color:#0a0a0a; }
+.con-item:hover { transform:translateY(-2px); }
+.con-item-top { display:flex; align-items:center; gap:7px; }
+.con-icon { font-size:16px; }
+.con-label { font-size:9px; color:#888; font-weight:600; letter-spacing:0.05em; }
+.con-value { font-size:11.5px; font-weight:700; color:#0a0a0a; line-height:1.4; word-break:break-all; }
 
 /* ACTIONS */
-.actions-wrap { background:var(--bg-dark); padding:40px 24px; }
-.btn-group { display:flex; flex-direction:column; gap:10px; }
+.actions-wrap { background:var(--dark); padding:32px 24px; }
+.act-primary { display:flex; flex-direction:column; gap:10px; margin-bottom:16px; }
 .btn {
   display:flex; align-items:center; justify-content:center; gap:8px;
   padding:15px 20px; border-radius:12px;
   font-size:14px; font-weight:700; cursor:pointer;
-  text-decoration:none; border:none;
-  transition:all 0.2s; width:100%;
+  text-decoration:none; border:none; transition:all 0.2s; width:100%;
 }
 .btn-red { background:var(--red); color:#fff; }
 .btn-red:hover { background:var(--red2); }
-.btn-out {
-  background:transparent; color:#fff;
-  border:1.5px solid rgba(255,255,255,0.3);
-}
-.btn-dark {
-  background:rgba(255,255,255,0.07); color:#fff;
-  border:1px solid rgba(255,255,255,0.15);
-}
+.btn-out { background:transparent; color:#fff; border:1.5px solid rgba(255,255,255,0.3); }
 
-/* FOOTER */
 footer {
-  background:#000; text-align:center;
-  padding:28px 24px;
+  background:#000; text-align:center; padding:24px 24px;
   border-top:1px solid rgba(224,0,0,0.2);
 }
 .footer-logo { font-size:13px; font-weight:900; color:#fff; letter-spacing:0.05em; }
 .footer-logo span { color:var(--red); }
-.footer-sub { font-size:10px; color:#555; margin-top:6px; letter-spacing:0.05em; }
+.footer-sub { font-size:10px; color:#444; margin-top:5px; }
 
-/* max-width wrapper */
 .container { max-width:430px; margin:0 auto; }
 </style>
 </head>
@@ -491,40 +270,34 @@ footer {
   </div>
 </div>
 
-<!-- ABOUT -->
-<div class="about-wrap">
-  <div class="about-bg"></div>
-  <div class="about-overlay"></div>
-  <div class="about-content section">
+<!-- ABOUT (배경: 무지개눈 → ABOUT으로 유지) -->
+<div class="bg-section">
+  <div class="bg-img about-bg"></div>
+  <div class="bg-ov about-ov"></div>
+  <div class="sec-inner">
     <div class="sec-label">ABOUT</div>
-    <div class="sec-title dark">
+    <div class="sec-title" style="color:#fff;">
       <span data-lang="kr" class="active">시각 + 공간 + 생각 + 감성</span>
-      <span data-lang="en">Vision + Space + Thought + Emotion</span>
-      <span data-lang="jp">視覚 + 空間 + 思考 + 感性</span>
-      <span data-lang="cn">视觉 + 空间 + 思考 + 感性</span>
+      <span data-lang="en">Vision · Space · Thought · Emotion</span>
+      <span data-lang="jp">視覚 · 空間 · 思考 · 感性</span>
+      <span data-lang="cn">视觉 · 空间 · 思考 · 感性</span>
     </div>
     <div class="sec-divider"></div>
     <div class="quote-box">
       <div class="quote-text">
-        <span data-lang="kr" class="active">문제를 발견하고, 변화를 설계합니다.<br>디자인은 결과물이 아니라<br>미래를 준비하는 전략입니다.</span>
-        <span data-lang="en">We discover problems and design change.<br>Design is not an outcome,<br>but a strategy to prepare for the future.</span>
-        <span data-lang="jp">問題を発見し、変化を設計します。<br>デザインは成果物ではなく、<br>未来を準備する戦略です。</span>
-        <span data-lang="cn">发现问题，设计变革。<br>设计不是结果，<br>而是准备未来的战略。</span>
+        <span data-lang="kr" class="active">문제를 발견하고, 변화를 설계합니다.<br>디자인은 결과물이 아니라 미래를 준비하는 전략입니다.</span>
+        <span data-lang="en">We discover problems and design change.<br>Design is not an outcome, but a strategy to prepare for the future.</span>
+        <span data-lang="jp">問題を発見し、変化を設計します。<br>デザインは成果物ではなく、未来を準備する戦略です。</span>
+        <span data-lang="cn">发现问题，设计变革。<br>设计不是结果，而是准备未来的战略。</span>
       </div>
     </div>
     <div class="about-body">
-      <span data-lang="kr" class="active">사람과 사회를 연결하는 사회적 가치 디자이너입니다.<br><br>
-      2015년 크로스컬러디자인연구소를 설립한 이래 실무 18년차로, 브랜드·공간·서비스를 통합적으로 설계하는 토탈 디자인 전문가입니다.<br><br>
-      디자인학 박사이자 대학교육 경력 16년차로, 연구와 현장을 동시에 이해하는 디자인 파트너입니다.</span>
-      <span data-lang="en">A social value designer connecting people and society.<br><br>
-      Since founding CrossCOLOR Design LAB in 2015, with 18 years of practical experience, specializing in integrated design of branding, space, and services.<br><br>
-      Ph.D. in Design with 16 years of university education experience — a design partner who understands both research and the field.</span>
-      <span data-lang="jp">人と社会をつなぐ社会的価値デザイナーです。<br><br>
-      2015年にクロスカラーデザイン研究所を設立し、実務18年目として、ブランド・空間・サービスを統合的に設計するトータルデザインの専門家です。</span>
-      <span data-lang="cn">连接人与社会的社会价值设计师。<br><br>
-      自2015年创立克罗斯彩色设计研究所以来，拥有18年实务经验，是品牌、空间、服务综合设计的全面设计专家。</span>
+      <span data-lang="kr" class="active">사람과 사회를 연결하는 사회적 가치 디자이너. 2015년 창립 이래 실무 18년차로 브랜드·공간·서비스를 통합 설계하는 토탈 디자인 전문가입니다.</span>
+      <span data-lang="en">A social value designer connecting people and society. 18 years of practical experience in integrated brand, space, and service design.</span>
+      <span data-lang="jp">人と社会をつなぐ社会的価値デザイナー。2015年創立以来18年目の実務経験を持つトータルデザインの専門家です。</span>
+      <span data-lang="cn">连接人与社会的社会价值设计师。自2015年创立以来，18年实务经验的全面设计专家。</span>
     </div>
-    <div class="about-keyword">
+    <div class="kw-row">
       <span class="kw-tag">브랜드디자인</span>
       <span class="kw-tag">공간디자인</span>
       <span class="kw-tag">색채전략</span>
@@ -535,13 +308,13 @@ footer {
   </div>
 </div>
 
-<!-- WHY -->
-<div class="why-wrap">
-  <div class="why-bg"></div>
-  <div class="why-overlay"></div>
-  <div class="why-content section">
+<!-- WHY (배경: 회의 이미지) -->
+<div class="bg-section">
+  <div class="bg-img why-bg"></div>
+  <div class="bg-ov why-ov"></div>
+  <div class="sec-inner">
     <div class="sec-label">WHY</div>
-    <div class="sec-title light">
+    <div class="sec-title" style="color:#0a0a0a;">
       <span data-lang="kr" class="active">왜 박영심인가?</span>
       <span data-lang="en">Why Park Young-sim?</span>
       <span data-lang="jp">なぜ朴英心なのか？</span>
@@ -551,148 +324,147 @@ footer {
     <div class="why-cards">
       <div class="why-card">
         <div class="why-num">WHY 01</div>
-        <div class="why-card-title">
-          <span data-lang="kr" class="active">공공기관 프로젝트 수행 경험을 바탕으로 검증된 전문성</span>
-          <span data-lang="en">Verified expertise backed by public institution project experience</span>
-          <span data-lang="jp">公共機関プロジェクトの経験に基づく検証済みの専門性</span>
-          <span data-lang="cn">基于公共机构项目经验的经过验证的专业性</span>
+        <div class="why-title">
+          <span data-lang="kr" class="active">공공·기업 모두 검증된 전문성</span>
+          <span data-lang="en">Verified expertise in both public & corporate</span>
+          <span data-lang="jp">公共・企業両方で検証された専門性</span>
+          <span data-lang="cn">公共与企业双重验证的专业性</span>
         </div>
-        <div class="why-card-body">
-          <span data-lang="kr" class="active">공공과 기업을 모두 이해하는 디자인 파트너입니다.<br>디자인학 박사 · 공공 프로젝트 경험 · 기업·공공 모두 경험 · 미래를 설계하는 디자인</span>
-          <span data-lang="en">A design partner who understands both public and private sectors.<br>Ph.D. in Design · Public project experience · Both corporate & public experience</span>
-          <span data-lang="jp">公共と企業の両方を理解するデザインパートナーです。</span>
-          <span data-lang="cn">既了解公共机构又了解企业的设计合作伙伴。</span>
+        <div class="why-body">
+          <span data-lang="kr" class="active">디자인학 박사 · 공공 프로젝트 다수 수행 · 기업과 공공을 동시에 이해하는 디자인 파트너</span>
+          <span data-lang="en">Ph.D. in Design · Multiple public projects · Design partner understanding both sectors</span>
+          <span data-lang="jp">デザイン学博士 · 公共プロジェクト多数実施 · 企業と公共を同時に理解するパートナー</span>
+          <span data-lang="cn">设计学博士·承接多项公共项目·同时理解企业和公共机构的设计合作伙伴</span>
         </div>
       </div>
       <div class="why-card">
         <div class="why-num">WHY 02</div>
-        <div class="why-card-title">
-          <span data-lang="kr" class="active">브랜드·공간·서비스를 통합적으로 설계</span>
-          <span data-lang="en">Integrated design of brand, space & service</span>
-          <span data-lang="jp">ブランド・空間・サービスの統合設計</span>
-          <span data-lang="cn">品牌、空间、服务的综合设计</span>
+        <div class="why-title">
+          <span data-lang="kr" class="active">브랜드·공간·서비스 One-Stop 통합 설계</span>
+          <span data-lang="en">Brand · Space · Service One-Stop integrated design</span>
+          <span data-lang="jp">ブランド·空間·サービス One-Stop 統合設計</span>
+          <span data-lang="cn">品牌·空间·服务一站式综合设计</span>
         </div>
-        <div class="why-card-body">
-          <span data-lang="kr" class="active">진단-디자인-실행까지 One-Stop 해결 파트너입니다.<br>공공이 검증한 전문성 · 연구 기반 디자인 · 미래를 설계하는 전략</span>
-          <span data-lang="en">One-Stop solution partner from diagnosis to design to execution.</span>
-          <span data-lang="jp">診断から設計、実行まで One-Stop で解決するパートナーです。</span>
-          <span data-lang="cn">从诊断到设计再到执行的一站式解决合作伙伴。</span>
+        <div class="why-body">
+          <span data-lang="kr" class="active">진단부터 디자인, 실행까지 하나의 파트너로 해결합니다</span>
+          <span data-lang="en">One partner from diagnosis through design to execution</span>
+          <span data-lang="jp">診断からデザイン、実行まで一つのパートナーで解決</span>
+          <span data-lang="cn">从诊断到设计再到执行，一个合作伙伴全程解决</span>
         </div>
       </div>
       <div class="why-card">
         <div class="why-num">WHY 03</div>
-        <div class="why-card-title">
-          <span data-lang="kr" class="active">미래 전략을 설계하는 디자인</span>
-          <span data-lang="en">Design that plans future strategies</span>
-          <span data-lang="jp">未来戦略を設計するデザイン</span>
-          <span data-lang="cn">规划未来战略的设计</span>
+        <div class="why-title">
+          <span data-lang="kr" class="active">지금이 아닌 미래의 경쟁력을 설계</span>
+          <span data-lang="en">Designing future competitiveness, not just today</span>
+          <span data-lang="jp">今ではなく未来の競争力を設計</span>
+          <span data-lang="cn">设计未来竞争力，而非眼前</span>
         </div>
-        <div class="why-card-body">
-          <span data-lang="kr" class="active">지금의 디자인보다, 미래의 경쟁력을 먼저 설계합니다.<br>단순한 시각 결과물이 아닌, 비즈니스 성장을 위한 전략적 디자인을 제안합니다.</span>
-          <span data-lang="en">We design future competitiveness before current design.<br>Not just visual output, but strategic design for business growth.</span>
-          <span data-lang="jp">現在のデザインより、未来の競争力を先に設計します。</span>
-          <span data-lang="cn">优先设计未来竞争力，而非当下的设计。</span>
+        <div class="why-body">
+          <span data-lang="kr" class="active">단순한 시각 결과물이 아닌, 비즈니스 성장을 위한 전략적 디자인을 제안합니다</span>
+          <span data-lang="en">Strategic design for business growth, not just visual output</span>
+          <span data-lang="jp">単なる視覚的成果物ではなく、ビジネス成長のための戦略的デザインを提案</span>
+          <span data-lang="cn">不仅是视觉成果，更是为业务增长量身定制的战略设计</span>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- SERVICES -->
-<div class="services-wrap">
-  <div class="services-bg"></div>
-  <div class="services-overlay"></div>
-  <div class="services-content section">
+<!-- SERVICES (배경: 젠 모래) -->
+<div class="bg-section">
+  <div class="bg-img svc-bg"></div>
+  <div class="bg-ov svc-ov"></div>
+  <div class="sec-inner">
     <div class="sec-label">DIFFERENCE</div>
-    <div class="sec-title dark">
-      <span data-lang="kr" class="active">다른 디자인 회사와 뭐가 다른가?</span>
+    <div class="sec-title" style="color:#fff;">
+      <span data-lang="kr" class="active">다른 디자인과 무엇이 다른가?</span>
       <span data-lang="en">What makes us different?</span>
-      <span data-lang="jp">他のデザイン会社と何が違うのか？</span>
-      <span data-lang="cn">与其他设计公司有何不同？</span>
+      <span data-lang="jp">何が違うのか？</span>
+      <span data-lang="cn">有何不同？</span>
     </div>
     <div class="sec-divider"></div>
-    <div class="services-grid">
+    <div class="svc-grid">
       <div class="svc-card">
         <div class="svc-icon">🔍</div>
         <div class="svc-title">
-          <span data-lang="kr" class="active">디자인 전에<br>문제를 먼저 진단합니다</span>
-          <span data-lang="en">We diagnose problems<br>before designing</span>
-          <span data-lang="jp">デザインの前に<br>問題を先に診断します</span>
-          <span data-lang="cn">设计前<br>先诊断问题</span>
+          <span data-lang="kr" class="active">디자인 전에 문제 먼저 진단</span>
+          <span data-lang="en">Diagnose before designing</span>
+          <span data-lang="jp">デザイン前に問題を診断</span>
+          <span data-lang="cn">设计前先诊断问题</span>
         </div>
         <div class="svc-body">
-          <span data-lang="kr" class="active">예쁜 디자인보다 근본 원인 파악</span>
-          <span data-lang="en">Identify root causes over pretty design</span>
-          <span data-lang="jp">見た目より根本原因の把握</span>
-          <span data-lang="cn">根本原因分析优先于美观设计</span>
+          <span data-lang="kr" class="active">예쁜 디자인보다 근본 원인 파악이 먼저</span>
+          <span data-lang="en">Root cause analysis before aesthetics</span>
+          <span data-lang="jp">見た目より根本原因の把握が先</span>
+          <span data-lang="cn">根本原因分析先于美观</span>
         </div>
       </div>
       <div class="svc-card">
         <div class="svc-icon">📈</div>
         <div class="svc-title">
-          <span data-lang="kr" class="active">성과가 나는<br>디자인을 설계합니다</span>
-          <span data-lang="en">We design for<br>measurable results</span>
-          <span data-lang="jp">成果の出る<br>デザインを設計します</span>
-          <span data-lang="cn">设计能产生<br>实际成效的方案</span>
+          <span data-lang="kr" class="active">성과가 나는 디자인 설계</span>
+          <span data-lang="en">Design for measurable results</span>
+          <span data-lang="jp">成果の出るデザイン設計</span>
+          <span data-lang="cn">产生实际成效的设计</span>
         </div>
         <div class="svc-body">
-          <span data-lang="kr" class="active">예쁜 디자인보다 성과 중심 설계</span>
-          <span data-lang="en">Performance-driven design approach</span>
+          <span data-lang="kr" class="active">예쁜 것보다 성과 중심 설계</span>
+          <span data-lang="en">Performance-driven, not just pretty</span>
           <span data-lang="jp">見た目より成果中心の設計</span>
-          <span data-lang="cn">以成效为中心的设计方法</span>
+          <span data-lang="cn">以成效为中心而非美观</span>
         </div>
       </div>
       <div class="svc-card">
         <div class="svc-icon">🔗</div>
         <div class="svc-title">
-          <span data-lang="kr" class="active">브랜드·공간·서비스<br>통합 설계</span>
-          <span data-lang="en">Brand·Space·Service<br>Integrated Design</span>
-          <span data-lang="jp">ブランド·空間·サービス<br>統合設計</span>
-          <span data-lang="cn">品牌·空间·服务<br>综合设计</span>
+          <span data-lang="kr" class="active">브랜드·공간·서비스 통합</span>
+          <span data-lang="en">Brand·Space·Service unified</span>
+          <span data-lang="jp">ブランド·空間·サービス統合</span>
+          <span data-lang="cn">品牌·空间·服务整合</span>
         </div>
         <div class="svc-body">
           <span data-lang="kr" class="active">분리하지 않고 하나의 전략으로</span>
-          <span data-lang="en">One integrated strategy, not separate</span>
+          <span data-lang="en">One integrated strategy</span>
           <span data-lang="jp">分離せず一つの戦略として</span>
-          <span data-lang="cn">作为一个整体战略，而非分开处理</span>
+          <span data-lang="cn">作为一个整体战略</span>
         </div>
       </div>
       <div class="svc-card">
         <div class="svc-icon">🚀</div>
         <div class="svc-title">
-          <span data-lang="kr" class="active">성장이 시작되도록<br>함께합니다</span>
-          <span data-lang="en">We stay with you<br>until growth begins</span>
-          <span data-lang="jp">成長が始まるまで<br>共に歩みます</span>
-          <span data-lang="cn">陪伴您直至<br>增长开始</span>
+          <span data-lang="kr" class="active">성장이 시작될 때까지 함께</span>
+          <span data-lang="en">With you until growth begins</span>
+          <span data-lang="jp">成長が始まるまで共に</span>
+          <span data-lang="cn">陪伴直至增长开始</span>
         </div>
         <div class="svc-body">
-          <span data-lang="kr" class="active">프로젝트 완료 후 실행·성과까지</span>
-          <span data-lang="en">Beyond project completion to execution</span>
-          <span data-lang="jp">プロジェクト完了後の実行・成果まで</span>
-          <span data-lang="cn">项目完成后继续支持执行和成效</span>
+          <span data-lang="kr" class="active">완료 후 실행·성과까지 동행</span>
+          <span data-lang="en">Beyond completion to execution</span>
+          <span data-lang="jp">完了後も実行·成果まで同行</span>
+          <span data-lang="cn">项目完成后继续同行</span>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- REFERRAL -->
-<div class="referral-wrap section">
-  <div class="sec-label">REFERRAL</div>
-  <div class="sec-title light">
-    <span data-lang="kr" class="active">이런 분을 소개해 주세요</span>
-    <span data-lang="en">Please refer people like these</span>
-    <span data-lang="jp">こういう方をご紹介ください</span>
-    <span data-lang="cn">请为我们介绍这类人士</span>
-  </div>
-  <div class="sec-divider"></div>
-
-  <div class="ref-slider-outer">
-    <div class="ref-track" id="ref-track">
-
-      <!-- 리퍼럴 1 -->
-      <div class="ref-card">
-        <div class="ref-card-inner">
+<!-- REFERRAL (배경: 무지개눈) -->
+<div class="bg-section">
+  <div class="bg-img ref-bg"></div>
+  <div class="bg-ov ref-ov"></div>
+  <div class="sec-inner">
+    <div class="sec-label">REFERRAL</div>
+    <div class="sec-title" style="color:#fff;">
+      <span data-lang="kr" class="active">이런 분을 소개해 주세요</span>
+      <span data-lang="en">Please refer people like these</span>
+      <span data-lang="jp">こういう方をご紹介ください</span>
+      <span data-lang="cn">请为我们介绍这类人士</span>
+    </div>
+    <div class="sec-divider"></div>
+    <div class="ref-track-wrap">
+      <div class="ref-track" id="ref-track">
+        <div class="ref-card"><div class="ref-inner">
           <div class="ref-num">REFERRAL 01</div>
           <div class="ref-title">
             <span data-lang="kr" class="active">브랜드를 새롭게 만들고 싶은 기업</span>
@@ -701,37 +473,13 @@ footer {
             <span data-lang="cn">希望打造新品牌的企业</span>
           </div>
           <div class="ref-items">
-            <div class="ref-item"><span class="ref-check">✔</span>
-              <span data-lang="kr" class="active">병원·의원 리브랜딩을 고민하는 원장님</span>
-              <span data-lang="en">Clinic directors considering rebranding</span>
-              <span data-lang="jp">病院・クリニックのリブランディングを検討している院長先生</span>
-              <span data-lang="cn">考虑医院重新品牌定位的院长</span>
-            </div>
-            <div class="ref-item"><span class="ref-check">✔</span>
-              <span data-lang="kr" class="active">프랜차이즈 확장을 준비하는 대표님</span>
-              <span data-lang="en">CEOs preparing franchise expansion</span>
-              <span data-lang="jp">フランチャイズ拡大を準備している代表</span>
-              <span data-lang="cn">准备拓展特许经营的负责人</span>
-            </div>
-            <div class="ref-item"><span class="ref-check">✔</span>
-              <span data-lang="kr" class="active">브랜드 리뉴얼을 고민하는 중소기업 대표님</span>
-              <span data-lang="en">SME owners considering brand renewal</span>
-              <span data-lang="jp">ブランドリニューアルを検討している中小企業代表</span>
-              <span data-lang="cn">考虑品牌更新的中小企业负责人</span>
-            </div>
-            <div class="ref-item"><span class="ref-check">✔</span>
-              <span data-lang="kr" class="active">창업 및 신규 브랜드 런칭을 준비하는 대표님</span>
-              <span data-lang="en">Entrepreneurs preparing new brand launches</span>
-              <span data-lang="jp">創業および新規ブランド立ち上げを準備している代表</span>
-              <span data-lang="cn">准备创业及推出新品牌的负责人</span>
-            </div>
+            <div class="ref-item"><span class="ref-check">✔</span><span data-lang="kr" class="active">병원·의원 리브랜딩을 고민하는 원장님</span><span data-lang="en">Clinic directors considering rebranding</span><span data-lang="jp">リブランディングを検討している院長先生</span><span data-lang="cn">考虑重新品牌定位的院长</span></div>
+            <div class="ref-item"><span class="ref-check">✔</span><span data-lang="kr" class="active">프랜차이즈 확장을 준비하는 대표님</span><span data-lang="en">CEOs preparing franchise expansion</span><span data-lang="jp">フランチャイズ拡大を準備している代表</span><span data-lang="cn">准备拓展特许经营的负责人</span></div>
+            <div class="ref-item"><span class="ref-check">✔</span><span data-lang="kr" class="active">브랜드 리뉴얼을 고민하는 중소기업 대표님</span><span data-lang="en">SME owners considering brand renewal</span><span data-lang="jp">ブランドリニューアルを検討している中小企業代表</span><span data-lang="cn">考虑品牌更新的中小企业负责人</span></div>
+            <div class="ref-item"><span class="ref-check">✔</span><span data-lang="kr" class="active">창업 및 신규 브랜드 런칭을 준비하는 대표님</span><span data-lang="en">Entrepreneurs preparing new brand launches</span><span data-lang="jp">創業·新規ブランド立ち上げを準備している代表</span><span data-lang="cn">准备创业及推出新品牌的负责人</span></div>
           </div>
-        </div>
-      </div>
-
-      <!-- 리퍼럴 2 -->
-      <div class="ref-card">
-        <div class="ref-card-inner">
+        </div></div>
+        <div class="ref-card"><div class="ref-inner">
           <div class="ref-num">REFERRAL 02</div>
           <div class="ref-title">
             <span data-lang="kr" class="active">공간을 개선하고 싶은 기업</span>
@@ -740,37 +488,12 @@ footer {
             <span data-lang="cn">希望改善空间的企业</span>
           </div>
           <div class="ref-items">
-            <div class="ref-item"><span class="ref-check">✔</span>
-              <span data-lang="kr" class="active">병원 · 카페 · 식당 · 쇼룸 공간 개선</span>
-              <span data-lang="en">Hospital · Café · Restaurant · Showroom space improvement</span>
-              <span data-lang="jp">病院・カフェ・レストラン・ショールームの空間改善</span>
-              <span data-lang="cn">医院·咖啡厅·餐厅·展厅空间改善</span>
-            </div>
-            <div class="ref-item"><span class="ref-check">✔</span>
-              <span data-lang="kr" class="active">교육시설 · 사무공간 리뉴얼</span>
-              <span data-lang="en">Education facilities · Office space renewal</span>
-              <span data-lang="jp">教育施設・オフィス空間のリニューアル</span>
-              <span data-lang="cn">教育设施·办公空间更新</span>
-            </div>
-            <div class="ref-item"><span class="ref-check">✔</span>
-              <span data-lang="kr" class="active">고객 경험(CX)과 공간 브랜딩을 개선하고 싶은 카페·매장 운영자</span>
-              <span data-lang="en">Café/store operators wanting to improve CX and space branding</span>
-              <span data-lang="jp">顧客体験（CX）と空間ブランディングを改善したいカフェ・店舗運営者</span>
-              <span data-lang="cn">希望改善客户体验和空间品牌形象的咖啡厅·店铺运营者</span>
-            </div>
-            <div class="ref-item"><span class="ref-check">✔</span>
-              <span data-lang="kr" class="active">브랜드와 공간의 경험을 함께 개선하고 싶은 곳</span>
-              <span data-lang="en">Places wanting to improve brand and space experience together</span>
-              <span data-lang="jp">ブランドと空間の体験を一緒に改善したい場所</span>
-              <span data-lang="cn">希望同时改善品牌和空间体验的场所</span>
-            </div>
+            <div class="ref-item"><span class="ref-check">✔</span><span data-lang="kr" class="active">병원·카페·식당·쇼룸 공간 개선</span><span data-lang="en">Hospital · Café · Restaurant · Showroom improvement</span><span data-lang="jp">病院·カフェ·レストラン·ショールームの空間改善</span><span data-lang="cn">医院·咖啡厅·餐厅·展厅空间改善</span></div>
+            <div class="ref-item"><span class="ref-check">✔</span><span data-lang="kr" class="active">교육시설·사무공간 리뉴얼</span><span data-lang="en">Education facilities · Office space renewal</span><span data-lang="jp">教育施設·オフィス空間リニューアル</span><span data-lang="cn">教育设施·办公空间更新</span></div>
+            <div class="ref-item"><span class="ref-check">✔</span><span data-lang="kr" class="active">고객 경험(CX)과 공간 브랜딩을 함께 개선하고 싶은 매장</span><span data-lang="en">Stores wanting to improve CX and space branding together</span><span data-lang="jp">CXと空間ブランディングを共に改善したい店舗</span><span data-lang="cn">希望同时改善客户体验和空间品牌形象的店铺</span></div>
           </div>
-        </div>
-      </div>
-
-      <!-- 리퍼럴 3 -->
-      <div class="ref-card">
-        <div class="ref-card-inner">
+        </div></div>
+        <div class="ref-card"><div class="ref-inner">
           <div class="ref-num">REFERRAL 03</div>
           <div class="ref-title">
             <span data-lang="kr" class="active">공공사업을 준비하는 기관</span>
@@ -779,64 +502,26 @@ footer {
             <span data-lang="cn">准备公共项目的机构</span>
           </div>
           <div class="ref-items">
-            <div class="ref-item"><span class="ref-check">✔</span>
-              <span data-lang="kr" class="active">공공디자인 및 공간개선 사업을 추진하는 공공기관</span>
-              <span data-lang="en">Public institutions promoting public design and space improvement projects</span>
-              <span data-lang="jp">公共デザインおよび空間改善事業を推進する公共機関</span>
-              <span data-lang="cn">推进公共设计和空间改善项目的公共机构</span>
-            </div>
-            <div class="ref-item"><span class="ref-check">✔</span>
-              <span data-lang="kr" class="active">유니버설디자인 · 웨이파인딩 · 도시브랜딩</span>
-              <span data-lang="en">Universal design · Wayfinding · City branding</span>
-              <span data-lang="jp">ユニバーサルデザイン・ウェイファインディング・都市ブランディング</span>
-              <span data-lang="cn">通用设计·导向系统·城市品牌</span>
-            </div>
-            <div class="ref-item"><span class="ref-check">✔</span>
-              <span data-lang="kr" class="active">색채계획이 필요한 도시·건물 프로젝트</span>
-              <span data-lang="en">City/building projects requiring color planning</span>
-              <span data-lang="jp">色彩計画が必要な都市・建物プロジェクト</span>
-              <span data-lang="cn">需要色彩规划的城市·建筑项目</span>
-            </div>
+            <div class="ref-item"><span class="ref-check">✔</span><span data-lang="kr" class="active">공공디자인·공간개선 사업을 추진하는 공공기관</span><span data-lang="en">Public institutions promoting public design projects</span><span data-lang="jp">公共デザイン·空間改善事業を推進する公共機関</span><span data-lang="cn">推进公共设计和空间改善项目的公共机构</span></div>
+            <div class="ref-item"><span class="ref-check">✔</span><span data-lang="kr" class="active">유니버설디자인 · 웨이파인딩 · 도시브랜딩</span><span data-lang="en">Universal design · Wayfinding · City branding</span><span data-lang="jp">ユニバーサルデザイン·ウェイファインディング·都市ブランディング</span><span data-lang="cn">通用设计·导向系统·城市品牌</span></div>
+            <div class="ref-item"><span class="ref-check">✔</span><span data-lang="kr" class="active">색채계획이 필요한 도시·건물 프로젝트</span><span data-lang="en">City/building projects requiring color planning</span><span data-lang="jp">色彩計画が必要な都市·建物プロジェクト</span><span data-lang="cn">需要色彩规划的城市·建筑项目</span></div>
           </div>
-        </div>
-      </div>
-
-      <!-- 리퍼럴 4 -->
-      <div class="ref-card">
-        <div class="ref-card-inner">
+        </div></div>
+        <div class="ref-card"><div class="ref-inner">
           <div class="ref-num">REFERRAL 04</div>
           <div class="ref-title">
-            <span data-lang="kr" class="active">기업의 경쟁력을 높이고 싶은 대표님</span>
-            <span data-lang="en">Business leaders who want to strengthen competitiveness</span>
+            <span data-lang="kr" class="active">기업 경쟁력을 높이고 싶은 대표님</span>
+            <span data-lang="en">Leaders wanting to strengthen competitiveness</span>
             <span data-lang="jp">企業の競争力を高めたい代表</span>
             <span data-lang="cn">希望提升企业竞争力的负责人</span>
           </div>
           <div class="ref-items">
-            <div class="ref-item"><span class="ref-check">✔</span>
-              <span data-lang="kr" class="active">고객이 기억하지 못하는 브랜드를 가진 기업</span>
-              <span data-lang="en">Companies whose brand customers don't remember</span>
-              <span data-lang="jp">顧客が覚えていないブランドを持つ企業</span>
-              <span data-lang="cn">客户记不住品牌的企业</span>
-            </div>
-            <div class="ref-item"><span class="ref-check">✔</span>
-              <span data-lang="kr" class="active">매출은 있지만 브랜드가 약한 기업</span>
-              <span data-lang="en">Companies with revenue but weak brand identity</span>
-              <span data-lang="jp">売上はあるがブランドが弱い企業</span>
-              <span data-lang="cn">有销售额但品牌薄弱的企业</span>
-            </div>
-            <div class="ref-item"><span class="ref-check">✔</span>
-              <span data-lang="kr" class="active">디자인이 필요하지만 어디서부터 시작해야 할지 모르는 기업</span>
-              <span data-lang="en">Companies needing design but unsure where to start</span>
-              <span data-lang="jp">デザインが必要だがどこから始めればいいかわからない企業</span>
-              <span data-lang="cn">需要设计但不知道从哪里开始的企业</span>
-            </div>
+            <div class="ref-item"><span class="ref-check">✔</span><span data-lang="kr" class="active">고객이 기억하지 못하는 브랜드를 가진 기업</span><span data-lang="en">Companies whose brand customers don't remember</span><span data-lang="jp">顧客が覚えていないブランドを持つ企業</span><span data-lang="cn">客户记不住品牌的企业</span></div>
+            <div class="ref-item"><span class="ref-check">✔</span><span data-lang="kr" class="active">매출은 있지만 브랜드가 약한 기업</span><span data-lang="en">Companies with revenue but weak brand identity</span><span data-lang="jp">売上はあるがブランドが弱い企業</span><span data-lang="cn">有销售额但品牌薄弱的企业</span></div>
+            <div class="ref-item"><span class="ref-check">✔</span><span data-lang="kr" class="active">디자인이 필요하지만 어디서 시작할지 모르는 기업</span><span data-lang="en">Companies needing design but unsure where to start</span><span data-lang="jp">デザインが必要だがどこから始めればいいかわからない企業</span><span data-lang="cn">需要设计但不知从哪里开始的企业</span></div>
           </div>
-        </div>
-      </div>
-
-      <!-- 리퍼럴 5 -->
-      <div class="ref-card">
-        <div class="ref-card-inner">
+        </div></div>
+        <div class="ref-card"><div class="ref-inner">
           <div class="ref-num">REFERRAL 05</div>
           <div class="ref-title">
             <span data-lang="kr" class="active">ESG와 사회적 가치를 고민하는 기업</span>
@@ -845,71 +530,58 @@ footer {
             <span data-lang="cn">关注ESG和社会价值的企业</span>
           </div>
           <div class="ref-items">
-            <div class="ref-item"><span class="ref-check">✔</span>
-              <span data-lang="kr" class="active">ESG 경영을 준비하는 기업</span>
-              <span data-lang="en">Companies preparing ESG management</span>
-              <span data-lang="jp">ESG経営を準備している企業</span>
-              <span data-lang="cn">准备ESG管理的企业</span>
-            </div>
-            <div class="ref-item"><span class="ref-check">✔</span>
-              <span data-lang="kr" class="active">사회공헌 프로그램을 기획하는 기업</span>
-              <span data-lang="en">Companies planning social contribution programs</span>
-              <span data-lang="jp">社会貢献プログラムを企画している企業</span>
-              <span data-lang="cn">策划社会贡献项目的企业</span>
-            </div>
-            <div class="ref-item"><span class="ref-check">✔</span>
-              <span data-lang="kr" class="active">사회적 가치 디자인이 필요한 기관</span>
-              <span data-lang="en">Institutions needing social value design</span>
-              <span data-lang="jp">社会的価値デザインが必要な機関</span>
-              <span data-lang="cn">需要社会价值设计的机构</span>
-            </div>
+            <div class="ref-item"><span class="ref-check">✔</span><span data-lang="kr" class="active">ESG 경영을 준비하는 기업</span><span data-lang="en">Companies preparing ESG management</span><span data-lang="jp">ESG経営を準備している企業</span><span data-lang="cn">准备ESG管理的企业</span></div>
+            <div class="ref-item"><span class="ref-check">✔</span><span data-lang="kr" class="active">사회공헌 프로그램을 기획하는 기업</span><span data-lang="en">Companies planning social contribution programs</span><span data-lang="jp">社会貢献プログラムを企画している企業</span><span data-lang="cn">策划社会贡献项目的企业</span></div>
+            <div class="ref-item"><span class="ref-check">✔</span><span data-lang="kr" class="active">사회적 가치 디자인이 필요한 기관</span><span data-lang="en">Institutions needing social value design</span><span data-lang="jp">社会的価値デザインが必要な機関</span><span data-lang="cn">需要社会价值设计的机构</span></div>
           </div>
-        </div>
+        </div></div>
       </div>
-
-    </div><!-- /ref-track -->
-  </div><!-- /ref-slider-outer -->
-
-  <div class="ref-nav">
-    <button class="ref-btn" onclick="refSlide(-1)">‹</button>
-    <div class="ref-dots" id="ref-dots"></div>
-    <button class="ref-btn" onclick="refSlide(1)">›</button>
-  </div>
-  <div class="ref-counter" id="ref-counter">1 / 5</div>
-
-  <div style="margin-top:20px; padding:16px; background:#fff; border-radius:12px; border-left:4px solid var(--red);">
-    <div style="font-size:12px; color:#333; line-height:1.7; font-weight:500;">
+    </div>
+    <div class="ref-nav">
+      <button class="ref-btn" onclick="refSlide(-1)">‹</button>
+      <div class="ref-dots" id="ref-dots"></div>
+      <button class="ref-btn" onclick="refSlide(1)">›</button>
+    </div>
+    <div class="ref-counter" id="ref-counter">1 / 5</div>
+    <div class="ref-cta">
       <span data-lang="kr" class="active">💬 성장의 전환점이 필요한 기업이 있다면,<br><strong>크로스컬러디자인연구소를 소개해 주세요.</strong></span>
-      <span data-lang="en">💬 If you know a company that needs a turning point for growth,<br><strong>please introduce CrossCOLOR Design LAB.</strong></span>
+      <span data-lang="en">💬 Know a company that needs a turning point?<br><strong>Please introduce CrossCOLOR Design LAB.</strong></span>
       <span data-lang="jp">💬 成長の転換点が必要な企業があれば、<br><strong>クロスカラーデザイン研究所をご紹介ください。</strong></span>
       <span data-lang="cn">💬 如果您认识需要成长转折点的企业，<br><strong>请介绍克罗斯彩色设计研究所。</strong></span>
     </div>
   </div>
 </div>
 
-<!-- CAREER -->
-<div class="career-wrap">
-  <div class="career-bg"></div>
-  <div class="career-overlay"></div>
-  <div class="career-content section">
+<!-- CAREER (배경: 어부 실루엣) -->
+<div class="bg-section">
+  <div class="bg-img career-bg"></div>
+  <div class="bg-ov career-ov"></div>
+  <div class="sec-inner">
     <div class="sec-label">CAREER</div>
-    <div class="sec-title dark">
+    <div class="sec-title" style="color:#fff;">
       <span data-lang="kr" class="active">경력 및 활동이력</span>
-      <span data-lang="en">Career & Activities</span>
+      <span data-lang="en">Career &amp; Activities</span>
       <span data-lang="jp">経歴および活動履歴</span>
       <span data-lang="cn">职业经历及活动履历</span>
     </div>
     <div class="sec-divider"></div>
+
+    <!-- 이미지 2개 나란히 -->
+    <div class="img-duo" style="margin-bottom:18px;">
+      <img src="portfolio2.jpg" alt="인증서">
+      <img src="portfolio3.jpg" alt="파트너기관">
+    </div>
+
     <div class="career-items">
       <div class="career-item">
         <div class="career-icon">🏢</div>
         <div>
           <div class="career-label">COMPANY</div>
           <div class="career-text">
-            <span data-lang="kr" class="active">크로스컬러디자인연구소 설립 (2015.11)<br>실무 18년차 · 산업디자인전문회사<br>동남권디자인전문회사 · 여성기업<br>출판사 · 옥외광고 등록<br>공공디자인 전문인력</span>
-            <span data-lang="en">CrossCOLOR Design LAB Founded (Nov. 2015)<br>18 years practical experience · Industrial Design Professional Company<br>Southeast Design Professional Company · Women-owned Business</span>
-            <span data-lang="jp">クロスカラーデザイン研究所設立（2015.11）<br>実務18年目・産業デザイン専門会社</span>
-            <span data-lang="cn">克罗斯彩色设计研究所成立（2015年11月）<br>18年实务经验·工业设计专业公司·东南地区设计专业公司·女性企业</span>
+            <span data-lang="kr" class="active">크로스컬러디자인연구소 설립 (2015.11) · 실무 18년차<br>산업디자인전문회사 · 동남권디자인전문회사 · 여성기업 · 공공디자인 전문인력</span>
+            <span data-lang="en">CrossCOLOR Design LAB Founded (Nov.2015) · 18yrs experience<br>Industrial Design Professional · Women-owned Business · Public Design Expert</span>
+            <span data-lang="jp">クロスカラーデザイン研究所設立（2015.11）· 実務18年目<br>産業デザイン専門会社 · 女性企業 · 公共デザイン専門人材</span>
+            <span data-lang="cn">克罗斯彩色设计研究所成立（2015年11月）· 18年实务经验<br>工业设计专业公司 · 女性企业 · 公共设计专业人才</span>
           </div>
         </div>
       </div>
@@ -918,10 +590,10 @@ footer {
         <div>
           <div class="career-label">EDUCATION</div>
           <div class="career-text">
-            <span data-lang="kr" class="active">디자인학 박사<br>대학교육 경력 16년차</span>
-            <span data-lang="en">Ph.D. in Design<br>16 years of university education</span>
-            <span data-lang="jp">デザイン学博士<br>大学教育経歴16年</span>
-            <span data-lang="cn">设计学博士<br>16年大学教育经历</span>
+            <span data-lang="kr" class="active">디자인학 박사 · 대학교육 경력 16년차</span>
+            <span data-lang="en">Ph.D. in Design · 16 years university education</span>
+            <span data-lang="jp">デザイン学博士 · 大学教育16年</span>
+            <span data-lang="cn">设计学博士 · 16年大学教育经历</span>
           </div>
         </div>
       </div>
@@ -929,61 +601,12 @@ footer {
         <div class="career-icon">🌐</div>
         <div>
           <div class="career-label">ACTIVITIES</div>
-          <div class="career-text">
-            <span data-lang="kr" class="active">주요 대외활동</span>
-            <span data-lang="en">Major External Activities</span>
-            <span data-lang="jp">主な対外活動</span>
-            <span data-lang="cn">主要对外活动</span>
-          </div>
-          <div class="activity-list">
-            <div class="activity-item">
-              <span data-lang="kr" class="active">(사)동남권디자인산업협회 부회장</span>
-              <span data-lang="en">Vice President, Southeast Korea Design Industry Association</span>
-              <span data-lang="jp">（社）東南圏デザイン産業協会 副会長</span>
-              <span data-lang="cn">东南地区设计产业协会副会长</span>
-            </div>
-            <div class="activity-item">
-              <span data-lang="kr" class="active">(사)부산디자인단체총연합회 사무총장</span>
-              <span data-lang="en">Secretary General, Busan Design Organization Federation</span>
-              <span data-lang="jp">（社）釜山デザイン団体総連合会 事務総長</span>
-              <span data-lang="cn">釜山设计团体总联合会秘书长</span>
-            </div>
-            <div class="activity-item">
-              <span data-lang="kr" class="active">한국기초조형학회 상임이사 (미래기획분과)</span>
-              <span data-lang="en">Standing Director, Korean Society of Basic Design</span>
-              <span data-lang="jp">韓国基礎造形学会 常任理事</span>
-              <span data-lang="cn">韩国基础造型学会常务理事</span>
-            </div>
-            <div class="activity-item">
-              <span data-lang="kr" class="active">부산디자인진흥원 선임직이사 역임</span>
-              <span data-lang="en">Former Senior Director, Busan Design Center</span>
-              <span data-lang="jp">釜山デザイン振興院 先任職理事 歴任</span>
-              <span data-lang="cn">曾任釜山设计振兴院高级理事</span>
-            </div>
-            <div class="activity-item">
-              <span data-lang="kr" class="active">2028 세계디자인수도 부산 '디자인산업자문단' 위원</span>
-              <span data-lang="en">Member, 2028 World Design Capital Busan Advisory Committee</span>
-              <span data-lang="jp">2028世界デザイン首都釜山「デザイン産業諮問団」委員</span>
-              <span data-lang="cn">2028世界设计之都釜山「设计产业咨询团」委员</span>
-            </div>
-            <div class="activity-item">
-              <span data-lang="kr" class="active">개인전 3회, 단체전 60여회 이상 (미국, 일본, 중국, 두바이 등)</span>
-              <span data-lang="en">3 solo exhibitions, 60+ group exhibitions (USA, Japan, China, Dubai, etc.)</span>
-              <span data-lang="jp">個展3回、グループ展60回以上（米国・日本・中国・ドバイ等）</span>
-              <span data-lang="cn">个展3次，团体展60余次以上（美国、日本、中国、迪拜等）</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="career-item">
-        <div class="career-icon">🤝</div>
-        <div>
-          <div class="career-label">BNI</div>
-          <div class="career-text">
-            <span data-lang="kr" class="active">BNI 부산 자이언츠 챕터 (2026.3.17 입회)<br>도어퍼슨 → PR팀 팀원</span>
-            <span data-lang="en">BNI Busan Giants Chapter (Joined 2026.3.17)<br>Doorperson → PR Team Member</span>
-            <span data-lang="jp">BNI釜山ジャイアンツチャプター（2026.3.17入会）<br>ドアパーソン → PRチームメンバー</span>
-            <span data-lang="cn">BNI釜山巨人分会（2026.3.17入会）<br>门卫 → PR团队成员</span>
+          <div class="act-list">
+            <div class="act-item"><span data-lang="kr" class="active">(사)동남권디자인산업협회 부회장</span><span data-lang="en">VP, Southeast Korea Design Industry Association</span><span data-lang="jp">東南圏デザイン産業協会 副会長</span><span data-lang="cn">东南地区设计产业协会副会长</span></div>
+            <div class="act-item"><span data-lang="kr" class="active">(사)부산디자인단체총연합회 사무총장</span><span data-lang="en">Secretary General, Busan Design Organization Federation</span><span data-lang="jp">釜山デザイン団体総連合会 事務総長</span><span data-lang="cn">釜山设计团体总联合会秘书长</span></div>
+            <div class="act-item"><span data-lang="kr" class="active">부산디자인진흥원 선임직이사 역임</span><span data-lang="en">Former Senior Director, Busan Design Center</span><span data-lang="jp">釜山デザイン振興院 先任職理事 歴任</span><span data-lang="cn">曾任釜山设计振兴院高级理事</span></div>
+            <div class="act-item"><span data-lang="kr" class="active">2028 세계디자인수도 부산 '디자인산업자문단' 위원</span><span data-lang="en">Member, 2028 World Design Capital Busan Advisory</span><span data-lang="jp">2028世界デザイン首都釜山「デザイン産業諮問団」委員</span><span data-lang="cn">2028世界设计之都釜山设计产业咨询团委员</span></div>
+            <div class="act-item"><span data-lang="kr" class="active">개인전 3회 · 단체전 60여회 (미국·일본·중국·두바이 등)</span><span data-lang="en">3 solo · 60+ group exhibitions (USA, Japan, China, Dubai…)</span><span data-lang="jp">個展3回 · グループ展60回以上（米国·日本·中国·ドバイ等）</span><span data-lang="cn">个展3次·团体展60余次（美国、日本、中国、迪拜等）</span></div>
           </div>
         </div>
       </div>
@@ -995,21 +618,24 @@ footer {
 <div class="port-wrap">
   <div class="port-header">
     <div class="sec-label">PORTFOLIO</div>
-    <div class="sec-title dark">
+    <div class="sec-title" style="color:#fff;">
       <span data-lang="kr" class="active">주요 작업물</span>
       <span data-lang="en">Selected Works</span>
       <span data-lang="jp">主な作品</span>
       <span data-lang="cn">主要作品</span>
     </div>
     <div class="sec-divider"></div>
+    <!-- 첫 2개 이미지 나란히 -->
+    <div class="img-duo">
+      <img src="portfolio4.jpg" alt="울산도서관">
+      <img src="portfolio5.jpg" alt="작업물">
+    </div>
   </div>
-  <div class="slide-wrap" id="slide-port">
+  <div class="slide-wrap" id="slide-port" style="margin-top:6px;">
     <div class="slide-track" id="slide-track-port">
-      <div class="slide-item"><img src="portfolio1.jpg" alt="포트폴리오1"></div>
-      <div class="slide-item"><img src="portfolio2.jpg" alt="포트폴리오2"></div>
-      <div class="slide-item"><img src="portfolio3.jpg" alt="포트폴리오3"></div>
-      <div class="slide-item"><img src="portfolio4.jpg" alt="포트폴리오4"></div>
-      <div class="slide-item"><img src="portfolio5.jpg" alt="포트폴리오5"></div>
+      <div class="slide-item"><img src="portfolio1.jpg" alt="1"></div>
+      <div class="slide-item"><img src="portfolio2.jpg" alt="2"></div>
+      <div class="slide-item"><img src="portfolio3.jpg" alt="3"></div>
     </div>
     <button class="slide-btn slide-btn-l" onclick="portSlide(-1)">‹</button>
     <button class="slide-btn slide-btn-r" onclick="portSlide(1)">›</button>
@@ -1017,46 +643,52 @@ footer {
   <div class="slide-dots" id="slide-dots-port"></div>
 </div>
 
-<!-- CONTACT -->
-<div class="contact-wrap">
-  <div class="contact-bg"></div>
-  <div class="contact-overlay"></div>
-  <div class="contact-content section">
+<!-- CONTACT (배경: 산토리니) -->
+<div class="bg-section">
+  <div class="bg-img contact-bg"></div>
+  <div class="bg-ov contact-ov"></div>
+  <div class="sec-inner">
     <div class="sec-label">CONTACT</div>
-    <div class="sec-title light">
+    <div class="sec-title" style="color:#0a0a0a;">
       <span data-lang="kr" class="active">연락하기</span>
       <span data-lang="en">Get in Touch</span>
       <span data-lang="jp">お問い合わせ</span>
       <span data-lang="cn">联系我们</span>
     </div>
     <div class="sec-divider"></div>
-    <div class="con-items">
+    <div class="con-grid">
       <a href="tel:010-9984-8248" class="con-item">
-        <span class="con-icon">📞</span>
-        <div>
-          <div class="con-label">PHONE</div>
-          <div class="con-value">010-9984-8248</div>
-        </div>
+        <div class="con-item-top"><span class="con-icon">📞</span><span class="con-label">PHONE</span></div>
+        <div class="con-value">010-9984-8248</div>
       </a>
-      <div class="con-item">
-        <span class="con-icon">📍</span>
-        <div>
-          <div class="con-label">COMPANY</div>
-          <div class="con-value">
-            <span data-lang="kr" class="active">크로스컬러디자인연구소</span>
-            <span data-lang="en">CrossCOLOR Design LAB</span>
-            <span data-lang="jp">クロスカラーデザイン研究所</span>
-            <span data-lang="cn">克罗斯彩色设计研究所</span>
-          </div>
+      <a href="https://brunch.co.kr/@zerosimp" target="_blank" class="con-item">
+        <div class="con-item-top"><span class="con-icon">✍️</span><span class="con-label">BRUNCH</span></div>
+        <div class="con-value">브런치 스토리</div>
+      </a>
+      <a href="https://www.instagram.com/zerosimp1" target="_blank" class="con-item">
+        <div class="con-item-top"><span class="con-icon">📸</span><span class="con-label">INSTAGRAM</span></div>
+        <div class="con-value">@zerosimp1</div>
+      </a>
+      <a href="https://www.threads.com/@zerosimp1" target="_blank" class="con-item">
+        <div class="con-item-top"><span class="con-icon">🧵</span><span class="con-label">THREADS</span></div>
+        <div class="con-value">@zerosimp1</div>
+      </a>
+      <div class="con-item" style="grid-column:1/-1;">
+        <div class="con-item-top"><span class="con-icon">🏢</span><span class="con-label">COMPANY</span></div>
+        <div class="con-value">
+          <span data-lang="kr" class="active">크로스컬러디자인연구소</span>
+          <span data-lang="en">CrossCOLOR Design LAB</span>
+          <span data-lang="jp">クロスカラーデザイン研究所</span>
+          <span data-lang="cn">克罗斯彩色设计研究所</span>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- ACTIONS -->
+<!-- ACTIONS — 3개만 -->
 <div class="actions-wrap">
-  <div class="btn-group">
+  <div class="act-primary">
     <button class="btn btn-red" onclick="shareCard()">📤
       <span data-lang="kr" class="active">명함 공유하기</span>
       <span data-lang="en">Share Card</span>
@@ -1075,44 +707,17 @@ footer {
       <span data-lang="jp">名刺帳に保存</span>
       <span data-lang="cn">保存到名片册</span>
     </button>
-    <a href="https://brunch.co.kr/@zerosimp" target="_blank" class="btn btn-dark">✍️
-      <span data-lang="kr" class="active">브런치 스토리</span>
-      <span data-lang="en">Brunch Story</span>
-      <span data-lang="jp">ブランチストーリー</span>
-      <span data-lang="cn">博客故事</span>
-    </a>
-    <a href="https://www.instagram.com/zerosimp1" target="_blank" class="btn btn-dark">📸
-      <span data-lang="kr" class="active">인스타그램</span>
-      <span data-lang="en">Instagram</span>
-      <span data-lang="jp">インスタグラム</span>
-      <span data-lang="cn">Instagram</span>
-    </a>
-    <a href="https://www.threads.com/@zerosimp1" target="_blank" class="btn btn-dark">🧵
-      <span data-lang="kr" class="active">쓰레드</span>
-      <span data-lang="en">Threads</span>
-      <span data-lang="jp">スレッズ</span>
-      <span data-lang="cn">Threads</span>
-    </a>
-    <a href="tel:010-9984-8248" class="btn btn-red">💬
-      <span data-lang="kr" class="active">상담 문의하기</span>
-      <span data-lang="en">Consultation Inquiry</span>
-      <span data-lang="jp">相談お問い合わせ</span>
-      <span data-lang="cn">咨询询问</span>
-    </a>
   </div>
 </div>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-logo">CROSS<span>color</span>DESIGN<span>+</span>LAB</div>
   <div class="footer-sub">© 2026 CrossCOLOR Design LAB. All rights reserved.</div>
 </footer>
 
-</div><!-- /container -->
-
+</div>
 <script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
 <script>
-/* 언어 전환 */
 function setLang(lang) {
   document.querySelectorAll('[data-lang]').forEach(el => {
     el.classList.toggle('active', el.getAttribute('data-lang') === lang);
@@ -1121,105 +726,64 @@ function setLang(lang) {
     btn.classList.toggle('active', ['kr','en','jp','cn'][i] === lang);
   });
 }
-
-/* 명함 공유 */
 function shareCard() {
   if (navigator.share) {
-    navigator.share({
-      title: document.title,
-      text: '박영심 대표 | 크로스컬러디자인연구소',
-      url: window.location.href
-    });
+    navigator.share({ title: document.title, text: '박영심 대표 | 크로스컬러디자인연구소', url: window.location.href });
   } else {
-    navigator.clipboard.writeText(window.location.href).then(() => {
-      alert('링크가 복사되었습니다!');
-    });
+    navigator.clipboard.writeText(window.location.href).then(() => alert('링크가 복사되었습니다!'));
   }
 }
-
-/* 연락처 저장 */
 function saveContact() {
-  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:박영심\nN:박;영심;;;\nORG:크로스컬러디자인연구소\nTITLE:대표\nTEL;TYPE=CELL:010-9984-8248\nURL:https://jinjjabg-hub.github.io/bni-giants/박영심/\nEND:VCARD`;
-  const blob = new Blob([vcard], {type:'text/vcard'});
+  const v = `BEGIN:VCARD\nVERSION:3.0\nFN:박영심\nN:박;영심;;;\nORG:크로스컬러디자인연구소\nTITLE:대표\nTEL;TYPE=CELL:010-9984-8248\nURL:https://jinjjabg-hub.github.io/bni-giants/박영심/\nEND:VCARD`;
   const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
+  a.href = URL.createObjectURL(new Blob([v], {type:'text/vcard'}));
   a.download = 'ParkYoungsim_CrossColorDesign.vcf';
   a.click();
 }
-
 /* 리퍼럴 슬라이더 */
-let refIdx = 0;
-const refTotal = 5;
-
-function initRefSlide() {
-  const dots = document.getElementById('ref-dots');
-  dots.innerHTML = '';
-  for (let i = 0; i < refTotal; i++) {
-    const d = document.createElement('div');
-    d.className = 'ref-dot' + (i === 0 ? ' active' : '');
-    d.onclick = () => goRefSlide(i);
-    dots.appendChild(d);
+let refIdx=0; const refTotal=5;
+function initRef() {
+  const d=document.getElementById('ref-dots'); d.innerHTML='';
+  for(let i=0;i<refTotal;i++){
+    const dot=document.createElement('div');
+    dot.className='ref-dot'+(i===0?' active':'');
+    dot.onclick=()=>goRef(i); d.appendChild(dot);
   }
-  updateRefCounter();
+  updateRefCnt();
 }
-function goRefSlide(idx) {
-  refIdx = (idx + refTotal) % refTotal;
-  document.getElementById('ref-track').style.transform = `translateX(-${refIdx * 100}%)`;
-  document.querySelectorAll('#ref-dots .ref-dot').forEach((d, i) => {
-    d.classList.toggle('active', i === refIdx);
-  });
-  updateRefCounter();
+function goRef(i){
+  refIdx=(i+refTotal)%refTotal;
+  document.getElementById('ref-track').style.transform=`translateX(-${refIdx*100}%)`;
+  document.querySelectorAll('#ref-dots .ref-dot').forEach((d,j)=>d.classList.toggle('active',j===refIdx));
+  updateRefCnt();
 }
-function refSlide(dir) { goRefSlide(refIdx + dir); }
-function updateRefCounter() {
-  document.getElementById('ref-counter').textContent = `${refIdx + 1} / ${refTotal}`;
-}
-(function() {
-  let sx = 0;
-  const track = document.getElementById('ref-track');
-  track.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, {passive:true});
-  track.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].clientX - sx;
-    if (Math.abs(dx) > 40) refSlide(dx < 0 ? 1 : -1);
-  }, {passive:true});
+function refSlide(dir){goRef(refIdx+dir);}
+function updateRefCnt(){document.getElementById('ref-counter').textContent=`${refIdx+1} / ${refTotal}`;}
+(()=>{let sx=0;const t=document.getElementById('ref-track');
+  t.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});
+  t.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)refSlide(dx<0?1:-1);},{passive:true});
 })();
-
 /* 포트폴리오 슬라이더 */
-let portIdx = 0;
-const portTotal = 5;
-
-function initPortSlide() {
-  const dots = document.getElementById('slide-dots-port');
-  dots.innerHTML = '';
-  for (let i = 0; i < portTotal; i++) {
-    const d = document.createElement('div');
-    d.className = 'slide-dot' + (i === 0 ? ' active' : '');
-    d.onclick = () => goPortSlide(i);
-    dots.appendChild(d);
+let portIdx=0; const portTotal=3;
+function initPort(){
+  const d=document.getElementById('slide-dots-port'); d.innerHTML='';
+  for(let i=0;i<portTotal;i++){
+    const dot=document.createElement('div');
+    dot.className='slide-dot'+(i===0?' active':'');
+    dot.onclick=()=>goPort(i); d.appendChild(dot);
   }
 }
-function goPortSlide(idx) {
-  portIdx = (idx + portTotal) % portTotal;
-  document.getElementById('slide-track-port').style.transform = `translateX(-${portIdx * 100}%)`;
-  document.querySelectorAll('#slide-dots-port .slide-dot').forEach((d, i) => {
-    d.classList.toggle('active', i === portIdx);
-  });
+function goPort(i){
+  portIdx=(i+portTotal)%portTotal;
+  document.getElementById('slide-track-port').style.transform=`translateX(-${portIdx*100}%)`;
+  document.querySelectorAll('#slide-dots-port .slide-dot').forEach((d,j)=>d.classList.toggle('active',j===portIdx));
 }
-function portSlide(dir) { goPortSlide(portIdx + dir); }
-(function() {
-  let sx = 0;
-  const track = document.getElementById('slide-track-port');
-  track.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, {passive:true});
-  track.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].clientX - sx;
-    if (Math.abs(dx) > 40) portSlide(dx < 0 ? 1 : -1);
-  }, {passive:true});
+function portSlide(dir){goPort(portIdx+dir);}
+(()=>{let sx=0;const t=document.getElementById('slide-track-port');
+  t.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});
+  t.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)portSlide(dx<0?1:-1);},{passive:true});
 })();
-
-document.addEventListener('DOMContentLoaded', () => {
-  initRefSlide();
-  initPortSlide();
-});
+document.addEventListener('DOMContentLoaded',()=>{initRef();initPort();});
 </script>
 </body>
 </html>
