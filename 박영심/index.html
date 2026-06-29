@@ -220,7 +220,12 @@ footer { background:#000; text-align:center; padding:24px; border-top:1px solid 
       <span data-lang="jp">クロスカラーデザイン研究所 · デザイン学博士</span>
       <span data-lang="cn">克罗斯彩色设计研究所 · 设计学博士</span>
     </div>
-    <div class="profile-tag">⚡ 문제를 발견하고, 변화를 설계합니다</div>
+    <div class="profile-tag">
+      <span data-lang="kr" class="active">⚡ 문제를 발견하고, 변화를 설계합니다</span>
+      <span data-lang="en">⚡ We discover problems and design change</span>
+      <span data-lang="jp">⚡ 問題を発見し、変化を設計します</span>
+      <span data-lang="cn">⚡ 发现问题，设计变革</span>
+    </div>
   </div>
 </div>
 
@@ -240,9 +245,9 @@ footer { background:#000; text-align:center; padding:24px; border-top:1px solid 
     <div class="quote-box">
       <div class="quote-text">
         <span data-lang="kr" class="active">문제를 발견하고, 변화를 설계합니다.<br>디자인은 결과물이 아니라 미래를 준비하는 전략입니다.</span>
-        <span data-lang="en">We discover problems and design change.<br>Design is not an outcome, but a strategy to prepare for the future.</span>
-        <span data-lang="jp">問題を発見し、変化を設計します。<br>デザインは成果物ではなく、未来を準備する戦略です。</span>
-        <span data-lang="cn">发现问题，设计变革。<br>设计不是结果，而是准备未来的战略。</span>
+        <span data-lang="en">We discover problems and design change.<br>Design is not an outcome,<br>but a strategy to prepare for the future.</span>
+        <span data-lang="jp">問題を発見し、変化を設計します。<br>デザインは成果物ではなく、<br>未来を準備する戦略です。</span>
+        <span data-lang="cn">发现问题，设计变革。<br>设计不是结果，<br>而是准备未来的战略。</span>
       </div>
     </div>
     <div class="about-body">
@@ -583,12 +588,10 @@ footer { background:#000; text-align:center; padding:24px; border-top:1px solid 
     <span data-lang="cn">主要作品</span>
   </div>
   <div class="sec-divider"></div>
-  <div class="img-duo">
-    <img src="portfolio1.jpg" alt="1">
-    <img src="portfolio2.jpg" alt="2">
-  </div>
   <div class="slide-wrap">
     <div class="slide-track" id="slide-track-port">
+      <div class="slide-item"><img src="portfolio1.jpg" alt="1"></div>
+      <div class="slide-item"><img src="portfolio2.jpg" alt="2"></div>
       <div class="slide-item"><img src="portfolio3.jpg" alt="3"></div>
       <div class="slide-item"><img src="portfolio4.jpg" alt="4"></div>
       <div class="slide-item"><img src="portfolio5.jpg" alt="5"></div>
@@ -629,10 +632,6 @@ footer { background:#000; text-align:center; padding:24px; border-top:1px solid 
         <div class="con-item-top"><span class="con-icon">🧵</span><span class="con-label">THREADS</span></div>
         <div class="con-value">@zerosimp1</div>
       </a>
-      <div class="con-item" style="grid-column:1/-1;">
-        <div class="con-item-top"><span class="con-icon">🏢</span><span class="con-label">COMPANY</span></div>
-        <div class="con-value"><span data-lang="kr" class="active">크로스컬러디자인연구소</span><span data-lang="en">CrossCOLOR Design LAB</span><span data-lang="jp">クロスカラーデザイン研究所</span><span data-lang="cn">克罗斯彩色设计研究所</span></div>
-      </div>
     </div>
   </div>
 </div>
@@ -645,6 +644,7 @@ footer { background:#000; text-align:center; padding:24px; border-top:1px solid 
 </div>
 
 <footer>
+  <img src="og.jpg" alt="CrossCOLOR Design LAB" style="width:120px; border-radius:8px; margin-bottom:14px; display:block; margin-left:auto; margin-right:auto;">
   <div class="footer-logo">CROSS<span>color</span>DESIGN<span>+</span>LAB</div>
   <div class="footer-sub">© 2026 CrossCOLOR Design LAB. All rights reserved.</div>
 </footer>
@@ -674,7 +674,7 @@ function goRef(i){refIdx=(i+refTotal)%refTotal;document.getElementById('ref-trac
 function refSlide(dir){goRef(refIdx+dir);}
 function updateRefCnt(){document.getElementById('ref-counter').textContent=`${refIdx+1} / ${refTotal}`;}
 (()=>{let sx=0;const t=document.getElementById('ref-track');t.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});t.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)refSlide(dx<0?1:-1);},{passive:true});})();
-let portIdx=0; const portTotal=3;
+let portIdx=0; const portTotal=5;
 function initPort(){const d=document.getElementById('slide-dots-port');d.innerHTML='';for(let i=0;i<portTotal;i++){const dot=document.createElement('div');dot.className='slide-dot'+(i===0?' active':'');dot.onclick=()=>goPort(i);d.appendChild(dot);}}
 function goPort(i){portIdx=(i+portTotal)%portTotal;document.getElementById('slide-track-port').style.transform=`translateX(-${portIdx*100}%)`;document.querySelectorAll('#slide-dots-port .slide-dot').forEach((d,j)=>d.classList.toggle('active',j===portIdx));}
 function portSlide(dir){goPort(portIdx+dir);}
