@@ -251,6 +251,26 @@ body {
 .diff-text strong .acc { color: var(--gold); }
 .diff-text p { font-size: 12px; color: #888; line-height: 1.7; }
 
+/* ═══════════ PORTFOLIO ═══════════ */
+.portfolio-sec { background: var(--dark); padding: 44px 0 40px; }
+.portfolio-sec .sec-label, .portfolio-sec .sec-title { padding: 0 24px; }
+.portfolio-slider { position: relative; overflow: hidden; margin-top: 20px; touch-action: pan-y; }
+.portfolio-track { display: flex; transition: transform .45s cubic-bezier(.4,0,.2,1); }
+.portfolio-slide { min-width: 100%; }
+.portfolio-slide img { width: 100%; height: 260px; object-fit: cover; display: block; }
+.portfolio-dots { display: flex; justify-content: center; gap: 7px; margin-top: 14px; padding: 0 20px; }
+.portfolio-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(201,168,76,0.3); cursor: pointer; transition: all .2s; }
+.portfolio-dot.on { background: var(--gold3); width: 20px; border-radius: 4px; }
+.portfolio-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(201,168,76,0.75); border: none; color: #fff; font-size: 16px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  z-index: 10; -webkit-tap-highlight-color: transparent;
+}
+.portfolio-nav.prev { left: 10px; }
+.portfolio-nav.next { right: 10px; }
+
 /* ═══════════ BNI 프로필 ═══════════ */
 .bni-sec { background: var(--dark); padding: 44px 24px; border-top: 1px solid var(--line); }
 .bni-inner {
@@ -547,6 +567,27 @@ body {
   </div>
 </section>
 
+<!-- ══════════ PORTFOLIO ══════════ -->
+<section class="portfolio-sec fade">
+  <span id="port-label" class="sec-label">Portfolio</span>
+  <h2 id="port-title" class="sec-title light">시공 사례</h2>
+  <div class="portfolio-slider" id="sliderWrap">
+    <button class="portfolio-nav prev" onclick="slidePort(-1)">‹</button>
+    <button class="portfolio-nav next" onclick="slidePort(1)">›</button>
+    <div class="portfolio-track" id="portfolioTrack">
+      <div class="portfolio-slide"><img src="poto1.jpg" alt="김준래 시공 사례 1"></div>
+      <div class="portfolio-slide"><img src="poto2.jpg" alt="김준래 시공 사례 2"></div>
+      <div class="portfolio-slide"><img src="poto3.jpg" alt="김준래 시공 사례 3"></div>
+      <div class="portfolio-slide"><img src="poto4.jpg" alt="김준래 시공 사례 4"></div>
+      <div class="portfolio-slide"><img src="poto5.jpg" alt="김준래 시공 사례 5"></div>
+      <div class="portfolio-slide"><img src="poto6.jpg" alt="김준래 시공 사례 6"></div>
+      <div class="portfolio-slide"><img src="poto7.jpg" alt="김준래 시공 사례 7"></div>
+      <div class="portfolio-slide"><img src="poto8.jpg" alt="김준래 시공 사례 8"></div>
+    </div>
+    <div class="portfolio-dots" id="portDots"></div>
+  </div>
+</section>
+
 <!-- ══════════ BNI 프로필 ══════════ -->
 <section class="bni-sec">
   <span id="bni-label" class="sec-label">BNI 프로필</span>
@@ -719,6 +760,8 @@ const T = {
     "diff3-desc": "막연한 상상이 아닌 현실에 가까운 3D 시각화로 공간을 구현해, 시작 전 불안을 줄이고 완성의 기대를 높여드립니다.",
     "diff4-title": "<span class='acc'>선택장애?</span> 해결합니다",
     "diff4-desc": "선택의 연속인 인테리어에서 정답에 가까운 선택지만 남겨, 결정 피로와 선택장애를 해결하는 솔루션을 제시합니다.",
+    "port-label": "Portfolio",
+    "port-title": "시공 사례",
     "bni-label": "BNI 프로필",
     "bni-name": "김준래",
     "bni-role": "무늬디자인 대표 · BNI 자이언츠 챕터",
@@ -775,6 +818,8 @@ const T = {
     "diff3-desc": "Not vague imagination, but near-reality 3D visualization. Reduce anxiety before you start; raise excitement for the finish.",
     "diff4-title": "<span class='acc'>Decision fatigue?</span> Solved.",
     "diff4-desc": "Interior design means endless choices. We narrow them down to only the right ones — eliminating decision fatigue.",
+    "port-label": "Portfolio",
+    "port-title": "Our Work",
     "bni-label": "BNI Profile",
     "bni-name": "Junrae Kim",
     "bni-role": "CEO, MooNee Design · BNI Giants Chapter",
@@ -832,6 +877,8 @@ const T = {
     "diff3-desc": "漠然とした想像ではなく、現実に近い3Dビジュアライゼーションで空間を体感。開始前の不安を減らし、完成への期待を高めます。",
     "diff4-title": "<span class='acc'>選択疲れ？</span> 解決します",
     "diff4-desc": "選択の連続であるインテリアで、正解に近い選択肢だけを残し、決定疲労と選択障害を解決するソリューションを提示します。",
+    "port-label": "Portfolio",
+    "port-title": "施工事例",
     "bni-label": "BNIプロフィール",
     "bni-name": "キム・ジュンレ",
     "bni-role": "ムーニーデザイン代表 · BNI ジャイアンツチャプター",
@@ -888,6 +935,8 @@ const T = {
     "diff3-desc": "不是模糊的想象，而是通过接近现实的3D可视化呈现空间，减少开工前的不安，提升对完成效果的期待。",
     "diff4-title": "<span class='acc'>选择困难？</span>我们来解决",
     "diff4-desc": "在选择不断的室内设计中，只留下最接近正确答案的选项，提供解决决策疲劳和选择困难的方案。",
+    "port-label": "Portfolio",
+    "port-title": "施工案例",
     "bni-label": "BNI简介",
     "bni-name": "金俊来",
     "bni-role": "MooNee Design代表 · BNI 巨人分会",
@@ -941,6 +990,37 @@ const io = new IntersectionObserver(e => e.forEach(el => {
   if (el.isIntersecting) { el.target.classList.add('on'); io.unobserve(el.target); }
 }), { threshold: 0.12 });
 document.querySelectorAll('.fade').forEach(el => io.observe(el));
+
+// 포트폴리오 슬라이더
+let portIdx = 0;
+const portTotal = 8;
+function initDots() {
+  const dots = document.getElementById('portDots');
+  if (!dots) return;
+  for (let i = 0; i < portTotal; i++) {
+    const d = document.createElement('div');
+    d.className = 'portfolio-dot' + (i === 0 ? ' on' : '');
+    d.onclick = () => goSlide(i);
+    dots.appendChild(d);
+  }
+}
+function goSlide(idx) {
+  portIdx = (idx + portTotal) % portTotal;
+  document.getElementById('portfolioTrack').style.transform = `translateX(-${portIdx * 100}%)`;
+  document.querySelectorAll('.portfolio-dot').forEach((d, i) => d.classList.toggle('on', i === portIdx));
+}
+function slidePort(dir) { goSlide(portIdx + dir); }
+let tx = 0;
+const sw = document.getElementById('sliderWrap');
+if (sw) {
+  sw.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+  sw.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - tx;
+    if (Math.abs(dx) > 40) slidePort(dx < 0 ? 1 : -1);
+  });
+}
+initDots();
+setInterval(() => slidePort(1), 4000);
 </script>
 <script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
 </body>
