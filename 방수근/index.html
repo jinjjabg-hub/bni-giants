@@ -68,7 +68,7 @@
     background:rgba(232,93,4,0.15);
   }
 
-  /* 2. HERO */
+  /* 2. HERO (이미지 없음 → 그라데이션 + 이니셜 플레이스홀더) */
   .hero{
     position:relative;
     height:440px;
@@ -109,12 +109,15 @@
     margin-top:4px;
   }
 
-  /* 3. ABOUT */
-  .about p{
+  /* 3. ABOUT — 배경 이미지 없이 단색(다크) */
+  .about-sec{ background:var(--dark); color:#fff; }
+  .about-sec .section-title::before{ background:var(--main); }
+  .about-sec .section-title{ color:#fff; }
+  .about-sec p{
     font-size:15px;
     line-height:1.75;
-    color:var(--dark);
     white-space:pre-line;
+    color:rgba(255,255,255,0.88);
   }
   .section-title{
     font-size:20px;
@@ -131,7 +134,7 @@
     display:inline-block;
   }
 
-  /* 4. WHY 카드 */
+  /* 4. WHY 카드 — 밝은(아이보리) 섹션 */
   .why-list{display:flex; flex-direction:column; gap:12px;}
   .why-card{
     border:1px solid var(--main-border);
@@ -153,31 +156,37 @@
   .why-title{font-size:15px; font-weight:700; margin-bottom:4px;}
   .why-desc{font-size:13.5px; color:var(--muted); line-height:1.55;}
 
-  /* 5. 차별점 */
+  /* 5. 차별점 — 단색(다크) 섹션 */
+  .diff-sec{ background:#241a12; color:#fff; }
+  .diff-sec .section-title{ color:#fff; }
   .diff-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:10px;
   }
   .diff-card{
-    background:var(--bg2);
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.1);
     border-radius:12px;
     padding:14px;
   }
   .diff-card.full{grid-column:1 / -1;}
-  .diff-title{font-size:13.5px; font-weight:700; margin-bottom:6px; line-height:1.4;}
-  .diff-sub{font-size:12px; color:var(--muted); line-height:1.6;}
+  .diff-title{font-size:13.5px; font-weight:700; margin-bottom:6px; line-height:1.4; color:#fff;}
+  .diff-sub{font-size:12px; color:rgba(255,255,255,0.65); line-height:1.6;}
 
-  /* 6. 소개의뢰 */
-  .ref-list{display:flex; flex-direction:column; gap:10px;}
-  .ref-item{
-    border-left:3px solid var(--main);
-    padding:10px 14px;
+  /* 6. 소개의뢰 — 리퍼럴이 많지 않아 한 카드에 통합 */
+  .ref-card{
     background:var(--bg2);
-    border-radius:0 10px 10px 0;
+    border-radius:14px;
+    padding:4px 18px;
   }
+  .ref-row{
+    padding:16px 0;
+    border-bottom:1px solid var(--main-border);
+  }
+  .ref-row:last-child{ border-bottom:none; }
   .ref-num{color:var(--main); font-weight:900; font-size:12px; margin-right:4px;}
-  .ref-title{font-size:14px; font-weight:700; display:inline;}
+  .ref-title{font-size:14px; font-weight:700; display:inline; color:var(--dark);}
   .ref-sub{font-size:12px; color:var(--muted); margin-top:6px; line-height:1.7;}
 
   /* 7. BNI 프로필 */
@@ -221,9 +230,9 @@
   }
   .bni-history b{color:#fff;}
 
-  /* 9. 연락처 */
-  .contact-list{display:flex; flex-direction:column; gap:10px;}
-  .contact-item{
+  /* 9. 연락처 — 링크 있는 항목만 2열 그리드 */
+  .con-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .con-item{
     display:flex; align-items:center; gap:12px;
     background:var(--bg2);
     border-radius:12px;
@@ -232,6 +241,7 @@
     text-decoration:none;
     color:var(--dark);
   }
+  .con-item.full{ grid-column:1 / -1; }
   .contact-icon{
     width:36px; height:36px; min-width:36px;
     border-radius:50%;
@@ -253,7 +263,7 @@
   .qr-box img{width:150px; height:150px; margin:0 auto 10px; border-radius:8px; background:#fff; padding:8px;}
   .qr-box p{font-size:12.5px; color:var(--muted);}
 
-  /* 12. 저장버튼 */
+  /* 12. 액션버튼 */
   .save-btns{display:flex; gap:10px;}
   .btn{
     flex:1;
@@ -316,7 +326,7 @@
   </div>
 
   <!-- 3. ABOUT -->
-  <section class="about">
+  <section class="about-sec">
     <div class="section-title" data-i18n="ko active">About</div>
     <div class="section-title" data-i18n="en">About</div>
     <div class="section-title" data-i18n="ja">About</div>
@@ -329,7 +339,7 @@
   </section>
 
   <!-- 4. WHY 3개 -->
-  <section class="why">
+  <section class="why-sec">
     <div class="section-title" data-i18n="ko active">Why</div>
     <div class="section-title" data-i18n="en">Why</div>
     <div class="section-title" data-i18n="ja">Why</div>
@@ -378,7 +388,7 @@
   </section>
 
   <!-- 5. 차별점 -->
-  <section class="diff">
+  <section class="diff-sec">
     <div class="section-title" data-i18n="ko active">차별점</div>
     <div class="section-title" data-i18n="en">What Sets Us Apart</div>
     <div class="section-title" data-i18n="ja">私たちの違い</div>
@@ -413,14 +423,14 @@
     </div>
   </section>
 
-  <!-- 6. 소개의뢰 -->
-  <section class="referral">
+  <!-- 6. 소개의뢰 (리퍼럴 한 카드로 통합) -->
+  <section class="ref-sec">
     <div class="section-title" data-i18n="ko active">이런 분을 소개해 주세요</div>
     <div class="section-title" data-i18n="en">Referrals I'm Looking For</div>
     <div class="section-title" data-i18n="ja">こんな方をご紹介ください</div>
     <div class="section-title" data-i18n="zh">期待您为我引荐</div>
-    <div class="ref-list">
-      <div class="ref-item">
+    <div class="ref-card">
+      <div class="ref-row">
         <span class="ref-num">01</span><span class="ref-title" data-i18n="ko active">종교·기도 문화 분야 (핵심 타깃)</span>
         <span class="ref-title" data-i18n="en">Religious & Prayer Culture (Core Target)</span>
         <span class="ref-title" data-i18n="ja">宗教・祈りの文化分野(コアターゲット)</span>
@@ -430,7 +440,7 @@
         <div class="ref-sub" data-i18n="ja">信者数の多い寺院の住職・宗務所責任者 / 祈祷・奉安灯・供養灯・願い灯プログラムを行う寺院 / テンプルステイ・瞑想プログラム運営寺院 / 法会・行事の多い宗教施設運営者 / 瞑想・修行・ヒーリングセンター運営者</div>
         <div class="ref-sub" data-i18n="zh">信众众多寺院的住持或宗务所负责人 / 常年开展祈祷、奉安灯、供养灯、许愿灯项目的寺院 / 运营寺庙静修和禅修项目的寺院 / 法会活动较多的宗教设施运营者 / 冥想·修行·疗愈中心运营者</div>
       </div>
-      <div class="ref-item">
+      <div class="ref-row">
         <span class="ref-num">02</span><span class="ref-title" data-i18n="ko active">라이프스타일·리테일 분야</span>
         <span class="ref-title" data-i18n="en">Lifestyle & Retail</span>
         <span class="ref-title" data-i18n="ja">ライフスタイル・リテール分野</span>
@@ -440,7 +450,7 @@
         <div class="ref-sub" data-i18n="ja">ライフスタイルセレクトショップ代表 / 百貨店・免税店MD / 観光土産店運営者 / プレミアムギフトショップ代表 / 大型ディスカウントストア商品企画担当者</div>
         <div class="ref-sub" data-i18n="zh">生活方式概念店代表 / 百货商店·免税店买手 / 旅游纪念品商店运营者 / 高端礼品店代表 / 大型折扣卖场商品企划负责人</div>
       </div>
-      <div class="ref-item">
+      <div class="ref-row">
         <span class="ref-num">03</span><span class="ref-title" data-i18n="ko active">공간 브랜딩 분야</span>
         <span class="ref-title" data-i18n="en">Space Branding</span>
         <span class="ref-title" data-i18n="ja">空間ブランディング分野</span>
@@ -450,7 +460,7 @@
         <div class="ref-sub" data-i18n="ja">ホテル代表・総支配人 / リゾート運営者 / インテリアデザイナー / 空間ブランディング専門会社 / ESG担当者</div>
         <div class="ref-sub" data-i18n="zh">酒店代表及总经理 / 度假村运营者 / 室内设计师 / 空间品牌专业公司 / ESG负责人</div>
       </div>
-      <div class="ref-item">
+      <div class="ref-row">
         <span class="ref-num">04</span><span class="ref-title" data-i18n="ko active">글로벌 분야</span>
         <span class="ref-title" data-i18n="en">Global</span>
         <span class="ref-title" data-i18n="ja">グローバル分野</span>
@@ -512,14 +522,14 @@
     </div>
   </section>
 
-  <!-- 9. 연락처 -->
+  <!-- 9. 연락처 (링크 있는 항목만) -->
   <section class="contact">
     <div class="section-title" data-i18n="ko active">연락처</div>
     <div class="section-title" data-i18n="en">Contact</div>
     <div class="section-title" data-i18n="ja">連絡先</div>
     <div class="section-title" data-i18n="zh">联系方式</div>
-    <div class="contact-list">
-      <a class="contact-item" href="tel:010-3551-1983">
+    <div class="con-grid">
+      <a class="con-item full" href="tel:010-3551-1983">
         <div class="contact-icon">📞</div>
         <div>
           <div class="contact-label" data-i18n="ko active">전화</div>
@@ -529,16 +539,6 @@
           <div class="contact-value">010-3551-1983</div>
         </div>
       </a>
-      <div class="contact-item">
-        <div class="contact-icon">🏢</div>
-        <div>
-          <div class="contact-label" data-i18n="ko active">회사</div>
-          <div class="contact-label" data-i18n="en">Company</div>
-          <div class="contact-label" data-i18n="ja">会社</div>
-          <div class="contact-label" data-i18n="zh">公司</div>
-          <div class="contact-value">선향양초 (SunHyang candle)</div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -549,7 +549,7 @@
     <div class="section-title" data-i18n="ja">QRコード</div>
     <div class="section-title" data-i18n="zh">二维码</div>
     <div class="qr-box">
-      <img src="./qr.png" alt="QR code">
+      <img src="./qr_code.png" alt="QR code">
       <p data-i18n="ko active">스캔하면 연락처가 저장됩니다</p>
       <p data-i18n="en">Scan to save this contact</p>
       <p data-i18n="ja">スキャンすると連絡先が保存されます</p>
