@@ -656,7 +656,21 @@ body {
       <span class="lang-inline" data-lang="jp">連絡先を保存</span>
       <span class="lang-inline" data-lang="cn">保存联系人</span>
     </button>
-    <button onclick="saveToCardbook({id:'kimjunrae',name:'김준래',nameEn:'Kim Junrae',company:'무늬디자인',title:'대표',phone:'010-7366-8555',email:'',chapter:'자이언츠',bni:'BNI 자이언츠 챕터',url:'https://jinjjabg-hub.github.io/bni-giants/김준래/'})" class="save-btn btn-secondary">
+    <button onclick="shareCard()" class="save-btn btn-secondary">
+      <span>📤</span>
+      <span class="lang-inline active" data-lang="ko">명함 공유하기</span>
+      <span class="lang-inline" data-lang="en">Share Card</span>
+      <span class="lang-inline" data-lang="jp">名刺をシェア</span>
+      <span class="lang-inline" data-lang="cn">分享名片</span>
+    </button>
+    <button onclick="saveContact()" class="save-btn btn-secondary">
+      <span>📞</span>
+      <span class="lang-inline active" data-lang="ko">연락처 저장</span>
+      <span class="lang-inline" data-lang="en">Save Contact</span>
+      <span class="lang-inline" data-lang="jp">連絡先を保存</span>
+      <span class="lang-inline" data-lang="cn">保存联系人</span>
+    </button>
+    <button onclick="saveToCardbook({dicaUrl:'https://jinjjabg-hub.github.io/bni-giants/김준래/',id:'kimjunrae',name:'김준래',nameEn:'Kim Junrae',company:'무늬디자인',title:'대표',phone:'010-7366-8555',email:'',chapter:'자이언츠',bni:'BNI 자이언츠 챕터',url:'https://jinjjabg-hub.github.io/bni-giants/김준래/'})" class="save-btn btn-secondary">
       <span>🗂️</span>
       <span class="lang-inline active" data-lang="ko">명함 저장하기</span>
       <span class="lang-inline" data-lang="en">Save to Cardbook</span>
@@ -1024,5 +1038,25 @@ initDots();
 setInterval(() => slidePort(1), 4000);
 </script>
 <script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+
+<script>
+/* v8 표준 공유 */
+if(typeof shareCard==='undefined'){
+  window.shareCard=function(){
+    if(navigator.share){navigator.share({title:document.title,url:window.location.href}).catch(function(){});}
+    else{navigator.clipboard.writeText(window.location.href).then(function(){alert('링크가 복사되었습니다!');});}
+  };
+}
+</script>
+
+<script>
+/* v8 표준 연락처 저장 */
+if(typeof saveContact==='undefined'){
+  window.saveContact=function(){
+    var v='BEGIN:VCARD\nVERSION:3.0\nFN:김준래\nN:김;준래;;;\nORG:무늬디자인\nTITLE:대표\nTEL;TYPE=CELL:010-7366-8555\nURL:https://jinjjabg-hub.github.io/bni-giants/김준래/\nEND:VCARD';
+    var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([v],{type:'text/vcard'}));a.download='KimJunrae.vcf';a.click();
+  };
+}
+</script>
 </body>
 </html>
