@@ -590,7 +590,8 @@ footer{
 <!-- SAVE -->
 <section class="save-section fade-in">
   <button class="btn-save btn-save-contact" onclick="saveContact()">👤 <span id="btn-contact">연락처 저장</span></button>
-  <button class="btn-save btn-save-holder" onclick="saveToCardbook({id:'elroi-parksungjun', name:'박성준', company:'(주)엘로이미디어', role:'대표', phone:'010-93192370', field:'방송장비 전광판', chapter:'자이언츠', url:window.location.href, photo:'profile1.jpg'})">📋 <span id="btn-holder">명함첩에 저장</span></button>
+  <button class="btn-save btn-save-holder" onclick="shareCard()">📋 <span id="btn-holder">명함 공유하기</span></button>
+    <button class="btn-save btn-save-holder" onclick="saveToCardbook({dicaUrl:'https://jinjjabg-hub.github.io/bni-giants/박성준/',id:'elroi-parksungjun', name:'박성준', company:'(주)엘로이미디어', role:'대표', phone:'010-93192370', field:'방송장비 전광판', chapter:'자이언츠', url:window.location.href, photo:'profile1.jpg'})">📋 <span id="btn-holder">명함첩에 저장</span></button>
 </section>
 
 <!-- CONNECT -->
@@ -838,5 +839,15 @@ document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 initDots();
 </script>
 <script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+
+<script>
+/* v8 표준 공유 */
+if(typeof shareCard==='undefined'){
+  window.shareCard=function(){
+    if(navigator.share){navigator.share({title:document.title,url:window.location.href}).catch(function(){});}
+    else{navigator.clipboard.writeText(window.location.href).then(function(){alert('링크가 복사되었습니다!');});}
+  };
+}
+</script>
 </body>
 </html>
