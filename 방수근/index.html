@@ -574,7 +574,7 @@
         <span data-i18n="ja">📞 連絡先を保存</span>
         <span data-i18n="zh">📞 保存联系人</span>
       </button>
-      <button class="btn btn-ghost" onclick="saveToCardbook()">
+      <button class="btn btn-ghost" onclick="saveToCardbook({name:'방수근',company:'선향양초(SunHyang candle)',title:'대표',phone:'010-3551-1983',dicaUrl:'https://jinjjabg-hub.github.io/bni-giants/방수근/'})">
         <span data-i18n="ko active">🗂️ 명함첩 저장</span>
         <span data-i18n="en">🗂️ Save to Cardbook</span>
         <span data-i18n="ja">🗂️ 名刺帳に保存</span>
@@ -652,11 +652,7 @@
   }
 
   // 🗂️ 명함첩 저장 — 별도 명함첩 서비스/백엔드가 연결되면 여기서 API 호출로 교체.
-  // 지금은 연동된 서비스가 없어 vCard 다운로드로 대체.
-  function saveToCardbook(){
-    saveContact();
-    alert('연락처가 저장되었습니다. 별도 명함첩 서비스와 연동하시려면 알려주세요.');
-  }
 </script>
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
 </body>
 </html>
