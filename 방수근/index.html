@@ -64,13 +64,14 @@ nav { position:fixed; top:0; left:0; right:0; max-width:430px; margin:0 auto; z-
 .profile-tag { display:inline-block; font-size:12px; color:var(--blue); margin-top:6px; font-weight:600; }
 
 /* SECTIONS COMMON */
-section { padding:52px 24px; }
+section { padding:40px 24px; }
 .sec-dark   { background:var(--bg-dark); }
+.sec-dark2  { background:var(--bg-dark2); }
 .sec-dark3  { background:var(--bg-dark3); }
 .sec-light  { background:var(--bg-light); color:var(--text-light); }
 .sec-label { font-size:12px; font-weight:700; letter-spacing:2px; color:var(--blue); margin-bottom:12px; }
-.sec-title { font-size:24px; font-weight:800; line-height:1.35; margin-bottom:28px; }
-.sec-dark .sec-title, .sec-dark3 .sec-title { color:#fff; }
+.sec-title { font-size:24px; font-weight:800; line-height:1.35; margin-bottom:20px; }
+.sec-dark .sec-title, .sec-dark2 .sec-title, .sec-dark3 .sec-title { color:#fff; }
 .sec-light .sec-title { color:var(--text-light); }
 
 /* ABOUT */
@@ -100,12 +101,14 @@ section { padding:52px 24px; }
 .ref-desc { font-size:12.5px; color:var(--muted-light); line-height:1.6; }
 
 /* CAREER */
-.career-badges { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
+.career-badges { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px; }
 .badge { font-size:12.5px; font-weight:600; padding:8px 14px; border-radius:20px; background:#fff; color:var(--text-light);
   border:1px solid rgba(31,59,44,0.15); }
-.career-block { margin-bottom:20px; }
+.career-block { margin-bottom:14px; }
 .career-year { font-size:12px; font-weight:700; color:var(--blue2); margin-bottom:4px; }
 .career-desc { font-size:13.5px; color:var(--muted-light); line-height:1.7; }
+.sec-dark2 .career-year { color:var(--blue); }
+.sec-dark2 .career-desc { color:rgba(255,255,255,0.75); }
 
 /* CONTACT */
 .con-item { display:flex; align-items:center; gap:12px; padding:16px 0; border-bottom:1px solid rgba(31,59,44,0.1); font-size:14.5px; font-weight:600; color:var(--text-light); }
@@ -393,7 +396,7 @@ footer { text-align:center; padding:32px 24px 40px; background:var(--bg-dark); c
 </section>
 
 <!-- CAREER -->
-<section class="sec-light">
+<section class="sec-dark2">
   <div class="sec-label">CAREER</div>
   <div class="sec-title">
     <span data-lang="kr" class="active">걸어온 길</span>
