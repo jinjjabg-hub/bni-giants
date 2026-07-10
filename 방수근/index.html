@@ -114,6 +114,19 @@ section { padding:40px 24px; }
 .con-item { display:flex; align-items:center; gap:12px; padding:16px 0; border-bottom:1px solid rgba(31,59,44,0.1); font-size:14.5px; font-weight:600; color:var(--text-light); }
 .con-item:last-child { border-bottom:none; }
 
+/* PORTFOLIO SLIDE */
+.slide-wrap { position:relative; margin:0 -24px; overflow:hidden; }
+.slide-track { display:flex; transition:transform 0.4s ease; }
+.slide-item { flex:0 0 100%; aspect-ratio:4/3; overflow:hidden; }
+.slide-item img { width:100%; height:100%; object-fit:cover; }
+.slide-btn { position:absolute; top:50%; transform:translateY(-50%); width:36px; height:36px; border-radius:50%;
+  background:rgba(15,36,23,0.55); color:#fff; border:none; font-size:18px; display:flex; align-items:center; justify-content:center; cursor:pointer; }
+.slide-btn-l { left:12px; }
+.slide-btn-r { right:12px; }
+.slide-dots { display:flex; justify-content:center; gap:7px; margin-top:16px; }
+.slide-dot { width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,0.25); cursor:pointer; }
+.slide-dot.active { background:var(--blue); width:18px; border-radius:4px; }
+
 /* BUTTONS */
 .btn-wrap { display:flex; flex-direction:column; gap:12px; }
 .btn { display:flex; align-items:center; justify-content:center; gap:8px; width:100%; padding:16px; border-radius:14px;
@@ -471,6 +484,29 @@ footer { text-align:center; padding:32px 24px 40px; background:var(--bg-dark); c
   </div>
 </section>
 
+<!-- PORTFOLIO -->
+<section class="sec-dark3">
+  <div class="sec-label">PORTFOLIO</div>
+  <div class="sec-title">
+    <span data-lang="kr" class="active">쇼룸 & 컬렉션</span>
+    <span data-lang="en">Showroom & Collections</span>
+    <span data-lang="jp">ショールーム＆コレクション</span>
+    <span data-lang="cn">展厅与系列</span>
+  </div>
+  <div class="slide-wrap" id="slide-port">
+    <div class="slide-track" id="slide-track-port">
+      <div class="slide-item"><img src="portfolio1.png" alt="선향양초 쇼룸"></div>
+      <div class="slide-item"><img src="portfolio2.png" alt="사찰 봉안 · 소원등 컬렉션"></div>
+      <div class="slide-item"><img src="portfolio3.png" alt="프리미엄 컬렉션 기사지세"></div>
+      <div class="slide-item"><img src="portfolio4.png" alt="명상존 전시 공간"></div>
+      <div class="slide-item"><img src="portfolio5.png" alt="빛의 결 캔들 갤러리"></div>
+    </div>
+    <button class="slide-btn slide-btn-l" onclick="portSlide(-1)">‹</button>
+    <button class="slide-btn slide-btn-r" onclick="portSlide(1)">›</button>
+  </div>
+  <div class="slide-dots" id="slide-dots-port"></div>
+</section>
+
 <!-- ACTION BUTTONS -->
 <section class="sec-dark">
   <div class="btn-wrap">
@@ -524,6 +560,43 @@ function saveContact() {
   a.download = '방수근_선향양초.vcf';
   a.click();
 }
+
+/* 포트폴리오 슬라이드 */
+let portIdx = 0;
+const portTotal = 5;
+
+function initPortSlide() {
+  const dots = document.getElementById('slide-dots-port');
+  if (!dots) return;
+  dots.innerHTML = '';
+  for (let i = 0; i < portTotal; i++) {
+    const d = document.createElement('div');
+    d.className = 'slide-dot' + (i === 0 ? ' active' : '');
+    d.onclick = () => goPortSlide(i);
+    dots.appendChild(d);
+  }
+}
+function goPortSlide(idx) {
+  portIdx = (idx + portTotal) % portTotal;
+  document.getElementById('slide-track-port').style.transform = `translateX(-${portIdx * 100}%)`;
+  document.querySelectorAll('#slide-dots-port .slide-dot').forEach((d, i) => {
+    d.classList.toggle('active', i === portIdx);
+  });
+}
+function portSlide(dir) { goPortSlide(portIdx + dir); }
+
+(function() {
+  let sx = 0;
+  const track = document.getElementById('slide-track-port');
+  if (!track) return;
+  track.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, {passive:true});
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - sx;
+    if (Math.abs(dx) > 40) portSlide(dx < 0 ? 1 : -1);
+  }, {passive:true});
+})();
+
+document.addEventListener('DOMContentLoaded', initPortSlide);
 </script>
 </body>
 </html>
