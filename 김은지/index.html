@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>김은지 | 뷰티넥서스</title>
+<meta property="og:title" content="김은지 | CEO · 뷰티넥서스">
+<meta property="og:description" content="뷰티의 모든 연결을 더 쉽고, 더 똑똑하게. 고객에게는 맞춤 뷰티 서비스를, 업체에는 성장 기회를 연결합니다.">
+<meta property="og:image" content="https://jinjjabg-hub.github.io/NAMECARD/%EA%B9%80%EC%9D%80%EC%A7%80/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jinjjabg-hub.github.io/NAMECARD/%EA%B9%80%EC%9D%80%EC%A7%80/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --navy: #0d0d0d;
+  --navy2: #171717;
+  --navy3: #212121;
+  --gold: #c9a24c;
+  --gold2: #e8c86a;
+  --purple: #a78bfa;
+  --light: #f4f1e8;
+  --text-dark: #f0ece0;
+  --text-light: #1a1a2e;
+  --muted-dark: #a89060;
+  --muted-light: #5a4a2a;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+html { font-size: 16px; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--navy);
+  color: var(--text-dark);
+  max-width: 480px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+[data-lang] { display: none; }
+[data-lang].active { display: block; }
+span[data-lang].active { display: inline; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  max-width: 480px; margin: 0 auto;
+  background: rgba(13,13,13,0.97);
+  backdrop-filter: blur(10px);
+  padding: 10px 16px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid rgba(201,162,76,0.25);
+}
+.nav-brand { font-size: 12px; font-weight: 700; color: var(--gold); white-space: nowrap; }
+.lang-btns { display:flex; gap:4px; }
+.lang-btn {
+  padding: 5px 8px;
+  border: 1px solid rgba(201,162,76,0.35);
+  background: transparent;
+  color: var(--muted-dark);
+  font-size: 10px; font-weight: 700;
+  cursor: pointer; border-radius: 5px;
+  transition: all 0.2s;
+  min-width: 40px; min-height: 32px;
+  display: flex; align-items:center; justify-content:center;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.lang-btn.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+
+/* ── HERO : hero.png = 1672x941 (16:9 가로형) ── */
+.hero {
+  margin-top: 54px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1672 / 941;
+  overflow: hidden;
+}
+.hero img.hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+.hero-overlay {
+  position: absolute; inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(13,13,13,0.05) 0%,
+    rgba(13,13,13,0.15) 40%,
+    rgba(13,13,13,0.78) 78%,
+    rgba(13,13,13,0.95) 100%
+  );
+}
+.hero-content {
+  position: absolute; bottom:0; left:0; right:0; z-index:2;
+  padding: 20px 20px 18px;
+}
+.hero-badge {
+  display: inline-block;
+  background: var(--purple);
+  color: #1a1a2e;
+  font-size: 10px; font-weight: 700;
+  padding: 4px 12px; border-radius: 20px;
+  margin-bottom: 10px; letter-spacing: 1.5px;
+}
+.hero-name {
+  font-size: 30px; font-weight: 700;
+  color: #fff; line-height: 1.15;
+  margin-bottom: 7px; letter-spacing: -0.5px;
+}
+.hero-title { font-size: 13px; color: var(--gold); opacity: 0.95; line-height: 1.5; }
+
+/* ── PROFILE ROW ── */
+.profile-row {
+  background: var(--navy2);
+  padding: 16px 20px;
+  display: flex; align-items: center; gap:14px;
+  border-bottom: 1px solid rgba(201,162,76,0.12);
+}
+.profile-img {
+  width: 64px; height: 64px; min-width:64px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  overflow: hidden; flex-shrink: 0;
+}
+.profile-img img { width:100%; height:100%; object-fit:cover; object-position: center top; }
+.profile-info h2 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.profile-info p { font-size: 12px; color: var(--muted-dark); line-height: 1.5; }
+
+/* ── 공통 섹션 ── */
+section { padding: 40px 20px; }
+.section-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 6px;
+}
+.section-title { font-size: 22px; font-weight: 700; line-height: 1.35; margin-bottom: 22px; }
+
+/* ── ABOUT ── */
+.about { background: var(--navy); }
+.about .section-title { color: #fff; }
+.slogan {
+  font-size: 15px; font-weight: 700;
+  color: var(--gold); margin-bottom: 14px;
+  font-style: italic; line-height: 1.6;
+}
+.about-text { font-size: 14px; line-height: 1.9; color: var(--text-dark); opacity: 0.85; }
+
+/* ── WHY ── */
+.why { background: var(--light); }
+.why .section-label { color: var(--muted-light); }
+.why .section-title { color: var(--text-light); }
+.why-cards { display: flex; flex-direction: column; gap:14px; }
+.why-card {
+  background: #fff;
+  border: 1px solid rgba(167,139,250,0.22);
+  border-left: 4px solid var(--purple);
+  border-radius: 10px; padding: 18px 16px;
+}
+.why-card h3 { font-size: 15px; font-weight: 700; color: var(--text-light); margin-bottom: 8px; line-height: 1.4; }
+.why-card p { font-size: 13px; line-height: 1.85; color: #444; }
+.why-card p strong { color: var(--navy); font-weight: 700; }
+
+/* ── DIFFERENCE ── */
+.difference { background: var(--navy2); }
+.difference .section-title { color: #fff; }
+.diff-grid { display: flex; flex-direction: column; gap:12px; }
+.diff-card {
+  background: var(--navy3);
+  border: 1px solid rgba(201,162,76,0.12);
+  border-radius: 10px; padding: 18px 16px;
+}
+.diff-card h3 { font-size: 14px; font-weight: 700; color: var(--gold); margin-bottom: 8px; line-height: 1.4; }
+.diff-card p { font-size: 13px; line-height: 1.8; color: var(--text-dark); opacity: 0.8; }
+
+/* ── REFERRAL ── */
+.referral { background: var(--light); }
+.referral .section-label { color: var(--muted-light); }
+.referral .section-title { color: var(--text-light); }
+.ref-list { display: flex; flex-direction: column; gap:10px; }
+.ref-item {
+  display: flex; gap:12px; align-items:flex-start;
+  background: #fff; border-radius: 10px;
+  padding: 15px 14px; border: 1px solid rgba(0,0,0,0.05);
+}
+.ref-num {
+  width: 26px; height: 26px; min-width:26px;
+  border-radius: 50%; background: var(--purple);
+  color: #1a1a2e; font-weight: 700; font-size: 12px;
+  display: flex; align-items:center; justify-content:center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.ref-item p { font-size: 13px; line-height: 1.8; color: #333; }
+
+/* ── CAREER ── */
+.career { background-color: #f0f4ff; }
+.career .section-label { color: var(--muted-light); }
+.career .section-title { color: var(--text-light); }
+.career-list { display: flex; flex-direction: column; gap:18px; }
+.career-item {
+  display: flex; gap:12px; align-items:flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.career-item:last-child { border-bottom: none; padding-bottom: 0; }
+.career-badge {
+  background: var(--navy); color: #fff;
+  font-size: 10px; font-weight: 700;
+  padding: 4px 10px; border-radius: 4px;
+  white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+}
+.career-content { background: rgba(255,255,255,0.82); border-radius: 8px; padding: 12px 14px; flex:1; }
+.career-item h3 { font-size: 14px; font-weight: 700; color: var(--text-light); margin-bottom: 7px; line-height: 1.4; }
+.career-item p { font-size: 12px; line-height: 1.85; color: #555; }
+
+/* ── CONTACT ── */
+.contact { background: var(--light); }
+.contact .section-label { color: var(--muted-light); }
+.contact .section-title { color: var(--text-light); }
+.contact-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.contact-item {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; text-align: center;
+  background: #fff; border-radius: 12px;
+  padding: 16px 10px; border: 1px solid rgba(0,0,0,0.05);
+  text-decoration: none; min-height: 100px;
+}
+.contact-item:active { transform: scale(0.97); }
+.contact-icon {
+  width: 42px; height: 42px; min-width:42px;
+  border-radius: 50%; background: var(--navy);
+  display: flex; align-items:center; justify-content:center;
+  font-size: 18px; flex-shrink: 0;
+}
+.contact-label { font-size: 10px; color: #999; }
+.contact-value { font-size: 12px; font-weight: 600; color: var(--text-light); line-height: 1.4; word-break: break-all; }
+
+/* ── ACTION ── */
+.action { background: var(--navy2); padding: 32px 20px; }
+.btn-group { display: flex; flex-direction: column; gap:12px; }
+.btn {
+  display: block; width: 100%; padding: 17px 16px;
+  border: none; border-radius: 10px;
+  font-size: 15px; font-weight: 700;
+  cursor: pointer; text-align: center;
+  transition: all 0.15s; font-family: 'Noto Sans KR', sans-serif;
+  min-height: 54px; letter-spacing: 0.3px;
+}
+.btn-primary { background: var(--gold); color: var(--navy); }
+.btn-secondary { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
+.btn-mandu { background: linear-gradient(135deg, #6d5bd0, #a78bfa); color: #fff; border: none; }
+.btn-share { background: linear-gradient(135deg, #1a6b3a, #0d8a4a); color: #fff; border: none; }
+.btn:active { transform: scale(0.97); opacity: 0.9; }
+
+/* 공유 바텀시트 */
+.share-sheet { display:none; position:fixed; inset:0; z-index:200; }
+.share-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.5); }
+.share-panel {
+  position:absolute; bottom:0; left:0; right:0;
+  max-width:480px; margin:0 auto;
+  background:#fff; border-radius:20px 20px 0 0;
+  padding:20px 20px 40px;
+}
+.share-handle { width:40px; height:4px; background:#ddd; border-radius:2px; margin:0 auto 18px; }
+.share-title { font-size:13px; color:#999; text-align:center; margin-bottom:20px; font-weight:600; }
+.share-btns { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:16px; }
+.share-btn { display:flex; flex-direction:column; align-items:center; gap:8px; background:none; border:none; cursor:pointer; padding:8px 4px; }
+.share-btn-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; }
+.share-btn span { font-size:11px; color:#333; font-weight:600; font-family:'Noto Sans KR',sans-serif; }
+.share-cancel { width:100%; padding:14px; background:#f2f2f2; border:none; border-radius:10px; font-size:15px; font-weight:700; color:#444; cursor:pointer; font-family:'Noto Sans KR',sans-serif; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy); padding: 24px 20px;
+  text-align: center; border-top: 1px solid rgba(201,162,76,0.12);
+}
+footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
+footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">뷰티넥서스</div>
+  <div class="lang-btns">
+    <button class="lang-btn active" onclick="setLang('kr')">한국어</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('jp')">日本語</button>
+    <button class="lang-btn" onclick="setLang('cn')">中文</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <img class="hero-img" src="hero.png" alt="김은지">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span data-lang="kr" class="active">뷰티 커넥터</span>
+      <span data-lang="en">Beauty Connector</span>
+      <span data-lang="jp">ビューティーコネクター</span>
+      <span data-lang="cn">美容连接者</span>
+    </div>
+    <div class="hero-name">
+      <span data-lang="kr" class="active">김 은 지</span>
+      <span data-lang="en">KIM EUN JI</span>
+      <span data-lang="jp">キム・ウンジ</span>
+      <span data-lang="cn">金蒑智</span>
+    </div>
+    <div class="hero-title">
+      <span data-lang="kr" class="active">CEO · 뷰티넥서스</span>
+      <span data-lang="en">CEO · Beauty Nexus</span>
+      <span data-lang="jp">CEO・ビューティーネクサス</span>
+      <span data-lang="cn">CEO · 美容连接社</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE ROW -->
+<div class="profile-row">
+  <div class="profile-img">
+    <img src="profil.png" alt="김은지">
+  </div>
+  <div class="profile-info">
+    <h2>김은지 · Kim Eun Ji</h2>
+    <p>
+      <span data-lang="kr" class="active">뷰티 커넥터 · 뷰티넥서스 대표</span>
+      <span data-lang="en">Beauty Connector · CEO of Beauty Nexus</span>
+      <span data-lang="jp">ビューティーコネクター・ビューティーネクサス代表</span>
+      <span data-lang="cn">美容连接者 · 美容连接社代表</span>
+    </p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="section-label">About</div>
+  <div class="slogan">
+    <span data-lang="kr" class="active">뷰티의 모든 연결을 더 쉽고, 더 똑똑하게!</span>
+    <span data-lang="en">Every beauty connection — easier, smarter.</span>
+    <span data-lang="jp">ビューティーのすべての連結を、もっと簡単に、もっと賢く。</span>
+    <span data-lang="cn">让美容的所有连接,更简单,更智能。</span>
+  </div>
+  <p class="about-text">
+    <span data-lang="kr" class="active">고객에게는 가장 적합한 뷰티 서비스를 연결하고, 뷰티샵·병원·한의원에는 새로운 고객과 뷰티 교육을 통한 성장 기회를 연결하는 뷰티 인프라를 구축하고 운영합니다.</span>
+    <span data-lang="en">I connect customers with the beauty service that truly fits them, and give beauty shops, clinics, and hospitals access to new customers and growth through education — building the infrastructure that ties beauty together.</span>
+    <span data-lang="jp">お客様には最も適したビューティーサービスをつなぎ、ビューティーショップ・病院・韓医院には新しい顧客とビューティー教育を通じた成長の機会をつなぐビューティーインフラを構築・運営しています。</span>
+    <span data-lang="cn">我为顾客连接最适合的美容服务,也为美容院、医院、韩医院连接新客户与通过美容教育获得成长的机会,构建并运营这样的美容基础设施。</span>
+  </p>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="section-label">Why Us</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">왜 뷰티넥서스인가</span>
+    <span data-lang="en">Why Beauty Nexus?</span>
+    <span data-lang="jp">なぜビューティーネクサスなのか</span>
+    <span data-lang="cn">为什么选择美容连接社</span>
+  </div>
+  <div class="why-cards">
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">① 검색이 아니라 연결</span>
+        <span data-lang="en">① Connection, Not Just Search</span>
+        <span data-lang="jp">①検索ではなく連結</span>
+        <span data-lang="cn">①连接,而非搜索</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">좋은 실력과 서비스를 가진 업체는 많지만, 고객은 어디를 가야 할지 몰라 시간을 쓰고 실패를 경험하기도 합니다. 저는 검색보다 연결이 쉬운 세상을 만들고 싶었습니다.</span>
+        <span data-lang="en">Great beauty shops and clinics are everywhere, but customers still waste time and sometimes pick wrong. I wanted to build a world where connecting is easier than searching.</span>
+        <span data-lang="jp">実力とサービスの良い店は多いのに、お客様はどこへ行けばいいか分からず時間を使い、失敗することもあります。検索より連結が簡単な世の中を作りたいと思いました。</span>
+        <span data-lang="cn">优质的美容院和诊所有很多,但顾客常常不知道该去哪里,浪费时间还可能选错。我想打造一个连接比搜索更简单的世界。</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">② 고민·예산·거리까지 분석한 맞춤 추천</span>
+        <span data-lang="en">② Personalized Picks, Not Just One Answer</span>
+        <span data-lang="jp">②悩み・予算・距離まで分析したおすすめ</span>
+        <span data-lang="cn">②综合分析预算与距离的精准推荐</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">한 곳만 정해주는 게 아니라 잘 선택할 수 있게 돕습니다. 고객의 고민, 원하는 결과, 예산, 거리, 선호 조건을 분석해 가장 잘 맞는 곳 <strong>5곳</strong>을 추천 순서와 이유까지 함께 제공하고, 예약까지 바로 가능합니다.</span>
+        <span data-lang="en">I don't just point to a single place — I help you choose well. Based on your concerns, goals, budget, distance, and preferences, I recommend the <strong>top 5</strong> matches, ranked with reasons, and you can book right away.</span>
+        <span data-lang="jp">一つの店だけを決めるのではなく、よく選べるようお手伝いします。お客様の悩み、望む結果、予算、距離、好みを分析し、最も合う<strong>5か所</strong>を順位と理由とともにご提案し、すぐに予約もできます。</span>
+        <span data-lang="cn">不是只给你指定一家,而是帮助你做出好的选择。根据顾客的困扰、期望效果、预算、距离和偏好进行分析,推荐最合适的<strong>5家</strong>,附上顺序和理由,还能立即预约。</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">③ 뷰잇(Beauit) 플랫폼의 AI 맞춤 추천</span>
+        <span data-lang="en">③ AI-Powered Matching on the Beauit Platform</span>
+        <span data-lang="jp">③ビューイット(Beauit)プラットフォームのAIおすすめ</span>
+        <span data-lang="cn">③Beauit平台的AI智能推荐</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active"><strong>AI 맞춤 추천</strong>, 내 주변 뷰티샵 검색, 여행·출장지 뷰티 서비스 연결, 얼굴 사진 분석 기반 개인 맞춤 뷰티 관리 제안까지 — 하나의 플랫폼에서 제공합니다. (최종 결정은 전문가 상담을 전제로 합니다.)</span>
+        <span data-lang="en"><strong>AI-based recommendations</strong>, nearby beauty shop search, beauty services wherever you travel, and personalized suggestions from facial photo analysis — all in one platform. (Final decisions are always made with an expert consultation.)</span>
+        <span data-lang="jp"><strong>AIによるおすすめ</strong>、近くのビューティーショップ検索、旅行・出張先でのビューティーサービス連結、顔写真分析による個人向けビューティー管理提案まで、ひとつのプラットフォームで提供します。（最終判断は必ず専門家相談を前提とします。）</span>
+        <span data-lang="cn"><strong>AI智能推荐</strong>、附近美容院搜索、旅行出差地美容服务连接,以及基于面部照片分析的个性化美容管理建议——都在一个平台中提供。(最终方案以专家咨询为准。)</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENCE -->
+<section class="difference">
+  <div class="section-label">Difference</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">차별점</span>
+    <span data-lang="en">What Makes Us Different</span>
+    <span data-lang="jp">差別化ポイント</span>
+    <span data-lang="cn">差异化优势</span>
+  </div>
+  <div class="diff-grid">
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">창업 성향 분석 &amp; 교육 연결</span>
+        <span data-lang="en">Startup Fit Analysis &amp; Education</span>
+        <span data-lang="jp">創業適性分析＆教育連結</span>
+        <span data-lang="cn">创业倾向分析与教育连接</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">창업을 준비하는 분에게는 성향에 맞는 분야와 전문 교육기관을 연결해 드립니다. 시작부터 성장까지 함께합니다.</span>
+        <span data-lang="en">Beauty entrepreneurs get matched to the right field and professional training partners — support from day one through growth.</span>
+        <span data-lang="jp">創業を準備する方には、適性に合った分野と専門教育機関をご紹介します。スタートから成長までサポートします。</span>
+        <span data-lang="cn">为准备创业的人匹配合适的领域与专业教育机构,从起步到成长全程陪伴。</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">검증된 업체만 입점</span>
+        <span data-lang="en">Verified Partners Only</span>
+        <span data-lang="jp">検証済みの店舗のみ入店</span>
+        <span data-lang="cn">仅收录经过验证的商家</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">뷰티샵, 병원, 한의원까지 — 실제 후기 기반으로 검증된 업체만 플랫폼에 연결합니다. 안심하고 선택할 수 있습니다.</span>
+        <span data-lang="en">From beauty shops to clinics and hospitals — only businesses verified through real reviews make it onto the platform, so you can choose with confidence.</span>
+        <span data-lang="jp">ビューティーショップ、病院、韓医院まで、実際の口コミに基づいて検証された店舗だけをプラットフォームに繋ぎます。安心して選べます。</span>
+        <span data-lang="cn">从美容院到医院、韩医院,平台只连接经过真实评价验证的商家,让您放心选择。</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">전국 어디서나, 여행지에서도</span>
+        <span data-lang="en">Nationwide, Even While You Travel</span>
+        <span data-lang="jp">全国どこでも、旅先でも</span>
+        <span data-lang="cn">全国各地,出行途中也不例外</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">낯선 지역, 여행이나 출장 중에도 믿을 수 있는 뷰티 서비스를 그 자리에서 연결해 드립니다.</span>
+        <span data-lang="en">Even in an unfamiliar city — for travel or business — I connect you with trustworthy beauty services on the spot.</span>
+        <span data-lang="jp">不慣れな地域、旅行や出張中でも、信頼できるビューティーサービスをその場でつなぎます。</span>
+        <span data-lang="cn">即便在陌生的城市——旅行或出差途中,也能就地为您连接值得信赖的美容服务。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- REFERRAL -->
+<section class="referral">
+  <div class="section-label">Referral</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">이런 분을 소개해 주세요</span>
+    <span data-lang="en">Please refer people like this</span>
+    <span data-lang="jp">こんな方をご紹介ください</span>
+    <span data-lang="cn">请介绍这样的客户</span>
+  </div>
+  <div class="ref-list">
+    <div class="ref-item">
+      <div class="ref-num">1</div>
+      <p>
+        <span data-lang="kr" class="active">뷰티 관련 창업을 준비 중인 예비 창업자</span>
+        <span data-lang="en">Anyone preparing to start a beauty-related business</span>
+        <span data-lang="jp">美容関連の創業を準備している予備創業者</span>
+        <span data-lang="cn">正在准备创业美容相关行业的人</span>
+      </p>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">2</div>
+      <p>
+        <span data-lang="kr" class="active">업종 추가를 고민 중인 원장님, 플랫폼 입점을 원하는 업체</span>
+        <span data-lang="en">Salon/clinic owners considering adding services, or businesses wanting to join the platform</span>
+        <span data-lang="jp">業種追加を検討中の院長、プラットフォームへの入店を希望する企業</span>
+        <span data-lang="cn">正在考虑增加业务类型的院长,或希望入驻平台的商家</span>
+      </p>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">3</div>
+      <p>
+        <span data-lang="kr" class="active">여러 뷰티 시술을 한곳에서 비교하고 선택하고 싶은 고객</span>
+        <span data-lang="en">Customers who want to compare multiple beauty treatments in one place</span>
+        <span data-lang="jp">複数のビューティー施術を一か所で比較して利用したい顧客</span>
+        <span data-lang="cn">想在一个地方比较多种美容项目并做选择的顾客</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section class="career">
+  <div class="section-label">Career</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">경력 및 활동</span>
+    <span data-lang="en">Career &amp; Network</span>
+    <span data-lang="jp">経歴・活動</span>
+    <span data-lang="cn">经历与活动</span>
+  </div>
+  <div class="career-list">
+    <div class="career-item">
+      <div class="career-badge">현재</div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">뷰티넥서스(Beauty Nexus) 대표</span>
+          <span data-lang="en">CEO, Beauty Nexus</span>
+          <span data-lang="jp">ビューティーネクサス代表</span>
+          <span data-lang="cn">美容连接社代表</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">뷰티 커넥팅 서비스와 뷰잇(Beauit) 플랫폼을 운영하며, 고객과 업체를 잇는 뷰티 인프라를 만들어가고 있습니다.</span>
+          <span data-lang="en">Running a beauty-connecting service and the Beauit platform, building the infrastructure that links customers and businesses.</span>
+          <span data-lang="jp">ビューティーコネクティングサービスとビューイット(Beauit)プラットフォームを運営し、顧客と店舗をつなぐビューティーインフラを作っています。</span>
+          <span data-lang="cn">运营美容连接服务与Beauit平台,构建连接顾客与商家的美容基础设施。</span>
+        </p>
+      </div>
+    </div>
+    <div class="career-item">
+      <div class="career-badge">경력</div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">엘리트코리아 부산점 이사</span>
+          <span data-lang="en">Director, Elite Korea Busan</span>
+          <span data-lang="jp">エリートコリア釜山支店理事</span>
+          <span data-lang="cn">Elite Korea釜山分部理事</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">미국 본사 엘리트코리아 부산점 이사 및 (주)파미셀 파트너 BYM 대표강사로 활동하며 뷰티 산업 전반의 실무 경험을 쌓았습니다.</span>
+          <span data-lang="en">Served as Director at Elite Korea's Busan branch (a U.S.-headquartered company) and as lead instructor for BYM, a Pharmicell Co. partner — gaining hands-on experience across the beauty industry.</span>
+          <span data-lang="jp">米国本社エリートコリア釜山支店理事、および(株)ファーミセルパートナーBYM代表講師として、ビューティー産業全般の実務経験を積みました。</span>
+          <span data-lang="cn">曾任美国总部Elite Korea釜山分部理事,以及Pharmicell合作伙伴BYM首席讲师,积累了美容行业的全面实务经验。</span>
+        </p>
+      </div>
+    </div>
+    <div class="career-item">
+      <div class="career-badge">BNI</div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">BNI 자이언츠 챕터 파운딩멤버</span>
+          <span data-lang="en">Founding Member, BNI Giants Chapter</span>
+          <span data-lang="jp">BNIジャイアンツチャプター創設メンバー</span>
+          <span data-lang="cn">BNI巨人分会创始成员</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">Givers Gain(먼저 주는 것이 곧 얻는 것) 정신을 기반으로 한 비즈니스 네트워크에서 활동하고 있습니다.</span>
+          <span data-lang="en">Active in a business network built on Givers Gain — the philosophy that giving comes first.</span>
+          <span data-lang="jp">Givers Gain（先に与えることが得ること）の精神に基づくビジネスネットワークで活動しています。</span>
+          <span data-lang="cn">活跃于以Givers Gain(先付出者先得)理念为基础的商务网络中。</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+  <div class="section-label">Contact</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">연락하기</span>
+    <span data-lang="en">Contact</span>
+    <span data-lang="jp">お問い合わせ</span>
+    <span data-lang="cn">联系方式</span>
+  </div>
+  <div class="contact-list">
+    <a class="contact-item" href="tel:0106789291">
+      <div class="contact-icon">📞</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">전화</span>
+        <span data-lang="en">Phone</span>
+        <span data-lang="jp">電話</span>
+        <span data-lang="cn">电话</span>
+      </div>
+      <div class="contact-value">010-6789-9291</div>
+    </a>
+    <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=YOUR_MANDU_ID" target="_blank">
+      <div class="contact-icon">💬</div>
+      <div class="contact-label">MANDU</div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">실시간 번역 메신저</span>
+        <span data-lang="en">Live translation chat</span>
+        <span data-lang="jp">リアルタイム翻訳チャット</span>
+        <span data-lang="cn">实时翻译聊天</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ACTION -->
+<div class="action">
+  <div class="btn-group">
+    <button class="btn btn-primary" onclick="saveContact()">
+      <span data-lang="kr" class="active">📞 연락처 저장</span>
+      <span data-lang="en">📞 Save contact</span>
+      <span data-lang="jp">📞 連絡先を保存</span>
+      <span data-lang="cn">📞 保存联系人</span>
+    </button>
+    <button class="btn btn-secondary" onclick="saveToCardbook({id:'kim-eunji',name:'김은지',nameEn:'Kim Eun Ji',title:'CEO · 뷰티커넥터',company:'뷰티넥서스',phone:'010-6789-9291',email:'',chapter:'자이언츠',bni:'파운딩멤버',url:window.location.href})">
+      <span data-lang="kr" class="active">🗂️ 명함 저장 (CardBook)</span>
+      <span data-lang="en">🗂️ Save to CardBook</span>
+      <span data-lang="jp">🗂️ 名刺を保存</span>
+      <span data-lang="cn">🗂️ 保存名片</span>
+    </button>
+    <button class="btn btn-mandu" onclick="window.open('https://jinjjabg-hub.github.io/MANDU/?u=YOUR_MANDU_ID','_blank')">
+      <span data-lang="kr" class="active">💬 MANDU로 바로 연락</span>
+      <span data-lang="en">💬 Chat on MANDU</span>
+      <span data-lang="jp">💬 MANDUで連絡</span>
+      <span data-lang="cn">💬 通过MANDU联系</span>
+    </button>
+    <button class="btn btn-share" onclick="shareCard()">
+      <span data-lang="kr" class="active">📤 명함 전달하기</span>
+      <span data-lang="en">📤 Share this card</span>
+      <span data-lang="jp">📤 名刺を共有</span>
+      <span data-lang="cn">📤 分享名片</span>
+    </button>
+  </div>
+</div>
+
+<!-- 공유 바텀시트 -->
+<div class="share-sheet" id="shareSheet">
+  <div class="share-backdrop" onclick="closeShare()"></div>
+  <div class="share-panel">
+    <div class="share-handle"></div>
+    <div class="share-title">명함 전달하기</div>
+    <div class="share-btns">
+      <button class="share-btn" onclick="shareKakao()">
+        <div class="share-btn-icon" style="background:#FEE500;">💬</div><span>카카오톡</span>
+      </button>
+      <button class="share-btn" onclick="shareSMS()">
+        <div class="share-btn-icon" style="background:#34c759;">✉️</div><span>문자</span>
+      </button>
+      <button class="share-btn" onclick="copyLink()">
+        <div class="share-btn-icon" style="background:#e8e8e8;">🔗</div><span>링크 복사</span>
+      </button>
+      <button class="share-btn" onclick="shareQR()">
+        <div class="share-btn-icon" style="background:#0d0d0d;">📱</div><span>QR 보기</span>
+      </button>
+    </div>
+    <button class="share-cancel" onclick="closeShare()">취소</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="company">
+    <span data-lang="kr" class="active">뷰티넥서스</span>
+    <span data-lang="en">Beauty Nexus</span>
+    <span data-lang="jp">ビューティーネクサス</span>
+    <span data-lang="cn">美容连接社</span>
+  </div>
+  <div class="slogan-footer">Every beauty connection — easier, smarter.</div>
+</footer>
+
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const m = btn.getAttribute('onclick').match(/'(\w+)'/);
+    btn.classList.toggle('active', m && m[1] === lang);
+  });
+}
+function saveContact() {
+  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:김은지\nORG:뷰티넥서스\nTITLE:CEO · 뷰티커넥터\nTEL:010-6789-9291\nURL:https://jinjjabg-hub.github.io/NAMECARD/%EA%B9%80%EC%9D%80%EC%A7%80/\nEND:VCARD`;
+  const blob = new Blob([vcard], {type:'text/vcard'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'KimEunji_BeautyNexus.vcf';
+  a.click();
+}
+
+/* ── 명함 전달하기 ── */
+const CARD_URL = 'https://jinjjabg-hub.github.io/NAMECARD/%EA%B9%80%EC%9D%80%EC%A7%80/';
+const CARD_TITLE = '김은지 | 뷰티넥서스';
+const CARD_TEXT = '뷰티의 모든 연결을 더 쉽고, 더 똑똑하게 — 김은지 대표의 디지털 명함입니다.';
+
+function shareCard() {
+  if (navigator.share) {
+    navigator.share({ title: CARD_TITLE, text: CARD_TEXT, url: CARD_URL }).catch(() => {});
+  } else {
+    document.getElementById('shareSheet').style.display = 'block';
+  }
+}
+function closeShare() { document.getElementById('shareSheet').style.display = 'none'; }
+function shareKakao() {
+  window.open('https://sharer.kakao.com/talk/friends/picker/link?app_key=&url=' + encodeURIComponent(CARD_URL), '_blank');
+  closeShare();
+}
+function shareSMS() {
+  location.href = 'sms:?body=' + encodeURIComponent(CARD_TITLE + '\n' + CARD_URL);
+  closeShare();
+}
+function copyLink() {
+  navigator.clipboard.writeText(CARD_URL).then(() => alert('링크가 복사되었습니다!')).catch(() => {
+    const t = document.createElement('textarea');
+    t.value = CARD_URL;
+    document.body.appendChild(t); t.select(); document.execCommand('copy');
+    document.body.removeChild(t);
+    alert('링크가 복사되었습니다!');
+  });
+  closeShare();
+}
+function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
+</script>
+</body>
+</html>
