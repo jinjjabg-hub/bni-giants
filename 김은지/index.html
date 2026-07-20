@@ -85,35 +85,6 @@ nav {
   object-position: center center;
   display: block;
 }
-.hero-overlay {
-  position: absolute; inset:0;
-  background: linear-gradient(
-    to bottom,
-    rgba(13,13,13,0.05) 0%,
-    rgba(13,13,13,0.15) 40%,
-    rgba(13,13,13,0.78) 78%,
-    rgba(13,13,13,0.95) 100%
-  );
-}
-.hero-content {
-  position: absolute; bottom:0; left:0; right:0; z-index:2;
-  padding: 20px 20px 18px;
-}
-.hero-badge {
-  display: inline-block;
-  background: var(--purple);
-  color: #1a1a2e;
-  font-size: 10px; font-weight: 700;
-  padding: 4px 12px; border-radius: 20px;
-  margin-bottom: 10px; letter-spacing: 1.5px;
-}
-.hero-name {
-  font-size: 30px; font-weight: 700;
-  color: #fff; line-height: 1.15;
-  margin-bottom: 7px; letter-spacing: -0.5px;
-}
-.hero-title { font-size: 13px; color: var(--gold); opacity: 0.95; line-height: 1.5; }
-
 /* ── PROFILE ROW ── */
 .profile-row {
   background: var(--navy2);
@@ -257,7 +228,6 @@ section { padding: 40px 20px; }
 }
 .btn-primary { background: var(--gold); color: var(--navy); }
 .btn-secondary { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
-.btn-mandu { background: linear-gradient(135deg, #6d5bd0, #a78bfa); color: #fff; border: none; }
 .btn-share { background: linear-gradient(135deg, #1a6b3a, #0d8a4a); color: #fff; border: none; }
 .btn:active { transform: scale(0.97); opacity: 0.9; }
 
@@ -302,28 +272,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 
 <!-- HERO -->
 <div class="hero">
-  <img class="hero-img" src="hero.png" alt="김은지">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-badge">
-      <span data-lang="kr" class="active">뷰티 커넥터</span>
-      <span data-lang="en">Beauty Connector</span>
-      <span data-lang="jp">ビューティーコネクター</span>
-      <span data-lang="cn">美容连接者</span>
-    </div>
-    <div class="hero-name">
-      <span data-lang="kr" class="active">김 은 지</span>
-      <span data-lang="en">KIM EUN JI</span>
-      <span data-lang="jp">キム・ウンジ</span>
-      <span data-lang="cn">金蒑智</span>
-    </div>
-    <div class="hero-title">
-      <span data-lang="kr" class="active">CEO · 뷰티넥서스</span>
-      <span data-lang="en">CEO · Beauty Nexus</span>
-      <span data-lang="jp">CEO・ビューティーネクサス</span>
-      <span data-lang="cn">CEO · 美容连接社</span>
-    </div>
-  </div>
+  <img class="hero-img" src="hero.png" alt="김은지 | 뷰티넥서스">
 </div>
 
 <!-- PROFILE ROW -->
@@ -361,54 +310,54 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 
 <!-- WHY -->
 <section class="why">
-  <div class="section-label">Why Us</div>
+  <div class="section-label">What I Do</div>
   <div class="section-title">
-    <span data-lang="kr" class="active">왜 뷰티넥서스인가</span>
-    <span data-lang="en">Why Beauty Nexus?</span>
-    <span data-lang="jp">なぜビューティーネクサスなのか</span>
-    <span data-lang="cn">为什么选择美容连接社</span>
+    <span data-lang="kr" class="active">제가 하는 일 세 가지</span>
+    <span data-lang="en">Three Things I Do</span>
+    <span data-lang="jp">私がしている三つのこと</span>
+    <span data-lang="cn">我做的三件事</span>
   </div>
   <div class="why-cards">
     <div class="why-card">
       <h3>
-        <span data-lang="kr" class="active">① 광고비가 아니라, 매칭으로 옵니다</span>
-        <span data-lang="en">① Customers Come by Matching, Not Ad Spend</span>
-        <span data-lang="jp">①広告費ではなく、マッチングで来ます</span>
-        <span data-lang="cn">①靠精准匹配,而非广告投放</span>
+        <span data-lang="kr" class="active">① 고객과 업체를 이어드립니다</span>
+        <span data-lang="en">① Connecting Customers and Businesses</span>
+        <span data-lang="jp">①お客様と店舗をつなぎます</span>
+        <span data-lang="cn">①连接顾客与商家</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active">노출 경쟁이 아닙니다. 고객의 고민·원하는 결과·예산·거리·선호 조건을 분석해 가장 잘 맞는 <strong>5곳</strong>을 이유와 함께 추천합니다. 우리 샵을 정말 필요로 하는 고객이 옵니다.</span>
-        <span data-lang="en">This is not a race for visibility. We analyze each customer's concerns, desired results, budget, distance, and preferences, then recommend the <strong>top 5</strong> best-fit places with reasons. The customers who arrive are the ones who actually need you.</span>
-        <span data-lang="jp">露出競争ではありません。お客様の悩み・望む結果・予算・距離・好みを分析し、最も合う<strong>5か所</strong>を理由とともにご提案します。本当にお店を必要とするお客様が来ます。</span>
-        <span data-lang="cn">这不是曝光量的竞争。我们分析顾客的困扰、期望效果、预算、距离与偏好,推荐最合适的<strong>5家</strong>并附上理由。来的是真正需要您店铺的顾客。</span>
+        <span data-lang="kr" class="active">고객의 고민·원하는 결과·예산·거리·선호 조건을 분석해 가장 잘 맞는 <strong>5곳</strong>을 이유와 함께 추천합니다. 노출 경쟁이 아니라 매칭이기 때문에, <strong>우리 샵을 정말 필요로 하는 고객</strong>이 옵니다.</span>
+        <span data-lang="en">I analyze each customer's concerns, desired results, budget, distance, and preferences, then recommend the <strong>top 5</strong> best-fit places with reasons. This is matching, not a race for visibility — so the customers who arrive are <strong>the ones who actually need you</strong>.</span>
+        <span data-lang="jp">お客様の悩み・望む結果・予算・距離・好みを分析し、最も合う<strong>5か所</strong>を理由とともにご提案します。露出競争ではなくマッチングなので、<strong>本当にお店を必要とするお客様</strong>が来ます。</span>
+        <span data-lang="cn">分析顾客的困扰、期望效果、预算、距离与偏好,推荐最合适的<strong>5家</strong>并附上理由。这是精准匹配而非曝光竞争,来的是<strong>真正需要您店铺的顾客</strong>。</span>
       </p>
     </div>
     <div class="why-card">
       <h3>
-        <span data-lang="kr" class="active">② 검증된 업체만 입점합니다</span>
-        <span data-lang="en">② Verified Businesses Only</span>
-        <span data-lang="jp">②検証された店舗のみ入店できます</span>
-        <span data-lang="cn">②仅限通过验证的商家入驻</span>
+        <span data-lang="kr" class="active">② 업체의 업종 추가를 돕습니다</span>
+        <span data-lang="en">② Helping Businesses Expand Their Services</span>
+        <span data-lang="jp">②店舗の業種追加をお手伝いします</span>
+        <span data-lang="cn">②帮助商家拓展业务项目</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active">실제 후기 기반으로 검증된 곳만 연결합니다. 아무나 들어오는 플랫폼이 아니기 때문에, <strong>입점 자체가 신뢰의 표시</strong>가 됩니다.</span>
-        <span data-lang="en">Only businesses verified through real customer reviews are listed. Because not everyone gets in, <strong>being listed is itself a mark of trust</strong>.</span>
-        <span data-lang="jp">実際の口コミに基づいて検証された店舗のみをつなぎます。誰でも入れるプラットフォームではないため、<strong>入店そのものが信頼の証</strong>になります。</span>
-        <span data-lang="cn">只连接经过真实评价验证的商家。因为并非人人都能入驻,<strong>入驻本身就是信任的标志</strong>。</span>
+        <span data-lang="kr" class="active">지금 하는 시술만으로 한계를 느끼시나요? 어떤 업종을 더하면 좋을지 함께 진단하고, <strong>전문 교육기관과 장비·브랜드까지 연결</strong>해 실제로 시작할 수 있게 돕습니다.</span>
+        <span data-lang="en">Feeling capped by your current service lineup? I help diagnose which service line to add, then <strong>connect you with professional training, equipment, and brands</strong> so you can actually launch it.</span>
+        <span data-lang="jp">今の施術だけでは限界を感じていませんか。どの業種を加えるべきか一緒に診断し、<strong>専門教育機関や機器・ブランドまでご紹介</strong>して、実際に始められるようお手伝いします。</span>
+        <span data-lang="cn">仅靠现有项目感到瓶颈了吗?我会与您一起诊断该增加哪类项目,并<strong>连接专业教育机构、设备与品牌</strong>,帮助您真正落地。</span>
       </p>
     </div>
     <div class="why-card">
       <h3>
-        <span data-lang="kr" class="active">③ 입점으로 끝나지 않습니다</span>
-        <span data-lang="en">③ Listing Is Just the Beginning</span>
-        <span data-lang="jp">③入店で終わりません</span>
-        <span data-lang="cn">③入驻不是终点</span>
+        <span data-lang="kr" class="active">③ 신규 창업자에게 교육기관을 연결합니다</span>
+        <span data-lang="en">③ Matching New Founders with the Right Training</span>
+        <span data-lang="jp">③新規創業者に教育機関をつなぎます</span>
+        <span data-lang="cn">③为新创业者连接教育机构</span>
       </h3>
       <p>
-        <span data-lang="kr" class="active">업종 추가를 고민하시나요? 뷰티 교육기관과 연결해 <strong>새로운 시술·서비스를 확장</strong>할 수 있도록 돕습니다. 고객 유입과 성장, 두 가지를 같이 봅니다.</span>
-        <span data-lang="en">Thinking about adding a new service line? We connect you with professional beauty training partners so you can <strong>expand into new treatments and services</strong>. We look at both customer inflow and long-term growth.</span>
-        <span data-lang="jp">業種の追加をお考えですか。ビューティー教育機関とつなぎ、<strong>新しい施術・サービスへの拡張</strong>をお手伝いします。集客と成長、その両方を一緒に見ます。</span>
-        <span data-lang="cn">正在考虑增加业务项目吗?我们为您连接专业美容教育机构,帮助您<strong>拓展新的项目与服务</strong>。客流与成长,我们同时兼顾。</span>
+        <span data-lang="kr" class="active">뷰티 창업을 준비하시나요? <strong>성향과 조건에 맞는 분야</strong>를 먼저 찾고, 그 분야의 전문 교육기관으로 연결합니다. 잘못된 선택으로 시간과 비용을 낭비하지 않도록 시작점을 잡아드립니다.</span>
+        <span data-lang="en">Preparing to open a beauty business? I first identify <strong>the field that fits your aptitude and circumstances</strong>, then connect you with professional training in that field — so you don't lose time and money on the wrong start.</span>
+        <span data-lang="jp">ビューティー創業を準備中ですか。まず<strong>適性と条件に合う分野</strong>を見つけ、その分野の専門教育機関へつなぎます。誤った選択で時間と費用を無駄にしないよう、出発点を整えます。</span>
+        <span data-lang="cn">正在准备美容创业吗?我会先找出<strong>适合您性格与条件的领域</strong>,再连接该领域的专业教育机构。帮您定好起点,避免因选错而浪费时间与金钱。</span>
       </p>
     </div>
   </div>
@@ -496,28 +445,37 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <div class="ref-item">
       <div class="ref-num">1</div>
       <p>
-        <span data-lang="kr" class="active">업종 추가를 고민 중인 원장님, 플랫폼 입점을 원하는 뷰티샵·병원·한의원</span>
-        <span data-lang="en">Salon, clinic, or hospital owners considering a new service line, or wanting to join the platform</span>
-        <span data-lang="jp">業種追加を検討中の院長、プラットフォームへの入店を希望するビューティーショップ・病院・韓医院</span>
-        <span data-lang="cn">正在考虑增加业务项目的院长,或希望入驻平台的美容院、医院、韩医院</span>
+        <span data-lang="kr" class="active"><strong>신규 고객을 늘리고 싶은</strong> 뷰티샵·피부과·성형외과·한의원 원장님</span>
+        <span data-lang="en">Owners of beauty shops, dermatology or plastic surgery clinics, and Korean medicine clinics who <strong>want more new customers</strong></span>
+        <span data-lang="jp"><strong>新規顧客を増やしたい</strong>ビューティーショップ・皮膚科・形成外科・韓医院の院長</span>
+        <span data-lang="cn"><strong>希望增加新客</strong>的美容院、皮肤科、整形外科、韩医院院长</span>
       </p>
     </div>
     <div class="ref-item">
       <div class="ref-num">2</div>
       <p>
-        <span data-lang="kr" class="active">뷰티 관련 창업을 준비 중인 예비 창업자</span>
-        <span data-lang="en">Anyone preparing to start a beauty-related business</span>
-        <span data-lang="jp">美容関連の創業を準備している予備創業者</span>
-        <span data-lang="cn">正在准备创业美容相关行业的人</span>
+        <span data-lang="kr" class="active"><strong>업종 추가·서비스 확장</strong>을 고민 중인 원장님</span>
+        <span data-lang="en">Owners considering <strong>adding a new service line or expanding</strong></span>
+        <span data-lang="jp"><strong>業種追加・サービス拡張</strong>を検討中の院長</span>
+        <span data-lang="cn">正在考虑<strong>增加项目或拓展服务</strong>的院长</span>
       </p>
     </div>
     <div class="ref-item">
       <div class="ref-num">3</div>
       <p>
+        <span data-lang="kr" class="active"><strong>뷰티 창업을 준비 중</strong>인데 어떤 분야로 시작할지 고민인 분</span>
+        <span data-lang="en">Anyone <strong>preparing to start a beauty business</strong> but unsure which field to begin with</span>
+        <span data-lang="jp"><strong>ビューティー創業を準備中</strong>で、どの分野から始めるか悩んでいる方</span>
+        <span data-lang="cn"><strong>正在准备美容创业</strong>,但不确定从哪个领域入手的人</span>
+      </p>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">4</div>
+      <p>
         <span data-lang="kr" class="active">여러 뷰티 시술을 한곳에서 비교하고 선택하고 싶은 고객</span>
         <span data-lang="en">Customers who want to compare multiple beauty treatments in one place</span>
-        <span data-lang="jp">複数のビューティー施術を一か所で比較して利用したい顧客</span>
-        <span data-lang="cn">想在一个地方比较多种美容项目并做选择的顾客</span>
+        <span data-lang="jp">複数のビューティー施術を一か所で比較して選びたい顧客</span>
+        <span data-lang="cn">想在一处比较多种美容项目并做选择的顾客</span>
       </p>
     </div>
   </div>
@@ -597,24 +555,54 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <span data-lang="cn">联系方式</span>
   </div>
   <div class="contact-list">
-    <a class="contact-item" href="tel:0106789291">
+    <a class="contact-item" href="tel:01067899291">
       <div class="contact-icon">📞</div>
       <div class="contact-label">
         <span data-lang="kr" class="active">전화</span>
-        <span data-lang="en">Phone</span>
+        <span data-lang="en">Call</span>
         <span data-lang="jp">電話</span>
         <span data-lang="cn">电话</span>
       </div>
       <div class="contact-value">010-6789-9291</div>
     </a>
+    <a class="contact-item" href="sms:01067899291">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">문자</span>
+        <span data-lang="en">Text</span>
+        <span data-lang="jp">SMS</span>
+        <span data-lang="cn">短信</span>
+      </div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">문자 보내기</span>
+        <span data-lang="en">Send a text</span>
+        <span data-lang="jp">SMSを送る</span>
+        <span data-lang="cn">发送短信</span>
+      </div>
+    </a>
     <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=YOUR_MANDU_ID" target="_blank">
       <div class="contact-icon">💬</div>
       <div class="contact-label">MANDU</div>
       <div class="contact-value">
-        <span data-lang="kr" class="active">실시간 번역 메신저</span>
-        <span data-lang="en">Live translation chat</span>
-        <span data-lang="jp">リアルタイム翻訳チャット</span>
-        <span data-lang="cn">实时翻译聊天</span>
+        <span data-lang="kr" class="active">번역 메신저</span>
+        <span data-lang="en">Translation chat</span>
+        <span data-lang="jp">翻訳チャット</span>
+        <span data-lang="cn">翻译聊天</span>
+      </div>
+    </a>
+    <a class="contact-item" href="javascript:void(0)" onclick="saveContact()">
+      <div class="contact-icon">📇</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">연락처</span>
+        <span data-lang="en">vCard</span>
+        <span data-lang="jp">連絡先</span>
+        <span data-lang="cn">联系人</span>
+      </div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">폰에 저장</span>
+        <span data-lang="en">Save to phone</span>
+        <span data-lang="jp">スマホに保存</span>
+        <span data-lang="cn">保存到手机</span>
       </div>
     </a>
   </div>
@@ -634,12 +622,6 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <span data-lang="en">🗂️ Save to CardBook</span>
       <span data-lang="jp">🗂️ 名刺を保存</span>
       <span data-lang="cn">🗂️ 保存名片</span>
-    </button>
-    <button class="btn btn-mandu" onclick="window.open('https://jinjjabg-hub.github.io/MANDU/?u=YOUR_MANDU_ID','_blank')">
-      <span data-lang="kr" class="active">💬 MANDU로 바로 연락</span>
-      <span data-lang="en">💬 Chat on MANDU</span>
-      <span data-lang="jp">💬 MANDUで連絡</span>
-      <span data-lang="cn">💬 通过MANDU联系</span>
     </button>
     <button class="btn btn-share" onclick="shareCard()">
       <span data-lang="kr" class="active">📤 명함 전달하기</span>
