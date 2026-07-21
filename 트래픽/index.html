@@ -419,13 +419,17 @@ function parseMonthRows(rows, y, m){
     }
   }
 
-  // 실제 진행 주수 = 출결합계 최빈값 (공휴일 자동 반영)
+  // 실제 진행 주수 = "가장 성실하게 기록된 멤버"의 출결합계.
+  //   (BNI는 매주 전원이 P/A/L/M/S 중 하나로 찍히므로, 완전기록 멤버 1명의 합계 = 그 달 미팅 횟수)
+  //   최빈값(mode)을 쓰면 시트에 빈칸이 많을 때 다수 멤버 합계가 실제보다 작아져 주수가 깎이는 문제가 있어
+  //   최댓값을 쓴다. 단, 달력상 가능한 주수(fw)를 상한으로 두어 데이터 오류로 과대계상되는 것을 막고,
+  //   진짜 공휴일로 미팅을 안 한 주는 최댓값 자체가 낮게 나오므로 자동 반영된다.
   var totals = members.map(function(mb){return mb.P+mb.A+mb.L+mb.M+mb.S;}).filter(function(v){return v>0;});
   var fw = countDOW(y,m,DOW);
   var actualWeeks = fw;
   if(totals.length>0){
-    var freq={}; totals.forEach(function(v){freq[v]=(freq[v]||0)+1;});
-    actualWeeks = parseInt(Object.keys(freq).sort(function(a,b){return freq[b]-freq[a];})[0]);
+    var maxT = Math.max.apply(null, totals);
+    actualWeeks = Math.min(fw, maxT);
   }
   return {
     year:y, month:m, members:members,
