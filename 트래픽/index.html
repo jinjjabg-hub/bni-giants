@@ -486,7 +486,14 @@ function fetchMonth(y, m){
         errs.push(names[i]+': 위조 의심 (오늘 기준 최대 '+maxW+'주인데 '+md.actualWeeks+'주로 나옴 — 다른 달 데이터로 추정)');
         return tryAt(i+1);
       }
-      return {md:md, sig:parsed.sig, errs:errs};
+      // 구글이 내려주는 gviz sig는 탭별로 다르지 않고 스프레드시트 전체 기준일 수 있어
+      // (여러 달을 동시에 요청하면 전부 같은 sig로 오는 경우가 실제로 관찰됨) 이걸로 위조를 판단하면
+      // 서로 다른 진짜 달까지 "중복"으로 오판해서 통째로 버려질 수 있다.
+      // 그래서 판단 기준을 sig 대신, 실제로 파싱된 멤버 데이터 내용 자체로 바꾼다 — 내용이 진짜 똑같을 때만 위조로 간주.
+      var contentSig = JSON.stringify(md.members.map(function(mb){
+        return [mb.name,mb.P,mb.A,mb.L,mb.M,mb.S,mb.RGI,mb.RGO,mb.V,mb.M121,mb.N,mb.O];
+      }));
+      return {md:md, sig:contentSig, errs:errs};
     }).catch(function(){ return tryAt(i+1); });
   }
   return tryAt(0);
@@ -499,8 +506,8 @@ function syncFromSheet(){
   }))
     .then(function(results){
       // ★ 위조 탭 감지: 존재하지 않는 탭을 요청하면 구글이 에러 대신 엉뚱한 탭을 대신 주는 경우가 있음.
-      //   시간순(오래된 달 → 최근 달)으로 훑으면서, 어떤 서명(sig)이 "처음" 나타나면 진짜로 인정하고,
-      //   그 이후에 다른 달인데 "똑같은 서명"이 또 나오면 그건 가짜(위조)로만 걸러낸다.
+      //   시간순(오래된 달 → 최근 달)으로 훑으면서, 어떤 서명(실제 데이터 내용 기반)이 "처음" 나타나면 진짜로 인정하고,
+      //   그 이후에 다른 달인데 "완전히 똑같은 내용"이 또 나오면 그건 가짜(위조)로만 걸러낸다.
       //   → 진짜 달이 먼저 확인됐다면 절대 억울하게 같이 버려지지 않음.
       var chronological = results.slice().sort(function(a,b){
         var ka=toKey(a.c.y,a.c.m), kb=toKey(b.c.y,b.c.m);
@@ -512,7 +519,7 @@ function syncFromSheet(){
         if(seenSigs[r.sig]){
           var realKey = seenSigs[r.sig];
           r.md = null;
-          r.errs = (r.errs||[]).concat(['위조탭 감지: '+realKey+'과 서명(sig) 중복 — 존재하지 않는 탭 요청 시 구글이 '+realKey+' 데이터를 대신 내려준 것으로 판단']);
+          r.errs = (r.errs||[]).concat(['위조탭 감지: '+realKey+'과 데이터 내용이 완전히 동일 — 존재하지 않는 탭 요청 시 구글이 '+realKey+' 데이터를 대신 내려준 것으로 판단']);
         } else {
           seenSigs[r.sig] = toKey(r.c.y, r.c.m);
         }
