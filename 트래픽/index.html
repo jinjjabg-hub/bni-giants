@@ -533,8 +533,15 @@ function syncFromSheet(){
       var keys = Object.keys(monthly).sort();
       if(!keys.length) throw new Error('시트에서 유효한 탭을 찾지 못했어요');
       // 최신 달 기준 6개월 + 여유만 유지
+      // ★ 주의: '로드된 최신월'을 그대로 쓰면(예: 진행중인 7월) 시작점이 2월로 밀려 1월이 삭제되는데,
+      //   화면 집계는 '확정월(6월)' 기준으로 1월부터 필요로 하므로 1월이 증발하는 버그가 생긴다.
+      //   그래서 진행중인 최신월은 유지하되, 컷 기준(start)은 '확정월'로 잡아 6개월 창을 보존한다.
       var latest = keys[keys.length-1];
-      var start = rollingStart(latest);
+      var now0 = new Date(), thisMonthKey = toKey(now0.getFullYear(), now0.getMonth()+1);
+      // 확정월 = 진행중인 이번 달을 제외한 가장 최근 로드월 (이번 달만 있으면 그냥 latest)
+      var confirmedLatest = latest;
+      for(var ci=keys.length-1; ci>=0; ci--){ if(keys[ci] !== thisMonthKey){ confirmedLatest = keys[ci]; break; } }
+      var start = rollingStart(confirmedLatest);
       keys.forEach(function(k){ if(k < start) delete monthly[k]; });
       // 진단: '이미 지난 달'인데 못 읽은 탭만 경고 (이번 달은 탭 없어도 정상 → 오탐 제외)
       var now = new Date(), thisKey = toKey(now.getFullYear(), now.getMonth()+1);
