@@ -66,6 +66,37 @@ body {
   border-radius:2px;
 }
 
+/* 트래픽 라이트 배너 */
+.tl-banner {
+  display:flex; align-items:center; gap:14px;
+  margin:20px 16px 4px;
+  padding:16px 18px;
+  background:linear-gradient(135deg, var(--navy2) 0%, var(--navy3) 100%);
+  border:1px solid rgba(204,161,50,.35);
+  border-radius:16px;
+  text-decoration:none; color:var(--white);
+  transition:all .2s; position:relative; overflow:hidden;
+}
+.tl-banner::after {
+  content:'›'; position:absolute; right:16px; top:50%;
+  transform:translateY(-50%); font-size:20px; color:rgba(204,161,50,.6);
+}
+.tl-banner:active { transform:scale(.98); }
+.tl-lights { display:flex; flex-direction:column; gap:4px; flex-shrink:0; }
+.tl-dot { width:12px; height:12px; border-radius:50%; }
+.tl-dot.g { background:#27ae60; box-shadow:0 0 8px rgba(39,174,96,.6); }
+.tl-dot.a { background:#cca132; opacity:.55; }
+.tl-dot.r { background:#ef314f; opacity:.4; }
+.tl-txt { flex:1; padding-right:20px; }
+.tl-title { font-size:15px; font-weight:800; letter-spacing:.5px; margin-bottom:3px; }
+.tl-sub { font-size:11.5px; color:rgba(255,255,255,.5); line-height:1.5; }
+.tl-badge {
+  display:inline-block; background:rgba(204,161,50,.15);
+  border:1px solid rgba(204,161,50,.35); color:var(--gold);
+  font-size:9.5px; font-weight:700; padding:2px 8px;
+  border-radius:20px; margin-bottom:5px; letter-spacing:.5px;
+}
+
 /* 멤버 리스트 */
 .member-list {
   padding:24px 16px 48px;
@@ -156,6 +187,19 @@ footer strong { color:var(--gold); }
   <div class="header-sub">디지털 명함 모음</div>
   <div class="gold-line"></div>
 </div>
+
+<a class="tl-banner" href="트래픽/index.html">
+  <div class="tl-lights">
+    <span class="tl-dot r"></span>
+    <span class="tl-dot a"></span>
+    <span class="tl-dot g"></span>
+  </div>
+  <div class="tl-txt">
+    <span class="tl-badge">CHAPTER TOOL</span>
+    <div class="tl-title">트래픽 라이트</div>
+    <div class="tl-sub">멤버 활동 점수 대시보드 · 6개월 롤링</div>
+  </div>
+</a>
 
 <div class="member-list">
   <!-- 김준래 -->
@@ -252,6 +296,36 @@ footer strong { color:var(--gold); }
   <p><strong>BNI 자이언츠 챕터</strong><br>
   jinjjabg-hub.github.io/bni-giants</p>
 </footer>
+
+<script>
+// 멤버 카드 하루 단위 랜덤 정렬 — 같은 날(로컬 날짜)엔 항상 같은 순서, 날짜가 바뀌면 순서도 바뀜.
+// 날짜 문자열(YYYY-MM-DD)을 시드로 쓰는 결정적 셔플이라 새로고침해도 그날은 순서가 고정됨.
+(function(){
+  var list = document.querySelector('.member-list');
+  if(!list) return;
+  var cards = Array.prototype.slice.call(list.querySelectorAll('.member-card'));
+  if(cards.length < 2) return;
+
+  var d = new Date();
+  var seedStr = d.getFullYear() + '-' + (d.getMonth()+1) + '-' + d.getDate();
+  // 문자열 → 숫자 시드
+  var seed = 0;
+  for(var i=0;i<seedStr.length;i++){ seed = (seed*31 + seedStr.charCodeAt(i)) >>> 0; }
+  // 시드 기반 난수 생성기(mulberry32)
+  function rng(){
+    seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
+    var t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  }
+  // Fisher-Yates 셔플
+  for(var j=cards.length-1;j>0;j--){
+    var k = Math.floor(rng() * (j+1));
+    var tmp = cards[j]; cards[j] = cards[k]; cards[k] = tmp;
+  }
+  cards.forEach(function(c){ list.appendChild(c); });
+})();
+</script>
 
 </body>
 </html>
