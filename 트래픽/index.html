@@ -47,6 +47,8 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'M
 .sync-btn { padding: 6px 12px; border-radius: 8px; border: 1px solid currentColor; background: transparent; color: inherit; font-size: 12px; font-weight: 600; cursor: pointer; font-family: inherit; white-space: nowrap; }
 .misswarn { background: var(--rd); color: var(--r); border-radius: 10px; padding: 11px 14px; margin-bottom: 14px; font-size: 12.5px; line-height: 1.65; box-shadow: var(--sh); }
 .misswarn b { font-weight: 700; }
+.namegap { background: var(--ad); color: var(--a); border-radius: 10px; padding: 11px 14px; margin-bottom: 14px; font-size: 12.5px; line-height: 1.65; box-shadow: var(--sh); }
+.namegap b { font-weight: 700; }
 /* LOADING */
 .loadbox { text-align: center; padding: 60px 20px; }
 .loadbox-icon { font-size: 40px; margin-bottom: 12px; }
@@ -173,6 +175,7 @@ tbody td { padding: 8px 9px; font-size: 12px; white-space: nowrap; }
   </div>
 
   <div class="misswarn" id="misswarn" style="display:none"></div>
+  <div class="namegap" id="namegap" style="display:none"></div>
 
   <div class="loadbox" id="loadbox">
     <div class="loadbox-icon">⏳</div>
@@ -317,6 +320,16 @@ function tableToRows(table){
   return rows;
 }
 var JUNK_NAMES = ['비지터','BNI','합','합계','계','총계','한글이름순','영어이름순'];
+// 이름 비교를 관대하게: 보이지 않는 문자, 끝에 붙은 (메모)/특수기호, 중간 공백을 흡수해서
+// "정래권"과 "정래권 " / "정래권(신규)" / "정래권*" 같은 표기 차이가 매칭 실패로 이어지지 않게 함
+function normName(s){
+  var t = String(s||'');
+  t = t.replace(/[\u200B-\u200D\uFEFF\u00A0]/g, '');   // 제로폭 문자·줄바꿈없는공백 제거
+  t = t.replace(/\([^)]*\)\s*$/, '');                   // 끝에 붙은 (직함/메모) 제거
+  t = t.replace(/[*※★☆#]+\s*$/, '');                    // 끝에 붙은 특수기호 제거
+  t = t.trim().replace(/\s+/g, '');                     // 공백 전부 제거(한글 이름은 붙여쓰기가 표준)
+  return t;
+}
 // 표준 열 순서(모든 달 동일하게 써온 순서) — 헤더 텍스트 인식이 실패해도 이 순서로 강제 추출
 var STD_ORDER = ['name','P','A','L','M','S','RGI','RGO',null,null,'V','M121','N','O'];
 function looksLikeMemberRow(raw){
@@ -339,7 +352,7 @@ function positionalScan(rows){
     var raw = String(row[0]||'').trim();
     if(!looksLikeFullNameRow(raw)) continue;
     if(row.length < 8) continue; // 열이 너무 적으면 이 표 형식이 아님
-    var kor = raw.split(/\s+/)[0].trim();
+    var kor = normName(raw.split(/\s+/)[0]);
     var get = function(field){
       var i = STD_ORDER.indexOf(field);
       return i<0 ? 0 : num(row[i]);
@@ -385,7 +398,7 @@ function parseMonthRows(rows, y, m){
       var row = rows[r2];
       var raw = String(row[idx.name]||'').trim();
       if(!looksLikeMemberRow(raw)) continue;
-      var kor = raw.split(/\s+/)[0].trim();
+      var kor = normName(raw.split(/\s+/)[0]);
       members.push({
         name:kor, full:raw,
         P:num(row[idx.P]), A:num(row[idx.A]), L:num(row[idx.L]),
@@ -522,11 +535,33 @@ function syncFromSheet(){
         if(!monthly[k] && k > firstLoaded && k < thisKey) missing.push({key:k, reasons:r.errs});
       });
       missing.sort(function(a,b){ return a.key<b.key?-1:1; });
-      var cache = { ts: Date.now(), monthly: monthly, missing: missing };
+      // 진단: 이름 매칭 구멍 탐지 — 어떤 멤버가 A월엔 있고 C월엔 있는데 중간 B월에만 없으면
+      // (탈퇴 후 재가입은 흔치 않으므로) 실제로는 B월에 이름 표기가 달라서 매칭 실패했을 가능성이 높음
+      var nameGaps = detectNameGaps(monthly, Object.keys(monthly).sort());
+      var cache = { ts: Date.now(), monthly: monthly, missing: missing, nameGaps: nameGaps };
       try { localStorage.setItem(CACHE_KEY, JSON.stringify(cache)); } catch(e){}
       applyData(cache, true);
       return true;
     });
+}
+function detectNameGaps(monthly, keysSorted){
+  var allNames = {};
+  keysSorted.forEach(function(k){
+    monthly[k].members.forEach(function(mb){ allNames[mb.name] = true; });
+  });
+  var gaps = [];
+  Object.keys(allNames).forEach(function(name){
+    var presence = keysSorted.map(function(k){
+      return monthly[k].members.some(function(mb){ return mb.name===name; });
+    });
+    var firstIdx = presence.indexOf(true);
+    var lastIdx = presence.lastIndexOf(true);
+    for(var i=firstIdx; i<lastIdx; i++){
+      if(!presence[i]) gaps.push({name:name, month:keysSorted[i]});
+    }
+  });
+  gaps.sort(function(a,b){ return a.name<b.name?-1: a.name>b.name?1: (a.month<b.month?-1:1); });
+  return gaps;
 }
 function loadCache(){
   try {
@@ -546,6 +581,7 @@ function applyData(cache, fresh){
   $('syncbar').style.display = 'flex';
   setSyncUI(fresh?'fresh':'cached', cache.ts);
   renderMissing(cache.missing);
+  renderNameGaps(cache.nameGaps);
   updateDbar(); renderStats(); renderTable(); renderChips();
   if(selName){ buildPbtns(); updatePersonal(); }
 }
@@ -564,6 +600,22 @@ function renderMissing(missing){
   el.innerHTML = '⚠️ <b>못 읽은 탭: '+keys.join(', ')+'</b><br>'+
     '이 달 데이터가 계산에서 빠졌어요. 아래는 앱이 실제로 시도하며 받은 응답이에요:'+
     detailHtml;
+}
+function renderNameGaps(gaps){
+  var el = $('namegap');
+  if(!el) return;
+  if(!gaps || !gaps.length){ el.style.display='none'; return; }
+  el.style.display='block';
+  var byName = {};
+  gaps.forEach(function(g){ (byName[g.name] = byName[g.name]||[]).push(g.month); });
+  var lines = Object.keys(byName).map(function(name){
+    return '<div style="margin-top:6px;font-size:11px;color:inherit;opacity:.9">'+
+      '<b>'+name+'</b> — '+byName[name].join(', ')+' 탭에서 이름이 안 잡혔어요 (앞뒤 달엔 있음)'+
+      '</div>';
+  }).join('');
+  el.innerHTML = '🔎 <b>이름 매칭 의심 '+Object.keys(byName).length+'건</b><br>'+
+    '해당 달 시트에서 이름 표기가 다른 달과 다를 수 있어요 (공백/특수문자/괄호 메모 등). 셀을 직접 확인해 주세요.'+
+    lines;
 }
 function fmtTs(ts){
   var d = new Date(ts);
