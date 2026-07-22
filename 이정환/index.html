@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>이정환 | 천풍농원</title>
+<meta property="og:title" content="이정환 | 대표 · 천풍농원">
+<meta property="og:description" content="경남 밀양, 참나무 원목에서 6년 키운 100% 유기농 상황버섯. 내 아이도 먹는 것만 만듭니다.">
+<meta property="og:image" content="https://jinjjabg-hub.github.io/NAMECARD/%EC%9D%B4%EC%A0%95%ED%99%98/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jinjjabg-hub.github.io/NAMECARD/이정환/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  /* 천풍농원 브랜드: 딥올리브 + 웜크림 + 브라스골드 (엑셀 지정 올리브그린) */
+  --navy: #2b3121;
+  --navy2: #353c28;
+  --navy3: #434c33;
+  --gold: #b7a067;
+  --gold2: #d6c38d;
+  --light: #f5f2e9;
+  --text-dark: #f1eede;
+  --text-light: #23281a;
+  --muted-dark: #a99a6a;
+  --muted-light: #5c5433;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+html { font-size: 16px; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--navy);
+  color: var(--text-dark);
+  max-width: 480px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+[data-lang="si"] { font-family: 'Noto Sans Sinhala', sans-serif; }
+[data-lang="ur"] { font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; }
+[data-lang] { display: none; }
+[data-lang].active { display: block; }
+span[data-lang].active { display: inline; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  max-width: 480px; margin: 0 auto;
+  background: rgba(43,49,33,0.97);
+  backdrop-filter: blur(10px);
+  padding: 10px 16px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid rgba(183,160,103,0.25);
+}
+.nav-brand { font-size: 12px; font-weight: 700; color: var(--gold); white-space: nowrap; }
+.lang-btns { display:flex; gap:4px; }
+.lang-btn {
+  padding: 5px 8px;
+  border: 1px solid rgba(183,160,103,0.35);
+  background: transparent;
+  color: var(--muted-dark);
+  font-size: 10px; font-weight: 700;
+  cursor: pointer; border-radius: 5px;
+  transition: all 0.2s;
+  min-width: 40px; min-height: 32px;
+  display: flex; align-items:center; justify-content:center;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.lang-btn.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+
+/* ── HERO ── */
+.hero {
+  margin-top: 54px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+.hero img.hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.hero-overlay {
+  position: absolute; inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(43,49,33,0.1) 0%,
+    rgba(43,49,33,0.15) 40%,
+    rgba(43,49,33,0.75) 75%,
+    rgba(43,49,33,0.96) 100%
+  );
+}
+.hero-content {
+  position: absolute; bottom:0; left:0; right:0; z-index:2;
+  padding: 24px 20px 22px;
+}
+.hero-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 10px; font-weight: 700;
+  padding: 4px 12px; border-radius: 20px;
+  margin-bottom: 10px; letter-spacing: 1.5px;
+}
+.hero-name {
+  font-size: 34px; font-weight: 700;
+  color: #fff; line-height: 1.15;
+  margin-bottom: 7px; letter-spacing: -0.5px;
+}
+.hero-title { font-size: 13px; color: var(--gold2); opacity: 0.97; line-height: 1.5; }
+
+/* ── PROFILE ROW ── */
+.profile-row {
+  background: var(--navy2);
+  padding: 16px 20px;
+  display: flex; align-items: center; gap:14px;
+  border-bottom: 1px solid rgba(183,160,103,0.12);
+}
+.profile-img {
+  width: 64px; height: 64px; min-width:64px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  overflow: hidden; flex-shrink: 0;
+}
+.profile-img img { width:100%; height:100%; object-fit:cover; object-position: center top; }
+.profile-info h2 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.profile-info p { font-size: 12px; color: var(--muted-dark); line-height: 1.5; }
+
+/* ── 공통 섹션 ── */
+section { padding: 40px 20px; }
+.section-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 6px;
+}
+.section-title { font-size: 22px; font-weight: 700; line-height: 1.35; margin-bottom: 22px; }
+
+/* ── ABOUT ── */
+.about { background: var(--navy); }
+.about .section-title { color: #fff; }
+.slogan {
+  font-size: 15px; font-weight: 700;
+  color: var(--gold2); margin-bottom: 14px;
+  font-style: italic; line-height: 1.6;
+}
+.about-text { font-size: 14px; line-height: 1.9; color: var(--text-dark); opacity: 0.85; }
+
+/* ── WHY ── */
+.why { background: var(--light); }
+.why .section-label { color: var(--muted-light); }
+.why .section-title { color: var(--text-light); }
+.why-cards { display: flex; flex-direction: column; gap:14px; }
+.why-card {
+  background: #fff;
+  border: 1px solid rgba(183,160,103,0.18);
+  border-left: 4px solid var(--gold);
+  border-radius: 10px; padding: 18px 16px;
+}
+.why-card h3 { font-size: 15px; font-weight: 700; color: var(--text-light); margin-bottom: 8px; line-height: 1.4; }
+.why-card p { font-size: 13px; line-height: 1.85; color: #444; }
+.why-card p strong { color: var(--navy); font-weight: 700; }
+
+/* ── DIFFERENCE ── */
+.difference { background: var(--navy2); }
+.difference .section-title { color: #fff; }
+.diff-grid { display: flex; flex-direction: column; gap:12px; }
+.diff-card {
+  background: var(--navy3);
+  border: 1px solid rgba(183,160,103,0.12);
+  border-radius: 10px; padding: 18px 16px;
+}
+.diff-card h3 { font-size: 14px; font-weight: 700; color: var(--gold2); margin-bottom: 8px; line-height: 1.4; }
+.diff-card p { font-size: 13px; line-height: 1.8; color: var(--text-dark); opacity: 0.85; }
+
+/* ── GALLERY (추가 섹션: 농장~제품 시각 신뢰) ── */
+.gallery { background: var(--navy3); }
+.gallery .section-title { color: #fff; }
+.gallery-scroll {
+  display: flex; gap: 10px;
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 -20px; padding: 0 20px 8px;
+}
+.gallery-scroll::-webkit-scrollbar { height: 0; }
+.gallery-item {
+  flex: 0 0 78%; scroll-snap-align: center;
+  border-radius: 12px; overflow: hidden;
+  aspect-ratio: 1/1; background: var(--navy);
+  border: 1px solid rgba(183,160,103,0.15);
+}
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.gallery-hint { font-size: 11px; color: var(--muted-dark); margin-top: 12px; text-align: center; letter-spacing: 0.3px; }
+
+/* ── REFERRAL ── */
+.referral { background: var(--light); }
+.referral .section-label { color: var(--muted-light); }
+.referral .section-title { color: var(--text-light); }
+.ref-list { display: flex; flex-direction: column; gap:10px; }
+.ref-item {
+  display: flex; gap:12px; align-items:flex-start;
+  background: #fff; border-radius: 10px;
+  padding: 15px 14px; border: 1px solid rgba(0,0,0,0.05);
+}
+.ref-num {
+  width: 26px; height: 26px; min-width:26px;
+  border-radius: 50%; background: var(--gold);
+  color: var(--navy); font-weight: 700; font-size: 12px;
+  display: flex; align-items:center; justify-content:center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.ref-item p { font-size: 13px; line-height: 1.8; color: #333; }
+.ref-item p b { color: var(--navy); }
+
+/* ── CAREER ── */
+.career {
+  position: relative;
+  background-color: #efeee2;
+}
+.career .section-label { position: relative; z-index:1; color: var(--muted-light); }
+.career .section-title { color: var(--text-light); position: relative; z-index:1; }
+.career-list { display: flex; flex-direction: column; gap:18px; position: relative; z-index:1; }
+.career-item {
+  display: flex; gap:12px; align-items:flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.career-item:last-child { border-bottom: none; padding-bottom: 0; }
+.career-badge {
+  background: var(--navy); color: #fff;
+  font-size: 10px; font-weight: 700;
+  padding: 4px 10px; border-radius: 4px;
+  white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+}
+.career-content { background: rgba(255,255,255,0.82); border-radius: 8px; padding: 12px 14px; flex:1; }
+.career-item h3 { font-size: 14px; font-weight: 700; color: var(--text-light); margin-bottom: 7px; line-height: 1.4; }
+.career-item p { font-size: 12px; line-height: 1.85; color: #555; }
+
+/* ── CONTACT ── */
+.contact { background: var(--light); }
+.contact .section-label { color: var(--muted-light); }
+.contact .section-title { color: var(--text-light); }
+.contact-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.contact-item {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; text-align: center;
+  background: #fff; border-radius: 12px;
+  padding: 16px 10px; border: 1px solid rgba(0,0,0,0.05);
+  text-decoration: none; min-height: 100px;
+}
+.contact-item:active { transform: scale(0.97); }
+.contact-icon {
+  width: 42px; height: 42px; min-width:42px;
+  border-radius: 50%; background: var(--navy);
+  display: flex; align-items:center; justify-content:center;
+  font-size: 18px; flex-shrink: 0;
+}
+.contact-label { font-size: 10px; color: #999; }
+.contact-value { font-size: 12px; font-weight: 600; color: var(--text-light); line-height: 1.4; word-break: break-all; }
+
+/* ── ACTION ── */
+.action { background: var(--navy2); padding: 32px 20px; }
+.btn-group { display: flex; flex-direction: column; gap:12px; }
+.btn {
+  display: block; width: 100%; padding: 17px 16px;
+  border: none; border-radius: 10px;
+  font-size: 15px; font-weight: 700;
+  cursor: pointer; text-align: center;
+  transition: all 0.15s; font-family: 'Noto Sans KR', sans-serif;
+  min-height: 54px; letter-spacing: 0.3px;
+}
+.btn-primary { background: var(--gold); color: var(--navy); }
+.btn-secondary { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
+.btn-mandu {
+  background: linear-gradient(135deg, #3a4a26, #566b2f);
+  color: #fff; border: none;
+}
+.btn-share { background: linear-gradient(135deg, #4a3f1f, #8a6f2a); color: #fff; border: none; }
+.btn:active { transform: scale(0.97); opacity: 0.9; }
+
+/* 공유 바텀시트 */
+.share-sheet { display:none; position:fixed; inset:0; z-index:200; }
+.share-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.5); }
+.share-panel {
+  position:absolute; bottom:0; left:0; right:0;
+  max-width:480px; margin:0 auto;
+  background:#fff; border-radius:20px 20px 0 0;
+  padding:20px 20px 40px;
+}
+.share-handle { width:40px; height:4px; background:#ddd; border-radius:2px; margin:0 auto 18px; }
+.share-title { font-size:13px; color:#999; text-align:center; margin-bottom:20px; font-weight:600; }
+.share-btns { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:16px; }
+.share-btn { display:flex; flex-direction:column; align-items:center; gap:8px; background:none; border:none; cursor:pointer; padding:8px 4px; }
+.share-btn-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; }
+.share-btn span { font-size:11px; color:#333; font-weight:600; font-family:'Noto Sans KR',sans-serif; }
+.share-cancel { width:100%; padding:14px; background:#f2f2f2; border:none; border-radius:10px; font-size:15px; font-weight:700; color:#444; cursor:pointer; font-family:'Noto Sans KR',sans-serif; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy); padding: 24px 20px;
+  text-align: center; border-top: 1px solid rgba(183,160,103,0.12);
+}
+footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
+footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">천풍농원 · 천의상황</div>
+  <div class="lang-btns">
+    <button class="lang-btn active" onclick="setLang('kr')">한국어</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('jp')">日本語</button>
+    <button class="lang-btn" onclick="setLang('cn')">中文</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <img class="hero-img" src="hero.png" alt="이정환">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span data-lang="kr" class="active">유기농 상황버섯</span>
+      <span data-lang="en">ORGANIC SANGHWANG</span>
+      <span data-lang="jp">有機メシマコブ</span>
+      <span data-lang="cn">有机桑黄</span>
+    </div>
+    <div class="hero-name">
+      <span data-lang="kr" class="active">이정환</span>
+      <span data-lang="en">Lee Jung-hwan</span>
+      <span data-lang="jp">イ・ジョンファン</span>
+      <span data-lang="cn">李政桓</span>
+    </div>
+    <div class="hero-title">
+      <span data-lang="kr" class="active">대표 · 천풍농원</span>
+      <span data-lang="en">CEO · Chunpung Farm</span>
+      <span data-lang="jp">代表 · チュンプン農園</span>
+      <span data-lang="cn">代表 · 天风农园</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE ROW -->
+<div class="profile-row">
+  <div class="profile-img">
+    <img src="profil.png" alt="이정환">
+  </div>
+  <div class="profile-info">
+    <h2>이정환 · Lee Jung-hwan</h2>
+    <p>
+      <span data-lang="kr" class="active">유기농 상황버섯 · 6년 원목재배 · 경남 밀양</span>
+      <span data-lang="en">Organic Phellinus · 6-yr log-grown · Miryang</span>
+      <span data-lang="jp">有機メシマコブ · 原木6年栽培 · 慶南密陽</span>
+      <span data-lang="cn">有机桑黄 · 原木6年栽培 · 庆南密阳</span>
+    </p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="section-label">About</div>
+  <div class="slogan">
+    <span data-lang="kr" class="active">내 아이도 먹는 것만 만듭니다.</span>
+    <span data-lang="en">We only make what we'd feed our own children.</span>
+    <span data-lang="jp">自分の子どもにも飲ませられるものだけを。</span>
+    <span data-lang="cn">只做能给自己孩子喝的产品。</span>
+  </div>
+  <p class="about-text">
+    <span data-lang="kr" class="active">경남 밀양, 참나무 원목에서 6년을 키운 100% 유기농 상황버섯입니다. 28년 프로골퍼의 길을 접고, 생리학 박사이신 아버지를 따라 농부가 되었습니다. 연구로 검증하고, 내 가족이 먹을 기준으로 만듭니다.</span>
+    <span data-lang="en">Grown for six years on oak logs in the clean fields of Miryang, Korea — 100% organic Phellinus linteus. After 28 years as a golf pro, I followed my father, a PhD in physiology, into farming. We verify with research and make everything to the standard we'd set for our own family.</span>
+    <span data-lang="jp">慶南密陽の清らかな畑で、ナラの原木で6年育てた100%有機メシマコブです。28年のゴルフプロの道を離れ、生理学博士である父を継いで農家になりました。研究で確かめ、家族が口にする基準で作ります。</span>
+    <span data-lang="cn">在庆南密阳洁净的田地里，用橡木原木栽培六年的100%有机桑黄。结束28年高尔夫职业选手生涯后，我追随身为生理学博士的父亲成为农人。以研究为凭，用能给家人食用的标准来制作。</span>
+  </p>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="section-label">Why Us</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">왜 천풍농원인가</span>
+    <span data-lang="en">Why Chunpung Farm?</span>
+    <span data-lang="jp">なぜチュンプン農園なのか</span>
+    <span data-lang="cn">为什么选择天风农园</span>
+  </div>
+  <div class="why-cards">
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">① 원목 6년, 유기농 무농약</span>
+        <span data-lang="en">① Six years on oak logs, organic</span>
+        <span data-lang="jp">① 原木6年、有機・無農薬</span>
+        <span data-lang="cn">① 原木六年，有机无农药</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">참나무 원목에서 <strong>6년</strong>. 배지(톱밥) 재배가 아니라 자연에 가깝게, <strong>유기농·무농약</strong>으로만 키웁니다.</span>
+        <span data-lang="en">Grown on oak logs for <strong>6 years</strong> — never on sawdust substrate. Close to nature, <strong>organic and pesticide-free</strong>.</span>
+        <span data-lang="jp">ナラの原木で<strong>6年</strong>。菌床栽培ではなく自然に近い形で、<strong>有機・無農薬</strong>だけで育てます。</span>
+        <span data-lang="cn">橡木原木栽培<strong>六年</strong>，而非菌棒栽培。贴近自然，只用<strong>有机·无农药</strong>方式培育。</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">② 연구로 응대하는 농원</span>
+        <span data-lang="en">② We advise from research</span>
+        <span data-lang="jp">② 研究にもとづくご相談</span>
+        <span data-lang="cn">② 以研究为凭的农园</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">생리학 <strong>박사</strong>이신 아버지가 상황버섯 연구자료를 바탕으로 직접 상담합니다. 그냥 파는 게 아니라, 알고 권합니다.</span>
+        <span data-lang="en">My father, a <strong>PhD in physiology</strong>, advises customers himself based on research on Phellinus. We don't just sell — we recommend from knowledge.</span>
+        <span data-lang="jp">生理学<strong>博士</strong>である父が、メシマコブの研究資料をもとに直接ご相談に応じます。ただ売るのではなく、理解した上でおすすめします。</span>
+        <span data-lang="cn">身为生理学<strong>博士</strong>的父亲，依据桑黄研究资料亲自为客户咨询。不是单纯销售，而是懂了再推荐。</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">③ 방송이 먼저 알아본 밀양 먹거리</span>
+        <span data-lang="en">③ A Miryang specialty, on national TV</span>
+        <span data-lang="jp">③ TVが選んだ密陽の食</span>
+        <span data-lang="cn">③ 上过电视的密阳美食</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">밀양 대표 먹거리로 <strong>생생정보통</strong>에 소개됐습니다. 믿고 선물할 수 있는 이유입니다.</span>
+        <span data-lang="en">Featured on <strong>KBS Saengsaeng Jeongbotong</strong> as a signature product of Miryang — a name you can gift with confidence.</span>
+        <span data-lang="jp">密陽を代表する食として<strong>KBS「センセン情報通」</strong>で紹介されました。安心して贈れる理由です。</span>
+        <span data-lang="cn">作为密阳代表性食品，曾登上<strong>KBS《生生情报通》</strong>节目——值得放心相赠的理由。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENCE -->
+<section class="difference">
+  <div class="section-label">Difference</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">차별점</span>
+    <span data-lang="en">What Makes Us Different</span>
+    <span data-lang="jp">差別化ポイント</span>
+    <span data-lang="cn">差异化优势</span>
+  </div>
+  <div class="diff-grid">
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">참나무 원목 6년 재배</span>
+        <span data-lang="en">Six years, oak-log grown</span>
+        <span data-lang="jp">ナラ原木で6年栽培</span>
+        <span data-lang="cn">橡木原木栽培六年</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">톱밥 배지가 아닌 참나무 원목. 오래, 정직하게 키웁니다.</span>
+        <span data-lang="en">Real oak logs, not sawdust — grown slowly and honestly.</span>
+        <span data-lang="jp">菌床ではなくナラの原木。長く、正直に育てます。</span>
+        <span data-lang="cn">非菌棒而是橡木原木，慢工细活、诚实栽培。</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">100% 국내산 · 유기농</span>
+        <span data-lang="en">100% Korean, certified organic</span>
+        <span data-lang="jp">100%国産・有機</span>
+        <span data-lang="cn">100%国产 · 有机</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">밀양 청정 농장에서 직접 재배. 수입산과는 시작부터 다릅니다.</span>
+        <span data-lang="en">Grown on our own clean farm in Miryang — different from imports from the very start.</span>
+        <span data-lang="jp">密陽の清浄な農場で自家栽培。輸入品とは最初から違います。</span>
+        <span data-lang="cn">密阳洁净农场自家栽培，从源头就与进口品不同。</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">마시기 편한 프리미엄 패키지</span>
+        <span data-lang="en">Ready-to-brew premium packaging</span>
+        <span data-lang="jp">飲みやすいプレミアム包装</span>
+        <span data-lang="cn">便于冲泡的高端包装</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">차(茶) 형태로 간편하게. 깔끔한 디자인으로 명절 · 기업 선물에 어울립니다.</span>
+        <span data-lang="en">Enjoy it simply as a tea. Clean design that suits holiday and corporate gifting.</span>
+        <span data-lang="jp">お茶として手軽に。洗練されたデザインで、贈答・法人ギフトにも。</span>
+        <span data-lang="cn">可当茶饮般轻松享用，简约设计适合节庆与企业送礼。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- REFERRAL -->
+<section class="referral">
+  <div class="section-label">Referral</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">이런 분을 소개해 주세요</span>
+    <span data-lang="en">Please refer people like this</span>
+    <span data-lang="jp">こんな方をご紹介ください</span>
+    <span data-lang="cn">请介绍这样的客户</span>
+  </div>
+  <div class="ref-list">
+    <div class="ref-item">
+      <div class="ref-num">1</div>
+      <p>
+        <span data-lang="kr" class="active">명절 · 창립기념일에 <b>임직원 선물이나 고객 답례품</b>을 찾는 총무 · 복지 담당자</span>
+        <span data-lang="en">A GA/HR or welfare manager sourcing <b>employee gifts or client thank-you gifts</b> for holidays and anniversaries.</span>
+        <span data-lang="jp">名節・創立記念日に<b>社員向けギフトや顧客への返礼品</b>を探す総務・福利厚生のご担当者。</span>
+        <span data-lang="cn">在节庆或周年庆时，为<b>员工礼品或客户答谢礼</b>选品的总务·福利负责人。</span>
+      </p>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">2</div>
+      <p>
+        <span data-lang="kr" class="active">프리미엄 건강식품을 소싱하는 <b>유통 · MD · 온라인몰 담당자</b></span>
+        <span data-lang="en">A <b>buyer, MD, or online-mall manager</b> sourcing premium health foods.</span>
+        <span data-lang="jp">プレミアム健康食品を仕入れる<b>流通・MD・オンラインモールのご担当者</b>。</span>
+        <span data-lang="cn">采购高端健康食品的<b>流通 · 采购(MD) · 电商平台负责人</b>。</span>
+      </p>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">3</div>
+      <p>
+        <span data-lang="kr" class="active">건강을 챙기는 분들이 모이는 <b>병원 · 요양시설 · 건강 모임</b> 관계자</span>
+        <span data-lang="en">Someone connected to <b>hospitals, care facilities, or wellness groups</b> where health-conscious people gather.</span>
+        <span data-lang="jp"><b>病院・療養施設・健康コミュニティ</b>など、健康に関心のある方が集まる場の関係者。</span>
+        <span data-lang="cn">与<b>医院 · 疗养机构 · 健康社群</b>等注重健康人群相关的负责人。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div class="section-label">Gallery</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">농장에서 찻잔까지</span>
+    <span data-lang="en">From Farm to Cup</span>
+    <span data-lang="jp">農場から一杯まで</span>
+    <span data-lang="cn">从农场到茶杯</span>
+  </div>
+  <div class="gallery-scroll">
+    <div class="gallery-item"><img src="g1.jpg" alt="밀양 청정 자연" loading="lazy"></div>
+    <div class="gallery-item"><img src="g2.jpg" alt="원목 재배 하우스" loading="lazy"></div>
+    <div class="gallery-item"><img src="g3.jpg" alt="참나무 원목 상황버섯" loading="lazy"></div>
+    <div class="gallery-item"><img src="g4.jpg" alt="상황버섯 원목 단면" loading="lazy"></div>
+    <div class="gallery-item"><img src="g5.jpg" alt="아버지와 함께" loading="lazy"></div>
+    <div class="gallery-item"><img src="g6.jpg" alt="천의상황 제품" loading="lazy"></div>
+    <div class="gallery-item"><img src="g7.jpg" alt="천의상황 선물 라인업" loading="lazy"></div>
+    <div class="gallery-item"><img src="g8.jpg" alt="상황버섯 차" loading="lazy"></div>
+  </div>
+  <div class="gallery-hint">
+    <span data-lang="kr" class="active">← 옆으로 밀어 더 보기 →</span>
+    <span data-lang="en">← swipe to see more →</span>
+    <span data-lang="jp">← スワイプでもっと見る →</span>
+    <span data-lang="cn">← 左右滑动查看更多 →</span>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section class="career">
+  <div class="section-label">Career</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">경력 및 활동</span>
+    <span data-lang="en">Career &amp; Activity</span>
+    <span data-lang="jp">経歴・活動</span>
+    <span data-lang="cn">经历与活动</span>
+  </div>
+  <div class="career-list">
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">현재</span>
+        <span data-lang="en">Now</span>
+        <span data-lang="jp">現在</span>
+        <span data-lang="cn">现在</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">천풍농원 대표</span>
+          <span data-lang="en">CEO, Chunpung Farm</span>
+          <span data-lang="jp">チュンプン農園 代表</span>
+          <span data-lang="cn">天风农园 代表</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">경남 밀양에서 유기농 상황버섯 재배 · 유통. 6년차.</span>
+          <span data-lang="en">Organic Phellinus cultivation &amp; distribution in Miryang — 6th year.</span>
+          <span data-lang="jp">慶南密陽で有機メシマコブの栽培・流通、6年目。</span>
+          <span data-lang="cn">在庆南密阳从事有机桑黄栽培与流通，第六年。</span>
+        </p>
+      </div>
+    </div>
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">경력</span>
+        <span data-lang="en">Career</span>
+        <span data-lang="jp">経歴</span>
+        <span data-lang="cn">经历</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">프로골퍼 28년 → 농부</span>
+          <span data-lang="en">28 years as a golf pro → farmer</span>
+          <span data-lang="jp">ゴルフプロ28年 → 農家</span>
+          <span data-lang="cn">高尔夫职业28年 → 农人</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">28년간 필드에서 쌓은 성실함을 그대로 농장으로 가져왔습니다.</span>
+          <span data-lang="en">The discipline of 28 years on the course, carried straight into the farm.</span>
+          <span data-lang="jp">28年間フィールドで培った誠実さを、そのまま農場へ。</span>
+          <span data-lang="cn">将28年球场上磨练的踏实，原封不动带进农场。</span>
+        </p>
+      </div>
+    </div>
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">활동</span>
+        <span data-lang="en">Activity</span>
+        <span data-lang="jp">活動</span>
+        <span data-lang="cn">活动</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">BNI 자이언츠 챕터 · 방송 출연</span>
+          <span data-lang="en">BNI Giants Chapter · TV feature</span>
+          <span data-lang="jp">BNIジャイアンツチャプター・TV出演</span>
+          <span data-lang="cn">BNI 巨人分会 · 电视节目</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">BNI 자이언츠 챕터 멤버. 밀양 먹거리로 생생정보통 방송에 소개됐습니다.</span>
+          <span data-lang="en">Member of the BNI Giants Chapter; featured on KBS as a Miryang specialty.</span>
+          <span data-lang="jp">BNIジャイアンツチャプター会員。密陽の食としてKBSで紹介。</span>
+          <span data-lang="cn">BNI巨人分会会员；作为密阳美食登上KBS节目。</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+  <div class="section-label">Contact</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">연락하기</span>
+    <span data-lang="en">Contact</span>
+    <span data-lang="jp">お問い合わせ</span>
+    <span data-lang="cn">联系方式</span>
+  </div>
+  <div class="contact-list">
+    <a class="contact-item" href="tel:010-3955-3082">
+      <div class="contact-icon">📞</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">전화</span>
+        <span data-lang="en">Phone</span>
+        <span data-lang="jp">電話</span>
+        <span data-lang="cn">电话</span>
+      </div>
+      <div class="contact-value">010-3955-3082</div>
+    </a>
+    <a class="contact-item" href="mailto:twoputt@naver.com">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-label">Email</div>
+      <div class="contact-value">twoputt@naver.com</div>
+    </a>
+    <a class="contact-item" href="http://www.chunpung.co.kr" target="_blank" rel="noopener">
+      <div class="contact-icon">🌐</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">온라인몰</span>
+        <span data-lang="en">Online Store</span>
+        <span data-lang="jp">オンラインモール</span>
+        <span data-lang="cn">线上商城</span>
+      </div>
+      <div class="contact-value">chunpung.co.kr</div>
+    </a>
+    <a class="contact-item" href="https://instagram.com/chunpung_farm" target="_blank" rel="noopener">
+      <div class="contact-icon">📷</div>
+      <div class="contact-label">Instagram</div>
+      <div class="contact-value">@chunpung_farm</div>
+    </a>
+    <a class="contact-item" style="grid-column: 1 / -1;" href="https://vimeo.com/468142696" target="_blank" rel="noopener">
+      <div class="contact-icon">▶️</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">방송 다시보기</span>
+        <span data-lang="en">TV Feature</span>
+        <span data-lang="jp">TV放送を見る</span>
+        <span data-lang="cn">电视节目回放</span>
+      </div>
+      <div class="contact-value">천풍농원 · 방송 출연분</div>
+    </a>
+  </div>
+</section>
+
+<!-- ACTION -->
+<div class="action">
+  <div class="btn-group">
+    <button class="btn btn-primary" onclick="saveContact()">
+      <span data-lang="kr" class="active">📞 연락처 저장</span>
+      <span data-lang="en">📞 Save contact</span>
+      <span data-lang="jp">📞 連絡先を保存</span>
+      <span data-lang="cn">📞 保存联系人</span>
+    </button>
+    <button class="btn btn-secondary" onclick="saveToCardbook({id:'lee-junghwan',name:'이정환',nameEn:'Lee Jung-hwan',title:'대표',company:'천풍농원',phone:'010-3955-3082',email:'twoputt@naver.com',chapter:'자이언츠',bni:'상황버섯/건강식품',url:window.location.href})">
+      <span data-lang="kr" class="active">🗂️ 명함 저장 (CardBook)</span>
+      <span data-lang="en">🗂️ Save to CardBook</span>
+      <span data-lang="jp">🗂️ 名刺を保存</span>
+      <span data-lang="cn">🗂️ 保存名片</span>
+    </button>
+    <button class="btn btn-mandu" onclick="window.open('https://jinjjabg-hub.github.io/MANDU/?u=YOUR_MANDU_ID','_blank')">
+      <span data-lang="kr" class="active">💬 MANDU 실시간 번역 채팅</span>
+      <span data-lang="en">💬 Chat on MANDU (live translation)</span>
+      <span data-lang="jp">💬 MANDUで翻訳チャット</span>
+      <span data-lang="cn">💬 通过MANDU翻译聊天</span>
+    </button>
+    <button class="btn btn-share" onclick="shareCard()">
+      <span data-lang="kr" class="active">📤 명함 전달하기</span>
+      <span data-lang="en">📤 Share this card</span>
+      <span data-lang="jp">📤 名刺を共有</span>
+      <span data-lang="cn">📤 分享名片</span>
+    </button>
+  </div>
+</div>
+
+<!-- 공유 바텀시트 -->
+<div class="share-sheet" id="shareSheet">
+  <div class="share-backdrop" onclick="closeShare()"></div>
+  <div class="share-panel">
+    <div class="share-handle"></div>
+    <div class="share-title">명함 전달하기</div>
+    <div class="share-btns">
+      <button class="share-btn" onclick="shareKakao()">
+        <div class="share-btn-icon" style="background:#FEE500;">💬</div><span>카카오톡</span>
+      </button>
+      <button class="share-btn" onclick="shareSMS()">
+        <div class="share-btn-icon" style="background:#34c759;">✉️</div><span>문자</span>
+      </button>
+      <button class="share-btn" onclick="copyLink()">
+        <div class="share-btn-icon" style="background:#e8e8e8;">🔗</div><span>링크 복사</span>
+      </button>
+      <button class="share-btn" onclick="shareQR()">
+        <div class="share-btn-icon" style="background:#2b3121;">📱</div><span>QR 보기</span>
+      </button>
+    </div>
+    <button class="share-cancel" onclick="closeShare()">취소</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="company">
+    <span data-lang="kr" class="active">천풍농원 · 천의상황</span>
+    <span data-lang="en">Chunpung Farm · Cheon-ui Sanghwang</span>
+    <span data-lang="jp">チュンプン農園 · 天のメシマコブ</span>
+    <span data-lang="cn">天风农园 · 天之桑黄</span>
+  </div>
+  <div class="slogan-footer">Organic Phellinus, oak-log grown in Miryang.</div>
+</footer>
+
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const m = btn.getAttribute('onclick').match(/'(\w+)'/);
+    btn.classList.toggle('active', m && m[1] === lang);
+  });
+}
+function saveContact() {
+  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:이정환\nORG:천풍농원\nTITLE:대표\nTEL:010-3955-3082\nEMAIL:twoputt@naver.com\nURL:https://jinjjabg-hub.github.io/NAMECARD/이정환/\nEND:VCARD`;
+  const blob = new Blob([vcard], {type:'text/vcard'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'LeeJungHwan_Chunpung.vcf';
+  a.click();
+}
+
+/* ── 명함 전달하기 ── */
+const CARD_URL = 'https://jinjjabg-hub.github.io/NAMECARD/%EC%9D%B4%EC%A0%95%ED%99%98/';
+const CARD_TITLE = '이정환 | 천풍농원';
+const CARD_TEXT = '내 아이도 먹는 것만 만듭니다 — 천풍농원 이정환 대표';
+
+function shareCard() {
+  if (navigator.share) {
+    navigator.share({ title: CARD_TITLE, text: CARD_TEXT, url: CARD_URL }).catch(() => {});
+  } else {
+    document.getElementById('shareSheet').style.display = 'block';
+  }
+}
+function closeShare() { document.getElementById('shareSheet').style.display = 'none'; }
+function shareKakao() {
+  window.open('https://sharer.kakao.com/talk/friends/picker/link?app_key=&url=' + encodeURIComponent(CARD_URL), '_blank');
+  closeShare();
+}
+function shareSMS() {
+  location.href = 'sms:?body=' + encodeURIComponent(CARD_TITLE + '\n' + CARD_URL);
+  closeShare();
+}
+function copyLink() {
+  navigator.clipboard.writeText(CARD_URL).then(() => alert('링크가 복사되었습니다!')).catch(() => {
+    const t = document.createElement('textarea');
+    t.value = CARD_URL;
+    document.body.appendChild(t); t.select(); document.execCommand('copy');
+    document.body.removeChild(t);
+    alert('링크가 복사되었습니다!');
+  });
+  closeShare();
+}
+function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
+</script>
+</body>
+</html>
