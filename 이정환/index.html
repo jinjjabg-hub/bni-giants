@@ -6,11 +6,11 @@
 <title>이정환 | 천풍농원</title>
 <meta property="og:title" content="이정환 | 대표 · 천풍농원">
 <meta property="og:description" content="경남 밀양, 참나무 원목에서 6년 키운 100% 유기농 상황버섯. 내 아이도 먹는 것만 만듭니다.">
-<meta property="og:image" content="https://jinjjabg-hub.github.io/NAMECARD/%EC%9D%B4%EC%A0%95%ED%99%98/og.png">
+<meta property="og:image" content="https://jinjjabg-hub.github.io/bni-giants/%EC%9D%B4%EC%A0%95%ED%99%98/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://jinjjabg-hub.github.io/NAMECARD/이정환/">
+<meta property="og:url" content="https://jinjjabg-hub.github.io/bni-giants/이정환/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -181,13 +181,15 @@ section { padding: 40px 20px; }
 /* ── GALLERY (추가 섹션: 농장~제품 시각 신뢰) ── */
 .gallery { background: var(--navy3); }
 .gallery .section-title { color: #fff; }
+.gallery-wrap { position: relative; }
 .gallery-scroll {
   display: flex; gap: 10px;
   overflow-x: auto; scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
   margin: 0 -20px; padding: 0 20px 8px;
 }
-.gallery-scroll::-webkit-scrollbar { height: 0; }
+.gallery-scroll::-webkit-scrollbar { height: 0; display:none; }
 .gallery-item {
   flex: 0 0 78%; scroll-snap-align: center;
   border-radius: 12px; overflow: hidden;
@@ -195,7 +197,29 @@ section { padding: 40px 20px; }
   border: 1px solid rgba(183,160,103,0.15);
 }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.gallery-hint { font-size: 11px; color: var(--muted-dark); margin-top: 12px; text-align: center; letter-spacing: 0.3px; }
+/* 좌우 화살표 버튼 — PC에서 마우스 클릭으로 넘기기 */
+.gallery-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 38px; height: 38px; border-radius: 50%;
+  background: rgba(43,49,33,0.85); border: 1px solid rgba(183,160,103,0.4);
+  color: var(--gold2); font-size: 18px; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 5; user-select: none;
+  transition: background 0.15s;
+}
+.gallery-btn:hover { background: rgba(43,49,33,1); }
+.gallery-btn:active { transform: translateY(-50%) scale(0.92); }
+.gallery-btn-l { left: 2px; }
+.gallery-btn-r { right: 2px; }
+/* 점 인디케이터 — 현재 위치 클릭 이동 */
+.gallery-dots { display: flex; justify-content: center; gap: 6px; margin-top: 14px; }
+.gallery-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(183,160,103,0.35);
+  cursor: pointer; transition: all 0.2s;
+}
+.gallery-dot.active { background: var(--gold); width: 18px; border-radius: 3px; }
+.gallery-hint { font-size: 11px; color: var(--muted-dark); margin-top: 10px; text-align: center; letter-spacing: 0.3px; }
 
 /* ── REFERRAL ── */
 .referral { background: var(--light); }
@@ -545,22 +569,21 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <span data-lang="jp">農場から一杯まで</span>
     <span data-lang="cn">从农场到茶杯</span>
   </div>
-  <div class="gallery-scroll">
-    <div class="gallery-item"><img src="g1.jpg" alt="밀양 청정 자연" loading="lazy"></div>
-    <div class="gallery-item"><img src="g2.jpg" alt="원목 재배 하우스" loading="lazy"></div>
-    <div class="gallery-item"><img src="g3.jpg" alt="참나무 원목 상황버섯" loading="lazy"></div>
-    <div class="gallery-item"><img src="g4.jpg" alt="상황버섯 원목 단면" loading="lazy"></div>
-    <div class="gallery-item"><img src="g5.jpg" alt="아버지와 함께" loading="lazy"></div>
-    <div class="gallery-item"><img src="g6.jpg" alt="천의상황 제품" loading="lazy"></div>
-    <div class="gallery-item"><img src="g7.jpg" alt="천의상황 선물 라인업" loading="lazy"></div>
-    <div class="gallery-item"><img src="g8.jpg" alt="상황버섯 차" loading="lazy"></div>
+  <div class="gallery-wrap">
+    <div class="gallery-scroll" id="galleryScroll">
+      <div class="gallery-item"><img src="g1.jpg" alt="밀양 청정 자연" loading="lazy"></div>
+      <div class="gallery-item"><img src="g2.jpg" alt="원목 재배 하우스" loading="lazy"></div>
+      <div class="gallery-item"><img src="g3.jpg" alt="참나무 원목 상황버섯" loading="lazy"></div>
+      <div class="gallery-item"><img src="g4.jpg" alt="상황버섯 원목 단면" loading="lazy"></div>
+      <div class="gallery-item"><img src="g5.jpg" alt="아버지와 함께" loading="lazy"></div>
+      <div class="gallery-item"><img src="g6.jpg" alt="천의상황 제품" loading="lazy"></div>
+      <div class="gallery-item"><img src="g7.jpg" alt="천의상황 선물 라인업" loading="lazy"></div>
+      <div class="gallery-item"><img src="g8.jpg" alt="상황버섯 차" loading="lazy"></div>
+    </div>
+    <div class="gallery-btn gallery-btn-l" onclick="gallerySlide(-1)">‹</div>
+    <div class="gallery-btn gallery-btn-r" onclick="gallerySlide(1)">›</div>
   </div>
-  <div class="gallery-hint">
-    <span data-lang="kr" class="active">← 옆으로 밀어 더 보기 →</span>
-    <span data-lang="en">← swipe to see more →</span>
-    <span data-lang="jp">← スワイプでもっと見る →</span>
-    <span data-lang="cn">← 左右滑动查看更多 →</span>
-  </div>
+  <div class="gallery-dots" id="galleryDots"></div>
 </section>
 
 <!-- CAREER -->
@@ -772,7 +795,7 @@ function setLang(lang) {
   });
 }
 function saveContact() {
-  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:이정환\nORG:천풍농원\nTITLE:대표\nTEL:010-3955-3082\nEMAIL:twoputt@naver.com\nURL:https://jinjjabg-hub.github.io/NAMECARD/이정환/\nEND:VCARD`;
+  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:이정환\nORG:천풍농원\nTITLE:대표\nTEL:010-3955-3082\nEMAIL:twoputt@naver.com\nURL:https://jinjjabg-hub.github.io/bni-giants/이정환/\nEND:VCARD`;
   const blob = new Blob([vcard], {type:'text/vcard'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
@@ -781,7 +804,7 @@ function saveContact() {
 }
 
 /* ── 명함 전달하기 ── */
-const CARD_URL = 'https://jinjjabg-hub.github.io/NAMECARD/%EC%9D%B4%EC%A0%95%ED%99%98/';
+const CARD_URL = 'https://jinjjabg-hub.github.io/bni-giants/%EC%9D%B4%EC%A0%95%ED%99%98/';
 const CARD_TITLE = '이정환 | 천풍농원';
 const CARD_TEXT = '내 아이도 먹는 것만 만듭니다 — 천풍농원 이정환 대표';
 
@@ -812,6 +835,41 @@ function copyLink() {
   closeShare();
 }
 function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
+
+/* ── GALLERY : 화살표 클릭 / 점 클릭 / 스와이프 모두 지원 ── */
+(function() {
+  const track = document.getElementById('galleryScroll');
+  const dotsWrap = document.getElementById('galleryDots');
+  if (!track || !dotsWrap) return;
+  const items = track.querySelectorAll('.gallery-item');
+  items.forEach((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+    d.onclick = () => items[i].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    dotsWrap.appendChild(d);
+  });
+  const dots = dotsWrap.querySelectorAll('.gallery-dot');
+
+  window.gallerySlide = function(dir) {
+    const itemW = items[0].getBoundingClientRect().width + 10; // gap 포함
+    track.scrollBy({ left: dir * itemW, behavior: 'smooth' });
+  };
+
+  function syncDots() {
+    const center = track.scrollLeft + track.clientWidth / 2;
+    let idx = 0, min = Infinity;
+    items.forEach((it, i) => {
+      const mid = it.offsetLeft + it.clientWidth / 2;
+      const diff = Math.abs(mid - center);
+      if (diff < min) { min = diff; idx = i; }
+    });
+    dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+  }
+  track.addEventListener('scroll', () => {
+    clearTimeout(track._t);
+    track._t = setTimeout(syncDots, 80);
+  }, { passive: true });
+})();
 </script>
 </body>
 </html>
