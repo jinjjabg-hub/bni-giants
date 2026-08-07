@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>우완용 | 해밀한의원 · 하니마을㈜</title>
+<meta property="og:title" content="우완용 | 원장 · 해밀한의원 · 하니마을㈜">
+<meta property="og:description" content="해밀한의원 원외탕전실에서는 공진단·경옥고·맞춤보약으로 면역 원기치료를 제공하며, 하니마을㈜의 무연쑥뜸기 마야구로 누구나 집에서 스스로 건강관리를 할 수 있도록 코칭합니다. 26년 한의원 운영과 20년 쑥뜸기 개발 경험을 바탕으로 고객의 건강과 삶의 질 향상에 헌신하고 있습니다.">
+<meta property="og:image" content="https://jinjjabg-hub.github.io/bni-giants/%EC%9A%B0%EC%99%84%EC%9A%A9/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jinjjabg-hub.github.io/bni-giants/우완용/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+Thai:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:#1a3a5c; --navy2:#22486e; --navy3:#2c5983;
+  --gold:#c9a227; --gold2:#e3bf4d;
+  --light:#f0f4ff;
+  --text-dark:#eaf0f8; --text-light:#12263a;
+  --muted-dark:#9fb6cf; --muted-light:#5a6b7d;
+}
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html { font-size:16px; }
+body {
+  font-family:'Noto Sans KR',sans-serif;
+  background:var(--navy); color:var(--text-dark);
+  max-width:480px; margin:0 auto; overflow-x:hidden;
+}
+[data-lang="th"] { font-family:'Noto Sans Thai','Noto Sans KR',sans-serif; }
+[data-lang="cn"] { font-family:'Noto Sans SC','Noto Sans KR',sans-serif; }
+[data-lang] { display:none; }
+[data-lang].active { display:block; }
+span[data-lang].active { display:inline; }
+
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  max-width:480px; margin:0 auto;
+  background:rgba(26,58,92,0.97); backdrop-filter:blur(10px);
+  padding:10px 14px; display:flex; justify-content:space-between; align-items:center;
+  border-bottom:1px solid rgba(201,162,39,0.3);
+}
+.nav-brand { font-size:11px; font-weight:700; color:var(--gold); white-space:nowrap; letter-spacing:0.5px; }
+.lang-btns { display:flex; gap:4px; }
+.lang-btn {
+  padding:5px 7px; border:1px solid rgba(201,162,39,0.35);
+  background:transparent; color:var(--muted-dark);
+  font-size:10px; font-weight:700; cursor:pointer; border-radius:5px;
+  transition:all 0.2s; min-width:38px; min-height:32px;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Noto Sans KR',sans-serif;
+}
+.lang-btn.active { background:var(--gold); color:var(--navy); border-color:var(--gold); }
+
+.hero { margin-top:54px; position:relative; width:100%; aspect-ratio:3/4; overflow:hidden; }
+.hero img.hero-img { width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }
+.hero-overlay {
+  position:absolute; inset:0;
+  background:linear-gradient(to bottom,rgba(26,58,92,0.05) 0%,rgba(26,58,92,0.12) 40%,rgba(26,58,92,0.78) 75%,rgba(26,58,92,0.97) 100%);
+}
+.hero-content { position:absolute; bottom:0; left:0; right:0; z-index:2; padding:24px 20px 22px; }
+.hero-badge {
+  display:inline-block; background:var(--gold); color:var(--navy);
+  font-size:10px; font-weight:700; padding:4px 12px; border-radius:20px;
+  margin-bottom:10px; letter-spacing:1px;
+}
+.hero-name { font-size:34px; font-weight:700; color:#fff; line-height:1.15; margin-bottom:7px; letter-spacing:-0.5px; }
+.hero-title { font-size:12.5px; color:var(--gold2); opacity:0.97; line-height:1.5; }
+
+.profile-row {
+  background:var(--navy2); padding:16px 20px;
+  display:flex; align-items:center; gap:14px;
+  border-bottom:1px solid rgba(201,162,39,0.15);
+}
+.profile-img { width:64px; height:64px; min-width:64px; border-radius:50%; border:2px solid var(--gold); overflow:hidden; flex-shrink:0; }
+.profile-img img { width:100%; height:100%; object-fit:cover; object-position:center top; }
+.profile-info h2 { font-size:16px; font-weight:700; color:#fff; margin-bottom:4px; }
+.profile-info p { font-size:11.5px; color:var(--muted-dark); line-height:1.5; }
+
+section { padding:40px 20px; }
+.section-label { font-size:10px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
+.section-title { font-size:21px; font-weight:700; line-height:1.35; margin-bottom:22px; }
+
+.about { background:var(--navy); }
+.about .section-title { color:#fff; }
+.slogan { font-size:15px; font-weight:700; color:var(--gold2); margin-bottom:14px; font-style:italic; line-height:1.6; }
+.about-text { font-size:14px; line-height:1.9; color:var(--text-dark); opacity:0.87; }
+
+.why { background:var(--light); }
+.why .section-label { color:var(--muted-light); }
+.why .section-title { color:var(--text-light); }
+.why-cards { display:flex; flex-direction:column; gap:14px; }
+.why-card { background:#fff; border:1px solid rgba(201,162,39,0.2); border-left:4px solid var(--gold); border-radius:10px; padding:18px 16px; }
+.why-card h3 { font-size:15px; font-weight:700; color:var(--text-light); margin-bottom:8px; line-height:1.4; }
+.why-card p { font-size:13px; line-height:1.85; color:#444; }
+.why-card p strong { color:var(--navy); font-weight:700; }
+
+.difference { background:var(--navy2); }
+.difference .section-title { color:#fff; }
+.diff-grid { display:flex; flex-direction:column; gap:12px; }
+.diff-card { background:var(--navy3); border:1px solid rgba(201,162,39,0.15); border-radius:10px; padding:18px 16px; }
+.diff-card h3 { font-size:14px; font-weight:700; color:var(--gold2); margin-bottom:8px; line-height:1.4; }
+.diff-card p { font-size:13px; line-height:1.8; color:var(--text-dark); opacity:0.85; }
+
+/* PRODUCTS */
+.portfolio { background:var(--navy); }
+.portfolio .section-title { color:#fff; }
+.port-wrap { overflow:hidden; border-radius:12px; border:1px solid rgba(201,162,39,0.25); background:#fff; }
+.port-track { display:flex; transition:transform 0.35s ease; }
+.port-slide { min-width:100%; cursor:pointer; }
+.port-slide img { width:100%; display:block; }
+.port-cap { font-size:12px; font-weight:700; text-align:center; padding:11px 8px; color:var(--navy); background:#f7f9fc; }
+.port-nav { display:flex; align-items:center; justify-content:center; gap:14px; margin-top:14px; }
+.port-btn {
+  width:34px; height:34px; border-radius:50%;
+  border:1px solid rgba(201,162,39,0.45); background:transparent;
+  color:var(--gold); font-size:18px; line-height:1; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+}
+.port-dots { display:flex; gap:6px; align-items:center; }
+.port-dot { width:7px; height:7px; border-radius:50%; background:rgba(255,255,255,0.25); cursor:pointer; transition:all 0.2s; }
+.port-dot.active { background:var(--gold); width:18px; border-radius:4px; }
+.port-hint { font-size:11px; text-align:center; color:var(--muted-dark); margin-top:10px; }
+
+.referral { background:var(--light); }
+.referral .section-label { color:var(--muted-light); }
+.referral .section-title { color:var(--text-light); }
+.ref-list { display:flex; flex-direction:column; gap:10px; }
+.ref-item { display:flex; gap:12px; align-items:flex-start; background:#fff; border-radius:10px; padding:15px 14px; border:1px solid rgba(0,0,0,0.05); }
+.ref-num { width:26px; height:26px; min-width:26px; border-radius:50%; background:var(--gold); color:var(--navy); font-weight:700; font-size:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:1px; }
+.ref-item p { font-size:13px; line-height:1.8; color:#333; }
+.ref-item p strong { color:var(--navy); }
+
+.career { background:var(--light); }
+.career .section-label { color:var(--muted-light); }
+.career .section-title { color:var(--text-light); }
+.career-list { display:flex; flex-direction:column; gap:18px; }
+.career-item { display:flex; gap:12px; align-items:flex-start; padding-bottom:18px; border-bottom:1px solid rgba(0,0,0,0.08); }
+.career-item:last-child { border-bottom:none; padding-bottom:0; }
+.career-badge { background:var(--navy); color:#fff; font-size:10px; font-weight:700; padding:4px 10px; border-radius:4px; white-space:nowrap; flex-shrink:0; margin-top:2px; }
+.career-content { background:rgba(255,255,255,0.9); border-radius:8px; padding:12px 14px; flex:1; }
+.career-item h3 { font-size:14px; font-weight:700; color:var(--text-light); margin-bottom:7px; line-height:1.4; }
+.career-item p { font-size:12px; line-height:1.85; color:#555; }
+
+.contact { background:var(--navy2); }
+.contact .section-label { color:var(--gold); }
+.contact .section-title { color:#fff; }
+.contact-list { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.contact-item {
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:8px; text-align:center; background:#fff; border-radius:12px;
+  padding:16px 10px; border:1px solid rgba(0,0,0,0.05);
+  text-decoration:none; min-height:100px;
+}
+.contact-item:active { transform:scale(0.97); }
+.contact-icon { width:42px; height:42px; min-width:42px; border-radius:50%; background:var(--navy); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+.contact-label { font-size:10px; color:#999; }
+.contact-value { font-size:12px; font-weight:600; color:var(--text-light); line-height:1.4; word-break:break-all; }
+
+.action { background:var(--navy); padding:32px 20px; }
+.btn-group { display:flex; flex-direction:column; gap:12px; }
+.btn {
+  display:block; width:100%; padding:17px 16px; border:none; border-radius:10px;
+  font-size:15px; font-weight:700; cursor:pointer; text-align:center;
+  transition:all 0.15s; font-family:'Noto Sans KR',sans-serif;
+  min-height:54px; letter-spacing:0.3px;
+}
+.btn-primary { background:var(--gold); color:var(--navy); }
+.btn-secondary { background:transparent; border:2px solid var(--gold); color:var(--gold); }
+.btn-mandu { background:linear-gradient(135deg,#1a3a6b,#0d5ca8); color:#fff; }
+.btn-share { background:linear-gradient(135deg,#1a6b3a,#0d8a4a); color:#fff; }
+.btn:active { transform:scale(0.97); opacity:0.9; }
+
+.share-sheet { display:none; position:fixed; inset:0; z-index:200; }
+.share-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.5); }
+.share-panel { position:absolute; bottom:0; left:0; right:0; max-width:480px; margin:0 auto; background:#fff; border-radius:20px 20px 0 0; padding:20px 20px 40px; }
+.share-handle { width:40px; height:4px; background:#ddd; border-radius:2px; margin:0 auto 18px; }
+.share-title { font-size:13px; color:#999; text-align:center; margin-bottom:20px; font-weight:600; }
+.share-btns { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:16px; }
+.share-btn { display:flex; flex-direction:column; align-items:center; gap:8px; background:none; border:none; cursor:pointer; padding:8px 4px; }
+.share-btn-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; }
+.share-btn span { font-size:11px; color:#333; font-weight:600; font-family:'Noto Sans KR',sans-serif; }
+.share-cancel { width:100%; padding:14px; background:#f2f2f2; border:none; border-radius:10px; font-size:15px; font-weight:700; color:#444; cursor:pointer; font-family:'Noto Sans KR',sans-serif; }
+
+footer { background:var(--navy); padding:24px 20px; text-align:center; border-top:1px solid rgba(201,162,39,0.15); }
+footer .company { font-size:13px; font-weight:700; color:var(--gold); margin-bottom:5px; }
+footer .slogan-footer { font-size:11px; color:var(--muted-dark); letter-spacing:0.5px; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">HAEMIL &amp; HANIMAEUL</div>
+  <div class="lang-btns">
+    <button class="lang-btn active" onclick="setLang('kr')">한국어</button>
+    <button class="lang-btn" onclick="setLang('th')">ไทย</button>
+    <button class="lang-btn" onclick="setLang('vi')">Việt</button>
+    <button class="lang-btn" onclick="setLang('cn')">中文</button>
+  </div>
+</nav>
+
+<div class="hero">
+  <img class="hero-img" src="hero.jpg" alt="우완용">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span data-lang="kr" class="active">26년 한의원 · MAYAGU</span><span data-lang="th">26 ปี · MAYAGU</span><span data-lang="vi">26 NĂM · MAYAGU</span><span data-lang="cn">26年 · MAYAGU</span></div>
+    <div class="hero-name"><span data-lang="kr" class="active">우 완 용</span><span data-lang="th">WOO WANYONG</span><span data-lang="vi">WOO WANYONG</span><span data-lang="cn">WOO WANYONG</span></div>
+    <div class="hero-title"><span data-lang="kr" class="active">원장 / 대표 · 해밀한의원 · 하니마을㈜</span><span data-lang="th">ผู้อำนวยการ / ซีอีโอ · Haemil Clinic · Hanimaeul</span><span data-lang="vi">Viện trưởng / Giám đốc · Haemil Clinic · Hanimaeul</span><span data-lang="cn">院长 / 代表 · Haemil 韩医院 · Hanimaeul</span></div>
+  </div>
+</div>
+
+<div class="profile-row">
+  <div class="profile-img"><img src="profil.jpg" alt="우완용"></div>
+  <div class="profile-info">
+    <h2>우완용 · Woo Wanyong</h2>
+    <p><span data-lang="kr" class="active">한의원 · 면역원기치료 · 무연쑥뜸기 · 한약제조</span><span data-lang="th">คลินิกแพทย์แผนเกาหลี · เสริมภูมิคุ้มกัน · เครื่องรมยาไร้ควัน · ผลิตยาสมุนไพร</span><span data-lang="vi">Phòng khám Đông y · Tăng miễn dịch · Máy cứu ngải không khói · Sản xuất thuốc</span><span data-lang="cn">韩医院 · 免疫元气治疗 · 无烟艾灸器 · 韩药制造</span></p>
+  </div>
+</div>
+
+<section class="about">
+  <div class="section-label">About</div>
+  <div class="slogan"><span data-lang="kr" class="active">건강을 위한 바른 뜸, 마야구 — 신뢰와 약속으로 26년</span><span data-lang="th">การรมยาที่ถูกต้องเพื่อสุขภาพ MAYAGU — 26 ปีแห่งความไว้วางใจ</span><span data-lang="vi">Cứu ngải đúng cách vì sức khỏe, MAYAGU — 26 năm tin cậy</span><span data-lang="cn">为健康的正确艾灸 MAYAGU — 信赖与承诺 26年</span></div>
+  <p class="about-text"><span data-lang="kr" class="active">해밀한의원 원외탕전실에서는 공진단·경옥고·맞춤보약으로 면역 원기치료를 제공하며, 하니마을㈜의 무연쑥뜸기 마야구로 누구나 집에서 스스로 건강관리를 할 수 있도록 코칭합니다. 26년 한의원 운영과 20년 쑥뜸기 개발 경험을 바탕으로 고객의 건강과 삶의 질 향상에 헌신하고 있습니다.</span><span data-lang="th">ที่ห้องปรุงยาของคลินิกแฮมิล เราให้การรักษาเสริมภูมิคุ้มกันและพลังชีวิตด้วยกงจินดัน คยองอกโก และยาบำรุงเฉพาะบุคคล และด้วยเครื่องรมยาไร้ควัน MAYAGU ของ Hanimaeul ทุกคนสามารถดูแลสุขภาพด้วยตนเองที่บ้านได้ ด้วยประสบการณ์บริหารคลินิก 26 ปี และพัฒนาเครื่องรมยา 20 ปี เราทุ่มเทเพื่อสุขภาพและคุณภาพชีวิตของลูกค้า</span><span data-lang="vi">Tại xưởng bào chế của Phòng khám Haemil, chúng tôi cung cấp liệu pháp tăng cường miễn dịch và nguyên khí bằng Gongjindan, Gyeongokgo và thuốc bổ cá nhân hóa. Với máy cứu ngải không khói MAYAGU của Hanimaeul, ai cũng có thể tự chăm sóc sức khỏe tại nhà. 26 năm điều hành phòng khám và 20 năm phát triển máy cứu ngải — chúng tôi tận tâm vì sức khỏe và chất lượng sống của khách hàng.</span><span data-lang="cn">Haemil韩医院院外汤煎室提供拱辰丹、琼玉膏及定制补药的免疫元气治疗；通过Hanimaeul的无烟艾灸器MAYAGU，让任何人都能在家自主管理健康。凭借26年韩医院运营与20年艾灸器研发经验，致力于提升客户的健康与生活品质。</span></p>
+</section>
+
+<section class="why">
+  <div class="section-label">Why Us</div>
+  <div class="section-title"><span data-lang="kr" class="active">왜 해밀한의원 · 하니마을인가</span><span data-lang="th">ทำไมต้อง Haemil &amp; Hanimaeul</span><span data-lang="vi">Vì sao chọn Haemil &amp; Hanimaeul</span><span data-lang="cn">为什么选择 Haemil &amp; Hanimaeul</span></div>
+  <div class="why-cards"><div class="why-card"><h3><span data-lang="kr" class="active">① 26년 한의원 운영 경력</span><span data-lang="th">① ประสบการณ์บริหารคลินิก 26 ปี</span><span data-lang="vi">① 26 năm điều hành phòng khám</span><span data-lang="cn">① 26年韩医院运营经验</span></h3><p><span data-lang="kr" class="active">한 자리에서 <strong>26년</strong>, 직접 환자를 보고 처방해 왔습니다. 유행을 좇는 대신 <strong>원방(原方)</strong>의 정통 배합을 지켜온 것이 신뢰의 근거입니다.</span><span data-lang="th"><strong>26 ปี</strong> ณ ที่เดิม ตรวจและจ่ายยาด้วยตนเองมาตลอด ไม่ตามกระแส แต่ยึด<strong>ตำรับดั้งเดิม (原方)</strong> คือรากฐานของความไว้วางใจ</span><span data-lang="vi"><strong>26 năm</strong> tại cùng một nơi, trực tiếp khám và kê đơn. Không chạy theo xu hướng mà giữ đúng <strong>cổ phương (原方)</strong> — đó là cơ sở của niềm tin.</span><span data-lang="cn">在同一地点坚守<strong>26年</strong>，亲自诊察、亲自处方。不追逐流行，坚持<strong>原方</strong>正统配伍，这就是信赖的根据。</span></p></div><div class="why-card"><h3><span data-lang="kr" class="active">② 원외탕전 제환 파트 업계 1위</span><span data-lang="th">② อันดับ 1 ด้านการผลิตยาลูกกลอน</span><span data-lang="vi">② Số 1 ngành bào chế viên hoàn</span><span data-lang="cn">② 院外汤煎制丸业界第一</span></h3><p><span data-lang="kr" class="active">해밀한의원 원외탕전실은 <strong>제환(製丸) 파트 업계 1위</strong>입니다. 전국 한의원에 공진단·경옥고를 공급하며 <strong>2023년 이후 연매출 100억 원 이상</strong>을 유지하고 있습니다.</span><span data-lang="th">ห้องปรุงยานอกคลินิกของแฮมิลเป็น<strong>อันดับ 1 ในสายการผลิตยาลูกกลอน</strong> ส่งกงจินดันและคยองอกโกให้คลินิกทั่วประเทศ และรักษา<strong>ยอดขายกว่า 1 หมื่นล้านวอนต่อปี ตั้งแต่ปี 2023</strong></span><span data-lang="vi">Xưởng bào chế của Haemil đứng <strong>số 1 ngành viên hoàn</strong>, cung cấp Gongjindan và Gyeongokgo cho các phòng khám toàn quốc, duy trì <strong>doanh thu trên 10 tỷ won mỗi năm từ 2023</strong>.</span><span data-lang="cn">Haemil院外汤煎室为<strong>制丸领域业界第一</strong>，向全国韩医院供应拱辰丹与琼玉膏，<strong>2023年起年营业额保持100亿韩元以上</strong>。</span></p></div><div class="why-card"><h3><span data-lang="kr" class="active">③ 무연쑥뜸기 마야구 20년 개발</span><span data-lang="th">③ พัฒนาเครื่องรมยาไร้ควัน MAYAGU 20 ปี</span><span data-lang="vi">③ 20 năm phát triển máy cứu ngải MAYAGU</span><span data-lang="cn">③ 无烟艾灸器 MAYAGU 20年研发</span></h3><p><span data-lang="kr" class="active">쑥뜸의 효과는 그대로 두고 <strong>연기·화상·냄새</strong>만 없앴습니다. <strong>20년</strong>의 개발 끝에, 한의원이 아닌 집에서도 안전하게 쓰는 제품이 됐습니다.</span><span data-lang="th">คงประสิทธิภาพของการรมยาไว้ แต่ตัด<strong>ควัน แผลไหม้ และกลิ่น</strong>ออกไป หลังการพัฒนา <strong>20 ปี</strong> จึงกลายเป็นเครื่องที่ใช้ได้อย่างปลอดภัยแม้ที่บ้าน</span><span data-lang="vi">Giữ nguyên hiệu quả cứu ngải nhưng loại bỏ <strong>khói, bỏng và mùi</strong>. Sau <strong>20 năm</strong> phát triển, sản phẩm có thể dùng an toàn ngay tại nhà.</span><span data-lang="cn">保留艾灸功效，去除<strong>烟、烫伤与气味</strong>。经过<strong>20年</strong>研发，成为在家也能安全使用的产品。</span></p></div></div>
+</section>
+
+<section class="difference">
+  <div class="section-label">Difference</div>
+  <div class="section-title"><span data-lang="kr" class="active">차별점</span><span data-lang="th">จุดต่าง</span><span data-lang="vi">Điểm khác biệt</span><span data-lang="cn">差异化优势</span></div>
+  <div class="diff-grid"><div class="diff-card"><h3><span data-lang="kr" class="active">공진단 · 경옥고 · 맞춤보약</span><span data-lang="th">กงจินดัน · คยองอกโก · ยาบำรุงเฉพาะบุคคล</span><span data-lang="vi">Gongjindan · Gyeongokgo · Thuốc bổ cá nhân hóa</span><span data-lang="cn">拱辰丹 · 琼玉膏 · 定制补药</span></h3><p><span data-lang="kr" class="active">동의보감 원방 그대로의 배합에 개인 체질을 더합니다. 만성피로·면역저하·갱년기까지 증상이 아닌 원인부터 잡습니다.</span><span data-lang="th">ยึดตำรับดั้งเดิมจากตงอึยโบกัม พร้อมปรับตามธาตุของแต่ละคน แก้ที่ต้นเหตุ ไม่ใช่แค่อาการ ทั้งอ่อนเพลียเรื้อรัง ภูมิคุ้มกันต่ำ และวัยทอง</span><span data-lang="vi">Giữ đúng cổ phương Đông y Bảo giám, kết hợp thể chất từng người. Điều trị tận gốc mệt mỏi mạn tính, suy giảm miễn dịch và tiền mãn kinh.</span><span data-lang="cn">在《东医宝鉴》原方配伍基础上结合个人体质。慢性疲劳、免疫力低下、更年期，从根源而非症状入手。</span></p></div><div class="diff-card"><h3><span data-lang="kr" class="active">마야구 — 연기 없는 안전한 쑥뜸</span><span data-lang="th">MAYAGU — รมยาปลอดภัย ไร้ควัน</span><span data-lang="vi">MAYAGU — Cứu ngải an toàn, không khói</span><span data-lang="cn">MAYAGU — 无烟安全艾灸</span></h3><p><span data-lang="kr" class="active">연기가 실내에 퍼지지 않는 특수 구조, 화상 걱정 없는 안전 온도 유지. 한의원에 오지 않아도 매일 관리할 수 있습니다.</span><span data-lang="th">โครงสร้างพิเศษที่ควันไม่ฟุ้งในห้อง รักษาอุณหภูมิปลอดภัยไม่ต้องกลัวแผลไหม้ ดูแลได้ทุกวันโดยไม่ต้องมาคลินิก</span><span data-lang="vi">Cấu trúc đặc biệt không để khói lan trong phòng, giữ nhiệt độ an toàn không lo bỏng. Chăm sóc mỗi ngày mà không cần đến phòng khám.</span><span data-lang="cn">特殊结构使烟气不扩散于室内，维持安全温度无烫伤之忧。不必到院也能每日调理。</span></p></div><div class="diff-card"><h3><span data-lang="kr" class="active">대량 보약선물 — 경옥고 · 공진단</span><span data-lang="th">ของขวัญยาบำรุงจำนวนมาก</span><span data-lang="vi">Quà tặng thuốc bổ số lượng lớn</span><span data-lang="cn">大批量补药礼品</span></h3><p><span data-lang="kr" class="active">명절·창립기념일 임직원 선물, VIP 고객 감사 선물. 10구 세트 단위로 대량 주문과 포장까지 함께 처리합니다.</span><span data-lang="th">ของขวัญพนักงานช่วงเทศกาลหรือวันครบรอบบริษัท และของขวัญขอบคุณลูกค้า VIP รับออร์เดอร์จำนวนมากพร้อมบรรจุภัณฑ์ แบบเซ็ต 10 ชิ้น</span><span data-lang="vi">Quà tặng nhân viên dịp lễ, kỷ niệm thành lập, quà tri ân khách VIP. Nhận đơn số lượng lớn theo bộ 10 phần, bao gồm cả đóng gói.</span><span data-lang="cn">节日、创立纪念日员工礼品，VIP客户答谢礼。以10入礼盒为单位承接大批量订购及包装。</span></p></div><div class="diff-card"><h3><span data-lang="kr" class="active">원기면역 다이어트 프로그램</span><span data-lang="th">โปรแกรมลดน้ำหนักเสริมภูมิคุ้มกัน</span><span data-lang="vi">Chương trình giảm cân tăng nguyên khí</span><span data-lang="cn">元气免疫减重项目</span></h3><p><span data-lang="kr" class="active">굶는 다이어트가 아니라 소화·배변·대사를 함께 잡는 한방 프로그램. 체중이 내려가면서 컨디션은 올라갑니다.</span><span data-lang="th">ไม่ใช่การอดอาหาร แต่เป็นโปรแกรมแพทย์แผนเกาหลีที่ดูแลการย่อย การขับถ่าย และเมแทบอลิซึมไปพร้อมกัน น้ำหนักลดลง แต่สภาพร่างกายดีขึ้น</span><span data-lang="vi">Không phải nhịn ăn, mà là chương trình Đông y cải thiện đồng thời tiêu hóa, bài tiết và trao đổi chất. Cân nặng giảm, thể trạng lên.</span><span data-lang="cn">不是挨饿式减肥，而是同时调理消化、排便与代谢的韩方项目。体重下降，状态上升。</span></p></div></div>
+</section>
+
+<section class="portfolio">
+  <div class="section-label">Products</div>
+  <div class="section-title"><span data-lang="kr" class="active">제품 안내</span><span data-lang="th">แนะนำผลิตภัณฑ์</span><span data-lang="vi">Giới thiệu sản phẩm</span><span data-lang="cn">产品介绍</span></div>
+  <div class="port-wrap"><div class="port-track" id="port-track"><div class="port-slide" onclick="window.open('portfolio1.jpg','_blank')"><img src="portfolio1.jpg" alt="" loading="lazy"><div class="port-cap"><span data-lang="kr" class="active">마야구 무연쑥뜸기</span><span data-lang="th">MAYAGU เครื่องรมยาไร้ควัน</span><span data-lang="vi">MAYAGU — Máy cứu ngải không khói</span><span data-lang="cn">MAYAGU 无烟艾灸器</span></div></div><div class="port-slide" onclick="window.open('portfolio2.jpg','_blank')"><img src="portfolio2.jpg" alt="" loading="lazy"><div class="port-cap"><span data-lang="kr" class="active">마야구 Next-Gen 세트</span><span data-lang="th">MAYAGU Next-Gen Set</span><span data-lang="vi">Bộ MAYAGU Next-Gen</span><span data-lang="cn">MAYAGU Next-Gen 套装</span></div></div><div class="port-slide" onclick="window.open('portfolio3.jpg','_blank')"><img src="portfolio3.jpg" alt="" loading="lazy"><div class="port-cap"><span data-lang="kr" class="active">공진단</span><span data-lang="th">กงจินดัน (Gongjindan)</span><span data-lang="vi">Gongjindan — Cung Thần Đan</span><span data-lang="cn">拱辰丹</span></div></div><div class="port-slide" onclick="window.open('portfolio4.jpg','_blank')"><img src="portfolio4.jpg" alt="" loading="lazy"><div class="port-cap"><span data-lang="kr" class="active">공옥단편 · 환제</span><span data-lang="th">กงอกดันพยอน · ยาลูกกลอน</span><span data-lang="vi">Gongokdanpyeon · Viên hoàn</span><span data-lang="cn">拱玉丹片 · 丸剂</span></div></div><div class="port-slide" onclick="window.open('portfolio5.jpg','_blank')"><img src="portfolio5.jpg" alt="" loading="lazy"><div class="port-cap"><span data-lang="kr" class="active">경옥고</span><span data-lang="th">คยองอกโก (Gyeongokgo)</span><span data-lang="vi">Gyeongokgo — Quỳnh Ngọc Cao</span><span data-lang="cn">琼玉膏</span></div></div><div class="port-slide" onclick="window.open('portfolio6.jpg','_blank')"><img src="portfolio6.jpg" alt="" loading="lazy"><div class="port-cap"><span data-lang="kr" class="active">외용제 자운고</span><span data-lang="th">ยาทาภายนอก จาอุนโก</span><span data-lang="vi">Thuốc bôi ngoài Jawoongo</span><span data-lang="cn">外用剂 紫云膏</span></div></div><div class="port-slide" onclick="window.open('portfolio7.jpg','_blank')"><img src="portfolio7.jpg" alt="" loading="lazy"><div class="port-cap"><span data-lang="kr" class="active">기능별 한방제품</span><span data-lang="th">ผลิตภัณฑ์สมุนไพรตามหน้าที่</span><span data-lang="vi">Sản phẩm Đông y theo chức năng</span><span data-lang="cn">功能性韩方产品</span></div></div></div></div>
+  <div class="port-nav">
+    <button class="port-btn" onclick="portSlide(-1)">&lsaquo;</button>
+    <div class="port-dots" id="port-dots"></div>
+    <button class="port-btn" onclick="portSlide(1)">&rsaquo;</button>
+  </div>
+  <div class="port-hint"><span data-lang="kr" class="active">이미지를 탭하면 크게 볼 수 있습니다</span><span data-lang="th">แตะที่ภาพเพื่อดูขนาดใหญ่</span><span data-lang="vi">Chạm vào ảnh để xem lớn</span><span data-lang="cn">点击图片可查看大图</span></div>
+</section>
+
+<section class="referral">
+  <div class="section-label">Referral</div>
+  <div class="section-title"><span data-lang="kr" class="active">이런 분을 소개해 주세요</span><span data-lang="th">กรุณาแนะนำคนแบบนี้ให้เรา</span><span data-lang="vi">Hãy giới thiệu những người như thế này</span><span data-lang="cn">请介绍这样的客户</span></div>
+  <div class="ref-list"><div class="ref-item"><div class="ref-num">1</div><p><span data-lang="kr" class="active">🏥 <strong>면역력 저하</strong>로 고민하시는 분 — 잔병치레가 잦고 만성피로·갱년기 증상이 있는 분</span><span data-lang="th">🏥 ผู้ที่กังวลเรื่อง<strong>ภูมิคุ้มกันต่ำ</strong> — ป่วยบ่อย อ่อนเพลียเรื้อรัง หรือมีอาการวัยทอง</span><span data-lang="vi">🏥 Người lo lắng về <strong>suy giảm miễn dịch</strong> — hay ốm vặt, mệt mỏi mạn tính, triệu chứng tiền mãn kinh</span><span data-lang="cn">🏥 为<strong>免疫力低下</strong>困扰的人 — 常小病不断、慢性疲劳或有更年期症状者</span></p></div><div class="ref-item"><div class="ref-num">2</div><p><span data-lang="kr" class="active">💊 <strong>맞춤 보약·공진단 선물</strong>을 찾으시는 분 — 부모님·거래처 선물을 고민 중인 분</span><span data-lang="th">💊 ผู้ที่มองหา<strong>ยาบำรุงเฉพาะบุคคลหรือกงจินดันเป็นของขวัญ</strong> — กำลังเลือกของฝากให้พ่อแม่หรือคู่ค้า</span><span data-lang="vi">💊 Người tìm <strong>thuốc bổ cá nhân hóa hoặc Gongjindan làm quà</strong> — đang cân nhắc quà cho cha mẹ, đối tác</span><span data-lang="cn">💊 寻找<strong>定制补药·拱辰丹礼品</strong>的人 — 正为父母或客户挑选礼物者</span></p></div><div class="ref-item"><div class="ref-num">3</div><p><span data-lang="kr" class="active">🌿 <strong>집에서 쑥뜸관리</strong>를 원하시는 분 — 한의원에 자주 못 가지만 꾸준히 관리하고 싶은 분</span><span data-lang="th">🌿 ผู้ที่อยาก<strong>รมยาที่บ้าน</strong> — มาคลินิกบ่อยไม่ได้ แต่อยากดูแลต่อเนื่อง</span><span data-lang="vi">🌿 Người muốn <strong>cứu ngải tại nhà</strong> — khó đến phòng khám thường xuyên nhưng muốn duy trì chăm sóc</span><span data-lang="cn">🌿 希望<strong>在家艾灸调理</strong>的人 — 无法常来医院却想持续管理者</span></p></div><div class="ref-item"><div class="ref-num">4</div><p><span data-lang="kr" class="active">🏢 <strong>대량 보약선물</strong>을 구매하는 기업 — 명절·창립기념일 임직원 및 VIP 선물 담당자</span><span data-lang="th">🏢 องค์กรที่ซื้อ<strong>ของขวัญยาบำรุงจำนวนมาก</strong> — ผู้ดูแลของขวัญพนักงานและลูกค้า VIP</span><span data-lang="vi">🏢 Doanh nghiệp mua <strong>quà thuốc bổ số lượng lớn</strong> — người phụ trách quà tặng nhân viên và khách VIP</span><span data-lang="cn">🏢 采购<strong>大批量补药礼品</strong>的企业 — 负责节日、周年员工及VIP礼品的人</span></p></div><div class="ref-item"><div class="ref-num">5</div><p><span data-lang="kr" class="active">🤝 <strong>한의원·한약제조 협업</strong>을 원하는 사업가 — 원외탕전 위탁제조, 마야구 유통·수출 파트너</span><span data-lang="th">🤝 นักธุรกิจที่ต้องการ<strong>ร่วมมือด้านคลินิก/ผลิตยาสมุนไพร</strong> — รับจ้างผลิต หรือเป็นพาร์ตเนอร์จัดจำหน่าย/ส่งออก MAYAGU</span><span data-lang="vi">🤝 Doanh nhân muốn <strong>hợp tác phòng khám / sản xuất thuốc Đông y</strong> — gia công bào chế, đối tác phân phối &amp; xuất khẩu MAYAGU</span><span data-lang="cn">🤝 希望<strong>与韩医院·韩药制造合作</strong>的企业家 — 院外汤煎委托生产、MAYAGU经销与出口伙伴</span></p></div></div>
+</section>
+
+<section class="career">
+  <div class="section-label">Career</div>
+  <div class="section-title"><span data-lang="kr" class="active">경력 및 전문 분야</span><span data-lang="th">ประสบการณ์และความเชี่ยวชาญ</span><span data-lang="vi">Kinh nghiệm &amp; Chuyên môn</span><span data-lang="cn">经历与专业领域</span></div>
+  <div class="career-list"><div class="career-item"><div class="career-badge"><span data-lang="kr" class="active">현재</span><span data-lang="th">ปัจจุบัน</span><span data-lang="vi">Hiện tại</span><span data-lang="cn">现职</span></div><div class="career-content"><h3><span data-lang="kr" class="active">해밀한의원 원장 · 하니마을㈜ 대표</span><span data-lang="th">ผู้อำนวยการคลินิกแฮมิล · ซีอีโอ Hanimaeul</span><span data-lang="vi">Viện trưởng Haemil · Giám đốc Hanimaeul</span><span data-lang="cn">Haemil韩医院院长 · Hanimaeul代表</span></h3><p><span data-lang="kr" class="active">26년 한의원 운영 · 원외탕전 제환 파트 업계 1위 · 연매출 100억 원 이상</span><span data-lang="th">บริหารคลินิก 26 ปี · อันดับ 1 ด้านการผลิตยาลูกกลอน · ยอดขายกว่า 1 หมื่นล้านวอนต่อปี</span><span data-lang="vi">26 năm điều hành phòng khám · Số 1 ngành viên hoàn · Doanh thu trên 10 tỷ won/năm</span><span data-lang="cn">26年韩医院运营 · 制丸领域业界第一 · 年营业额100亿韩元以上</span></p></div></div><div class="career-item"><div class="career-badge"><span data-lang="kr" class="active">실적</span><span data-lang="th">ผลงาน</span><span data-lang="vi">Thành tích</span><span data-lang="cn">业绩</span></div><div class="career-content"><h3><span data-lang="kr" class="active">원외탕전업계 제환 파트 업계 1위</span><span data-lang="th">อันดับ 1 ด้านการผลิตยาลูกกลอนในอุตสาหกรรม</span><span data-lang="vi">Số 1 ngành bào chế viên hoàn</span><span data-lang="cn">院外汤煎业界制丸部门第一</span></h3><p><span data-lang="kr" class="active">전국 한의원에 공진단·경옥고 공급 · 2023년 이후 연매출 100억 원 이상 유지</span><span data-lang="th">ส่งกงจินดันและคยองอกโกให้คลินิกทั่วประเทศ · รักษายอดขายกว่า 1 หมื่นล้านวอนต่อปีตั้งแต่ปี 2023</span><span data-lang="vi">Cung cấp Gongjindan · Gyeongokgo toàn quốc · Duy trì doanh thu trên 10 tỷ won/năm từ 2023</span><span data-lang="cn">向全国韩医院供应拱辰丹·琼玉膏 · 2023年起年营业额保持100亿韩元以上</span></p></div></div><div class="career-item"><div class="career-badge"><span data-lang="kr" class="active">강점</span><span data-lang="th">จุดแข็ง</span><span data-lang="vi">Thế mạnh</span><span data-lang="cn">优势</span></div><div class="career-content"><h3><span data-lang="kr" class="active">무연쑥뜸기 마야구 개발</span><span data-lang="th">พัฒนาเครื่องรมยาไร้ควัน MAYAGU</span><span data-lang="vi">Phát triển máy cứu ngải không khói MAYAGU</span><span data-lang="cn">无烟艾灸器 MAYAGU 研发</span></h3><p><span data-lang="kr" class="active">20년 개발 · 국내 제조 · 각종 전시 참가 및 강의 활동</span><span data-lang="th">พัฒนา 20 ปี · ผลิตในเกาหลี · ร่วมงานแสดงสินค้าและบรรยายต่าง ๆ</span><span data-lang="vi">20 năm phát triển · Sản xuất tại Hàn Quốc · Tham gia triển lãm và giảng dạy</span><span data-lang="cn">20年研发 · 韩国制造 · 参加各类展会与讲座活动</span></p></div></div><div class="career-item"><div class="career-badge"><span data-lang="kr" class="active">BNI</span><span data-lang="th">BNI</span><span data-lang="vi">BNI</span><span data-lang="cn">BNI</span></div><div class="career-content"><h3><span data-lang="kr" class="active">BNI 자이언츠 챕터 멤버</span><span data-lang="th">สมาชิก BNI Giants Chapter</span><span data-lang="vi">Thành viên BNI Giants Chapter</span><span data-lang="cn">BNI Giants 分会成员</span></h3><p><span data-lang="kr" class="active">한의원 · 한약제조 분과 · 신뢰 기반 리퍼럴 네트워크로 검증된 소개를 주고받습니다.</span><span data-lang="th">หมวดคลินิกแพทย์แผนเกาหลี · ผลิตยาสมุนไพร — แลกเปลี่ยนการแนะนำที่ตรวจสอบได้ผ่านเครือข่ายที่ไว้ใจได้</span><span data-lang="vi">Nhóm ngành Phòng khám Đông y · Sản xuất thuốc — trao đổi giới thiệu đã kiểm chứng qua mạng lưới tin cậy.</span><span data-lang="cn">韩医院·韩药制造分科 — 通过以信赖为基础的推荐网络交换经过验证的介绍。</span></p></div></div></div>
+</section>
+
+<section class="contact">
+  <div class="section-label">Contact</div>
+  <div class="section-title"><span data-lang="kr" class="active">연락하기</span><span data-lang="th">ติดต่อ</span><span data-lang="vi">Liên hệ</span><span data-lang="cn">联系方式</span></div>
+  <div class="contact-list">
+    <a class="contact-item" href="tel:010-2667-1075">
+      <div class="contact-icon">📞</div>
+      <div class="contact-label"><span data-lang="kr" class="active">전화</span><span data-lang="th">โทรศัพท์</span><span data-lang="vi">Điện thoại</span><span data-lang="cn">电话</span></div>
+      <div class="contact-value">010-2667-1075</div>
+    </a>
+    <a class="contact-item" href="tel:051-727-7540">
+      <div class="contact-icon">☎️</div>
+      <div class="contact-label"><span data-lang="kr" class="active">고객센터</span><span data-lang="th">ศูนย์บริการลูกค้า</span><span data-lang="vi">Tổng đài</span><span data-lang="cn">客服中心</span></div>
+      <div class="contact-value">051-727-7540</div>
+    </a>
+    <a class="contact-item" href="mailto:aquabibau@gmail.com">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-label">Email</div>
+      <div class="contact-value">aquabibau@gmail.com</div>
+    </a>
+    <a class="contact-item" href="https://www.hanimaeul.com" target="_blank">
+      <div class="contact-icon">💻</div>
+      <div class="contact-label"><span data-lang="kr" class="active">홈페이지</span><span data-lang="th">เว็บไซต์</span><span data-lang="vi">Website</span><span data-lang="cn">官网</span></div>
+      <div class="contact-value"><span data-lang="kr" class="active">제품 안내 · 주문</span><span data-lang="th">ข้อมูลสินค้า · สั่งซื้อ</span><span data-lang="vi">Thông tin &amp; đặt hàng</span><span data-lang="cn">产品信息 · 订购</span></div>
+    </a>
+    <a class="contact-item" style="grid-column:1/-1;" href="https://jinjjabg-hub.github.io/MANDU/?u=YOUR_MANDU_ID" target="_blank">
+      <div class="contact-icon">💬</div>
+      <div class="contact-label">MANDU</div>
+      <div class="contact-value"><span data-lang="kr" class="active">실시간 번역 메신저</span><span data-lang="th">แชตแปลภาษาแบบเรียลไทม์</span><span data-lang="vi">Chat dịch thời gian thực</span><span data-lang="cn">实时翻译聊天</span></div>
+    </a>
+    <a class="contact-item" style="grid-column:1/-1;" href="https://map.kakao.com/link/search/%ED%95%B4%EB%B0%80%ED%95%9C%EC%9D%98%EC%9B%90" target="_blank">
+      <div class="contact-icon">📍</div>
+      <div class="contact-label"><span data-lang="kr" class="active">주소 (탭하면 지도 열림)</span><span data-lang="th">ที่อยู่ (แตะเพื่อเปิดแผนที่)</span><span data-lang="vi">Địa chỉ (chạm để mở bản đồ)</span><span data-lang="cn">地址（点击打开地图）</span></div>
+      <div class="contact-value">부산광역시</div>
+    </a>
+  </div>
+</section>
+
+<div class="action">
+  <div class="btn-group">
+    <button class="btn btn-primary" onclick="saveContact()"><span data-lang="kr" class="active">📞 연락처 저장</span><span data-lang="th">📞 บันทึกผู้ติดต่อ</span><span data-lang="vi">📞 Lưu danh bạ</span><span data-lang="cn">📞 保存联系人</span></button>
+    <button class="btn btn-secondary" onclick="saveToCardbook({id:'woo-wanyong',name:'우완용',nameEn:'Woo Wanyong',title:'원장 / 대표',company:'해밀한의원 · 하니마을㈜',phone:'010-2667-1075',email:'aquabibau@gmail.com',chapter:'BNI 자이언츠',bni:'한의원 · 한약제조',url:window.location.href})"><span data-lang="kr" class="active">🗂️ 명함 저장 (CardBook)</span><span data-lang="th">🗂️ บันทึกนามบัตร</span><span data-lang="vi">🗂️ Lưu danh thiếp</span><span data-lang="cn">🗂️ 保存名片</span></button>
+    <button class="btn btn-mandu" onclick="window.open('https://jinjjabg-hub.github.io/MANDU/?u=YOUR_MANDU_ID','_blank')"><span data-lang="kr" class="active">💬 MANDU로 바로 연락</span><span data-lang="th">💬 ติดต่อผ่าน MANDU</span><span data-lang="vi">💬 Liên hệ qua MANDU</span><span data-lang="cn">💬 通过MANDU联系</span></button>
+    <button class="btn btn-share" onclick="shareCard()"><span data-lang="kr" class="active">📤 명함 전달하기</span><span data-lang="th">📤 ส่งต่อนามบัตร</span><span data-lang="vi">📤 Chia sẻ danh thiếp</span><span data-lang="cn">📤 分享名片</span></button>
+  </div>
+</div>
+
+<div class="share-sheet" id="shareSheet">
+  <div class="share-backdrop" onclick="closeShare()"></div>
+  <div class="share-panel">
+    <div class="share-handle"></div>
+    <div class="share-title">명함 전달하기</div>
+    <div class="share-btns">
+      <button class="share-btn" onclick="shareKakao()"><div class="share-btn-icon" style="background:#FEE500;">💬</div><span>카카오톡</span></button>
+      <button class="share-btn" onclick="shareSMS()"><div class="share-btn-icon" style="background:#34c759;">✉️</div><span>문자</span></button>
+      <button class="share-btn" onclick="copyLink()"><div class="share-btn-icon" style="background:#e8e8e8;">🔗</div><span>링크 복사</span></button>
+      <button class="share-btn" onclick="shareQR()"><div class="share-btn-icon" style="background:#1a3a5c;">📱</div><span>QR 보기</span></button>
+    </div>
+    <button class="share-cancel" onclick="closeShare()">취소</button>
+  </div>
+</div>
+
+<footer>
+  <div class="company"><span data-lang="kr" class="active">해밀한의원 · 하니마을㈜</span><span data-lang="th">Haemil Clinic · Hanimaeul</span><span data-lang="vi">Haemil Clinic · Hanimaeul</span><span data-lang="cn">Haemil 韩医院 · Hanimaeul</span></div>
+  <div class="slogan-footer">The Right Moxibustion for Your Health · MAYAGU</div>
+</footer>
+
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => el.classList.toggle('active', el.getAttribute('data-lang') === lang));
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const m = btn.getAttribute('onclick').match(/'(\w+)'/);
+    btn.classList.toggle('active', m && m[1] === lang);
+  });
+}
+
+/* 제품 슬라이더 */
+let portIdx = 0; const portTotal = 7;
+function initPort() {
+  const d = document.getElementById('port-dots'); d.innerHTML = '';
+  for (let i = 0; i < portTotal; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'port-dot' + (i === 0 ? ' active' : '');
+    dot.onclick = (e) => { e.stopPropagation(); goPort(i); };
+    d.appendChild(dot);
+  }
+}
+function goPort(i) {
+  portIdx = (i + portTotal) % portTotal;
+  document.getElementById('port-track').style.transform = 'translateX(-' + (portIdx * 100) + '%)';
+  document.querySelectorAll('#port-dots .port-dot').forEach((d, j) => d.classList.toggle('active', j === portIdx));
+}
+function portSlide(dir) { goPort(portIdx + dir); }
+initPort();
+(function() {
+  let sx = 0, moved = false;
+  const t = document.getElementById('port-track');
+  t.addEventListener('touchstart', e => { sx = e.touches[0].clientX; moved = false; }, {passive:true});
+  t.addEventListener('touchmove', () => { moved = true; }, {passive:true});
+  t.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - sx;
+    if (moved && Math.abs(dx) > 40) portSlide(dx < 0 ? 1 : -1);
+  }, {passive:true});
+})();
+
+function saveContact() {
+  const vcard = "BEGIN:VCARD\nVERSION:3.0\nFN:우완용\nORG:해밀한의원 · 하니마을㈜\nTITLE:원장 / 대표\nTEL;TYPE=CELL:010-2667-1075\nTEL;TYPE=WORK:051-727-7540\nEMAIL:aquabibau@gmail.com\nURL:https://jinjjabg-hub.github.io/bni-giants/우완용/\nADR:;;부산광역시;;;;\nEND:VCARD";
+  const blob = new Blob([vcard], {type:'text/vcard'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = '우완용_해밀한의원.vcf';
+  a.click();
+}
+
+const CARD_URL = 'https://jinjjabg-hub.github.io/bni-giants/%EC%9A%B0%EC%99%84%EC%9A%A9/';
+const CARD_TITLE = '우완용 | 해밀한의원 · 하니마을㈜';
+const CARD_TEXT = '26년 한의원 · 무연쑥뜸기 마야구 — 우완용 원장 디지털 명함';
+
+function shareCard() {
+  if (navigator.share) {
+    navigator.share({ title: CARD_TITLE, text: CARD_TEXT, url: CARD_URL }).catch(() => {});
+  } else {
+    document.getElementById('shareSheet').style.display = 'block';
+  }
+}
+function closeShare() { document.getElementById('shareSheet').style.display = 'none'; }
+function shareKakao() { window.open('https://sharer.kakao.com/talk/friends/picker/link?app_key=&url=' + encodeURIComponent(CARD_URL), '_blank'); closeShare(); }
+function shareSMS() { location.href = 'sms:?body=' + encodeURIComponent(CARD_TITLE + '\n' + CARD_URL); closeShare(); }
+function copyLink() {
+  navigator.clipboard.writeText(CARD_URL).then(() => alert('링크가 복사되었습니다!')).catch(() => {
+    const t = document.createElement('textarea'); t.value = CARD_URL;
+    document.body.appendChild(t); t.select(); document.execCommand('copy');
+    document.body.removeChild(t); alert('링크가 복사되었습니다!');
+  });
+  closeShare();
+}
+function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
+</script>
+</body>
+</html>
