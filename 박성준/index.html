@@ -624,6 +624,11 @@ footer{
       <span class="connect-label">엘로이샵</span>
       <span class="connect-value">위치 보기</span>
     </a>
+    <a href="https://jinjjabg-hub.github.io/MANDU/?u=park-seongjune" target="_blank" rel="noopener" class="connect-btn">
+      <span class="connect-icon">💬</span>
+      <span class="connect-label">MANDU</span>
+      <span class="connect-value" id="conn-mandu-value">실시간 번역 메신저</span>
+    </a>
   </div>
 </section>
 
@@ -632,6 +637,15 @@ footer{
   <div class="qr-wrap"><img src="qr.png" alt="QR코드"></div>
   <p class="qr-label" id="qr-label">QR코드를 스캔하면 이 명함을 바로 볼 수 있어요</p>
 </section>
+
+<div style="padding:14px 20px 4px;text-align:center;">
+  <button id="mandu-activate-btn" onclick="activateMandu()" style="background:none;border:1px solid rgba(0,0,0,0.15);color:#888;font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;">
+    💬 본인 명함이신가요? 만두 연결하기 (1회)
+  </button>
+  <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:#888;padding:7px 0;">
+    ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -669,6 +683,7 @@ const T = {
     "ref-tags": ["📡 미디어 구축이 필요한 기업","🪧 옥외광고 전광판 필요한 기업","🎯 진짜 프로 미디어 전문가가 필요한 분","🏛️ 예술회관·시청·구청 관공서 주무관","🏢 공공기관"],
     "btn-contact": "연락처 저장", "btn-holder": "명함첩에 저장",
     "connect-title": "연락하기", "conn-phone-label": "전화", "conn-email-label": "이메일", "conn-web-label": "홈페이지", "conn-save-label": "연락처저장",
+    "conn-mandu-value": "실시간 번역 메신저",
     "qr-label": "QR코드를 스캔하면 이 명함을 바로 볼 수 있어요"
   },
   en: {
@@ -697,6 +712,7 @@ const T = {
     "ref-tags": ["📡 Companies needing media installation","🪧 Businesses needing outdoor LED displays","🎯 Those needing a true media pro","🏛️ Government/arts facility managers","🏢 Public institutions"],
     "btn-contact": "Save Contact", "btn-holder": "Save to Card Holder",
     "connect-title": "Connect", "conn-phone-label": "Call", "conn-email-label": "Email", "conn-web-label": "Website", "conn-save-label": "Save vCard",
+    "conn-mandu-value": "Live Translation Chat",
     "qr-label": "Scan QR code to view this card instantly"
   },
   jp: {
@@ -725,6 +741,7 @@ const T = {
     "ref-tags": ["📡 メディア構築が必要な企業","🪧 屋外広告・電光掲示板が必要な企業","🎯 本物のメディア専門家を求める方","🏛️ 文化施設・官公庁の担当者","🏢 公共機関"],
     "btn-contact": "連絡先を保存", "btn-holder": "名刺帳に保存",
     "connect-title": "お問い合わせ", "conn-phone-label": "電話", "conn-email-label": "メール", "conn-web-label": "ウェブサイト", "conn-save-label": "連絡先保存",
+    "conn-mandu-value": "翻訳チャット",
     "qr-label": "QRコードをスキャンすると名刺をすぐ見られます"
   },
   cn: {
@@ -753,6 +770,7 @@ const T = {
     "ref-tags": ["📡 需要媒体建设的企业","🪧 需要户外广告LED屏的企业","🎯 需要真正专业媒体专家的人","🏛️ 艺术馆·政府机构负责人","🏢 公共机构"],
     "btn-contact": "保存联系人", "btn-holder": "保存到名片夹",
     "connect-title": "联系方式", "conn-phone-label": "电话", "conn-email-label": "邮件", "conn-web-label": "官网", "conn-save-label": "保存名片",
+    "conn-mandu-value": "实时翻译聊天",
     "qr-label": "扫描二维码即可立即查看名片"
   }
 };
@@ -848,6 +866,79 @@ if(typeof shareCard==='undefined'){
     else{navigator.clipboard.writeText(window.location.href).then(function(){alert('링크가 복사되었습니다!');});}
   };
 }
+</script>
+
+<script>
+/* ── 만두 원클릭 연결 (카드 주인 전용) ────────────────────────── */
+async function _manduWaitFirebase(maxTries) {
+  let tries = 0;
+  while ((typeof firebase === 'undefined' || !firebase.apps || !firebase.apps.length) && tries < (maxTries || 50)) {
+    await new Promise(r => setTimeout(r, 100));
+    tries++;
+  }
+  return typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length > 0;
+}
+async function _manduFinishActivate(user) {
+  const slug = 'park-seongjune';
+  const db = firebase.firestore();
+  const existing = await db.collection('manduid_index').doc(slug).get();
+  if (existing.exists && existing.data().uid !== user.uid) {
+    const btn = document.getElementById('mandu-activate-btn');
+    if (btn) btn.style.display = 'none';
+    const done = document.getElementById('mandu-activate-done');
+    if (done) { done.textContent = 'ℹ️ 이미 연결된 명함이에요'; done.style.display = 'block'; }
+    return;
+  }
+  await db.collection('users').doc(user.uid).set({
+    uid: user.uid, displayName: user.displayName || '', photoURL: user.photoURL || '',
+    email: user.email || '', manduid: slug
+  }, { merge: true });
+  await db.collection('manduid_index').doc(slug).set({
+    uid: user.uid, createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  }, { merge: true });
+  const btn = document.getElementById('mandu-activate-btn');
+  const done = document.getElementById('mandu-activate-done');
+  if (btn) btn.style.display = 'none';
+  if (done) done.style.display = 'block';
+}
+async function activateMandu() {
+  if (!confirm('본인 명함이 맞나요?\n구글 로그인하면 이 명함으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  const btn = document.getElementById('mandu-activate-btn');
+  if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
+  const ready = await _manduWaitFirebase();
+  if (!ready) {
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 실패. 잠시 후 다시 시도해주세요.');
+    return;
+  }
+  try {
+    const auth = firebase.auth();
+    await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      sessionStorage.setItem('_manduPendingSlug', 'park-seongjune');
+      await auth.signInWithRedirect(provider);
+      return;
+    }
+    const result = await auth.signInWithPopup(provider);
+    await _manduFinishActivate(result.user);
+  } catch (e) {
+    console.error('만두 연결 실패:', e);
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 중 오류가 발생했어요.');
+  }
+}
+(async function () {
+  if (!sessionStorage.getItem('_manduPendingSlug')) return;
+  const ready = await _manduWaitFirebase();
+  sessionStorage.removeItem('_manduPendingSlug');
+  if (!ready) return;
+  try {
+    const res = await firebase.auth().getRedirectResult();
+    if (res && res.user) await _manduFinishActivate(res.user);
+  } catch (e) { console.error(e); }
+})();
 </script>
 </body>
 </html>
