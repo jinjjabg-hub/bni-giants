@@ -169,7 +169,7 @@ section { padding:40px 20px; }
 }
 .btn-primary { background:var(--gold); color:var(--navy); }
 .btn-secondary { background:transparent; border:2px solid var(--gold); color:var(--gold); }
-.btn-mandu { background:linear-gradient(135deg,#1a3a6b,#0d5ca8); color:#fff; }
+
 .btn-share { background:linear-gradient(135deg,#1a6b3a,#0d8a4a); color:#fff; }
 .btn:active { transform:scale(0.97); opacity:0.9; }
 
@@ -285,7 +285,7 @@ footer .slogan-footer { font-size:11px; color:var(--muted-dark); letter-spacing:
       <div class="contact-label"><span data-lang="kr" class="active">홈페이지</span><span data-lang="th">เว็บไซต์</span><span data-lang="vi">Website</span><span data-lang="cn">官网</span></div>
       <div class="contact-value"><span data-lang="kr" class="active">제품 안내 · 주문</span><span data-lang="th">ข้อมูลสินค้า · สั่งซื้อ</span><span data-lang="vi">Thông tin &amp; đặt hàng</span><span data-lang="cn">产品信息 · 订购</span></div>
     </a>
-    <a class="contact-item" style="grid-column:1/-1;" href="https://jinjjabg-hub.github.io/MANDU/?u=YOUR_MANDU_ID" target="_blank">
+    <a class="contact-item" style="grid-column:1/-1;" href="https://jinjjabg-hub.github.io/MANDU/?u=woo-wanyong" target="_blank">
       <div class="contact-icon">💬</div>
       <div class="contact-label">MANDU</div>
       <div class="contact-value"><span data-lang="kr" class="active">실시간 번역 메신저</span><span data-lang="th">แชตแปลภาษาแบบเรียลไทม์</span><span data-lang="vi">Chat dịch thời gian thực</span><span data-lang="cn">实时翻译聊天</span></div>
@@ -302,7 +302,6 @@ footer .slogan-footer { font-size:11px; color:var(--muted-dark); letter-spacing:
   <div class="btn-group">
     <button class="btn btn-primary" onclick="saveContact()"><span data-lang="kr" class="active">📞 연락처 저장</span><span data-lang="th">📞 บันทึกผู้ติดต่อ</span><span data-lang="vi">📞 Lưu danh bạ</span><span data-lang="cn">📞 保存联系人</span></button>
     <button class="btn btn-secondary" onclick="saveToCardbook({id:'woo-wanyong',name:'우완용',nameEn:'Woo Wanyong',title:'원장 / 대표',company:'해밀한의원 · 하니마을㈜',phone:'010-2667-1075',email:'aquabibau@gmail.com',chapter:'BNI 자이언츠',bni:'한의원·한방병원 난치면역질환·체력저하·헬스뷰티',url:window.location.href})"><span data-lang="kr" class="active">🗂️ 명함 저장 (CardBook)</span><span data-lang="th">🗂️ บันทึกนามบัตร</span><span data-lang="vi">🗂️ Lưu danh thiếp</span><span data-lang="cn">🗂️ 保存名片</span></button>
-    <button class="btn btn-mandu" onclick="window.open('https://jinjjabg-hub.github.io/MANDU/?u=YOUR_MANDU_ID','_blank')"><span data-lang="kr" class="active">💬 MANDU로 바로 연락</span><span data-lang="th">💬 ติดต่อผ่าน MANDU</span><span data-lang="vi">💬 Liên hệ qua MANDU</span><span data-lang="cn">💬 通过MANDU联系</span></button>
     <button class="btn btn-share" onclick="shareCard()"><span data-lang="kr" class="active">📤 명함 전달하기</span><span data-lang="th">📤 ส่งต่อนามบัตร</span><span data-lang="vi">📤 Chia sẻ danh thiếp</span><span data-lang="cn">📤 分享名片</span></button>
   </div>
 </div>
@@ -319,6 +318,15 @@ footer .slogan-footer { font-size:11px; color:var(--muted-dark); letter-spacing:
       <button class="share-btn" onclick="shareQR()"><div class="share-btn-icon" style="background:#1a3a5c;">📱</div><span>QR 보기</span></button>
     </div>
     <button class="share-cancel" onclick="closeShare()">취소</button>
+  </div>
+</div>
+
+<div class="mandu-activate-wrap" style="padding:14px 20px 4px;text-align:center;">
+  <button id="mandu-activate-btn" onclick="activateMandu()" style="background:none;border:1px solid rgba(201,168,76,0.3);color:#a89060;font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
+    💬 본인 명함이신가요? 만두 연결하기 (1회)
+  </button>
+  <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:#c9a84c;padding:7px 0;">
+    ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
   </div>
 </div>
 
@@ -398,6 +406,77 @@ function copyLink() {
   closeShare();
 }
 function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
+
+/* ── 만두 원클릭 연결 (카드 주인 전용) ────────────────────────── */
+async function _manduWaitFirebase(maxTries) {
+  let tries = 0;
+  while ((typeof firebase === 'undefined' || !firebase.apps || !firebase.apps.length) && tries < (maxTries || 50)) {
+    await new Promise(r => setTimeout(r, 100));
+    tries++;
+  }
+  return typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length > 0;
+}
+async function _manduFinishActivate(user) {
+  const slug = 'woo-wanyong';
+  const db = firebase.firestore();
+  const existing = await db.collection('manduid_index').doc(slug).get();
+  if (existing.exists && existing.data().uid !== user.uid) {
+    const btn = document.getElementById('mandu-activate-btn');
+    if (btn) btn.style.display = 'none';
+    const done = document.getElementById('mandu-activate-done');
+    if (done) { done.textContent = 'ℹ️ 이미 연결된 명함이에요'; done.style.display = 'block'; }
+    return;
+  }
+  await db.collection('users').doc(user.uid).set({
+    uid: user.uid, displayName: user.displayName || '', photoURL: user.photoURL || '',
+    email: user.email || '', manduid: slug
+  }, { merge: true });
+  await db.collection('manduid_index').doc(slug).set({
+    uid: user.uid, createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  }, { merge: true });
+  const btn = document.getElementById('mandu-activate-btn');
+  const done = document.getElementById('mandu-activate-done');
+  if (btn) btn.style.display = 'none';
+  if (done) done.style.display = 'block';
+}
+async function activateMandu() {
+  if (!confirm('본인 명함이 맞나요?\n구글 로그인하면 이 명함으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  const btn = document.getElementById('mandu-activate-btn');
+  if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
+  const ready = await _manduWaitFirebase();
+  if (!ready) {
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 실패. 잠시 후 다시 시도해주세요.');
+    return;
+  }
+  try {
+    const auth = firebase.auth();
+    await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      sessionStorage.setItem('_manduPendingSlug', 'woo-wanyong');
+      await auth.signInWithRedirect(provider);
+      return;
+    }
+    const result = await auth.signInWithPopup(provider);
+    await _manduFinishActivate(result.user);
+  } catch (e) {
+    console.error('만두 연결 실패:', e);
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 중 오류가 발생했어요.');
+  }
+}
+(async function () {
+  if (!sessionStorage.getItem('_manduPendingSlug')) return;
+  const ready = await _manduWaitFirebase();
+  sessionStorage.removeItem('_manduPendingSlug');
+  if (!ready) return;
+  try {
+    const res = await firebase.auth().getRedirectResult();
+    if (res && res.user) await _manduFinishActivate(res.user);
+  } catch (e) { console.error(e); }
+})();
 </script>
 </body>
 </html>
