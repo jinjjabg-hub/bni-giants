@@ -639,6 +639,10 @@ footer { background:#000; text-align:center; padding:24px; border-top:1px solid 
         <div class="con-item-top"><span class="con-icon">🧵</span><span class="con-label">THREADS</span></div>
         <div class="con-value">@zerosimp1</div>
       </a>
+      <a href="https://jinjjabg-hub.github.io/MANDU/?u=park-youngsim" target="_blank" class="con-item" style="grid-column:1/-1;">
+        <div class="con-item-top"><span class="con-icon">💬</span><span class="con-label">MANDU</span></div>
+        <div class="con-value"><span data-lang="kr" class="active">실시간 번역 메신저</span><span data-lang="en">Live Translation Chat</span><span data-lang="jp">翻訳チャット</span><span data-lang="cn">实时翻译聊天</span></div>
+      </a>
     </div>
   </div>
 </div>
@@ -648,6 +652,15 @@ footer { background:#000; text-align:center; padding:24px; border-top:1px solid 
   <button class="btn btn-red" onclick="shareCard()">📤 <span data-lang="kr" class="active">명함 공유하기</span><span data-lang="en">Share Card</span><span data-lang="jp">名刺をシェア</span><span data-lang="cn">分享名片</span></button>
   <button class="btn btn-out" onclick="saveContact()">📞 <span data-lang="kr" class="active">연락처 저장</span><span data-lang="en">Save Contact</span><span data-lang="jp">連絡先を保存</span><span data-lang="cn">保存联系人</span></button>
   <button class="btn btn-out" onclick="saveToCardbook({name:'박영심',company:'크로스컬러디자인연구소',title:'대표',phone:'010-9984-8248',dicaUrl:'https://jinjjabg-hub.github.io/bni-giants/박영심/'})">🗂️ <span data-lang="kr" class="active">명함첩 저장</span><span data-lang="en">Save to CardBook</span><span data-lang="jp">名刺帳に保存</span><span data-lang="cn">保存到名片册</span></button>
+</div>
+
+<div style="padding:14px 20px 4px;text-align:center;">
+  <button id="mandu-activate-btn" onclick="activateMandu()" style="background:none;border:1px solid rgba(0,0,0,0.15);color:#888;font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;">
+    💬 본인 명함이신가요? 만두 연결하기 (1회)
+  </button>
+  <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:#888;padding:7px 0;">
+    ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
+  </div>
 </div>
 
 <footer>
@@ -687,6 +700,79 @@ function goPort(i){portIdx=(i+portTotal)%portTotal;document.getElementById('slid
 function portSlide(dir){goPort(portIdx+dir);}
 (()=>{let sx=0;const t=document.getElementById('slide-track-port');t.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});t.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)portSlide(dx<0?1:-1);},{passive:true});})();
 document.addEventListener('DOMContentLoaded',()=>{initRef();initPort();});
+</script>
+
+<script>
+/* ── 만두 원클릭 연결 (카드 주인 전용) ────────────────────────── */
+async function _manduWaitFirebase(maxTries) {
+  let tries = 0;
+  while ((typeof firebase === 'undefined' || !firebase.apps || !firebase.apps.length) && tries < (maxTries || 50)) {
+    await new Promise(r => setTimeout(r, 100));
+    tries++;
+  }
+  return typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length > 0;
+}
+async function _manduFinishActivate(user) {
+  const slug = 'park-youngsim';
+  const db = firebase.firestore();
+  const existing = await db.collection('manduid_index').doc(slug).get();
+  if (existing.exists && existing.data().uid !== user.uid) {
+    const btn = document.getElementById('mandu-activate-btn');
+    if (btn) btn.style.display = 'none';
+    const done = document.getElementById('mandu-activate-done');
+    if (done) { done.textContent = 'ℹ️ 이미 연결된 명함이에요'; done.style.display = 'block'; }
+    return;
+  }
+  await db.collection('users').doc(user.uid).set({
+    uid: user.uid, displayName: user.displayName || '', photoURL: user.photoURL || '',
+    email: user.email || '', manduid: slug
+  }, { merge: true });
+  await db.collection('manduid_index').doc(slug).set({
+    uid: user.uid, createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  }, { merge: true });
+  const btn = document.getElementById('mandu-activate-btn');
+  const done = document.getElementById('mandu-activate-done');
+  if (btn) btn.style.display = 'none';
+  if (done) done.style.display = 'block';
+}
+async function activateMandu() {
+  if (!confirm('본인 명함이 맞나요?\n구글 로그인하면 이 명함으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  const btn = document.getElementById('mandu-activate-btn');
+  if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
+  const ready = await _manduWaitFirebase();
+  if (!ready) {
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 실패. 잠시 후 다시 시도해주세요.');
+    return;
+  }
+  try {
+    const auth = firebase.auth();
+    await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      sessionStorage.setItem('_manduPendingSlug', 'park-youngsim');
+      await auth.signInWithRedirect(provider);
+      return;
+    }
+    const result = await auth.signInWithPopup(provider);
+    await _manduFinishActivate(result.user);
+  } catch (e) {
+    console.error('만두 연결 실패:', e);
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 중 오류가 발생했어요.');
+  }
+}
+(async function () {
+  if (!sessionStorage.getItem('_manduPendingSlug')) return;
+  const ready = await _manduWaitFirebase();
+  sessionStorage.removeItem('_manduPendingSlug');
+  if (!ready) return;
+  try {
+    const res = await firebase.auth().getRedirectResult();
+    if (res && res.user) await _manduFinishActivate(res.user);
+  } catch (e) { console.error(e); }
+})();
 </script>
 </body>
 </html>
