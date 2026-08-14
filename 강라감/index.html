@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>강라감 | 광안리 마도로스 · 엘레나</title>
+<meta property="og:title" content="강라감 | 대표 · 광안리 마도로스 · 엘레나">
+<meta property="og:description" content="광안리 3층, 통창 너머로 광안대교가 그대로 들어옵니다. 회는 제가 직접 칼을 잡습니다. 단체 최대 100명.">
+<meta property="og:image" content="https://jinjjabg-hub.github.io/NAMECARD/%EA%B0%95%EB%9D%BC%EA%B0%90/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jinjjabg-hub.github.io/NAMECARD/강라감/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&family=Black+Han+Sans&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --navy: #0f2a1e;
+  --navy2: #163526;
+  --navy3: #1e4331;
+  --gold: #c9a84c;
+  --gold2: #e8c86a;
+  --light: #f5efe0;
+  --text-dark: #f0ece0;
+  --text-light: #14261c;
+  --muted-dark: #a89060;
+  --muted-light: #4d5b3f;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+html { font-size: 16px; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--navy);
+  color: var(--text-dark);
+  max-width: 480px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+[data-lang] { display: none; }
+[data-lang].active { display: block; }
+span[data-lang].active { display: inline; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  max-width: 480px; margin: 0 auto;
+  background: rgba(15,42,30,0.97);
+  backdrop-filter: blur(10px);
+  padding: 10px 16px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid rgba(201,168,76,0.25);
+}
+.nav-brand { font-size: 12px; font-weight: 700; color: var(--gold); white-space: nowrap; }
+.lang-btns { display:flex; gap:4px; }
+.lang-btn {
+  padding: 5px 8px;
+  border: 1px solid rgba(201,168,76,0.35);
+  background: transparent;
+  color: var(--muted-dark);
+  font-size: 10px; font-weight: 700;
+  cursor: pointer; border-radius: 5px;
+  transition: all 0.2s;
+  min-width: 40px; min-height: 32px;
+  display: flex; align-items:center; justify-content:center;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.lang-btn.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+
+/* ── 간판 재현 타이포 (검은고딕 + 테두리 발광) ── */
+.sign-type {
+  font-family: 'Black Han Sans', 'Noto Sans KR', sans-serif;
+  letter-spacing: 0.12em;
+  color: #0c1a14;
+  -webkit-text-stroke: 1.6px var(--gold);
+  text-shadow: 0 0 12px rgba(201,168,76,0.7), 0 0 3px rgba(201,168,76,0.9);
+  font-weight: 400;
+}
+
+/* ── HERO (1:1 — 첨부 이미지 비율에 맞춤) ── */
+.hero {
+  margin-top: 54px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+.hero img.hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+.hero-overlay {
+  position: absolute; inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(15,42,30,0.05) 0%,
+    rgba(15,42,30,0.15) 35%,
+    rgba(15,42,30,0.78) 72%,
+    rgba(15,42,30,0.97) 100%
+  );
+}
+.hero-content {
+  position: absolute; bottom:0; left:0; right:0; z-index:2;
+  padding: 24px 20px 22px;
+}
+.hero-sign {
+  font-size: 13px; margin-bottom: 2px;
+  font-family: 'Black Han Sans','Noto Sans KR',sans-serif;
+  letter-spacing: 0.14em; color: var(--gold);
+}
+.hero-shop {
+  font-size: 33px; line-height: 1.1; margin-bottom: 12px;
+  display: inline-block; transform: scaleX(1.05); transform-origin: left;
+}
+.hero-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 10px; font-weight: 700;
+  padding: 4px 12px; border-radius: 20px;
+  margin-bottom: 10px; letter-spacing: 1.2px;
+}
+.hero-name {
+  font-size: 30px; font-weight: 700;
+  color: #fff; line-height: 1.15;
+  margin-bottom: 7px; letter-spacing: 1px;
+}
+.hero-title { font-size: 13px; color: var(--gold); opacity: 0.95; line-height: 1.5; }
+
+/* ── PROFILE ROW ── */
+.profile-row {
+  background: var(--navy2);
+  padding: 16px 20px;
+  display: flex; align-items: center; gap:14px;
+  border-bottom: 1px solid rgba(201,168,76,0.12);
+}
+.profile-img {
+  width: 64px; height: 64px; min-width:64px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  overflow: hidden; flex-shrink: 0;
+}
+.profile-img img { width:100%; height:100%; object-fit:cover; object-position: center top; }
+.profile-info h2 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.profile-info p { font-size: 12px; color: var(--muted-dark); line-height: 1.5; }
+
+/* ── 공통 섹션 ── */
+section { padding: 40px 20px; }
+.section-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 6px;
+}
+.section-title { font-size: 22px; font-weight: 700; line-height: 1.35; margin-bottom: 22px; }
+
+/* ── ABOUT ── */
+.about { background: var(--navy); }
+.about .section-title { color: #fff; }
+.slogan {
+  font-size: 15px; font-weight: 700;
+  color: var(--gold); margin-bottom: 14px;
+  font-style: italic; line-height: 1.6;
+}
+.about-text { font-size: 14px; line-height: 1.9; color: var(--text-dark); opacity: 0.85; }
+
+/* ── WHY ── */
+.why { background: var(--light); }
+.why .section-label { color: var(--muted-light); }
+.why .section-title { color: var(--text-light); }
+.why-cards { display: flex; flex-direction: column; gap:14px; }
+.why-card {
+  background: #fff;
+  border: 1px solid rgba(201,168,76,0.18);
+  border-left: 4px solid var(--gold);
+  border-radius: 10px; padding: 18px 16px;
+}
+.why-card h3 { font-size: 15px; font-weight: 700; color: var(--text-light); margin-bottom: 8px; line-height: 1.4; }
+.why-card p { font-size: 13px; line-height: 1.85; color: #444; }
+.why-card p strong { color: var(--navy); font-weight: 700; }
+
+/* ── VIDEO (광안대교 뷰) ── */
+.viewvideo { background: #0a1a12; }
+.viewvideo .section-title { color: #fff; }
+.video-wrap {
+  position: relative; width: 100%;
+  aspect-ratio: 1/1; overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(201,168,76,0.25);
+  background: #000;
+}
+.video-wrap video { width:100%; height:100%; object-fit: cover; display:block; }
+.video-cap {
+  margin-top: 12px; font-size: 12px; line-height: 1.8;
+  color: var(--muted-dark); text-align: center;
+}
+.video-tag {
+  display:inline-block; margin-bottom:14px;
+  background: rgba(201,168,76,0.14); color: var(--gold);
+  border: 1px solid rgba(201,168,76,0.35);
+  font-size: 11px; font-weight:700; padding: 5px 12px; border-radius: 20px;
+}
+
+/* ── DIFFERENCE ── */
+.difference { background: var(--navy2); }
+.difference .section-title { color: #fff; }
+.diff-grid { display: flex; flex-direction: column; gap:12px; }
+.diff-card {
+  background: var(--navy3);
+  border: 1px solid rgba(201,168,76,0.12);
+  border-radius: 10px; padding: 18px 16px;
+}
+.diff-card h3 { font-size: 14px; font-weight: 700; color: var(--gold); margin-bottom: 8px; line-height: 1.4; }
+.diff-card p { font-size: 13px; line-height: 1.8; color: var(--text-dark); opacity: 0.85; }
+
+/* ── REFERRAL ── */
+.referral { background: var(--light); }
+.referral .section-label { color: var(--muted-light); }
+.referral .section-title { color: var(--text-light); }
+.ref-list { display: flex; flex-direction: column; gap:10px; }
+.ref-item {
+  display: flex; gap:12px; align-items:flex-start;
+  background: #fff; border-radius: 10px;
+  padding: 15px 14px; border: 1px solid rgba(0,0,0,0.05);
+}
+.ref-num {
+  width: 26px; height: 26px; min-width:26px;
+  border-radius: 50%; background: var(--gold);
+  color: var(--navy); font-weight: 700; font-size: 12px;
+  display: flex; align-items:center; justify-content:center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.ref-item p { font-size: 13px; line-height: 1.8; color: #333; }
+.ref-item p strong { color: var(--navy); }
+
+/* ── PORTFOLIO (엘레나 단일 이미지) ── */
+.portfolio { background: var(--navy); }
+.portfolio .section-title { color: #fff; }
+.portfolio-track-wrap { overflow: hidden; border-radius: 12px; border: 1px solid rgba(201,168,76,0.18); }
+.portfolio-track { display: flex; transition: transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94); }
+.portfolio-slide { min-width: 100%; aspect-ratio: 1/1; overflow: hidden; }
+.portfolio-slide img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+.portfolio-cap { margin-top: 12px; font-size: 12px; line-height:1.8; color: var(--muted-dark); text-align:center; }
+
+/* ── CAREER ── */
+.career { background-color: #eef2e6; }
+.career .section-label { color: var(--muted-light); }
+.career .section-title { color: var(--text-light); }
+.career-list { display: flex; flex-direction: column; gap:18px; }
+.career-item {
+  display: flex; gap:12px; align-items:flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.career-item:last-child { border-bottom: none; padding-bottom: 0; }
+.career-badge {
+  background: var(--navy); color: #fff;
+  font-size: 10px; font-weight: 700;
+  padding: 4px 10px; border-radius: 4px;
+  white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+}
+.career-content { background: rgba(255,255,255,0.85); border-radius: 8px; padding: 12px 14px; flex:1; }
+.career-item h3 { font-size: 14px; font-weight: 700; color: var(--text-light); margin-bottom: 7px; line-height: 1.4; }
+.career-item p { font-size: 12px; line-height: 1.85; color: #555; }
+
+/* ── CONTACT ── */
+.contact { background: var(--light); }
+.contact .section-label { color: var(--muted-light); }
+.contact .section-title { color: var(--text-light); }
+.contact-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.contact-item {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; text-align: center;
+  background: #fff; border-radius: 12px;
+  padding: 16px 10px; border: 1px solid rgba(0,0,0,0.05);
+  text-decoration: none; min-height: 100px;
+}
+.contact-item:active { transform: scale(0.97); }
+.contact-icon {
+  width: 42px; height: 42px; min-width:42px;
+  border-radius: 50%; background: var(--navy);
+  display: flex; align-items:center; justify-content:center;
+  font-size: 18px; flex-shrink: 0;
+}
+.contact-label { font-size: 10px; color: #999; }
+.contact-value { font-size: 12px; font-weight: 600; color: var(--text-light); line-height: 1.4; word-break: break-all; }
+
+/* ── ACTION ── */
+.action { background: var(--navy2); padding: 32px 20px; }
+.btn-group { display: flex; flex-direction: column; gap:12px; }
+.btn {
+  display: block; width: 100%; padding: 17px 16px;
+  border: none; border-radius: 10px;
+  font-size: 15px; font-weight: 700;
+  cursor: pointer; text-align: center;
+  transition: all 0.15s; font-family: 'Noto Sans KR', sans-serif;
+  min-height: 54px; letter-spacing: 0.3px;
+}
+.btn-primary { background: var(--gold); color: var(--navy); }
+.btn-secondary { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
+.btn-share { background: linear-gradient(135deg, #1a6b3a, #0d8a4a); color: #fff; border: none; }
+.btn:active { transform: scale(0.97); opacity: 0.9; }
+
+/* 공유 바텀시트 */
+.share-sheet { display:none; position:fixed; inset:0; z-index:200; }
+.share-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.5); }
+.share-panel {
+  position:absolute; bottom:0; left:0; right:0;
+  max-width:480px; margin:0 auto;
+  background:#fff; border-radius:20px 20px 0 0;
+  padding:20px 20px 40px;
+}
+.share-handle { width:40px; height:4px; background:#ddd; border-radius:2px; margin:0 auto 18px; }
+.share-title { font-size:13px; color:#999; text-align:center; margin-bottom:20px; font-weight:600; }
+.share-btns { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:16px; }
+.share-btn { display:flex; flex-direction:column; align-items:center; gap:8px; background:none; border:none; cursor:pointer; padding:8px 4px; }
+.share-btn-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; }
+.share-btn span { font-size:11px; color:#333; font-weight:600; font-family:'Noto Sans KR',sans-serif; }
+.share-cancel { width:100%; padding:14px; background:#f2f2f2; border:none; border-radius:10px; font-size:15px; font-weight:700; color:#444; cursor:pointer; font-family:'Noto Sans KR',sans-serif; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy); padding: 24px 20px;
+  text-align: center; border-top: 1px solid rgba(201,168,76,0.12);
+}
+footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
+footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.5px; }
+
+/* ═══ 매장 분리 구조 ═══ */
+html { scroll-behavior: smooth; }
+:root { --wine: #a8503a; --wine2: #c96f4f; }
+section[id] { scroll-margin-top: 54px; }
+
+/* STORE SELECT */
+.store-select { background: var(--light); padding: 34px 20px 40px; }
+.store-select .section-title { color: var(--text-light); }
+.store-cards { display: flex; flex-direction: column; gap: 12px; }
+.store-card {
+  display: flex; align-items: center; gap: 14px;
+  background: #fff; border-radius: 14px; padding: 14px;
+  text-decoration: none; border: 1px solid rgba(0,0,0,0.06);
+}
+.store-card:active { transform: scale(0.98); }
+.store-card img { width: 68px; height: 68px; border-radius: 10px; object-fit: cover; flex-shrink: 0; }
+.store-card .sc-name { font-size: 16px; font-weight: 700; margin-bottom: 3px; }
+.store-card.sc-madoros .sc-name { color: var(--navy); }
+.store-card.sc-elena .sc-name { color: var(--wine); }
+.store-card .sc-desc { font-size: 12px; color: #777; line-height: 1.5; }
+.store-card .sc-arrow { margin-left: auto; font-size: 18px; color: #ccc; flex-shrink:0; }
+
+/* VENUE BLOCK (매장별 완전 분리 섹션) */
+.venue-block { padding-top: 0; }
+.venue-tag {
+  display: flex; align-items: center; gap: 8px;
+  padding: 22px 20px 0;
+}
+.venue-tag .vt-num { font-size: 11px; opacity: 0.6; letter-spacing: 1px; }
+.venue-tag .vt-line { flex:1; height:1px; background: rgba(255,255,255,0.15); }
+.venue-block.elena .venue-tag .vt-line { background: rgba(0,0,0,0.08); }
+
+.venue-hero { width: 100%; aspect-ratio: 1/1; overflow: hidden; margin-top: 14px; }
+.venue-hero img { width:100%; height:100%; object-fit:cover; display:block; }
+
+.venue-name-wrap { padding: 18px 20px 6px; }
+.venue-logo-madoros {
+  font-family:'Black Han Sans','Noto Sans KR',sans-serif; letter-spacing:0.1em;
+  font-size: 30px; color: #0c1a14; -webkit-text-stroke: 1.3px var(--gold);
+  text-shadow: 0 0 10px rgba(201,168,76,0.6); transform: scaleX(1.05); transform-origin:left; display:inline-block;
+}
+.venue-logo-elena {
+  font-family:'Noto Sans KR',sans-serif; font-weight:700; letter-spacing:0.22em;
+  font-size: 26px; color: var(--wine2);
+}
+.venue-sub { font-size: 12px; margin-top: 4px; opacity: 0.75; }
+.venue-block.madoros .venue-sub { color: var(--muted-dark); }
+.venue-block.elena .venue-sub { color: #8a5540; }
+
+.venue-block.madoros { background: var(--navy); color: var(--text-dark); }
+.venue-block.elena { background: #fbf3ec; color: #3a2a22; }
+
+.venue-about { padding: 16px 20px 6px; font-size: 13.5px; line-height: 1.9; opacity: 0.9; }
+
+.venue-video-wrap {
+  margin: 6px 20px 8px; aspect-ratio: 1/1; border-radius: 12px; overflow:hidden;
+  border: 1px solid rgba(201,168,76,0.25); background:#000;
+}
+.venue-video-wrap video { width:100%; height:100%; object-fit:cover; display:block; }
+.venue-video-cap { margin: 10px 20px 4px; font-size: 11.5px; line-height:1.8; color: var(--muted-dark); }
+
+.venue-diff { padding: 14px 20px 4px; display:flex; flex-direction:column; gap:10px; }
+.venue-diff .vd-card { border-radius: 10px; padding: 14px 15px; }
+.venue-block.madoros .vd-card { background: var(--navy3); border:1px solid rgba(201,168,76,0.12); }
+.venue-block.elena .vd-card { background: #fff; border:1px solid rgba(168,80,58,0.15); }
+.venue-diff h4 { font-size: 13.5px; font-weight:700; margin-bottom:6px; }
+.venue-block.madoros .venue-diff h4 { color: var(--gold); }
+.venue-block.elena .venue-diff h4 { color: var(--wine); }
+.venue-diff p { font-size: 12.5px; line-height:1.75; opacity:0.85; }
+
+.venue-ref { padding: 18px 20px 24px; display:flex; flex-direction:column; gap:10px; }
+.venue-ref .vr-item { display:flex; gap:10px; align-items:flex-start; border-radius:10px; padding:13px 14px; }
+.venue-block.madoros .vr-item { background: rgba(255,255,255,0.05); border:1px solid rgba(201,168,76,0.15); }
+.venue-block.elena .vr-item { background:#fff; border:1px solid rgba(168,80,58,0.15); }
+.venue-ref .vr-num {
+  width:22px;height:22px;min-width:22px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:1px;
+}
+.venue-block.madoros .vr-num { background: var(--gold); color: var(--navy); }
+.venue-block.elena .vr-num { background: var(--wine); color:#fff; }
+.venue-ref p { font-size:12.5px; line-height:1.75; }
+.venue-block.elena .vr-item p strong { color: var(--wine); }
+.venue-block.madoros .vr-item p strong { color: var(--gold2); }
+
+.venue-quick { display:flex; gap:10px; padding: 4px 20px 30px; }
+.venue-quick a {
+  flex:1; text-align:center; padding:12px 8px; border-radius:10px; font-size:12.5px; font-weight:700;
+  text-decoration:none;
+}
+.venue-block.madoros .venue-quick a.q-primary { background: var(--gold); color: var(--navy); }
+.venue-block.madoros .venue-quick a.q-secondary { border:1px solid rgba(201,168,76,0.4); color: var(--gold); }
+.venue-block.elena .venue-quick a.q-primary { background: var(--wine); color:#fff; }
+.venue-block.elena .venue-quick a.q-secondary { border:1px solid rgba(168,80,58,0.4); color: var(--wine); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">광안리 마도로스 · 엘레나</div>
+  <div class="lang-btns">
+    <button class="lang-btn active" onclick="setLang('kr')">한국어</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('jp')">日本語</button>
+    <button class="lang-btn" onclick="setLang('cn')">中文</button>
+  </div>
+</nav>
+
+<!-- HERO : 오너 프로필 (특정 매장이 아닌 강라감 개인) -->
+<div class="hero">
+  <img class="hero-img" src="profil.png" alt="강라감" style="object-position:center 20%;">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span data-lang="kr" class="active">두 개의 매장을 운영합니다</span>
+      <span data-lang="en">Running two separate restaurants</span>
+      <span data-lang="jp">2つの店舗を運営しています</span>
+      <span data-lang="cn">经营两家独立餐厅</span>
+    </div>
+    <div class="hero-name">
+      <span data-lang="kr" class="active">강 라 감</span>
+      <span data-lang="en">Kang Ra-gam</span>
+      <span data-lang="jp">カン・ラガム</span>
+      <span data-lang="cn">姜罗敢</span>
+    </div>
+    <div class="hero-title">
+      <span data-lang="kr" class="active">대표 · 광안리 마도로스 / 이탈리안 다이닝 엘레나</span>
+      <span data-lang="en">CEO · Madoros Gwangalli · Italian Dining Elena</span>
+      <span data-lang="jp">代表 · 広安里マドロス · イタリアンダイニング エレナ</span>
+      <span data-lang="cn">代表 · 广安里马多罗斯 · 意式餐厅 埃莱娜</span>
+    </div>
+  </div>
+</div>
+
+<!-- STORE SELECT : 서로 다른 위치·메뉴의 별개 매장 -->
+<section class="store-select">
+  <div class="section-label">두 매장</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">원하시는 걸로 골라주세요</span>
+    <span data-lang="en">Choose by what you're craving</span>
+    <span data-lang="jp">お好みでお選びください</span>
+    <span data-lang="cn">请按喜好选择</span>
+  </div>
+  <div class="store-cards">
+    <a class="store-card sc-madoros" href="#madoros">
+      <img src="hero.jpg" alt="마도로스">
+      <div>
+        <div class="sc-name">
+          <span data-lang="kr" class="active">🐟 회를 드시고 싶다면 — 마도로스</span>
+          <span data-lang="en">🐟 For sashimi — Madoros</span>
+          <span data-lang="jp">🐟 刺身なら — マドロス</span>
+          <span data-lang="cn">🐟 想吃生鱼片 — 马多罗斯</span>
+        </div>
+        <div class="sc-desc">
+          <span data-lang="kr" class="active">광안리 3층 · 최대 100명</span>
+          <span data-lang="en">3F Gwangalli · up to 100</span>
+          <span data-lang="jp">広安里3階・最大100名</span>
+          <span data-lang="cn">广安里三楼 · 最多100人</span>
+        </div>
+      </div>
+      <div class="sc-arrow">›</div>
+    </a>
+    <a class="store-card sc-elena" href="#elena">
+      <img src="portfolio1.jpg" alt="엘레나">
+      <div>
+        <div class="sc-name">
+          <span data-lang="kr" class="active">🍝 이탈리안을 드시고 싶다면 — 엘레나</span>
+          <span data-lang="en">🍝 For Italian — Elena</span>
+          <span data-lang="jp">🍝 イタリアンなら — エレナ</span>
+          <span data-lang="cn">🍝 想吃意大利菜 — 埃莱娜</span>
+        </div>
+        <div class="sc-desc">
+          <span data-lang="kr" class="active">문현동 · 최대 30명</span>
+          <span data-lang="en">Munhyeon-dong · up to 30</span>
+          <span data-lang="jp">門峴洞・最大30名</span>
+          <span data-lang="cn">门岘洞 · 最多30人</span>
+        </div>
+      </div>
+      <div class="sc-arrow">›</div>
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT : 오너 개인 (특정 매장 이야기 아님) -->
+<section class="about">
+  <div class="section-label">About</div>
+  <div class="slogan">
+    <span data-lang="kr" class="active">"내 가족이 먹는 음식이다 생각하고 만듭니다"</span>
+    <span data-lang="en">"I cook every dish as if my own family were eating it."</span>
+    <span data-lang="jp">「家族に食べさせる料理だと思って作ります」</span>
+    <span data-lang="cn">"把每一道菜，当作给家人做的菜"</span>
+  </div>
+  <p class="about-text">
+    <span data-lang="kr" class="active">사무용가구 도소매 8년, 그다음 광안리에서 횟집 10년, 그 사이 문현동에서 이탈리안 다이닝 5년. 두 매장은 위치도 메뉴도 다르지만 기준은 하나입니다 — 사장이 직접 만든다는 것.</span>
+    <span data-lang="en">Eight years in office furniture wholesale, then ten years running a sashimi restaurant in Gwangalli, five of those years also running an Italian kitchen in Munhyeon-dong. Two separate restaurants, different locations and menus, but one standard: the owner cooks it himself.</span>
+    <span data-lang="jp">オフィス家具卸8年、その後広安里で刺身店10年、その間に門峴洞でイタリアンダイニング5年。二つの店は場所もメニューも違いますが、基準は一つ — 店主自らが作ること。</span>
+    <span data-lang="cn">办公家具批发8年，之后在广安里经营生鱼片店10年，其间在门岘洞经营意式餐厅5年。两家店位置和菜单都不同，但标准只有一个——由老板亲自制作。</span>
+  </p>
+</section>
+
+<!-- ══════════════ MADOROS 블록 (완전 분리) ══════════════ -->
+<div class="venue-block madoros" id="madoros">
+  <div class="venue-tag">
+    <span class="vt-num">01 / VENUE</span>
+    <span class="vt-line"></span>
+  </div>
+  <div class="venue-hero">
+    <img src="hero.jpg" alt="광안리 마도로스">
+  </div>
+  <div class="venue-name-wrap">
+    <div class="venue-logo-madoros">마도로스</div>
+    <div class="venue-sub">
+      <span data-lang="kr" class="active">광안리 · 회 · 딱새우 · 스시 · 명품물회</span>
+      <span data-lang="en">Gwangalli · Sashimi · Sweet Shrimp · Sushi</span>
+      <span data-lang="jp">広安里・刺身・甘エビ・寿司</span>
+      <span data-lang="cn">广安里 · 生鱼片 · 甜虾 · 寿司</span>
+    </div>
+  </div>
+  <p class="venue-about">
+    <span data-lang="kr" class="active">광안리 3층, 통창 너머로 광안대교가 그대로 들어옵니다. 회는 제가 직접 칼을 잡습니다. <strong>10년째</strong>, 자리는 <strong>최대 100명</strong>, 독립 룸은 <strong>30명</strong>까지입니다.</span>
+    <span data-lang="en">On the 3rd floor in Gwangalli, the Gwangan Bridge fills the entire window. I cut every piece of fish myself. <strong>10 years</strong> running, seating up to <strong>100 guests</strong>, with a private room for <strong>30</strong>.</span>
+    <span data-lang="jp">広安里3階、大きな窓の向こうに広安大橋が広がります。刺身は私が自ら包丁を握ります。<strong>10年目</strong>、最大<strong>100名</strong>、個室は<strong>30名</strong>まで。</span>
+    <span data-lang="cn">广安里三楼，整面落地窗外就是广安大桥。生鱼片由我亲自操刀。经营<strong>第10年</strong>，最多可容纳<strong>100人</strong>，包间最多<strong>30人</strong>。</span>
+  </p>
+
+  <div class="venue-video-wrap">
+    <video src="view.mp4" autoplay muted loop playsinline preload="metadata" poster="hero.jpg"></video>
+  </div>
+  <div class="venue-video-cap">
+    <span data-lang="kr" class="active">🎆 매장 3층에서 직접 촬영 — 불꽃축제 때 이 자리에 앉을 수 있습니다. 매년 일찍 마감되니 미리 문의 주세요.</span>
+    <span data-lang="en">🎆 Filmed from our 3rd floor — you can sit right here during the fireworks festival. These seats fill up early every year.</span>
+    <span data-lang="jp">🎆 店舗3階から実際に撮影 — 花火祭りの際もこの席から。毎年早くに満席になります。</span>
+    <span data-lang="cn">🎆 于本店三楼实拍 — 烟花节时可坐在这个位置。每年很早就订满，请提前咨询。</span>
+  </div>
+
+  <div class="venue-diff">
+    <div class="vd-card">
+      <h4>
+        <span data-lang="kr" class="active">사장이 직접 회를 뜹니다</span>
+        <span data-lang="en">The owner cuts every fish</span>
+        <span data-lang="jp">店主が自ら刺身を引きます</span>
+        <span data-lang="cn">老板亲自片鱼</span>
+      </h4>
+      <p>
+        <span data-lang="kr" class="active">위탁 없이 대표가 직접 손질합니다. 명품물회 소스도 직접 만듭니다.</span>
+        <span data-lang="en">No outsourcing — prepared personally by the owner, including the premium mulhoe sauce.</span>
+        <span data-lang="jp">外注なし、代表自ら仕込みます。高級ムルフェのソースも自家製です。</span>
+        <span data-lang="cn">不外包，由代表亲自处理，连精品凉拌生鱼汤的酱汁也是自制。</span>
+      </p>
+    </div>
+    <div class="vd-card">
+      <h4>
+        <span data-lang="kr" class="active">최대 100명, 룸 30명</span>
+        <span data-lang="en">Up to 100 guests, room for 30</span>
+        <span data-lang="jp">最大100名、個室30名</span>
+        <span data-lang="cn">最多100人，包间30人</span>
+      </h4>
+      <p>
+        <span data-lang="kr" class="active">회사 단체 회식부터 소규모 룸 모임까지 한 매장에서 해결됩니다.</span>
+        <span data-lang="en">From large company dinners to small private gatherings, all handled in one venue.</span>
+        <span data-lang="jp">会社の団体会食から少人数の個室利用まで、一つの店舗で対応します。</span>
+        <span data-lang="cn">从公司团体聚餐到小型包间聚会，一家店即可满足。</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="venue-ref">
+    <div class="vr-item">
+      <div class="vr-num">1</div>
+      <p>
+        <span data-lang="kr" class="active"><strong>회사 단체 회식을 맡으신 총무 · 팀장 · 대표님</strong> — 최대 100명까지 한 자리에 모실 수 있습니다.</span>
+        <span data-lang="en"><strong>The person in charge of a company dinner</strong> — office manager, team lead, or CEO. Up to 100 in one room.</span>
+        <span data-lang="jp"><strong>会社の団体会食を任された総務・チーム長・代表の方</strong> — 最大100名まで一度にご案内できます。</span>
+        <span data-lang="cn"><strong>负责公司团体聚餐的总务、组长或代表</strong> — 最多可容纳100人。</span>
+      </p>
+    </div>
+    <div class="vr-item">
+      <div class="vr-num">2</div>
+      <p>
+        <span data-lang="kr" class="active"><strong>우리끼리만 조용히 드시고 싶은 소모임 회장님</strong> — 독립 룸 최대 30명, 광안대교가 보이는 자리입니다.</span>
+        <span data-lang="en"><strong>The head of a small group who wants a private room</strong> — up to 30, with a view of the Gwangan Bridge.</span>
+        <span data-lang="jp"><strong>身内だけで静かに食事したい小さな集まりの会長様</strong> — 個室最大30名、広安大橋が見える席です。</span>
+        <span data-lang="cn"><strong>希望安静用餐的小型聚会会长</strong> — 独立包间最多30人，可眺望广安大桥。</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="venue-quick">
+    <a class="q-primary" href="tel:0507-1431-3950">
+      <span data-lang="kr" class="active">📞 마도로스 예약</span>
+      <span data-lang="en">📞 Call Madoros</span>
+      <span data-lang="jp">📞 マドロス予約</span>
+      <span data-lang="cn">📞 马多罗斯预订</span>
+    </a>
+    <a class="q-secondary" href="https://www.instagram.com/madol_6160/" target="_blank" rel="noopener">📷 Instagram</a>
+  </div>
+</div>
+
+<!-- ══════════════ ELENA 블록 (완전 분리) ══════════════ -->
+<div class="venue-block elena" id="elena">
+  <div class="venue-tag">
+    <span class="vt-num" style="color:#a8503a;">02 / VENUE</span>
+    <span class="vt-line"></span>
+  </div>
+  <div class="venue-hero">
+    <img src="portfolio1.jpg" alt="이탈리안 다이닝 엘레나">
+  </div>
+  <div class="venue-name-wrap">
+    <div class="venue-logo-elena">ELENA</div>
+    <div class="venue-sub">
+      <span data-lang="kr" class="active">문현동 · 파스타 · 뇨끼 · 리조또</span>
+      <span data-lang="en">Munhyeon-dong · Pasta · Gnocchi · Risotto</span>
+      <span data-lang="jp">門峴洞・パスタ・ニョッキ・リゾット</span>
+      <span data-lang="cn">门岘洞 · 意面 · 土豆团 · 烩饭</span>
+    </div>
+  </div>
+  <p class="venue-about">
+    <span data-lang="kr" class="active">문현동에서 <strong>5년째</strong> 운영 중인 이탈리안 다이닝입니다. 파스타도, 피클도, 소스도 사 오지 않고 제가 직접 만듭니다. 최대 <strong>30명</strong>까지 단독 대관이 가능합니다.</span>
+    <span data-lang="en">An Italian dining spot in Munhyeon-dong, running for <strong>5 years</strong>. Pasta, pickles, and sauces are never bought — I make them myself. Exclusive booking for up to <strong>30 guests</strong>.</span>
+    <span data-lang="jp">門峴洞で<strong>5年目</strong>を迎えるイタリアンダイニングです。パスタもピクルスもソースも既製品は使わず、自ら作ります。最大<strong>30名</strong>の貸切が可能です。</span>
+    <span data-lang="cn">在门岘洞经营<strong>第5年</strong>的意式餐厅。意面、腌菜、酱汁从不外购，全部亲手制作。最多可供<strong>30人</strong>独立包场。</span>
+  </p>
+
+  <div class="venue-diff">
+    <div class="vd-card">
+      <h4>
+        <span data-lang="kr" class="active">소스와 피클까지 직접</span>
+        <span data-lang="en">Even sauces and pickles, homemade</span>
+        <span data-lang="jp">ソースもピクルスも自家製</span>
+        <span data-lang="cn">酱汁与腌菜均为自制</span>
+      </h4>
+      <p>
+        <span data-lang="kr" class="active">기성품을 쓰지 않습니다. 버섯시금치뇨끼, 구운연어크림파스타 모두 매장에서 직접.</span>
+        <span data-lang="en">No pre-made ingredients. Mushroom-spinach gnocchi and grilled salmon cream pasta, all made in-house.</span>
+        <span data-lang="jp">既製品は使いません。きのことほうれん草のニョッキ、焼きサーモンのクリームパスタもすべて店内で。</span>
+        <span data-lang="cn">不使用现成食材。蘑菇菠菜土豆团、烤三文鱼奶油意面均为店内手工制作。</span>
+      </p>
+    </div>
+    <div class="vd-card">
+      <h4>
+        <span data-lang="kr" class="active">최대 30명 단독 대관</span>
+        <span data-lang="en">Exclusive booking for up to 30</span>
+        <span data-lang="jp">最大30名貸切</span>
+        <span data-lang="cn">最多30人独立包场</span>
+      </h4>
+      <p>
+        <span data-lang="kr" class="active">공간 전체를 통째로 쓸 수 있어 소모임·프라이빗 행사에 어울립니다.</span>
+        <span data-lang="en">The whole space can be booked exclusively — ideal for private gatherings.</span>
+        <span data-lang="jp">空間全体を貸し切れるため、少人数の集まりに向いています。</span>
+        <span data-lang="cn">可整场包下，适合小型私密聚会。</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="venue-ref">
+    <div class="vr-item">
+      <div class="vr-num">1</div>
+      <p>
+        <span data-lang="kr" class="active"><strong>북클럽 · 와인모임 · 쿠킹클래스 같은 공간이 필요한 모임 주최자</strong> — 최대 30명 단독 대관이 가능합니다.</span>
+        <span data-lang="en"><strong>Organizers of book clubs, wine tastings, or cooking classes</strong> — the space can be booked exclusively for up to 30.</span>
+        <span data-lang="jp"><strong>読書会・ワイン会・料理教室など、場所が必要な主催者の方</strong> — 最大30名の貸切が可能です。</span>
+        <span data-lang="cn"><strong>需要场地的读书会、品酒会、烹饪课主办方</strong> — 最多可供30人独立包场。</span>
+      </p>
+    </div>
+    <div class="vr-item">
+      <div class="vr-num">2</div>
+      <p>
+        <span data-lang="kr" class="active"><strong>기념일 · 소개팅처럼 분위기가 중요한 자리를 찾는 분</strong> — 직접 만든 소스와 파스타로 차린 이탈리안 코스입니다.</span>
+        <span data-lang="en"><strong>Anyone looking for a place with atmosphere</strong> — anniversaries, first dates — an Italian course built on house-made sauces and pasta.</span>
+        <span data-lang="jp"><strong>記念日やお見合いなど、雰囲気を大切にしたい方</strong> — 自家製ソースとパスタで仕上げるイタリアンコースです。</span>
+        <span data-lang="cn"><strong>寻找有氛围的场所的人</strong> — 纪念日、相亲等，以自制酱汁和意面呈现的意式套餐。</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="venue-quick">
+    <a class="q-primary" href="tel:051-638-7181">
+      <span data-lang="kr" class="active">📞 엘레나 예약</span>
+      <span data-lang="en">📞 Call Elena</span>
+      <span data-lang="jp">📞 エレナ予約</span>
+      <span data-lang="cn">📞 埃莱娜预订</span>
+    </a>
+    <a class="q-secondary" href="https://www.instagram.com/da__elena" target="_blank" rel="noopener">📷 Instagram</a>
+  </div>
+</div>
+
+<!-- CAREER -->
+<section class="career">
+  <div class="section-label">Career</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">경력 및 활동</span>
+    <span data-lang="en">Career &amp; Activities</span>
+    <span data-lang="jp">経歴・活動</span>
+    <span data-lang="cn">经历与活动</span>
+  </div>
+  <div class="career-list">
+
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">현재</span>
+        <span data-lang="en">Now</span>
+        <span data-lang="jp">現在</span>
+        <span data-lang="cn">现在</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">광안리 마도로스 대표 · 10년차</span>
+          <span data-lang="en">Owner, Madoros Gwangalli · 10th year</span>
+          <span data-lang="jp">広安里マドロス 代表・10年目</span>
+          <span data-lang="cn">广安里马多罗斯 代表 · 第10年</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">회 · 딱새우 · 스시 · 명품물회. 광안리 3층 오션뷰, 단체 최대 100명, 독립 룸 30명.</span>
+          <span data-lang="en">Sashimi, sweet shrimp, sushi and premium mulhoe. 3rd-floor ocean view in Gwangalli, up to 100 guests, private room for 30.</span>
+          <span data-lang="jp">刺身・甘エビ・寿司・高級ムルフェ。広安里3階オーシャンビュー、団体最大100名、個室30名。</span>
+          <span data-lang="cn">生鱼片、甜虾、寿司、精品凉拌生鱼汤。广安里三楼海景，团体最多100人，包间30人。</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">현재</span>
+        <span data-lang="en">Now</span>
+        <span data-lang="jp">現在</span>
+        <span data-lang="cn">现在</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">이탈리안 다이닝 엘레나 (문현동) · 5년차</span>
+          <span data-lang="en">Italian Dining Elena, Munhyeon-dong · 5th year</span>
+          <span data-lang="jp">イタリアンダイニング エレナ（門峴洞）・5年目</span>
+          <span data-lang="cn">意式餐厅 埃莱娜（门岘洞）· 第5年</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">파스타 · 뇨끼 · 리조또. 소스와 피클까지 직접 만듭니다. 최대 30명 단독 대관 가능.</span>
+          <span data-lang="en">Pasta, gnocchi and risotto. Sauces and pickles made in-house. Exclusive booking for up to 30.</span>
+          <span data-lang="jp">パスタ・ニョッキ・リゾット。ソースもピクルスも自家製。最大30名の貸切可能。</span>
+          <span data-lang="cn">意面、土豆团、烩饭。酱汁与腌菜全部自制。最多30人可独立包场。</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">경력</span>
+        <span data-lang="en">Past</span>
+        <span data-lang="jp">経歴</span>
+        <span data-lang="cn">经历</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">사무용가구 도소매 8년</span>
+          <span data-lang="en">8 years in office furniture wholesale &amp; retail</span>
+          <span data-lang="jp">オフィス家具 卸・小売 8年</span>
+          <span data-lang="cn">办公家具批发零售 8年</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">B2B 영업과 납품 관리 경험. 기업 담당자와 일하는 방식을 여기서 배웠습니다.</span>
+          <span data-lang="en">B2B sales and delivery management. This is where I learned how to work with corporate clients.</span>
+          <span data-lang="jp">B2B営業と納品管理の経験。企業担当者との仕事の進め方はここで学びました。</span>
+          <span data-lang="cn">B2B销售与交付管理经验。与企业负责人合作的方式正是在这里学到的。</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="career-item">
+      <div class="career-badge">
+        <span data-lang="kr" class="active">활동</span>
+        <span data-lang="en">Network</span>
+        <span data-lang="jp">活動</span>
+        <span data-lang="cn">活动</span>
+      </div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">지역 네트워크 활동</span>
+          <span data-lang="en">Local network activities</span>
+          <span data-lang="jp">地域ネットワーク活動</span>
+          <span data-lang="cn">地区网络活动</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">부산오륜로타리클럽 2년차 (25~26회기 재무) · BNI {{CHAPTER_KR}} · 부산 남구 공감교육위원회 1년차 · 당신애봄 모자동행봉사단 대외영업이사 · 동의대학교 미래교육원 경영학과 26학번</span>
+          <span data-lang="en">Busan Oryun Rotary Club, 2nd year (Treasurer, 2025–26) · BNI {{CHAPTER_KR}} · Nam-gu Busan Empathy Education Committee, 1st year · Director of External Affairs, Dangsinaebom volunteer group · Dong-eui University Future Education Institute, Business Administration '26</span>
+          <span data-lang="jp">釜山五輪ロータリークラブ2年目（25〜26年度 会計）· BNI {{CHAPTER_KR}} · 釜山南区共感教育委員会1年目 · タンシネボム母子同行奉仕団 対外営業理事 · 東義大学校未来教育院 経営学科26学番</span>
+          <span data-lang="cn">釜山五轮扶轮社第2年（25~26年度财务）· BNI {{CHAPTER_KR}} · 釜山南区共感教育委员会第1年 · 当身爱春母子同行志愿团 对外营业理事 · 东义大学未来教育院 经营学系26届</span>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT : 매장별 상세 연락처는 각 매장 블록 하단에 이미 있으므로, 여기는 대표 직통 중심으로 간결하게 -->
+<section class="contact">
+  <div class="section-label">Contact</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">대표에게 직접 연락하기</span>
+    <span data-lang="en">Contact the Owner Directly</span>
+    <span data-lang="jp">代表に直接連絡</span>
+    <span data-lang="cn">直接联系代表</span>
+  </div>
+  <div class="contact-list">
+
+    <a class="contact-item" href="tel:010-4301-7181">
+      <div class="contact-icon">📞</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">대표 직통</span>
+        <span data-lang="en">Direct (CEO)</span>
+        <span data-lang="jp">代表直通</span>
+        <span data-lang="cn">代表直线</span>
+      </div>
+      <div class="contact-value">010-4301-7181</div>
+    </a>
+
+    <a class="contact-item" href="mailto:leo0007@naver.com">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-label">Email</div>
+      <div class="contact-value">leo0007@naver.com</div>
+    </a>
+
+    <a class="contact-item" href="https://naver.me/xiqYk1uB" target="_blank" rel="noopener">
+      <div class="contact-icon">🗺️</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">네이버 플레이스</span>
+        <span data-lang="en">Naver Place</span>
+        <span data-lang="jp">NAVERプレイス</span>
+        <span data-lang="cn">Naver地图</span>
+      </div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">마도로스 예약 · 리뷰</span>
+        <span data-lang="en">Madoros reviews</span>
+        <span data-lang="jp">マドロス予約・口コミ</span>
+        <span data-lang="cn">马多罗斯预订・点评</span>
+      </div>
+    </a>
+
+    <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=kang-ragam" target="_blank" rel="noopener">
+      <div class="contact-icon">💬</div>
+      <div class="contact-label">MANDU</div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">실시간 번역 메신저</span>
+        <span data-lang="en">Live translation chat</span>
+        <span data-lang="jp">リアルタイム翻訳チャット</span>
+        <span data-lang="cn">实时翻译聊天</span>
+      </div>
+    </a>
+
+    <a class="contact-item" style="grid-column: 1 / -1;" href="https://map.kakao.com/link/search/%EB%B6%80%EC%82%B0%20%EC%88%98%EC%98%81%EA%B5%AC%20%EA%B4%91%EC%95%88%EB%A1%9C61%EB%B2%88%EA%B8%B8%2060" target="_blank" rel="noopener">
+      <div class="contact-icon">📍</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">광안리 마도로스 (탭하면 지도 열림)</span>
+        <span data-lang="en">Madoros Gwangalli (tap for map)</span>
+        <span data-lang="jp">広安里マドロス（タップで地図）</span>
+        <span data-lang="cn">广安里马多罗斯（点击打开地图）</span>
+      </div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">부산 수영구 광안로61번길 60, 3층 306·307·308호</span>
+        <span data-lang="en">3F #306–308, 60 Gwangan-ro 61beon-gil, Suyeong-gu, Busan</span>
+        <span data-lang="jp">釜山広域市 水営区 広安路61番ギル60 3階306・307・308号</span>
+        <span data-lang="cn">釜山水营区广安路61番街60号 3楼306·307·308室</span>
+      </div>
+    </a>
+
+    <a class="contact-item" style="grid-column: 1 / -1;" href="https://map.kakao.com/link/search/%EB%B6%80%EC%82%B0%20%EB%82%A8%EA%B5%AC%20%EA%B3%A0%EB%8F%99%EA%B3%A8%EB%A1%9C36%EB%B2%88%EA%B0%80%EA%B8%B8%2038" target="_blank" rel="noopener">
+      <div class="contact-icon">📍</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">이탈리안 다이닝 엘레나 (탭하면 지도 열림)</span>
+        <span data-lang="en">Italian Dining Elena (tap for map)</span>
+        <span data-lang="jp">イタリアンダイニング エレナ（タップで地図）</span>
+        <span data-lang="cn">意式餐厅 埃莱娜（点击打开地图）</span>
+      </div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">부산 남구 고동골로36번가길 38, 1층</span>
+        <span data-lang="en">1F, 38 Godonggol-ro 36beonga-gil, Nam-gu, Busan</span>
+        <span data-lang="jp">釜山広域市 南区 コドンゴル路36番街ギル38 1階</span>
+        <span data-lang="cn">釜山南区高东谷路36番街38号 1楼</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ACTION -->
+<div class="action">
+  <div class="btn-group">
+    <button class="btn btn-primary" onclick="saveContact()">
+      <span data-lang="kr" class="active">📞 연락처 저장</span>
+      <span data-lang="en">📞 Save contact</span>
+      <span data-lang="jp">📞 連絡先を保存</span>
+      <span data-lang="cn">📞 保存联系人</span>
+    </button>
+    <button class="btn btn-secondary" onclick="saveToCardbook({id:'kang-ragam',name:'강라감',nameEn:'Kang Ra-gam',title:'대표',company:'광안리 마도로스 · 엘레나',phone:'010-4301-7181',email:'leo0007@naver.com',chapter:'{{CHAPTER_KR}}',bni:'요식업 (횟집 · 이탈리안)',url:window.location.href})">
+      <span data-lang="kr" class="active">🗂️ 명함 저장 (CardBook)</span>
+      <span data-lang="en">🗂️ Save to CardBook</span>
+      <span data-lang="jp">🗂️ 名刺を保存</span>
+      <span data-lang="cn">🗂️ 保存名片</span>
+    </button>
+    <button class="btn btn-share" onclick="shareCard()">
+      <span data-lang="kr" class="active">📤 명함 전달하기</span>
+      <span data-lang="en">📤 Share this card</span>
+      <span data-lang="jp">📤 名刺を共有</span>
+      <span data-lang="cn">📤 分享名片</span>
+    </button>
+  </div>
+</div>
+
+<!-- 공유 바텀시트 -->
+<div class="share-sheet" id="shareSheet">
+  <div class="share-backdrop" onclick="closeShare()"></div>
+  <div class="share-panel">
+    <div class="share-handle"></div>
+    <div class="share-title">명함 전달하기</div>
+    <div class="share-btns">
+      <button class="share-btn" onclick="shareKakao()">
+        <div class="share-btn-icon" style="background:#FEE500;">💬</div><span>카카오톡</span>
+      </button>
+      <button class="share-btn" onclick="shareSMS()">
+        <div class="share-btn-icon" style="background:#34c759;">✉️</div><span>문자</span>
+      </button>
+      <button class="share-btn" onclick="copyLink()">
+        <div class="share-btn-icon" style="background:#e8e8e8;">🔗</div><span>링크 복사</span>
+      </button>
+      <button class="share-btn" onclick="shareQR()">
+        <div class="share-btn-icon" style="background:#0f2a1e;">📱</div><span>QR 보기</span>
+      </button>
+    </div>
+    <button class="share-cancel" onclick="closeShare()">취소</button>
+  </div>
+</div>
+
+<!-- 만두 연결 (카드 주인 전용) -->
+<div class="mandu-activate-wrap" style="padding:14px 20px 4px;text-align:center;">
+  <button id="mandu-activate-btn" onclick="activateMandu()"
+    style="background:none;border:1px solid rgba(201,168,76,0.3);color:var(--muted-dark);font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
+    💬 본인 명함이신가요? 만두 연결하기 (1회)
+  </button>
+  <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:var(--gold);padding:7px 0;">
+    ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="company">
+    <span data-lang="kr" class="active">광안리 마도로스 · 이탈리안 다이닝 엘레나</span>
+    <span data-lang="en">Madoros Gwangalli · Italian Dining Elena</span>
+    <span data-lang="jp">広安里マドロス · イタリアンダイニング エレナ</span>
+    <span data-lang="cn">广安里马多罗斯 · 意式餐厅 埃莱娜</span>
+  </div>
+  <div class="slogan-footer">Cooked as if for my own family.</div>
+</footer>
+
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const m = btn.getAttribute('onclick').match(/'(\w+)'/);
+    btn.classList.toggle('active', m && m[1] === lang);
+  });
+}
+function saveContact() {
+  const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:강라감
+ORG:광안리 마도로스 · 이탈리안 다이닝 엘레나
+TITLE:대표
+TEL;TYPE=CELL:010-4301-7181
+TEL;TYPE=WORK:0507-1431-3950
+TEL;TYPE=WORK:051-638-7181
+EMAIL:leo0007@naver.com
+URL:https://jinjjabg-hub.github.io/NAMECARD/강라감/
+ADR;TYPE=WORK:;;부산 수영구 광안로61번길 60 3층 306호;부산;;;대한민국
+NOTE:두 개의 별도 매장을 운영합니다 — ① 광안리 마도로스(회·딱새우·스시·명품물회, 0507-1431-3950, 최대 100명/룸30명) ② 이탈리안 다이닝 엘레나(문현동, 051-638-7181, 최대 30명 단독대관)
+END:VCARD`;
+  const blob = new Blob([vcard], {type:'text/vcard'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = '강라감_마도로스.vcf';
+  a.click();
+}
+
+/* ── 명함 전달하기 ── */
+const CARD_URL = 'https://jinjjabg-hub.github.io/NAMECARD/%EA%B0%95%EB%9D%BC%EA%B0%90/';
+const CARD_TITLE = '강라감 | 광안리 마도로스 · 엘레나';
+const CARD_TEXT = '광안리 3층, 통창 너머 광안대교. 회는 사장이 직접 씁니다. 단체 최대 100명.';
+
+function shareCard() {
+  if (navigator.share) {
+    navigator.share({ title: CARD_TITLE, text: CARD_TEXT, url: CARD_URL }).catch(() => {});
+  } else {
+    document.getElementById('shareSheet').style.display = 'block';
+  }
+}
+function closeShare() { document.getElementById('shareSheet').style.display = 'none'; }
+function shareKakao() {
+  window.open('https://sharer.kakao.com/talk/friends/picker/link?app_key=&url=' + encodeURIComponent(CARD_URL), '_blank');
+  closeShare();
+}
+function shareSMS() {
+  location.href = 'sms:?body=' + encodeURIComponent(CARD_TITLE + '\n' + CARD_URL);
+  closeShare();
+}
+function copyLink() {
+  navigator.clipboard.writeText(CARD_URL).then(() => alert('링크가 복사되었습니다!')).catch(() => {
+    const t = document.createElement('textarea');
+    t.value = CARD_URL;
+    document.body.appendChild(t); t.select(); document.execCommand('copy');
+    document.body.removeChild(t);
+    alert('링크가 복사되었습니다!');
+  });
+  closeShare();
+}
+function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
+
+/* ── PORTFOLIO 슬라이드 (슬라이드 1장이면 조용히 종료) ── */
+(function () {
+  const track = document.getElementById('portfolio-track');
+  if (!track) return;
+  const slides = track.querySelectorAll('.portfolio-slide');
+  const total = slides.length;
+  if (total < 2) return;
+  const dotsWrap = document.getElementById('portfolio-dots');
+  let idx = 0, timer = null;
+  for (let i = 0; i < total; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'portfolio-dot' + (i === 0 ? ' active' : '');
+    dot.onclick = () => { go(i); reset(); };
+    dotsWrap.appendChild(dot);
+  }
+  function render() {
+    track.style.transform = `translateX(-${idx * 100}%)`;
+    dotsWrap.querySelectorAll('.portfolio-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+  }
+  function go(i) { idx = (i + total) % total; render(); }
+  window.portfolioSlide = function (dir) { go(idx + dir); reset(); };
+  function auto() { timer = setTimeout(() => { go(idx + 1); auto(); }, 3000); }
+  function reset() { clearTimeout(timer); auto(); }
+  let startX = 0;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; clearTimeout(timer); }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) go(idx + (dx < 0 ? 1 : -1));
+    auto();
+  }, { passive: true });
+  auto();
+})();
+
+/* ── 영상 자동재생 보정 (iOS 저전력 모드 등에서 막힐 때 탭하면 재생) ── */
+(function () {
+  const v = document.querySelector('.video-wrap video');
+  if (!v) return;
+  const tryPlay = () => v.play().catch(() => {});
+  tryPlay();
+  v.addEventListener('click', () => { v.paused ? tryPlay() : v.pause(); });
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
+})();
+
+/* ── 만두 원클릭 연결 (카드 주인 전용) ── */
+async function _manduWaitFirebase(maxTries) {
+  let tries = 0;
+  while ((typeof firebase === 'undefined' || !firebase.apps || !firebase.apps.length) && tries < (maxTries || 50)) {
+    await new Promise(r => setTimeout(r, 100));
+    tries++;
+  }
+  return typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length > 0;
+}
+
+async function _manduFinishActivate(user) {
+  const slug = 'kang-ragam';
+  const db = firebase.firestore();
+  const existing = await db.collection('manduid_index').doc(slug).get();
+  if (existing.exists && existing.data().uid !== user.uid) {
+    const btn = document.getElementById('mandu-activate-btn');
+    if (btn) btn.style.display = 'none';
+    const done = document.getElementById('mandu-activate-done');
+    if (done) { done.textContent = 'ℹ️ 이미 연결된 명함이에요'; done.style.display = 'block'; }
+    return;
+  }
+  await db.collection('users').doc(user.uid).set({
+    uid: user.uid, displayName: user.displayName || '', photoURL: user.photoURL || '',
+    email: user.email || '', manduid: slug
+  }, { merge: true });
+  await db.collection('manduid_index').doc(slug).set({
+    uid: user.uid, createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  }, { merge: true });
+  const btn = document.getElementById('mandu-activate-btn');
+  const done = document.getElementById('mandu-activate-done');
+  if (btn) btn.style.display = 'none';
+  if (done) done.style.display = 'block';
+}
+
+async function activateMandu() {
+  if (!confirm('본인 명함이 맞나요?\n구글 로그인하면 이 명함으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  const btn = document.getElementById('mandu-activate-btn');
+  if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
+  const ready = await _manduWaitFirebase();
+  if (!ready) {
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 실패. 잠시 후 다시 시도해주세요.');
+    return;
+  }
+  try {
+    const auth = firebase.auth();
+    await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      sessionStorage.setItem('_manduPendingSlug', 'kang-ragam');
+      await auth.signInWithRedirect(provider);
+      return;
+    }
+    const result = await auth.signInWithPopup(provider);
+    await _manduFinishActivate(result.user);
+  } catch (e) {
+    console.error('만두 연결 실패:', e);
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 중 오류가 발생했어요.');
+  }
+}
+
+(async function () {
+  if (!sessionStorage.getItem('_manduPendingSlug')) return;
+  const ready = await _manduWaitFirebase();
+  sessionStorage.removeItem('_manduPendingSlug');
+  if (!ready) return;
+  try {
+    const res = await firebase.auth().getRedirectResult();
+    if (res && res.user) await _manduFinishActivate(res.user);
+  } catch (e) { console.error(e); }
+})();
+</script>
+</body>
+</html>
