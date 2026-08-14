@@ -85,7 +85,7 @@ nav {
   margin-top: 54px;
   position: relative;
   width: 100%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 2/3;
   overflow: hidden;
 }
 .hero img.hero-img {
@@ -94,43 +94,14 @@ nav {
   object-position: center center;
   display: block;
 }
-.hero-overlay {
-  position: absolute; inset:0;
-  background: linear-gradient(
-    to bottom,
-    rgba(15,42,30,0.05) 0%,
-    rgba(15,42,30,0.15) 35%,
-    rgba(15,42,30,0.78) 72%,
-    rgba(15,42,30,0.97) 100%
-  );
-}
-.hero-content {
-  position: absolute; bottom:0; left:0; right:0; z-index:2;
-  padding: 24px 20px 22px;
-}
-.hero-sign {
-  font-size: 13px; margin-bottom: 2px;
-  font-family: 'Black Han Sans','Noto Sans KR',sans-serif;
-  letter-spacing: 0.14em; color: var(--gold);
-}
-.hero-shop {
-  font-size: 33px; line-height: 1.1; margin-bottom: 12px;
-  display: inline-block; transform: scaleX(1.05); transform-origin: left;
-}
 .hero-badge {
   display: inline-block;
   background: var(--gold);
   color: var(--navy);
   font-size: 10px; font-weight: 700;
   padding: 4px 12px; border-radius: 20px;
-  margin-bottom: 10px; letter-spacing: 1.2px;
+  letter-spacing: 1.2px;
 }
-.hero-name {
-  font-size: 30px; font-weight: 700;
-  color: #fff; line-height: 1.15;
-  margin-bottom: 7px; letter-spacing: 1px;
-}
-.hero-title { font-size: 13px; color: var(--gold); opacity: 0.95; line-height: 1.5; }
 
 /* ── PROFILE ROW ── */
 .profile-row {
@@ -346,7 +317,13 @@ section[id] { scroll-margin-top: 54px; }
   text-decoration: none; border: 1px solid rgba(0,0,0,0.06);
 }
 .store-card:active { transform: scale(0.98); }
-.store-card img { width: 68px; height: 68px; border-radius: 10px; object-fit: cover; flex-shrink: 0; }
+.store-card .sc-icon {
+  width: 52px; height: 52px; min-width: 52px; border-radius: 50%;
+  display: flex; align-items:center; justify-content:center;
+  font-size: 24px; flex-shrink: 0;
+}
+.store-card.sc-madoros .sc-icon { background: rgba(15,42,30,0.08); }
+.store-card.sc-elena .sc-icon { background: rgba(168,80,58,0.1); }
 .store-card .sc-name { font-size: 16px; font-weight: 700; margin-bottom: 3px; }
 .store-card.sc-madoros .sc-name { color: var(--navy); }
 .store-card.sc-elena .sc-name { color: var(--wine); }
@@ -441,27 +418,27 @@ section[id] { scroll-margin-top: 54px; }
 
 <!-- HERO : 오너 프로필 (특정 매장이 아닌 강라감 개인) -->
 <div class="hero">
-  <img class="hero-img" src="profil.png" alt="강라감" style="object-position:center 20%;">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-badge">
+  <img class="hero-img" src="hero.png" alt="강라감 · 마도로스 · 엘레나">
+</div>
+
+<!-- PROFILE ROW : 대표 얼굴 -->
+<div class="profile-row">
+  <div class="profile-img">
+    <img src="profile.png" alt="강라감">
+  </div>
+  <div class="profile-info">
+    <div class="hero-badge" style="margin-bottom:6px;">
       <span data-lang="kr" class="active">두 개의 매장을 운영합니다</span>
       <span data-lang="en">Running two separate restaurants</span>
       <span data-lang="jp">2つの店舗を運営しています</span>
       <span data-lang="cn">经营两家独立餐厅</span>
     </div>
-    <div class="hero-name">
-      <span data-lang="kr" class="active">강 라 감</span>
-      <span data-lang="en">Kang Ra-gam</span>
-      <span data-lang="jp">カン・ラガム</span>
-      <span data-lang="cn">姜罗敢</span>
-    </div>
-    <div class="hero-title">
-      <span data-lang="kr" class="active">대표 · 광안리 마도로스 / 이탈리안 다이닝 엘레나</span>
-      <span data-lang="en">CEO · Madoros Gwangalli · Italian Dining Elena</span>
-      <span data-lang="jp">代表 · 広安里マドロス · イタリアンダイニング エレナ</span>
-      <span data-lang="cn">代表 · 广安里马多罗斯 · 意式餐厅 埃莱娜</span>
-    </div>
+    <p>
+      <span data-lang="kr" class="active">광안리 마도로스 · 이탈리안 다이닝 엘레나 대표</span>
+      <span data-lang="en">Owner, Madoros Gwangalli &amp; Italian Dining Elena</span>
+      <span data-lang="jp">広安里マドロス・イタリアンダイニング エレナ 代表</span>
+      <span data-lang="cn">广安里马多罗斯 · 意式餐厅 埃莱娜 代表</span>
+    </p>
   </div>
 </div>
 
@@ -476,13 +453,13 @@ section[id] { scroll-margin-top: 54px; }
   </div>
   <div class="store-cards">
     <a class="store-card sc-madoros" href="#madoros">
-      <img src="hero.jpg" alt="마도로스">
+      <div class="sc-icon">🐟</div>
       <div>
         <div class="sc-name">
-          <span data-lang="kr" class="active">🐟 회를 드시고 싶다면 — 마도로스</span>
-          <span data-lang="en">🐟 For sashimi — Madoros</span>
-          <span data-lang="jp">🐟 刺身なら — マドロス</span>
-          <span data-lang="cn">🐟 想吃生鱼片 — 马多罗斯</span>
+          <span data-lang="kr" class="active">회를 드시고 싶다면 — 마도로스</span>
+          <span data-lang="en">For sashimi — Madoros</span>
+          <span data-lang="jp">刺身なら — マドロス</span>
+          <span data-lang="cn">想吃生鱼片 — 马多罗斯</span>
         </div>
         <div class="sc-desc">
           <span data-lang="kr" class="active">광안리 3층 · 최대 100명</span>
@@ -494,13 +471,13 @@ section[id] { scroll-margin-top: 54px; }
       <div class="sc-arrow">›</div>
     </a>
     <a class="store-card sc-elena" href="#elena">
-      <img src="portfolio1.jpg" alt="엘레나">
+      <div class="sc-icon">🍝</div>
       <div>
         <div class="sc-name">
-          <span data-lang="kr" class="active">🍝 이탈리안을 드시고 싶다면 — 엘레나</span>
-          <span data-lang="en">🍝 For Italian — Elena</span>
-          <span data-lang="jp">🍝 イタリアンなら — エレナ</span>
-          <span data-lang="cn">🍝 想吃意大利菜 — 埃莱娜</span>
+          <span data-lang="kr" class="active">이탈리안을 드시고 싶다면 — 엘레나</span>
+          <span data-lang="en">For Italian — Elena</span>
+          <span data-lang="jp">イタリアンなら — エレナ</span>
+          <span data-lang="cn">想吃意大利菜 — 埃莱娜</span>
         </div>
         <div class="sc-desc">
           <span data-lang="kr" class="active">문현동 · 최대 30명</span>
@@ -538,7 +515,7 @@ section[id] { scroll-margin-top: 54px; }
     <span class="vt-line"></span>
   </div>
   <div class="venue-hero">
-    <img src="hero.jpg" alt="광안리 마도로스">
+    <img src="hero2.jpg" alt="광안리 마도로스">
   </div>
   <div class="venue-name-wrap">
     <div class="venue-logo-madoros">마도로스</div>
@@ -557,7 +534,7 @@ section[id] { scroll-margin-top: 54px; }
   </p>
 
   <div class="venue-video-wrap">
-    <video src="view.mp4" autoplay muted loop playsinline preload="metadata" poster="hero.jpg"></video>
+    <video src="video.mp4" autoplay muted loop playsinline preload="metadata" poster="hero2.jpg"></video>
   </div>
   <div class="venue-video-cap">
     <span data-lang="kr" class="active">🎆 매장 3층에서 직접 촬영 — 불꽃축제 때 이 자리에 앉을 수 있습니다. 매년 일찍 마감되니 미리 문의 주세요.</span>
@@ -636,7 +613,7 @@ section[id] { scroll-margin-top: 54px; }
     <span class="vt-line"></span>
   </div>
   <div class="venue-hero">
-    <img src="portfolio1.jpg" alt="이탈리안 다이닝 엘레나">
+    <img src="hero1.jpg" alt="이탈리안 다이닝 엘레나">
   </div>
   <div class="venue-name-wrap">
     <div class="venue-logo-elena">ELENA</div>
