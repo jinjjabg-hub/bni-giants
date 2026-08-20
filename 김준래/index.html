@@ -251,26 +251,6 @@ body {
 .diff-text strong .acc { color: var(--gold); }
 .diff-text p { font-size: 12px; color: #888; line-height: 1.7; }
 
-/* ═══════════ PORTFOLIO ═══════════ */
-.portfolio-sec { background: var(--dark); padding: 44px 0 40px; }
-.portfolio-sec .sec-label, .portfolio-sec .sec-title { padding: 0 24px; }
-.portfolio-slider { position: relative; overflow: hidden; margin-top: 20px; touch-action: pan-y; }
-.portfolio-track { display: flex; transition: transform .45s cubic-bezier(.4,0,.2,1); }
-.portfolio-slide { min-width: 100%; }
-.portfolio-slide img { width: 100%; height: 260px; object-fit: cover; display: block; }
-.portfolio-dots { display: flex; justify-content: center; gap: 7px; margin-top: 14px; padding: 0 20px; }
-.portfolio-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(201,168,76,0.3); cursor: pointer; transition: all .2s; }
-.portfolio-dot.on { background: var(--gold3); width: 20px; border-radius: 4px; }
-.portfolio-nav {
-  position: absolute; top: 50%; transform: translateY(-50%);
-  width: 32px; height: 32px; border-radius: 50%;
-  background: rgba(201,168,76,0.75); border: none; color: #fff; font-size: 16px;
-  cursor: pointer; display: flex; align-items: center; justify-content: center;
-  z-index: 10; -webkit-tap-highlight-color: transparent;
-}
-.portfolio-nav.prev { left: 10px; }
-.portfolio-nav.next { right: 10px; }
-
 /* ═══════════ BNI 프로필 ═══════════ */
 .bni-sec { background: var(--dark); padding: 44px 24px; border-top: 1px solid var(--line); }
 .bni-inner {
@@ -355,17 +335,12 @@ body {
   border-radius: 14px; padding: 14px 16px;
   cursor: pointer; text-decoration: none;
   transition: all 0.2s; width: 100%;
-  color: var(--white);
-  }
-  .save-btn.btn-primary {
-  color: #ffffff !important;
 }
-  
 .save-btn:hover { background: rgba(184,154,58,0.16); border-color: var(--gold3); }
 .save-icon { font-size: 22px; flex-shrink: 0; }
 .save-info strong {
   display: block; font-size: 13px; font-weight: 800;
-  color: #ffffff; margin-bottom: 2px;
+  color: var(--gold2); margin-bottom: 2px;
 }
 .save-info span { font-size: 11px; color: rgba(255,255,255,0.3); }
 
@@ -421,7 +396,6 @@ body {
 .fade-d1 { transition-delay: 0.1s; }
 .fade-d2 { transition-delay: 0.2s; }
 .fade-d3 { transition-delay: 0.3s; }
-.lang-inline{display:none}.lang-inline.active{display:inline}
 </style>
 </head>
 <body>
@@ -525,7 +499,7 @@ body {
     <div id="stat3-label" class="stat-label">일정 준수율<br>(단 하루도 미준수 없음)</div>
   </div>
   <div class="stat-item fade fade-d3">
-    <div class="stat-num">3<em>기</em></div>
+    <div class="stat-num">4<em>기</em></div>
     <div id="stat4-label" class="stat-label">BNI<br>자이언츠 챕터</div>
   </div>
 </div>
@@ -568,27 +542,6 @@ body {
   </div>
 </section>
 
-<!-- ══════════ PORTFOLIO ══════════ -->
-<section class="portfolio-sec fade">
-  <span id="port-label" class="sec-label">Portfolio</span>
-  <h2 id="port-title" class="sec-title light">시공 사례</h2>
-  <div class="portfolio-slider" id="sliderWrap">
-    <button class="portfolio-nav prev" onclick="slidePort(-1)">‹</button>
-    <button class="portfolio-nav next" onclick="slidePort(1)">›</button>
-    <div class="portfolio-track" id="portfolioTrack">
-      <div class="portfolio-slide"><img src="poto1.jpg" alt="김준래 시공 사례 1"></div>
-      <div class="portfolio-slide"><img src="poto2.jpg" alt="김준래 시공 사례 2"></div>
-      <div class="portfolio-slide"><img src="poto3.jpg" alt="김준래 시공 사례 3"></div>
-      <div class="portfolio-slide"><img src="poto4.jpg" alt="김준래 시공 사례 4"></div>
-      <div class="portfolio-slide"><img src="poto5.jpg" alt="김준래 시공 사례 5"></div>
-      <div class="portfolio-slide"><img src="poto6.jpg" alt="김준래 시공 사례 6"></div>
-      <div class="portfolio-slide"><img src="poto7.jpg" alt="김준래 시공 사례 7"></div>
-      <div class="portfolio-slide"><img src="poto8.jpg" alt="김준래 시공 사례 8"></div>
-    </div>
-    <div class="portfolio-dots" id="portDots"></div>
-  </div>
-</section>
-
 <!-- ══════════ BNI 프로필 ══════════ -->
 <section class="bni-sec">
   <span id="bni-label" class="sec-label">BNI 프로필</span>
@@ -600,7 +553,7 @@ body {
       <div id="bni-name" class="bni-info-name">김준래</div>
       <div id="bni-role" class="bni-info-role">무늬디자인 대표 · BNI 자이언츠 챕터</div>
       <div class="bni-tags">
-        <span id="bni-tag1" class="bni-tag">3기 도어퍼슨마스터</span>
+        <span id="bni-tag1" class="bni-tag">4기 의장</span>
         <span id="bni-tag2" class="bni-tag">자이언츠 챕터</span>
         <span id="bni-tag3" class="bni-tag">인테리어 전문</span>
       </div>
@@ -609,7 +562,7 @@ body {
     <div class="bni-history fade">
     <div id="bni-hist-label" class="bni-history-label">BNI HISTORY</div>
     <div id="bni-hist-text" class="bni-history-text">
-      3기 도어퍼슨마스터 · 자이언츠 챕터 · 부산<br><br>
+      4기 의장 · 자이언츠 챕터 · 부산<br><br>
       꾸준함과 약속으로 증명합니다<br>
       입회일부터 현재까지, 매주 주간회의 1등 도착으로<br>
       BNI의 시작을 열고 있습니다
@@ -649,33 +602,19 @@ body {
 <!-- ══════════ 저장 버튼 ══════════ -->
 <section class="save-sec">
   <div class="save-wrap">
-    <button onclick="savePhone({name:'무늬디자인/인테리어/김준래',company:'무늬디자인',title:'대표',phone:'010-7366-8555',email:''})" class="save-btn btn-primary">
-      <span>📞</span>
-      <span class="lang-inline active" data-lang="ko">전화번호 저장하기</span>
-      <span class="lang-inline" data-lang="en">Save Contact</span>
-      <span class="lang-inline" data-lang="jp">連絡先を保存</span>
-      <span class="lang-inline" data-lang="cn">保存联系人</span>
-    </button>
-    <button onclick="shareCard()" class="save-btn btn-secondary">
-      <span>📤</span>
-      <span class="lang-inline active" data-lang="ko">명함 공유하기</span>
-      <span class="lang-inline" data-lang="en">Share Card</span>
-      <span class="lang-inline" data-lang="jp">名刺をシェア</span>
-      <span class="lang-inline" data-lang="cn">分享名片</span>
-    </button>
-    <button onclick="saveContact()" class="save-btn btn-secondary">
-      <span>📞</span>
-      <span class="lang-inline active" data-lang="ko">연락처 저장</span>
-      <span class="lang-inline" data-lang="en">Save Contact</span>
-      <span class="lang-inline" data-lang="jp">連絡先を保存</span>
-      <span class="lang-inline" data-lang="cn">保存联系人</span>
-    </button>
-    <button onclick="saveToCardbook({url:'https://jinjjabg-hub.github.io/bni-giants/김준래/',id:'kimjunrae',name:'김준래',nameEn:'Kim Junrae',company:'무늬디자인',title:'대표',phone:'010-7366-8555',email:'',chapter:'자이언츠',bni:'BNI 자이언츠 챕터',url:'https://jinjjabg-hub.github.io/bni-giants/김준래/'})" class="save-btn btn-secondary">
-      <span>🗂️</span>
-      <span class="lang-inline active" data-lang="ko">명함 저장하기</span>
-      <span class="lang-inline" data-lang="en">Save to Cardbook</span>
-      <span class="lang-inline" data-lang="jp">名刺帳に保存</span>
-      <span class="lang-inline" data-lang="cn">保存到名片册</span>
+    <a class="save-btn save-contact" onclick="saveContact()" href="#">
+      <span class="save-icon">👤</span>
+      <div class="save-info">
+        <strong>연락처 저장</strong>
+        <span>이름·상호·전화번호 저장</span>
+      </div>
+    </a>
+    <button class="save-btn save-home" onclick="saveToCardHolder()">
+      <span class="save-icon">📋</span>
+      <div class="save-info">
+        <strong>명함첩에 저장</strong>
+        <span>내 명함첩에 보관하기</span>
+      </div>
     </button>
   </div>
 </section>
@@ -719,25 +658,8 @@ body {
       </div>
       <span class="connect-arrow">›</span>
     </a>
-    <a href="https://jinjjabg-hub.github.io/MANDU/?u=mooneedesign" target="_blank" class="connect-item">
-  <div class="connect-icon ci-mandu">🥟</div>
-  <div class="connect-info">
-    <strong id="conn3-title">만두</strong>
-    <span>실시간 번역앱</span>
-  </div>
-  <span class="connect-arrow">→</span>
-</a>
   </div>
 </section>
-
-<div class="mandu-activate-wrap" style="padding:14px 20px 4px;text-align:center;">
-  <button id="mandu-activate-btn" onclick="activateMandu()" style="background:none;border:1px solid rgba(184,154,58,0.3);color:#888;font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
-    💬 본인 명함이신가요? 만두 연결하기 (1회)
-  </button>
-  <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:#b89a3a;padding:7px 0;">
-    ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
-  </div>
-</div>
 
 <!-- ══════════ FOOTER ══════════ -->
 <footer class="footer">
@@ -784,14 +706,12 @@ const T = {
     "diff3-desc": "막연한 상상이 아닌 현실에 가까운 3D 시각화로 공간을 구현해, 시작 전 불안을 줄이고 완성의 기대를 높여드립니다.",
     "diff4-title": "<span class='acc'>선택장애?</span> 해결합니다",
     "diff4-desc": "선택의 연속인 인테리어에서 정답에 가까운 선택지만 남겨, 결정 피로와 선택장애를 해결하는 솔루션을 제시합니다.",
-    "port-label": "Portfolio",
-    "port-title": "시공 사례",
     "bni-label": "BNI 프로필",
     "bni-name": "김준래",
     "bni-role": "무늬디자인 대표 · BNI 자이언츠 챕터",
-    "bni-tag1": "3기 도어퍼슨마스터", "bni-tag2": "자이언츠 챕터", "bni-tag3": "인테리어 전문",
+    "bni-tag1": "4기 의장", "bni-tag2": "자이언츠 챕터", "bni-tag3": "인테리어 전문",
     "bni-hist-label": "BNI HISTORY",
-    "bni-hist-text": "3기 도어퍼슨마스터 · 자이언츠 챕터 · 부산",
+    "bni-hist-text": "4기 의장 · 자이언츠 챕터 · 부산",
     "quote-label": "MOONEE PHILOSOPHY",
     "quote-text": "인테리어에서 실패하는 이유는 단 하나,<br><span class='acc'>준비 없이 시작</span>했기 때문입니다.<br>우리는 문제보다 해결을 먼저 준비합니다.",
     "quote-author": "— 김준래, 무늬디자인 대표",
@@ -842,14 +762,12 @@ const T = {
     "diff3-desc": "Not vague imagination, but near-reality 3D visualization. Reduce anxiety before you start; raise excitement for the finish.",
     "diff4-title": "<span class='acc'>Decision fatigue?</span> Solved.",
     "diff4-desc": "Interior design means endless choices. We narrow them down to only the right ones — eliminating decision fatigue.",
-    "port-label": "Portfolio",
-    "port-title": "Our Work",
     "bni-label": "BNI Profile",
     "bni-name": "Junrae Kim",
     "bni-role": "CEO, MooNee Design · BNI Giants Chapter",
-    "bni-tag1": "3rd Door Person Master", "bni-tag2": "Giants Chapter", "bni-tag3": "Interior Expert",
+    "bni-tag1": "4th President", "bni-tag2": "Giants Chapter", "bni-tag3": "Interior Expert",
     "bni-hist-label": "BNI HISTORY",
-    "bni-hist-text": "3rd Period Door Person Master · Giants Chapter · Busan<br><br>Proven through consistency and commitment.<br>Since joining, arriving first every weekly meeting —<br>opening every BNI session.",
+    "bni-hist-text": "4th Period President · Giants Chapter · Busan<br><br>Proven through consistency and commitment.<br>Since joining, arriving first every weekly meeting —<br>opening every BNI session.",
     "quote-label": "MOONEE PHILOSOPHY",
     "quote-text": "The reason interior projects fail is simple:<br><span class='acc'>starting without preparation.</span><br>We prepare solutions before problems arise.",
     "quote-author": "— Junrae Kim, CEO of MooNee Design",
@@ -901,14 +819,12 @@ const T = {
     "diff3-desc": "漠然とした想像ではなく、現実に近い3Dビジュアライゼーションで空間を体感。開始前の不安を減らし、完成への期待を高めます。",
     "diff4-title": "<span class='acc'>選択疲れ？</span> 解決します",
     "diff4-desc": "選択の連続であるインテリアで、正解に近い選択肢だけを残し、決定疲労と選択障害を解決するソリューションを提示します。",
-    "port-label": "Portfolio",
-    "port-title": "施工事例",
     "bni-label": "BNIプロフィール",
     "bni-name": "キム・ジュンレ",
     "bni-role": "ムーニーデザイン代表 · BNI ジャイアンツチャプター",
-    "bni-tag1": "3期ドアパーソンマスター", "bni-tag2": "ジャイアンツチャプター", "bni-tag3": "インテリア専門",
+    "bni-tag1": "4期チャプタープレジデント", "bni-tag2": "ジャイアンツチャプター", "bni-tag3": "インテリア専門",
     "bni-hist-label": "BNI HISTORY",
-    "bni-hist-text": "3期ドアパーソンマスター · ジャイアンツチャプター · 釜山<br><br>継続と約束で証明します。<br>入会日から現在まで、毎週の定例会に1番乗りで到着し、<br>BNIの始まりを開いています。",
+    "bni-hist-text": "4期チャプタープレジデント · ジャイアンツチャプター · 釜山<br><br>継続と約束で証明します。<br>入会日から現在まで、毎週の定例会に1番乗りで到着し、<br>BNIの始まりを開いています。",
     "quote-label": "MOONEE PHILOSOPHY",
     "quote-text": "インテリアで失敗する理由はただ一つ、<br><span class='acc'>準備なしに始めた</span>からです。<br>私たちは問題より先に解決策を準備します。",
     "quote-author": "— キム・ジュンレ、ムーニーデザイン代表",
@@ -959,14 +875,12 @@ const T = {
     "diff3-desc": "不是模糊的想象，而是通过接近现实的3D可视化呈现空间，减少开工前的不安，提升对完成效果的期待。",
     "diff4-title": "<span class='acc'>选择困难？</span>我们来解决",
     "diff4-desc": "在选择不断的室内设计中，只留下最接近正确答案的选项，提供解决决策疲劳和选择困难的方案。",
-    "port-label": "Portfolio",
-    "port-title": "施工案例",
     "bni-label": "BNI简介",
     "bni-name": "金俊来",
     "bni-role": "MooNee Design代表 · BNI 巨人分会",
-    "bni-tag1": "第3期门卫大师", "bni-tag2": "巨人分会", "bni-tag3": "室内设计专家",
+    "bni-tag1": "第4期主席", "bni-tag2": "巨人分会", "bni-tag3": "室内设计专家",
     "bni-hist-label": "BNI履历",
-    "bni-hist-text": "第3期门卫大师 · 巨人分会 · 釜山<br><br>用坚持与承诺来证明。<br>从入会至今，每周例会第一个到达，<br>守护着BNI每一次的开始。",
+    "bni-hist-text": "第4期主席 · 巨人分会 · 釜山<br><br>用坚持与承诺来证明。<br>从入会至今，每周例会第一个到达，<br>守护着BNI每一次的开始。",
     "quote-label": "MOONEE PHILOSOPHY",
     "quote-text": "室内设计失败只有一个原因，<br><span class='acc'>没有准备就开始了。</span><br>我们比问题更早准备好解决方案。",
     "quote-author": "— 金俊来，MooNee Design代表",
@@ -989,11 +903,9 @@ const T = {
   }
 };
 
-document.querySelectorAll('.lang-inline[data-lang="ko"]').forEach(e=>e.classList.add('active'));
 function setLang(lang, btn) {
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('on'));
   btn.classList.add('on');
-  document.querySelectorAll('.lang-inline').forEach(e=>{e.classList.remove('active');const m={kr:'ko',en:'en',jp:'jp',cn:'cn'};if(e.dataset.lang===(m[lang]||lang))e.classList.add('active');});
   const langMap = { kr: 'ko', en: 'en', jp: 'ja', cn: 'zh' };
   document.documentElement.lang = langMap[lang] || 'ko';
   const t = T[lang];
@@ -1008,137 +920,65 @@ function setLang(lang, btn) {
   });
 }
 
+// 연락처 저장
+function saveContact() {
+  const vcard = [
+    'BEGIN:VCARD',
+    'VERSION:3.0',
+    'FN:김준래',
+    'N:김;준래;;;',
+    'ORG:무늬디자인',
+    'TITLE:대표',
+    'TEL;TYPE=CELL:010-7366-8555',
+    'URL:https://jinjjabg-hub.github.io/bni-giants/김준래/',
+    'NOTE:BNI 자이언츠 챕터 · 인테리어/실내디자인/3D모델링',
+    'END:VCARD'
+  ].join('\n');
+
+  const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = '김준래_무늬디자인.vcf';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+// 명함첩에 저장
+function saveToCardHolder() {
+  const card = {
+    id: 'kimjunrae',
+    name: '김준래',
+    company: '무늬디자인',
+    role: '대표',
+    phone: '010-7366-8555',
+    field: '인테리어 / 실내디자인 / 3D모델링',
+    chapter: 'BNI 자이언츠 챕터',
+    url: window.location.href,
+    photo: 'profile.jpg',
+    savedAt: new Date().toLocaleDateString('ko-KR')
+  };
+  let cards = JSON.parse(localStorage.getItem('bni_cards') || '[]');
+  const exists = cards.find(c => c.id === card.id);
+  if (exists) {
+    window.location.href = '/';
+    return;
+  }
+  cards.push(card);
+  localStorage.setItem('bni_cards', JSON.stringify(cards));
+  sessionStorage.setItem('auto_install', '1');
+  if (confirm('✅ 명함첩에 저장되었습니다!\n명함첩 앱도 설치할까요?')) {
+    window.location.href = '/';
+  }
+}
 
 // 스크롤 페이드 인
 const io = new IntersectionObserver(e => e.forEach(el => {
   if (el.isIntersecting) { el.target.classList.add('on'); io.unobserve(el.target); }
 }), { threshold: 0.12 });
 document.querySelectorAll('.fade').forEach(el => io.observe(el));
-
-// 포트폴리오 슬라이더
-let portIdx = 0;
-const portTotal = 8;
-function initDots() {
-  const dots = document.getElementById('portDots');
-  if (!dots) return;
-  for (let i = 0; i < portTotal; i++) {
-    const d = document.createElement('div');
-    d.className = 'portfolio-dot' + (i === 0 ? ' on' : '');
-    d.onclick = () => goSlide(i);
-    dots.appendChild(d);
-  }
-}
-function goSlide(idx) {
-  portIdx = (idx + portTotal) % portTotal;
-  document.getElementById('portfolioTrack').style.transform = `translateX(-${portIdx * 100}%)`;
-  document.querySelectorAll('.portfolio-dot').forEach((d, i) => d.classList.toggle('on', i === portIdx));
-}
-function slidePort(dir) { goSlide(portIdx + dir); }
-let tx = 0;
-const sw = document.getElementById('sliderWrap');
-if (sw) {
-  sw.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
-  sw.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].clientX - tx;
-    if (Math.abs(dx) > 40) slidePort(dx < 0 ? 1 : -1);
-  });
-}
-initDots();
-setInterval(() => slidePort(1), 4000);
-</script>
-<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
-
-<script>
-/* v8 표준 공유 */
-if(typeof shareCard==='undefined'){
-  window.shareCard=function(){
-    if(navigator.share){navigator.share({title:document.title,url:window.location.href}).catch(function(){});}
-    else{navigator.clipboard.writeText(window.location.href).then(function(){alert('링크가 복사되었습니다!');});}
-  };
-}
-</script>
-
-<script>
-/* v8 표준 연락처 저장 */
-if(typeof saveContact==='undefined'){
-  window.saveContact=function(){
-    var v='BEGIN:VCARD\nVERSION:3.0\nFN:김준래\nN:김;준래;;;\nORG:무늬디자인\nTITLE:대표\nTEL;TYPE=CELL:010-7366-8555\nURL:https://jinjjabg-hub.github.io/bni-giants/김준래/\nEND:VCARD';
-    var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([v],{type:'text/vcard'}));a.download='KimJunrae.vcf';a.click();
-  };
-}
-</script>
-
-<script>
-/* ── 만두 원클릭 연결 (카드 주인 전용) ────────────────────────── */
-async function _manduWaitFirebase(maxTries) {
-  let tries = 0;
-  while ((typeof firebase === 'undefined' || !firebase.apps || !firebase.apps.length) && tries < (maxTries || 50)) {
-    await new Promise(r => setTimeout(r, 100));
-    tries++;
-  }
-  return typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length > 0;
-}
-async function _manduFinishActivate(user) {
-  const slug = 'mooneedesign';
-  const db = firebase.firestore();
-  const existing = await db.collection('manduid_index').doc(slug).get();
-  if (existing.exists && existing.data().uid !== user.uid) {
-    const btn = document.getElementById('mandu-activate-btn');
-    if (btn) btn.style.display = 'none';
-    const done = document.getElementById('mandu-activate-done');
-    if (done) { done.textContent = 'ℹ️ 이미 연결된 명함이에요'; done.style.display = 'block'; }
-    return;
-  }
-  await db.collection('users').doc(user.uid).set({
-    uid: user.uid, displayName: user.displayName || '', photoURL: user.photoURL || '',
-    email: user.email || '', manduid: slug
-  }, { merge: true });
-  await db.collection('manduid_index').doc(slug).set({
-    uid: user.uid, createdAt: firebase.firestore.FieldValue.serverTimestamp()
-  }, { merge: true });
-  const btn = document.getElementById('mandu-activate-btn');
-  const done = document.getElementById('mandu-activate-done');
-  if (btn) btn.style.display = 'none';
-  if (done) done.style.display = 'block';
-}
-async function activateMandu() {
-  if (!confirm('본인 명함이 맞나요?\n구글 로그인하면 이 명함으로 만두 DM을 받을 수 있게 연결돼요.')) return;
-  const btn = document.getElementById('mandu-activate-btn');
-  if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
-  const ready = await _manduWaitFirebase();
-  if (!ready) {
-    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
-    alert('연결 실패. 잠시 후 다시 시도해주세요.');
-    return;
-  }
-  try {
-    const auth = firebase.auth();
-    await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-    const provider = new firebase.auth.GoogleAuthProvider();
-    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-    if (isMobile) {
-      sessionStorage.setItem('_manduPendingSlug', 'mooneedesign');
-      await auth.signInWithRedirect(provider);
-      return;
-    }
-    const result = await auth.signInWithPopup(provider);
-    await _manduFinishActivate(result.user);
-  } catch (e) {
-    console.error('만두 연결 실패:', e);
-    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
-    alert('연결 중 오류가 발생했어요.');
-  }
-}
-(async function () {
-  if (!sessionStorage.getItem('_manduPendingSlug')) return;
-  const ready = await _manduWaitFirebase();
-  sessionStorage.removeItem('_manduPendingSlug');
-  if (!ready) return;
-  try {
-    const res = await firebase.auth().getRedirectResult();
-    if (res && res.user) await _manduFinishActivate(res.user);
-  } catch (e) { console.error(e); }
-})();
 </script>
 </body>
 </html>
