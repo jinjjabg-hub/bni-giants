@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>윤현석 | 윤오토자동차정비</title>
+<meta property="og:title" content="윤현석 | 대표 · 윤오토자동차정비">
+<meta property="og:description" content="1993년부터 자동차 정비를 시작해 2000년 9월 윤오토자동차정비를 열었습니다. 30여 년간 쌓은 기술로 다른 곳에서 해결하지 못한 문제까지 끝까지 찾아 해결합니다.">
+<meta property="og:image" content="https://jinjjabg-hub.github.io/bni-giants/%EC%9C%A4%ED%98%84%EC%84%9D/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jinjjabg-hub.github.io/bni-giants/윤현석/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --navy: #241b42;
+  --navy2: #2e2350;
+  --navy3: #392c62;
+  --gold: #8C6BFF;
+  --gold2: #a78bfa;
+  --light: #EDF0F5;
+  --text-dark: #f3f0fa;
+  --text-light: #1a1a2e;
+  --muted-dark: #b8a8f0;
+  --muted-light: #5a4f7a;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+html { font-size: 16px; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--navy);
+  color: var(--text-dark);
+  max-width: 480px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+[data-lang] { display: none; }
+[data-lang].active { display: block; }
+span[data-lang].active { display: inline; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  max-width: 480px; margin: 0 auto;
+  background: rgba(36,27,66,0.97);
+  backdrop-filter: blur(10px);
+  padding: 10px 16px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid rgba(140,107,255,0.25);
+}
+.nav-brand { font-size: 12px; font-weight: 700; color: var(--gold); white-space: nowrap; }
+.lang-btns { display:flex; gap:4px; }
+.lang-btn {
+  padding: 5px 8px;
+  border: 1px solid rgba(140,107,255,0.35);
+  background: transparent;
+  color: var(--muted-dark);
+  font-size: 10px; font-weight: 700;
+  cursor: pointer; border-radius: 5px;
+  transition: all 0.2s;
+  min-width: 40px; min-height: 32px;
+  display: flex; align-items:center; justify-content:center;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.lang-btn.active { background: var(--gold); color: #fff; border-color: var(--gold); }
+
+/* ── HERO ── */
+.hero {
+  margin-top: 54px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+.hero img.hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.hero-overlay {
+  position: absolute; inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(36,27,66,0.1) 0%,
+    rgba(36,27,66,0.15) 40%,
+    rgba(36,27,66,0.78) 75%,
+    rgba(36,27,66,0.96) 100%
+  );
+}
+.hero-content {
+  position: absolute; bottom:0; left:0; right:0; z-index:2;
+  padding: 24px 20px 22px;
+}
+.hero-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: #fff;
+  font-size: 10px; font-weight: 700;
+  padding: 4px 12px; border-radius: 20px;
+  margin-bottom: 10px; letter-spacing: 1.5px;
+}
+.hero-name {
+  font-size: 34px; font-weight: 700;
+  color: #fff; line-height: 1.15;
+  margin-bottom: 7px; letter-spacing: -0.5px;
+}
+.hero-title { font-size: 13px; color: var(--gold2); opacity: 0.95; line-height: 1.5; }
+
+/* ── PROFILE ROW ── */
+.profile-row {
+  background: var(--navy2);
+  padding: 16px 20px;
+  display: flex; align-items: center; gap:14px;
+  border-bottom: 1px solid rgba(140,107,255,0.12);
+}
+.profile-img {
+  width: 64px; height: 64px; min-width:64px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  overflow: hidden; flex-shrink: 0;
+}
+.profile-img img { width:100%; height:100%; object-fit:cover; object-position: center top; }
+.profile-info h2 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.profile-info p { font-size: 12px; color: var(--muted-dark); line-height: 1.5; }
+
+/* ── 공통 섹션 ── */
+section { padding: 40px 20px; }
+.section-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 6px;
+}
+.section-title { font-size: 22px; font-weight: 700; line-height: 1.35; margin-bottom: 22px; }
+
+/* ── ABOUT ── */
+.about { background: var(--navy); }
+.about .section-title { color: #fff; }
+.slogan {
+  font-size: 15px; font-weight: 700;
+  color: var(--gold2); margin-bottom: 14px;
+  font-style: italic; line-height: 1.6;
+}
+.about-text { font-size: 14px; line-height: 1.9; color: var(--text-dark); opacity: 0.9; }
+
+/* ── WHY ── */
+.why { background: var(--light); }
+.why .section-label { color: var(--muted-light); }
+.why .section-title { color: var(--text-light); }
+.why-cards { display: flex; flex-direction: column; gap:14px; }
+.why-card {
+  background: #fff;
+  border: 1px solid rgba(140,107,255,0.18);
+  border-left: 4px solid var(--gold);
+  border-radius: 10px; padding: 18px 16px;
+}
+.why-card h3 { font-size: 15px; font-weight: 700; color: var(--text-light); margin-bottom: 8px; line-height: 1.4; }
+.why-card p { font-size: 13px; line-height: 1.85; color: #444; }
+.why-card p strong { color: #6b4fd6; font-weight: 700; }
+
+/* ── DIFFERENCE ── */
+.difference { background: var(--navy2); }
+.difference .section-title { color: #fff; }
+.diff-grid { display: flex; flex-direction: column; gap:12px; }
+.diff-card {
+  background: var(--navy3);
+  border: 1px solid rgba(140,107,255,0.15);
+  border-radius: 10px; padding: 18px 16px;
+}
+.diff-card h3 { font-size: 14px; font-weight: 700; color: var(--gold2); margin-bottom: 8px; line-height: 1.4; }
+.diff-card p { font-size: 13px; line-height: 1.8; color: var(--text-dark); opacity: 0.85; }
+
+/* ── REFERRAL ── */
+.referral { background: var(--light); }
+.referral .section-label { color: var(--muted-light); }
+.referral .section-title { color: var(--text-light); }
+.ref-list { display: flex; flex-direction: column; gap:10px; }
+.ref-item {
+  display: flex; gap:12px; align-items:flex-start;
+  background: #fff; border-radius: 10px;
+  padding: 15px 14px; border: 1px solid rgba(0,0,0,0.05);
+}
+.ref-num {
+  width: 26px; height: 26px; min-width:26px;
+  border-radius: 50%; background: var(--gold);
+  color: #fff; font-weight: 700; font-size: 12px;
+  display: flex; align-items:center; justify-content:center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.ref-item p { font-size: 13px; line-height: 1.8; color: #333; }
+
+/* ── CAREER ── */
+.career {
+  position: relative;
+  background-color: #f3f0fa;
+}
+.career .section-label { position: relative; z-index:1; color: var(--muted-light); }
+.career .section-title { color: var(--text-light); position: relative; z-index:1; }
+.career-list { display: flex; flex-direction: column; gap:18px; position: relative; z-index:1; }
+.career-item {
+  display: flex; gap:12px; align-items:flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.career-item:last-child { border-bottom: none; padding-bottom: 0; }
+.career-badge {
+  background: var(--navy); color: #fff;
+  font-size: 10px; font-weight: 700;
+  padding: 4px 10px; border-radius: 4px;
+  white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+}
+.career-content { background: rgba(255,255,255,0.82); border-radius: 8px; padding: 12px 14px; flex:1; }
+.career-item h3 { font-size: 14px; font-weight: 700; color: var(--text-light); margin-bottom: 7px; line-height: 1.4; }
+.career-item p { font-size: 12px; line-height: 1.85; color: #555; }
+
+/* ── CONTACT ── */
+.contact { background: var(--light); }
+.contact .section-label { color: var(--muted-light); }
+.contact .section-title { color: var(--text-light); }
+.contact-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.contact-item {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; text-align: center;
+  background: #fff; border-radius: 12px;
+  padding: 16px 10px; border: 1px solid rgba(0,0,0,0.05);
+  text-decoration: none; min-height: 100px;
+}
+.contact-item:active { transform: scale(0.97); }
+.contact-icon {
+  width: 42px; height: 42px; min-width:42px;
+  border-radius: 50%; background: var(--navy);
+  display: flex; align-items:center; justify-content:center;
+  font-size: 18px; flex-shrink: 0;
+}
+.contact-label { font-size: 10px; color: #999; }
+.contact-value { font-size: 12px; font-weight: 600; color: var(--text-light); line-height: 1.4; word-break: break-all; }
+
+/* ── ACTION ── */
+.action { background: var(--navy2); padding: 32px 20px; }
+.btn-group { display: flex; flex-direction: column; gap:12px; }
+.btn {
+  display: block; width: 100%; padding: 17px 16px;
+  border: none; border-radius: 10px;
+  font-size: 15px; font-weight: 700;
+  cursor: pointer; text-align: center;
+  transition: all 0.15s; font-family: 'Noto Sans KR', sans-serif;
+  min-height: 54px; letter-spacing: 0.3px;
+}
+.btn-primary { background: var(--gold); color: #fff; }
+.btn-secondary { background: transparent; border: 2px solid var(--gold); color: var(--gold2); }
+.btn-share { background: linear-gradient(135deg, #6b4fd6, #8C6BFF); color: #fff; border: none; }
+.btn:active { transform: scale(0.97); opacity: 0.9; }
+
+/* 공유 바텀시트 */
+.share-sheet { display:none; position:fixed; inset:0; z-index:200; }
+.share-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.5); }
+.share-panel {
+  position:absolute; bottom:0; left:0; right:0;
+  max-width:480px; margin:0 auto;
+  background:#fff; border-radius:20px 20px 0 0;
+  padding:20px 20px 40px;
+}
+.share-handle { width:40px; height:4px; background:#ddd; border-radius:2px; margin:0 auto 18px; }
+.share-title { font-size:13px; color:#999; text-align:center; margin-bottom:20px; font-weight:600; }
+.share-btns { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:16px; }
+.share-btn { display:flex; flex-direction:column; align-items:center; gap:8px; background:none; border:none; cursor:pointer; padding:8px 4px; }
+.share-btn-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; }
+.share-btn span { font-size:11px; color:#333; font-weight:600; font-family:'Noto Sans KR',sans-serif; }
+.share-cancel { width:100%; padding:14px; background:#f2f2f2; border:none; border-radius:10px; font-size:15px; font-weight:700; color:#444; cursor:pointer; font-family:'Noto Sans KR',sans-serif; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy); padding: 24px 20px;
+  text-align: center; border-top: 1px solid rgba(140,107,255,0.12);
+}
+footer .company { font-size: 13px; font-weight: 700; color: var(--gold2); margin-bottom: 5px; }
+footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.5px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">윤오토자동차정비</div>
+  <div class="lang-btns">
+    <button class="lang-btn active" onclick="setLang('kr')">한국어</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('jp')">日本語</button>
+    <button class="lang-btn" onclick="setLang('cn')">中文</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <img class="hero-img" src="hero.png" alt="윤현석">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span data-lang="kr" class="active">자동차정비 전문가</span>
+      <span data-lang="en">AUTO REPAIR EXPERT</span>
+      <span data-lang="jp">自動車整備の専門家</span>
+      <span data-lang="cn">汽车维修专家</span>
+    </div>
+    <div class="hero-name">
+      <span data-lang="kr" class="active">윤 현 석</span>
+      <span data-lang="en">YOON HYEON-SEOK</span>
+      <span data-lang="jp">ユン・ヒョンソク</span>
+      <span data-lang="cn">尹鉉錫</span>
+    </div>
+    <div class="hero-title">
+      <span data-lang="kr" class="active">대표 · 윤오토자동차정비</span>
+      <span data-lang="en">CEO · YOON AUTO Car Care</span>
+      <span data-lang="jp">代表・ユンオート自動車整備</span>
+      <span data-lang="cn">代表・尹奥托汽车整备</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILE ROW -->
+<div class="profile-row">
+  <div class="profile-img">
+    <img src="profil.png" alt="윤현석">
+  </div>
+  <div class="profile-info">
+    <h2>윤현석 · Yoon Hyeon-seok</h2>
+    <p>
+      <span data-lang="kr" class="active">자동차정비 · 백년가게 선정</span>
+      <span data-lang="en">Auto Repair · Certified "100-Year Store"</span>
+      <span data-lang="jp">自動車整備・百年店選定</span>
+      <span data-lang="cn">汽车维修・百年老店认证</span>
+    </p>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="section-label">About</div>
+  <div class="slogan">
+    <span data-lang="kr" class="active">"내 가족의 차라고 생각하고, 안전하게 정비합니다"</span>
+    <span data-lang="en">"We service every car like it's family."</span>
+    <span data-lang="jp">"家族の車だと思って、安全に整備します"</span>
+    <span data-lang="cn">"把每一辆车都当作家人的车来保养"</span>
+  </div>
+  <p class="about-text">
+    <span data-lang="kr" class="active">1993년부터 자동차 정비를 시작해 2000년 9월 윤오토자동차정비를 열었습니다. 30여 년간 쌓은 기술과 노하우로 차량을 꼼꼼히 진단하고, 다른 곳에서 해결하지 못한 문제까지 끝까지 찾아 완벽하게 정비합니다.</span>
+    <span data-lang="en">Since starting in auto repair in 1993, I opened YOON AUTO in September 2000. With over 30 years of hands-on experience, I diagnose every vehicle thoroughly and resolve issues other shops couldn't fix.</span>
+    <span data-lang="jp">1993年から自動車整備を始め、2000年9月にユンオート自動車整備をオープンしました。30年以上の技術とノウハウで車両を丁寧に診断し、他店で解決できなかった問題も最後まで突き止めて完璧に整備します。</span>
+    <span data-lang="cn">自1993年投身汽车维修行业，2000年9月创立尹奥托汽车整备。凭借30余年积累的技术与经验，仔细诊断每一辆车，并彻底解决其他维修厂无法处理的疑难问题。</span>
+  </p>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="section-label">Why Us</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">왜 윤오토자동차정비인가</span>
+    <span data-lang="en">Why YOON AUTO?</span>
+    <span data-lang="jp">なぜユンオート自動車整備なのか</span>
+    <span data-lang="cn">为什么选择尹奥托汽车整备</span>
+  </div>
+  <div class="why-cards">
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">① 30년 정비 외길</span>
+        <span data-lang="en">① 30 Years in the Field</span>
+        <span data-lang="jp">① 30年の整備一筋</span>
+        <span data-lang="cn">① 30年专注维修</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active"><strong>1993년</strong> 정비를 시작해 <strong>2000년</strong> 윤오토를 열었습니다. 30여 년간 쌓은 기술로 진단부터 마무리까지 책임집니다.</span>
+        <span data-lang="en">Started in <strong>1993</strong>, opened YOON AUTO in <strong>2000</strong>. Over 30 years of hands-on expertise, from diagnosis to final check.</span>
+        <span data-lang="jp"><strong>1993年</strong>に整備を始め、<strong>2000年</strong>にユンオートを開業。30年以上の技術で診断から仕上げまで責任を持ちます。</span>
+        <span data-lang="cn"><strong>1993年</strong>投身汽修，<strong>2000年</strong>创立尹奥托。凭借30余年技术，从诊断到完工全程负责。</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">② 국가가 인정한 신뢰</span>
+        <span data-lang="en">② Government-Certified Trust</span>
+        <span data-lang="jp">② 国が認めた信頼</span>
+        <span data-lang="cn">② 政府认证的信赖</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">중소벤처기업부·소상공시장진흥공단이 선정하는 <strong>백년가게</strong>에 이름을 올렸습니다. 숫자와 시간이 증명하는 신뢰입니다.</span>
+        <span data-lang="en">Officially selected as a <strong>"100-Year Store"</strong> by Korea's Ministry of SMEs and Startups — trust proven by time.</span>
+        <span data-lang="jp">中小ベンチャー企業部・小商工人市場振興公団が選定する<strong>百年店</strong>に選ばれました。時間が証明する信頼です。</span>
+        <span data-lang="cn">获韩国中小风险企业部及小商工市场振兴公团评选为<strong>"百年老店"</strong>，是时间证明的信赖。</span>
+      </p>
+    </div>
+    <div class="why-card">
+      <h3>
+        <span data-lang="kr" class="active">③ 유일한 다자녀 30% 할인</span>
+        <span data-lang="en">③ Only Shop with 30% Multi-Child Discount</span>
+        <span data-lang="jp">③ 唯一の多子世帯30%割引</span>
+        <span data-lang="cn">③ 唯一的多子女家庭30%优惠</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">다자녀 가정에 정비 공임 <strong>30% 할인</strong>을 시행하는 지역 유일의 정비소입니다.</span>
+        <span data-lang="en">The only repair shop in the area offering a <strong>30% labor discount</strong> for families with multiple children.</span>
+        <span data-lang="jp">多子世帯に整備工賃<strong>30%割引</strong>を実施する、地域で唯一の整備工場です。</span>
+        <span data-lang="cn">是当地唯一为多子女家庭提供<strong>30%维修工时费优惠</strong>的汽修厂。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENCE -->
+<section class="difference">
+  <div class="section-label">Difference</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">차별점</span>
+    <span data-lang="en">What Makes Us Different</span>
+    <span data-lang="jp">差別化ポイント</span>
+    <span data-lang="cn">差异化优势</span>
+  </div>
+  <div class="diff-grid">
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">못 고친 차, 끝까지 찾아 해결</span>
+        <span data-lang="en">We Fix What Others Couldn't</span>
+        <span data-lang="jp">直せなかった車も最後まで</span>
+        <span data-lang="cn">别处修不好的车，我们查到底</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">서비스센터·타 정비소에서 해결하지 못한 차량도 원인을 끝까지 찾아 해결합니다.</span>
+        <span data-lang="en">Vehicles that other service centers or shops couldn't fix — we track down the root cause and solve it.</span>
+        <span data-lang="jp">サービスセンターや他の整備工場で解決できなかった車両も、原因を最後まで突き止めて解決します。</span>
+        <span data-lang="cn">服务中心或其他维修厂无法解决的车辆问题，我们会彻底查明原因并解决。</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">공신력 있는 이력</span>
+        <span data-lang="en">Credentials You Can Verify</span>
+        <span data-lang="jp">公的な実績</span>
+        <span data-lang="cn">权威认证背书</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">백년가게 선정, 국토부장관 표창 등 숫자와 인증으로 증명된 신뢰입니다.</span>
+        <span data-lang="en">Certified "100-Year Store," commendation from Korea's Ministry of Land — trust backed by official recognition.</span>
+        <span data-lang="jp">百年店選定、国土交通部長官表彰など、数字と認証で証明された信頼です。</span>
+        <span data-lang="cn">荣获"百年老店"称号、国土交通部长官表彰，值得信赖的官方认证。</span>
+      </p>
+    </div>
+    <div class="diff-card">
+      <h3>
+        <span data-lang="kr" class="active">다자녀 30% 할인, 유일하게</span>
+        <span data-lang="en">The Only 30% Multi-Child Discount</span>
+        <span data-lang="jp">唯一の多子世帯30%割引</span>
+        <span data-lang="cn">唯一的多子女30%优惠</span>
+      </h3>
+      <p>
+        <span data-lang="kr" class="active">정비비 부담을 실제로 줄여주는 지역 유일의 다자녀 할인 정책입니다.</span>
+        <span data-lang="en">A real, meaningful discount policy for multi-child families — unique in the area.</span>
+        <span data-lang="jp">整備費の負担を実際に減らす、地域で唯一の多子世帯割引制度です。</span>
+        <span data-lang="cn">真正减轻维修费用负担的多子女家庭优惠政策，当地独有。</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- REFERRAL -->
+<section class="referral">
+  <div class="section-label">Referral</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">이런 분을 소개해 주세요</span>
+    <span data-lang="en">Please refer people like this</span>
+    <span data-lang="jp">こんな方をご紹介ください</span>
+    <span data-lang="cn">请介绍这样的客户</span>
+  </div>
+  <div class="ref-list">
+    <div class="ref-item">
+      <div class="ref-num">1</div>
+      <p>
+        <span data-lang="kr" class="active">다른 정비소·서비스센터에서 해결하지 못한 문제로 고민 중인 차주</span>
+        <span data-lang="en">Car owners struggling with issues other shops or service centers couldn't fix</span>
+        <span data-lang="jp">他の整備工場やサービスセンターで解決できなかった問題に悩む車のオーナー</span>
+        <span data-lang="cn">在其他维修厂或服务中心未能解决问题、仍在苦恼的车主</span>
+      </p>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">2</div>
+      <p>
+        <span data-lang="kr" class="active">고쳐도 자꾸 같은 증상이 재발하는 차량의 소유자</span>
+        <span data-lang="en">Owners whose vehicle keeps showing the same symptom even after repairs</span>
+        <span data-lang="jp">修理してもまた同じ症状が再発する車のオーナー</span>
+        <span data-lang="cn">车辆维修后同样问题反复出现的车主</span>
+      </p>
+    </div>
+    <div class="ref-item">
+      <div class="ref-num">3</div>
+      <p>
+        <span data-lang="kr" class="active">원인을 못 찾아 여러 곳을 전전한 차량 소유자</span>
+        <span data-lang="en">Owners who've been to multiple shops without ever finding the real cause</span>
+        <span data-lang="jp">原因が分からず、あちこちの工場を回っている車のオーナー</span>
+        <span data-lang="cn">一直找不到原因、辗转多家维修厂的车主</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section class="career">
+  <div class="section-label">Career</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">경력 및 전문 분야</span>
+    <span data-lang="en">Career &amp; Expertise</span>
+    <span data-lang="jp">経歴・専門分野</span>
+    <span data-lang="cn">经历与专业领域</span>
+  </div>
+  <div class="career-list">
+    <div class="career-item">
+      <div class="career-badge">현재</div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">윤오토자동차정비 대표</span>
+          <span data-lang="en">CEO, YOON AUTO Car Care</span>
+          <span data-lang="jp">ユンオート自動車整備 代表</span>
+          <span data-lang="cn">尹奥托汽车整备 代表</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">2000년 9월 오픈, 25년째 부산에서 자동차 정비 전문점을 운영하고 있습니다.</span>
+          <span data-lang="en">Opened in September 2000. Running a specialized auto repair shop in Busan for 25 years.</span>
+          <span data-lang="jp">2000年9月オープン。25年間、釜山で自動車整備専門店を運営しています。</span>
+          <span data-lang="cn">2000年9月开业，25年来在釜山经营专业汽车维修店。</span>
+        </p>
+      </div>
+    </div>
+    <div class="career-item">
+      <div class="career-badge">경력</div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">정비 외길 30여 년</span>
+          <span data-lang="en">30+ Years in Auto Repair</span>
+          <span data-lang="jp">整備一筋30年以上</span>
+          <span data-lang="cn">专注汽修30余年</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">1993년 정비 입문 → 2003년 KB매직카 → 2010년 착한정비센터 → 2021년 백년가게 선정</span>
+          <span data-lang="en">1993 Started in repair → 2003 KB Magic Car → 2010 Chakhan Service Center → 2021 Certified "100-Year Store"</span>
+          <span data-lang="jp">1993年整備を開始 → 2003年KBマジックカー → 2010年チャッカン整備センター → 2021年百年店選定</span>
+          <span data-lang="cn">1993年入行 → 2003年KB Magic Car → 2010年Chakhan整备中心 → 2021年获评"百年老店"</span>
+        </p>
+      </div>
+    </div>
+    <div class="career-item">
+      <div class="career-badge">강점</div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">지역 사회와 함께</span>
+          <span data-lang="en">Strong Local Network</span>
+          <span data-lang="jp">地域社会とともに</span>
+          <span data-lang="cn">深耕本地社群</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">BNI 자이언츠 챕터 활동, 부산광역시자동차정비 부산진구지회장, 백년가게협동조합 이사장 등 지역 네트워크에서 활발히 활동합니다.</span>
+          <span data-lang="en">Active in BNI Giants Chapter, Chairman of Busan Jin-gu Auto Repair Association, Chairman of the "100-Year Store" Cooperative, and more.</span>
+          <span data-lang="jp">BNIジャイアンツチャプター活動、釜山広域市自動車整備釜山鎮区支会長、百年店協同組合理事長など、地域ネットワークで積極的に活動しています。</span>
+          <span data-lang="cn">活跃于BNI Giants分会，担任釜山广域市釜山镇区汽车维修支会长、百年老店协同组合理事长等地方职务。</span>
+        </p>
+      </div>
+    </div>
+    <div class="career-item">
+      <div class="career-badge">자격</div>
+      <div class="career-content">
+        <h3>
+          <span data-lang="kr" class="active">기능·수상 이력</span>
+          <span data-lang="en">Certifications &amp; Awards</span>
+          <span data-lang="jp">技能・受賞歴</span>
+          <span data-lang="cn">技能与获奖经历</span>
+        </h3>
+        <p>
+          <span data-lang="kr" class="active">자동차정비기능사·배관기능사·용접기능사 / 국토부장관 표창 / KTAMG 기능경진대회 금상 / TV·라디오 광고 출연</span>
+          <span data-lang="en">Certified Auto Mechanic, Plumber, Welder / Commendation from Korea's Ministry of Land / Gold Prize, KTAMG Skills Competition / Featured in TV &amp; radio ads</span>
+          <span data-lang="jp">自動車整備技能士・配管技能士・溶接技能士／国土交通部長官表彰／KTAMG技能競技大会金賞／TV・ラジオCM出演</span>
+          <span data-lang="cn">汽车维修技师・管道技师・焊接技师资格 / 国土交通部长官表彰 / KTAMG技能大赛金奖 / TV及电台广告出镜</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact">
+  <div class="section-label">Contact</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">연락하기</span>
+    <span data-lang="en">Contact</span>
+    <span data-lang="jp">お問い合わせ</span>
+    <span data-lang="cn">联系方式</span>
+  </div>
+  <div class="contact-list">
+    <a class="contact-item" href="tel:010-5512-8381">
+      <div class="contact-icon">📞</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">전화</span>
+        <span data-lang="en">Phone</span>
+        <span data-lang="jp">電話</span>
+        <span data-lang="cn">电话</span>
+      </div>
+      <div class="contact-value">010-5512-8381<br>010-2981-8381</div>
+    </a>
+    <a class="contact-item" href="mailto:younauto@hanmail.net">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-label">Email</div>
+      <div class="contact-value">younauto@hanmail.net</div>
+    </a>
+    <a class="contact-item" href="https://blog.naver.com/younauto2" target="_blank">
+      <div class="contact-icon">🌐</div>
+      <div class="contact-label">
+        <span data-lang="kr" class="active">블로그</span>
+        <span data-lang="en">Blog</span>
+        <span data-lang="jp">ブログ</span>
+        <span data-lang="cn">博客</span>
+      </div>
+      <div class="contact-value">blog.naver.com/younauto2</div>
+    </a>
+    <a class="contact-item" href="https://www.instagram.com/younauto2" target="_blank">
+      <div class="contact-icon">📷</div>
+      <div class="contact-label">Instagram</div>
+      <div class="contact-value">@younauto2</div>
+    </a>
+    <a class="contact-item" href="https://www.youtube.com/@YOUNAUTO" target="_blank">
+      <div class="contact-icon">▶️</div>
+      <div class="contact-label">YouTube</div>
+      <div class="contact-value">@YOUNAUTO</div>
+    </a>
+    <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=yoon-hyeonseok" target="_blank">
+      <div class="contact-icon">💬</div>
+      <div class="contact-label">MANDU</div>
+      <div class="contact-value">
+        <span data-lang="kr" class="active">실시간 번역 메신저</span>
+        <span data-lang="en">Live translation chat</span>
+        <span data-lang="jp">リアルタイム翻訳チャット</span>
+        <span data-lang="cn">实时翻译聊天</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ACTION -->
+<div class="action">
+  <div class="btn-group">
+    <button class="btn btn-primary" onclick="saveContact()">
+      <span data-lang="kr" class="active">📞 연락처 저장</span>
+      <span data-lang="en">📞 Save contact</span>
+      <span data-lang="jp">📞 連絡先を保存</span>
+      <span data-lang="cn">📞 保存联系人</span>
+    </button>
+    <button class="btn btn-secondary" onclick="saveToCardbook({id:'yoon-hyeonseok',name:'윤현석',nameEn:'Yoon Hyeon-seok',title:'대표',company:'윤오토자동차정비',phone:'010-5512-8381',email:'younauto@hanmail.net',chapter:'BNI 자이언츠',bni:'자동차정비',url:window.location.href})">
+      <span data-lang="kr" class="active">🗂️ 명함 저장 (CardBook)</span>
+      <span data-lang="en">🗂️ Save to CardBook</span>
+      <span data-lang="jp">🗂️ 名刺を保存</span>
+      <span data-lang="cn">🗂️ 保存名片</span>
+    </button>
+    <button class="btn btn-share" onclick="shareCard()">
+      <span data-lang="kr" class="active">📤 명함 전달하기</span>
+      <span data-lang="en">📤 Share this card</span>
+      <span data-lang="jp">📤 名刺を共有</span>
+      <span data-lang="cn">📤 分享名片</span>
+    </button>
+  </div>
+</div>
+
+<!-- 공유 바텀시트 -->
+<div class="share-sheet" id="shareSheet">
+  <div class="share-backdrop" onclick="closeShare()"></div>
+  <div class="share-panel">
+    <div class="share-handle"></div>
+    <div class="share-title">명함 전달하기</div>
+    <div class="share-btns">
+      <button class="share-btn" onclick="shareKakao()">
+        <div class="share-btn-icon" style="background:#FEE500;">💬</div><span>카카오톡</span>
+      </button>
+      <button class="share-btn" onclick="shareSMS()">
+        <div class="share-btn-icon" style="background:#34c759;">✉️</div><span>문자</span>
+      </button>
+      <button class="share-btn" onclick="copyLink()">
+        <div class="share-btn-icon" style="background:#e8e8e8;">🔗</div><span>링크 복사</span>
+      </button>
+      <button class="share-btn" onclick="shareQR()">
+        <div class="share-btn-icon" style="background:#241b42;">📱</div><span>QR 보기</span>
+      </button>
+    </div>
+    <button class="share-cancel" onclick="closeShare()">취소</button>
+  </div>
+</div>
+
+<!-- 만두 연결 (카드 주인 전용) -->
+<div class="mandu-activate-wrap" style="padding:14px 20px 4px;text-align:center;">
+  <button id="mandu-activate-btn" onclick="activateMandu()"
+    style="background:none;border:1px solid rgba(140,107,255,0.3);color:var(--muted-dark);font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
+    💬 본인 명함이신가요? 만두 연결하기 (1회)
+  </button>
+  <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:var(--gold2);padding:7px 0;">
+    ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="company">
+    <span data-lang="kr" class="active">윤오토자동차정비</span>
+    <span data-lang="en">YOON AUTO Car Care</span>
+    <span data-lang="jp">ユンオート自動車整備</span>
+    <span data-lang="cn">尹奥托汽车整备</span>
+  </div>
+  <div class="slogan-footer">We service every car like it's family.</div>
+</footer>
+
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const m = btn.getAttribute('onclick').match(/'(\w+)'/);
+    btn.classList.toggle('active', m && m[1] === lang);
+  });
+}
+function saveContact() {
+  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:윤현석\nORG:윤오토자동차정비\nTITLE:대표\nTEL:010-5512-8381\nEMAIL:younauto@hanmail.net\nURL:https://jinjjabg-hub.github.io/bni-giants/윤현석/\nEND:VCARD`;
+  const blob = new Blob([vcard], {type:'text/vcard'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = '윤현석_윤오토자동차정비.vcf';
+  a.click();
+}
+
+/* ── 명함 전달하기 ── */
+const CARD_URL = 'https://jinjjabg-hub.github.io/bni-giants/%EC%9C%A4%ED%98%84%EC%84%9D/';
+const CARD_TITLE = '윤현석 | 윤오토자동차정비';
+const CARD_TEXT = '윤현석 대표 · 윤오토자동차정비 디지털 명함입니다.';
+
+function shareCard() {
+  if (navigator.share) {
+    navigator.share({ title: CARD_TITLE, text: CARD_TEXT, url: CARD_URL }).catch(() => {});
+  } else {
+    document.getElementById('shareSheet').style.display = 'block';
+  }
+}
+function closeShare() { document.getElementById('shareSheet').style.display = 'none'; }
+function shareKakao() {
+  window.open('https://sharer.kakao.com/talk/friends/picker/link?app_key=&url=' + encodeURIComponent(CARD_URL), '_blank');
+  closeShare();
+}
+function shareSMS() {
+  location.href = 'sms:?body=' + encodeURIComponent(CARD_TITLE + '\n' + CARD_URL);
+  closeShare();
+}
+function copyLink() {
+  navigator.clipboard.writeText(CARD_URL).then(() => alert('링크가 복사되었습니다!')).catch(() => {
+    const t = document.createElement('textarea');
+    t.value = CARD_URL;
+    document.body.appendChild(t); t.select(); document.execCommand('copy');
+    document.body.removeChild(t);
+    alert('링크가 복사되었습니다!');
+  });
+  closeShare();
+}
+function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
+
+/* ── 만두 원클릭 연결 (카드 주인 전용) ── */
+async function _manduWaitFirebase(maxTries) {
+  let tries = 0;
+  while ((typeof firebase === 'undefined' || !firebase.apps || !firebase.apps.length) && tries < (maxTries || 50)) {
+    await new Promise(r => setTimeout(r, 100));
+    tries++;
+  }
+  return typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length > 0;
+}
+
+async function _manduFinishActivate(user) {
+  const slug = 'yoon-hyeonseok';
+  const db = firebase.firestore();
+
+  const existing = await db.collection('manduid_index').doc(slug).get();
+  if (existing.exists && existing.data().uid !== user.uid) {
+    const btn = document.getElementById('mandu-activate-btn');
+    if (btn) btn.style.display = 'none';
+    const done = document.getElementById('mandu-activate-done');
+    if (done) { done.textContent = 'ℹ️ 이미 연결된 명함이에요'; done.style.display = 'block'; }
+    return;
+  }
+
+  await db.collection('users').doc(user.uid).set({
+    uid: user.uid, displayName: user.displayName || '', photoURL: user.photoURL || '',
+    email: user.email || '', manduid: slug
+  }, { merge: true });
+  await db.collection('manduid_index').doc(slug).set({
+    uid: user.uid, createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  }, { merge: true });
+  const btn = document.getElementById('mandu-activate-btn');
+  const done = document.getElementById('mandu-activate-done');
+  if (btn) btn.style.display = 'none';
+  if (done) done.style.display = 'block';
+}
+
+async function activateMandu() {
+  if (!confirm('본인 명함이 맞나요?\n구글 로그인하면 이 명함으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  const btn = document.getElementById('mandu-activate-btn');
+  if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
+  const ready = await _manduWaitFirebase();
+  if (!ready) {
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 실패. 잠시 후 다시 시도해주세요.');
+    return;
+  }
+  try {
+    const auth = firebase.auth();
+    await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      sessionStorage.setItem('_manduPendingSlug', 'yoon-hyeonseok');
+      await auth.signInWithRedirect(provider);
+      return;
+    }
+    const result = await auth.signInWithPopup(provider);
+    await _manduFinishActivate(result.user);
+  } catch (e) {
+    console.error('만두 연결 실패:', e);
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 중 오류가 발생했어요.');
+  }
+}
+
+(async function () {
+  if (!sessionStorage.getItem('_manduPendingSlug')) return;
+  const ready = await _manduWaitFirebase();
+  sessionStorage.removeItem('_manduPendingSlug');
+  if (!ready) return;
+  try {
+    const res = await firebase.auth().getRedirectResult();
+    if (res && res.user) await _manduFinishActivate(res.user);
+  } catch (e) { console.error(e); }
+})();
+</script>
+</body>
+</html>
