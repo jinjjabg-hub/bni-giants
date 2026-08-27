@@ -609,7 +609,7 @@ body {
         <span>이름·상호·전화번호 저장</span>
       </div>
     </a>
-    <button class="save-btn save-home" onclick="saveToCardHolder()">
+    <button class="save-btn save-home" onclick="saveToCardbook({id:'moonee-kimjunrae', name:'김준래', company:'무늬디자인', role:'대표', phone:'010-7366-8555', field:'인테리어 / 실내디자인 / 3D모델링', chapter:'자이언츠', url:window.location.href, photo:'profile.jpg'})">
       <span class="save-icon">📋</span>
       <div class="save-info">
         <strong>명함첩에 저장</strong>
@@ -947,32 +947,7 @@ function saveContact() {
 }
 
 // 명함첩에 저장
-function saveToCardHolder() {
-  const card = {
-    id: 'kimjunrae',
-    name: '김준래',
-    company: '무늬디자인',
-    role: '대표',
-    phone: '010-7366-8555',
-    field: '인테리어 / 실내디자인 / 3D모델링',
-    chapter: 'BNI 자이언츠 챕터',
-    url: window.location.href,
-    photo: 'profile.jpg',
-    savedAt: new Date().toLocaleDateString('ko-KR')
-  };
-  let cards = JSON.parse(localStorage.getItem('bni_cards') || '[]');
-  const exists = cards.find(c => c.id === card.id);
-  if (exists) {
-    window.location.href = '/';
-    return;
-  }
-  cards.push(card);
-  localStorage.setItem('bni_cards', JSON.stringify(cards));
-  sessionStorage.setItem('auto_install', '1');
-  if (confirm('✅ 명함첩에 저장되었습니다!\n명함첩 앱도 설치할까요?')) {
-    window.location.href = '/';
-  }
-}
+// ── 명함첩 저장 ── save-to-cardbook.js 에서 처리
 
 // 스크롤 페이드 인
 const io = new IntersectionObserver(e => e.forEach(el => {
@@ -980,5 +955,6 @@ const io = new IntersectionObserver(e => e.forEach(el => {
 }), { threshold: 0.12 });
 document.querySelectorAll('.fade').forEach(el => io.observe(el));
 </script>
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
 </body>
 </html>
