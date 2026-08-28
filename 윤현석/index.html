@@ -148,6 +148,17 @@ section { padding: 40px 20px; }
 }
 .about-text { font-size: 14px; line-height: 1.9; color: var(--text-dark); opacity: 0.9; }
 
+/* ── VIDEO ── */
+.video-section { background: var(--navy); padding-top: 8px; }
+.video-section .section-title { color: #fff; }
+.video-wrap {
+  border-radius: 14px; overflow: hidden;
+  border: 1px solid rgba(140,107,255,0.3);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  background: #000;
+}
+.video-wrap video { width: 100%; display: block; aspect-ratio: 16/9; background:#000; }
+
 /* ── WHY ── */
 .why { background: var(--light); }
 .why .section-label { color: var(--muted-light); }
@@ -357,6 +368,22 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <span data-lang="jp">1993年から自動車整備を始め、2000年9月にユンオート自動車整備をオープンしました。30年以上の技術とノウハウで車両を丁寧に診断し、他店で解決できなかった問題も最後まで突き止めて完璧に整備します。</span>
     <span data-lang="cn">自1993年投身汽车维修行业，2000年9月创立尹奥托汽车整备。凭借30余年积累的技术与经验，仔细诊断每一辆车，并彻底解决其他维修厂无法处理的疑难问题。</span>
   </p>
+</section>
+
+<!-- VIDEO -->
+<section class="video-section">
+  <div class="section-label">Video</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">영상으로 만나보세요</span>
+    <span data-lang="en">See us in action</span>
+    <span data-lang="jp">動画でご紹介</span>
+    <span data-lang="cn">视频介绍</span>
+  </div>
+  <div class="video-wrap">
+    <video controls playsinline preload="metadata" poster="intro-poster.jpg">
+      <source src="intro.mp4" type="video/mp4">
+    </video>
+  </div>
 </section>
 
 <!-- WHY -->
