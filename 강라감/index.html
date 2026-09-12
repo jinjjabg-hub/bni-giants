@@ -901,7 +901,7 @@ section[id] { scroll-margin-top: 54px; }
       </div>
     </a>
 
-    <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=kang-ragam" target="_blank" rel="noopener">
+    <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=ragamk0822" target="_blank" rel="noopener">
       <div class="contact-icon">💬</div>
       <div class="contact-label">MANDU</div>
       <div class="contact-value">
@@ -1145,7 +1145,7 @@ async function _manduWaitFirebase(maxTries) {
 }
 
 async function _manduFinishActivate(user) {
-  const slug = 'kang-ragam';
+  const slug = 'ragamk0822';
   const db = firebase.firestore();
   const existing = await db.collection('manduid_index').doc(slug).get();
   if (existing.exists && existing.data().uid !== user.uid) {
@@ -1184,7 +1184,7 @@ async function activateMandu() {
     const provider = new firebase.auth.GoogleAuthProvider();
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     if (isMobile) {
-      sessionStorage.setItem('_manduPendingSlug', 'kang-ragam');
+      sessionStorage.setItem('_manduPendingSlug', 'ragamk0822');
       await auth.signInWithRedirect(provider);
       return;
     }
