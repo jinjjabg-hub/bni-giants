@@ -373,7 +373,7 @@ body {
   display: block; font-size: 13px; font-weight: 800;
   color: var(--gold2); margin-bottom: 2px;
 }
-.save-info span { font-size: 11px; color: rgba(255,255,255,0.3); }
+.save-info > span { font-size: 11px; color: rgba(255,255,255,0.3); }
 
 /* ═══════════ CONNECT ═══════════ */
 .connect-sec { background: var(--dark); padding: 40px 24px; }
@@ -397,7 +397,7 @@ body {
 .ci-mandu{ background: linear-gradient(135deg, #2d6a4f, #1b4332); }
 .connect-info { flex: 1; }
 .connect-info strong { display: block; font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 2px; }
-.connect-info span  { font-size: 12px; color: rgba(255,255,255,0.3); }
+.connect-info > span  { font-size: 12px; color: rgba(255,255,255,0.3); }
 .connect-arrow { color: rgba(255,255,255,0.18); font-size: 14px; }
 
 /* ═══════════ FOOTER ═══════════ */
@@ -428,6 +428,9 @@ body {
 .fade-d1 { transition-delay: 0.1s; }
 .fade-d2 { transition-delay: 0.2s; }
 .fade-d3 { transition-delay: 0.3s; }
+
+[data-lang]:not(.active){display:none !important;}
+em.acc,.hero-name em{font-style:normal;}
 </style>
 </head>
 <body>
@@ -449,7 +452,7 @@ body {
 
   <div class="hero-top">
     <span class="bni-badge">BNI</span>
-    <span id="chapter-badge" class="chapter-badge">자이언츠 챕터 · 부산</span>
+    <span id="chapter-badge" class="chapter-badge"><span data-lang="kr" class="active">자이언츠 챕터 · 부산</span><span data-lang="en">Giants Chapter · Busan</span><span data-lang="jp">ジャイアンツチャプター · 釜山</span><span data-lang="cn">巨人分会 · 釜山</span><span data-lang="mn">Жайентс дүүрэг · Бусан</span></span>
   </div>
 
   <div class="hero-logo">
@@ -462,114 +465,101 @@ body {
   </div>
 
   <div class="hero-bottom">
-    <div id="hero-label" class="hero-label">Interior Consulting</div>
+    <div id="hero-label" class="hero-label"><span data-lang="kr" class="active">Interior Consulting</span><span data-lang="en">Interior Consulting</span><span data-lang="jp">インテリアコンサルティング</span><span data-lang="cn">室内设计咨询</span><span data-lang="mn">Interior Consulting</span></div>
     <div class="hero-company">
-      <span id="company-acc" class="acc">MooNee</span><span id="company-rest" class="script"> design</span>
+      <span id="company-acc" class="acc"><span data-lang="kr" class="active">MooNee</span><span data-lang="en">MooNee</span><span data-lang="jp">MooNee</span><span data-lang="cn">MooNee</span><span data-lang="mn">MooNee</span></span><span id="company-rest" class="script"><span data-lang="kr" class="active"> design</span><span data-lang="en"> design</span><span data-lang="jp"> design</span><span data-lang="cn"> design</span><span data-lang="mn"> design</span></span>
     </div>
-    <div id="hero-name" class="hero-name">김준래 대표 · 인테리어 / 실내디자인 / 3D모델링</div>
+    <div id="hero-name" class="hero-name"><span data-lang="kr" class="active">김준래 대표 · 인테리어 / 실내디자인 / 3D모델링</span><span data-lang="en">Junrae Kim · Interior / Spatial Design / 3D Modeling</span><span data-lang="jp">キム・ジュンレ代表 · インテリア / 空間デザイン / 3Dモデリング</span><span data-lang="cn">金俊来代表 · 室内设计 / 空间设计 / 3D建模</span><span data-lang="mn">Ким Жун Рэ ерөнхийлөгч · Интерьер / Дотоод дизайн / 3D загварчлал</span></div>
     <div id="hero-name-ko" class="hero-name-ko">무늬디자인</div>
-    <div id="hero-slogan" class="hero-slogan">
-      인테리어에 두 가지 격을 담다<br>
-      합리적인 가격, 디테일을 놓치지 않는 품격
-    </div>
+    <div id="hero-slogan" class="hero-slogan"><span data-lang="kr" class="active">인테리어에 두 가지 격을 담다<br>합리적인 가격, 디테일을 놓치지 않는 품격</span><span data-lang="en">Two standards of excellence in one space.<br>Reasonable price. Uncompromising quality.</span><span data-lang="jp">インテリアに二つの格を込めて<br>合理的な価格、細部を妥協しない品格</span><span data-lang="cn">将两种格调融入室内设计<br>合理价格，不妥协细节的品格</span><span data-lang="mn">Интерьерт хоёр төрлийн эрхэм чанарыг шингээв<br>Хямд үнэ, нарийн ширийн зүйлийг алдахгүй өндөр чанар</span></div>
     <div class="hero-divider"></div>
   </div>
 </section>
 
 <!-- ══════════ ABOUT ══════════ -->
 <section class="about-sec fade">
-  <span id="about-label" class="sec-label">About</span>
-  <h2 id="about-title" class="sec-title dark">
-    공간이 달라지면<br><span class="acc">삶의 질이 달라집니다</span>
-  </h2>
-  <p id="about-desc" class="sec-desc dark">
-    인테리어는 단순한 시공이 아닙니다.<br>
-    당신의 일상이 채워지는 공간을 설계하는 일입니다.<br>
-    무늬디자인은 합리적인 가격 안에서 품격을 지킵니다.
-  </p>
+  <span id="about-label" class="sec-label"><span data-lang="kr" class="active">About</span><span data-lang="en">About</span><span data-lang="jp">About</span><span data-lang="cn">关于我们</span><span data-lang="mn">Бидний тухай</span></span>
+  <h2 id="about-title" class="sec-title dark"><span data-lang="kr" class="active">공간이 달라지면<br><em class="acc">삶의 질이 달라집니다</em></span><span data-lang="en">When space changes,<br><em class="acc">life changes</em></span><span data-lang="jp">空間が変われば<br><em class="acc">人生の質が変わる</em></span><span data-lang="cn">空间改变了<br><em class="acc">生活质量就改变了</em></span><span data-lang="mn">Орон зай өөрчлөгдвөл<br><em class="acc">амьдралын чанар өөрчлөгдөнө</em></span></h2>
+  <p id="about-desc" class="sec-desc dark"><span data-lang="kr" class="active">인테리어는 단순한 시공이 아닙니다.<br>당신의 일상이 채워지는 공간을 설계하는 일입니다.<br>무늬디자인은 합리적인 가격 안에서 품격을 지킵니다.</span><span data-lang="en">Interior design is more than construction.<br>It's the art of creating spaces where your life unfolds.<br>MooNee Design preserves quality within a reasonable price.</span><span data-lang="jp">インテリアは単なる施工ではありません。<br>あなたの日常が満たされる空間を設計することです。<br>ムーニーデザインは合理的な価格の中で品格を守ります。</span><span data-lang="cn">室内设计不仅仅是施工。<br>而是设计一个让您日常生活得以充实的空间。<br>MooNee Design在合理价格内坚守品格。</span><span data-lang="mn">Интерьер зөвхөн барилгын ажил биш.<br>Энэ бол таны өдөр тутмын амьдрал бялхах орон зайг төлөвлөх ажил юм.<br>MooNee Design хямд үнийн хүрээнд өндөр чанараа хадгалдаг.</span></p>
 
   <div class="why-cards">
     <div class="why-card fade fade-d1">
       <div class="why-num">01</div>
       <div class="why-body">
-        <strong id="why1-title"><span class="acc">신뢰</span>를 일정으로 증명하다</strong>
-        <p id="why1-desc">1,000여 건의 프로젝트를 진행하면서 단 하루도 어긴 적 없는 일정 관리. 약속이 곧 실력입니다.</p>
+        <strong id="why1-title"><span data-lang="kr" class="active"><em class="acc">신뢰</em>를 일정으로 증명하다</span><span data-lang="en">Proving <em class="acc">trust</em> through deadlines</span><span data-lang="jp">スケジュールで<em class="acc">信頼</em>を証明する</span><span data-lang="cn">用日程证明<em class="acc">信任</em></span><span data-lang="mn">Хугацаагаараа <em class="acc">итгэлээ</em> баталгаажуулдаг</span></strong>
+        <p id="why1-desc"><span data-lang="kr" class="active">1,000여 건의 프로젝트를 진행하면서 단 하루도 어긴 적 없는 일정 관리. 약속이 곧 실력입니다.</span><span data-lang="en">Over 1,000 projects completed. Not a single deadline missed. Our promise is our portfolio.</span><span data-lang="jp">1,000件以上のプロジェクトを進める中で、一日も納期を破ったことがありません。約束こそが実力です。</span><span data-lang="cn">完成1,000余个项目，从未有过一天延期。承诺本身就是实力。</span><span data-lang="mn">1,000 гаруй төслийг гүйцэтгэхдээ нэг ч удаа хугацаа алдаагүй. Амлалт бол чадвар юм.</span></p>
       </div>
     </div>
     <div class="why-card fade fade-d2">
       <div class="why-num">02</div>
       <div class="why-body">
-        <strong id="why2-title">말보다는 <span class="acc">실행</span>으로</strong>
-        <p id="why2-desc">말로 설명하는 인테리어보다 직접 체감되는 결과로 증명합니다. 결과가 포트폴리오입니다.</p>
+        <strong id="why2-title"><span data-lang="kr" class="active">말보다는 <em class="acc">실행</em>으로</span><span data-lang="en">Results over <em class="acc">words</em></span><span data-lang="jp">言葉より<em class="acc">実行</em>で</span><span data-lang="cn">用<em class="acc">行动</em>而非言语</span><span data-lang="mn">Үгээр биш <em class="acc">үйлдлээр</em></span></strong>
+        <p id="why2-desc"><span data-lang="kr" class="active">말로 설명하는 인테리어보다 직접 체감되는 결과로 증명합니다. 결과가 포트폴리오입니다.</span><span data-lang="en">We don't explain what we'll do — we show you what we've done. The result is the proof.</span><span data-lang="jp">説明するインテリアより、直接体感できる結果で証明します。結果がポートフォリオです。</span><span data-lang="cn">不是用语言解释室内设计，而是用亲身感受到的结果来证明。结果就是作品集。</span><span data-lang="mn">Тайлбарлаж яриад суухаас илүү, биечлэн мэдрэгдэх үр дүнгээр баталгаажуулдаг. Үр дүн бол манай ажлын жагсаалт.</span></p>
       </div>
     </div>
     <div class="why-card fade fade-d3">
       <div class="why-num">03</div>
       <div class="why-body">
-        <strong id="why3-title">공간의 <span class="acc">마에스트로</span></strong>
-        <p id="why3-desc">디자인·시공·일정관리·사후서비스까지, 유기적인 프로세스를 통해 체계적으로 운영합니다.</p>
+        <strong id="why3-title"><span data-lang="kr" class="active">공간의 <em class="acc">마에스트로</em></span><span data-lang="en">Maestro of <em class="acc">Space</em></span><span data-lang="jp">空間の<em class="acc">マエストロ</em></span><span data-lang="cn">空间的<em class="acc">大师</em></span><span data-lang="mn">Орон зайн <em class="acc">мастер</em></span></strong>
+        <p id="why3-desc"><span data-lang="kr" class="active">디자인·시공·일정관리·사후서비스까지, 유기적인 프로세스를 통해 체계적으로 운영합니다.</span><span data-lang="en">From design and construction to scheduling and after-service — all managed as one organic process.</span><span data-lang="jp">デザイン・施工・スケジュール管理・アフターサービスまで、有機的なプロセスで体系的に運営します。</span><span data-lang="cn">从设计、施工、进度管理到售后服务，通过有机的流程体系化运营。</span><span data-lang="mn">Дизайн, барилга угсралт, хуваарь удирдлага, борлуулалтын дараах үйлчилгээ хүртэл нэгдмэл процессоор системтэй явуулдаг.</span></p>
       </div>
     </div>
   </div>
 
-  <blockquote id="about-quote" class="about-quote">
-    "공간은 사람을 담는 그릇입니다.<br>그 그릇의 품격이 삶의 온도를 결정합니다." — 김준래
-  </blockquote>
+  <blockquote id="about-quote" class="about-quote"><span data-lang="kr" class="active">"공간은 사람을 담는 그릇입니다.<br>그 그릇의 품격이 삶의 온도를 결정합니다." — 김준래</span><span data-lang="en">"Space is the vessel that holds a person.<br>The quality of that vessel determines the quality of life." — Junrae Kim</span><span data-lang="jp">"空間は人を包む器です。<br>その器の品格が、生活の温度を決めます。" — キム・ジュンレ</span><span data-lang="cn">"空间是容纳人的容器。<br>容器的品格决定了生活的温度。" — 金俊来</span><span data-lang="mn">"Орон зай бол хүнийг багтаасан сав юм.<br>Тэр савны эрхэм чанар амьдралын дулааныг тодорхойлдог." — Ким Жун Рэ</span></blockquote>
 </section>
 
 <!-- ══════════ 통계 ══════════ -->
 <div class="stats-wrap">
   <div class="stat-item fade">
     <div class="stat-num">20<em>년</em></div>
-    <div id="stat1-label" class="stat-label">인테리어<br>전문 경력</div>
+    <div id="stat1-label" class="stat-label"><span data-lang="kr" class="active">인테리어<br>전문 경력</span><span data-lang="en">Years of<br>expertise</span><span data-lang="jp">インテリア<br>専門経歴</span><span data-lang="cn">室内设计<br>专业经验</span><span data-lang="mn">Интерьерийн<br>мэргэжлийн туршлага</span></div>
   </div>
   <div class="stat-item fade fade-d1">
     <div class="stat-num">1,000<em>+</em></div>
-    <div id="stat2-label" class="stat-label">누적<br>프로젝트 실적</div>
+    <div id="stat2-label" class="stat-label"><span data-lang="kr" class="active">누적<br>프로젝트 실적</span><span data-lang="en">Cumulative<br>projects</span><span data-lang="jp">累計<br>プロジェクト実績</span><span data-lang="cn">累计<br>项目业绩</span><span data-lang="mn">Нийт хийсэн<br>төслийн тоо</span></div>
   </div>
   <div class="stat-item fade fade-d2">
     <div class="stat-num">100<em>%</em></div>
-    <div id="stat3-label" class="stat-label">일정 준수율<br>(단 하루도 미준수 없음)</div>
+    <div id="stat3-label" class="stat-label"><span data-lang="kr" class="active">일정 준수율<br>(단 하루도 미준수 없음)</span><span data-lang="en">Schedule<br>compliance rate</span><span data-lang="jp">スケジュール<br>遵守率</span><span data-lang="cn">进度<br>遵守率</span><span data-lang="mn">Хуваарь мөрдөлтийн хувь<br>(нэг ч удаа алдаагүй)</span></div>
   </div>
   <div class="stat-item fade fade-d3">
     <div class="stat-num">4<em>기</em></div>
-    <div id="stat4-label" class="stat-label">BNI<br>자이언츠 챕터</div>
+    <div id="stat4-label" class="stat-label"><span data-lang="kr" class="active">BNI<br>자이언츠 챕터</span><span data-lang="en">BNI<br>Giants Chapter</span><span data-lang="jp">BNI<br>ジャイアンツチャプター</span><span data-lang="cn">BNI<br>巨人分会</span><span data-lang="mn">BNI<br>Жайентс дүүрэг</span></div>
   </div>
 </div>
 
 <!-- ══════════ DIFFERENCE ══════════ -->
 <section class="diff-sec fade">
-  <span id="diff-label" class="sec-label">Difference</span>
-  <h2 id="diff-title" class="sec-title dark">
-    일반 인테리어와<br><span class="acc">무엇이 다른가?</span>
-  </h2>
+  <span id="diff-label" class="sec-label"><span data-lang="kr" class="active">Difference</span><span data-lang="en">Difference</span><span data-lang="jp">Difference</span><span data-lang="cn">差异化</span><span data-lang="mn">Ялгаа</span></span>
+  <h2 id="diff-title" class="sec-title dark"><span data-lang="kr" class="active">일반 인테리어와<br><em class="acc">무엇이 다른가?</em></span><span data-lang="en">What sets us apart<br><em class="acc">from ordinary firms?</em></span><span data-lang="jp">一般的なインテリアと<br><em class="acc">何が違うのか？</em></span><span data-lang="cn">与普通室内设计<br><em class="acc">有何不同？</em></span><span data-lang="mn">Энгийн интерьерээс<br><em class="acc">юугаараа ялгаатай вэ?</em></span></h2>
   <div class="diff-list">
     <div class="diff-item fade">
       <div class="diff-icon">🏆</div>
       <div class="diff-text">
-        <strong id="diff1-title"><span class="acc">20년</span>의 노하우</strong>
-        <p id="diff1-desc">20년간 축적된 데이터로 변수와 시행착오까지 예측해서, 문제보다 해결을 먼저 준비합니다.</p>
+        <strong id="diff1-title"><span data-lang="kr" class="active"><em class="acc">20년</em>의 노하우</span><span data-lang="en"><em class="acc">20 Years</em> of Know-How</span><span data-lang="jp"><em class="acc">20年</em>のノウハウ</span><span data-lang="cn"><em class="acc">20年</em>的专业积累</span><span data-lang="mn"><em class="acc">20 жилийн</em> туршлага</span></strong>
+        <p id="diff1-desc"><span data-lang="kr" class="active">20년간 축적된 데이터로 변수와 시행착오까지 예측해서, 문제보다 해결을 먼저 준비합니다.</span><span data-lang="en">Two decades of accumulated data lets us anticipate variables and prepare solutions before problems arise.</span><span data-lang="jp">20年間蓄積されたデータで変数や試行錯誤まで予測し、問題より先に解決策を準備します。</span><span data-lang="cn">凭借20年积累的数据，预测变数和试错，提前准备解决方案而非等待问题出现。</span><span data-lang="mn">20 жилийн турш хуримтлуулсан мэдээллээр өөрчлөлт, алдааг хүртэл урьдчилан таамаглаж, асуудлаас өмнө шийдлээ бэлдэж байдаг.</span></p>
       </div>
     </div>
     <div class="diff-item fade fade-d1">
       <div class="diff-icon">🔗</div>
       <div class="diff-text">
-        <strong id="diff2-title">시작과 끝을 <span class="acc">함께</span>하다</strong>
-        <p id="diff2-desc">설계의 시작부터 고객의 일상이 채워지는 순간의 스타일링까지, 원스톱으로 솔루션을 제안합니다.</p>
+        <strong id="diff2-title"><span data-lang="kr" class="active">시작과 끝을 <em class="acc">함께</em>하다</span><span data-lang="en">With you from <em class="acc">start to finish</em></span><span data-lang="jp">始まりから終わりまで<em class="acc">共に</em></span><span data-lang="cn">从始至终<em class="acc">相伴</em></span><span data-lang="mn">Эхлэлээс төгсгөл хүртэл <em class="acc">хамтдаа</em></span></strong>
+        <p id="diff2-desc"><span data-lang="kr" class="active">설계의 시작부터 고객의 일상이 채워지는 순간의 스타일링까지, 원스톱으로 솔루션을 제안합니다.</span><span data-lang="en">From initial design to the moment your daily life fills the space — we offer one-stop solutions.</span><span data-lang="jp">設計の始まりから、お客様の日常が満たされる瞬間のスタイリングまで、ワンストップで提案します。</span><span data-lang="cn">从设计开始到客户日常生活填满空间的那一刻的风格设计，提供一站式解决方案。</span><span data-lang="mn">Зураг төслөөс эхлээд захиалагчийн өдөр тутмын амьдрал орон зайг дүүргэх мөч хүртэлх стайлингийг нэг дороос санал болгодог.</span></p>
       </div>
     </div>
     <div class="diff-item fade fade-d2">
       <div class="diff-icon">🧊</div>
       <div class="diff-text">
-        <strong id="diff3-title">이제 상상보다 <span class="acc">경험</span>으로</strong>
-        <p id="diff3-desc">막연한 상상이 아닌 현실에 가까운 3D 시각화로 공간을 구현해, 시작 전 불안을 줄이고 완성의 기대를 높여드립니다.</p>
+        <strong id="diff3-title"><span data-lang="kr" class="active">이제 상상보다 <em class="acc">경험</em>으로</span><span data-lang="en">Experience over <em class="acc">imagination</em></span><span data-lang="jp">想像より<em class="acc">体験</em>で</span><span data-lang="cn">用<em class="acc">体验</em>代替想象</span><span data-lang="mn">Төсөөллөөс илүү <em class="acc">туршлагаар</em></span></strong>
+        <p id="diff3-desc"><span data-lang="kr" class="active">막연한 상상이 아닌 현실에 가까운 3D 시각화로 공간을 구현해, 시작 전 불안을 줄이고 완성의 기대를 높여드립니다.</span><span data-lang="en">Not vague imagination, but near-reality 3D visualization. Reduce anxiety before you start; raise excitement for the finish.</span><span data-lang="jp">漠然とした想像ではなく、現実に近い3Dビジュアライゼーションで空間を体感。開始前の不安を減らし、完成への期待を高めます。</span><span data-lang="cn">不是模糊的想象，而是通过接近现实的3D可视化呈现空间，减少开工前的不安，提升对完成效果的期待。</span><span data-lang="mn">Бүрхэг төсөөлөл биш, бодит байдалд ойр 3D дүрслэлээр орон зайг харуулж, эхлэхийн өмнөх түгшүүрийг багасгаж, дуусах хүлээлтийг нэмэгдүүлдэг.</span></p>
       </div>
     </div>
     <div class="diff-item fade fade-d3">
       <div class="diff-icon">✅</div>
       <div class="diff-text">
-        <strong id="diff4-title"><span class="acc">선택장애?</span> 해결합니다</strong>
-        <p id="diff4-desc">선택의 연속인 인테리어에서 정답에 가까운 선택지만 남겨, 결정 피로와 선택장애를 해결하는 솔루션을 제시합니다.</p>
+        <strong id="diff4-title"><span data-lang="kr" class="active"><em class="acc">선택장애?</em> 해결합니다</span><span data-lang="en"><em class="acc">Decision fatigue?</em> Solved.</span><span data-lang="jp"><em class="acc">選択疲れ？</em> 解決します</span><span data-lang="cn"><em class="acc">选择困难？</em>我们来解决</span><span data-lang="mn"><em class="acc">Сонголтын бэрхшээл?</em> Бид шийднэ</span></strong>
+        <p id="diff4-desc"><span data-lang="kr" class="active">선택의 연속인 인테리어에서 정답에 가까운 선택지만 남겨, 결정 피로와 선택장애를 해결하는 솔루션을 제시합니다.</span><span data-lang="en">Interior design means endless choices. We narrow them down to only the right ones — eliminating decision fatigue.</span><span data-lang="jp">選択の連続であるインテリアで、正解に近い選択肢だけを残し、決定疲労と選択障害を解決するソリューションを提示します。</span><span data-lang="cn">在选择不断的室内设计中，只留下最接近正确答案的选项，提供解决决策疲劳和选择困难的方案。</span><span data-lang="mn">Сонголт дараалсан интерьерийн ажилд зөв хариултад хамгийн ойр сонголтуудыг л үлдээж, шийдвэр гаргах ядаргаа, сонголтын бэрхшээлийг шийддэг.</span></p>
       </div>
     </div>
   </div>
@@ -577,10 +567,8 @@ body {
 
 <!-- ══════════ 포트폴리오 ══════════ -->
 <section class="portfolio-sec fade">
-  <span id="port-label" class="sec-label">Portfolio</span>
-  <h2 id="port-title" class="sec-title dark">
-    공간이 <span class="acc">작품</span>이 됩니다
-  </h2>
+  <span id="port-label" class="sec-label"><span data-lang="kr" class="active">포트폴리오</span><span data-lang="en">Portfolio</span><span data-lang="jp">ポートフォリオ</span><span data-lang="cn">作品集</span><span data-lang="mn">Портфолио</span></span>
+  <h2 id="port-title" class="sec-title dark"><span data-lang="kr" class="active">공간이 <em class="acc">작품</em>이 됩니다</span><span data-lang="en">Space becomes <em class="acc">Art</em></span><span data-lang="jp">空間が<em class="acc">作品</em>になります</span><span data-lang="cn">空间成为<em class="acc">艺术</em></span><span data-lang="mn">Орон зай <em class="acc">урлагийн бүтээл</em> болно</span></h2>
   <div class="port-slider" id="portSlider">
     <div class="port-track" id="portTrack">
       <div class="port-slide"><img src="poto1.jpg" alt="포트폴리오 1"></div>
@@ -600,58 +588,47 @@ body {
 
 <!-- ══════════ BNI 프로필 ══════════ -->
 <section class="bni-sec">
-  <span id="bni-label" class="sec-label">BNI 프로필</span>
+  <span id="bni-label" class="sec-label"><span data-lang="kr" class="active">BNI 프로필</span><span data-lang="en">BNI Profile</span><span data-lang="jp">BNIプロフィール</span><span data-lang="cn">BNI简介</span><span data-lang="mn">BNI танилцуулга</span></span>
   <div class="bni-inner fade">
     <div class="bni-photo">
       <img src="profile.jpg" alt="김준래 대표" onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1a1a1a,#2a2a2a)';this.parentNode.innerHTML='<div style=\'width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:28px;\'>👤</div>'">
     </div>
     <div>
-      <div id="bni-name" class="bni-info-name">김준래</div>
-      <div id="bni-role" class="bni-info-role">무늬디자인 대표 · BNI 자이언츠 챕터</div>
+      <div id="bni-name" class="bni-info-name"><span data-lang="kr" class="active">김준래</span><span data-lang="en">Junrae Kim</span><span data-lang="jp">キム・ジュンレ</span><span data-lang="cn">金俊来</span><span data-lang="mn">Ким Жун Рэ</span></div>
+      <div id="bni-role" class="bni-info-role"><span data-lang="kr" class="active">무늬디자인 대표 · BNI 자이언츠 챕터</span><span data-lang="en">CEO, MooNee Design · BNI Giants Chapter</span><span data-lang="jp">ムーニーデザイン代表 · BNI ジャイアンツチャプター</span><span data-lang="cn">MooNee Design代表 · BNI 巨人分会</span><span data-lang="mn">MooNee Design-ийн ерөнхийлөгч · BNI Жайентс дүүрэг</span></div>
       <div class="bni-tags">
-        <span id="bni-tag1" class="bni-tag">4기 의장</span>
-        <span id="bni-tag2" class="bni-tag">자이언츠 챕터</span>
-        <span id="bni-tag3" class="bni-tag">인테리어 전문</span>
+        <span id="bni-tag1" class="bni-tag"><span data-lang="kr" class="active">4기 의장</span><span data-lang="en">4th President</span><span data-lang="jp">4期チャプタープレジデント</span><span data-lang="cn">第4期主席</span><span data-lang="mn">4-р үеийн дарга</span></span>
+        <span id="bni-tag2" class="bni-tag"><span data-lang="kr" class="active">자이언츠 챕터</span><span data-lang="en">Giants Chapter</span><span data-lang="jp">ジャイアンツチャプター</span><span data-lang="cn">巨人分会</span><span data-lang="mn">Жайентс дүүрэг</span></span>
+        <span id="bni-tag3" class="bni-tag"><span data-lang="kr" class="active">인테리어 전문</span><span data-lang="en">Interior Expert</span><span data-lang="jp">インテリア専門</span><span data-lang="cn">室内设计专家</span><span data-lang="mn">Интерьерийн мэргэжилтэн</span></span>
       </div>
     </div>
   </div>
     <div class="bni-history fade">
-    <div id="bni-hist-label" class="bni-history-label">BNI HISTORY</div>
-    <div id="bni-hist-text" class="bni-history-text">
-      4기 의장 · 자이언츠 챕터 · 부산<br><br>
-      꾸준함과 약속으로 증명합니다<br>
-      입회일부터 현재까지, 매주 주간회의 1등 도착으로<br>
-      BNI의 시작을 열고 있습니다
-    </div>
+    <div id="bni-hist-label" class="bni-history-label"><span data-lang="kr" class="active">BNI HISTORY</span><span data-lang="en">BNI HISTORY</span><span data-lang="jp">BNI HISTORY</span><span data-lang="cn">BNI履历</span><span data-lang="mn">BNI TҮҮХ</span></div>
+    <div id="bni-hist-text" class="bni-history-text"><span data-lang="kr" class="active">4기 의장 · 자이언츠 챕터 · 부산</span><span data-lang="en">4th Period President · Giants Chapter · Busan<br><br>Proven through consistency and commitment.<br>Since joining, arriving first every weekly meeting —<br>opening every BNI session.</span><span data-lang="jp">4期チャプタープレジデント · ジャイアンツチャプター · 釜山<br><br>継続と約束で証明します。<br>入会日から現在まで、毎週の定例会に1番乗りで到着し、<br>BNIの始まりを開いています。</span><span data-lang="cn">第4期主席 · 巨人分会 · 釜山<br><br>用坚持与承诺来证明。<br>从入会至今，每周例会第一个到达，<br>守护着BNI每一次的开始。</span><span data-lang="mn">4-р үеийн дарга · Жайентс дүүрэг · Бусан<br><br>Тууштай байдал, амлалтаараа баталгаажуулдаг.<br>Элссэн өдрөөс өнөөг хүртэл долоо хоног бүрийн ээлжит уулзалтад хамгийн түрүүнд ирж,<br>BNI-ийн эхлэлийг нээж байна.</span></div>
   </div>
 </section>
 
 <!-- ══════════ QUOTE ══════════ -->
 <section class="quote-sec">
   <div class="quote-inner fade">
-    <span id="quote-label" class="quote-label-txt">MOONEE PHILOSOPHY</span>
+    <span id="quote-label" class="quote-label-txt"><span data-lang="kr" class="active">MOONEE PHILOSOPHY</span><span data-lang="en">MOONEE PHILOSOPHY</span><span data-lang="jp">MOONEE PHILOSOPHY</span><span data-lang="cn">MOONEE PHILOSOPHY</span><span data-lang="mn">MOONEE PHILOSOPHY</span></span>
     <div class="quote-mark">"</div>
-    <p id="quote-text" class="quote-text">
-      인테리어에서 실패하는 이유는 단 하나,<br>
-      <span class="acc">준비 없이 시작</span>했기 때문입니다.<br>
-      우리는 문제보다 해결을 먼저 준비합니다.
-    </p>
-    <div id="quote-author" class="quote-author">— 김준래, 무늬디자인 대표</div>
+    <p id="quote-text" class="quote-text"><span data-lang="kr" class="active">인테리어에서 실패하는 이유는 단 하나,<br><em class="acc">준비 없이 시작</em>했기 때문입니다.<br>우리는 문제보다 해결을 먼저 준비합니다.</span><span data-lang="en">The reason interior projects fail is simple:<br><em class="acc">starting without preparation.</em><br>We prepare solutions before problems arise.</span><span data-lang="jp">インテリアで失敗する理由はただ一つ、<br><em class="acc">準備なしに始めた</em>からです。<br>私たちは問題より先に解決策を準備します。</span><span data-lang="cn">室内设计失败只有一个原因，<br><em class="acc">没有准备就开始了。</em><br>我们比问题更早准备好解决方案。</span><span data-lang="mn">Интерьерийн ажил бүтэлгүйтэх шалтгаан ганцхан,<br><em class="acc">бэлтгэлгүйгээр эхэлсэн</em> явдал юм.<br>Бид асуудлаас өмнө шийдлээ бэлддэг.</span></p>
+    <div id="quote-author" class="quote-author"><span data-lang="kr" class="active">— 김준래, 무늬디자인 대표</span><span data-lang="en">— Junrae Kim, CEO of MooNee Design</span><span data-lang="jp">— キム・ジュンレ、ムーニーデザイン代表</span><span data-lang="cn">— 金俊来，MooNee Design代表</span><span data-lang="mn">— Ким Жун Рэ, MooNee Design-ийн ерөнхийлөгч</span></div>
   </div>
 </section>
 
 <!-- ══════════ 리퍼럴 ══════════ -->
 <section class="ref-sec">
-  <span id="ref-label" class="sec-label">소개 의뢰</span>
-  <h2 id="ref-title" class="sec-title dark">
-    이런 분을<br><span class="acc">소개해 주세요</span>
-  </h2>
+  <span id="ref-label" class="sec-label"><span data-lang="kr" class="active">소개 의뢰</span><span data-lang="en">Referrals</span><span data-lang="jp">ご紹介のお願い</span><span data-lang="cn">转介绍请求</span><span data-lang="mn">Танилцуулгын хүсэлт</span></span>
+  <h2 id="ref-title" class="sec-title dark"><span data-lang="kr" class="active">이런 분을<br><em class="acc">소개해 주세요</em></span><span data-lang="en">Please introduce<br><em class="acc">people like these</em></span><span data-lang="jp">このような方を<br><em class="acc">ご紹介ください</em></span><span data-lang="cn">请为我介绍<br><em class="acc">以下类型的客户</em></span><span data-lang="mn">Дараах хүмүүсийг<br><em class="acc">танилцуулаарай</em></span></h2>
   <div id="ref-tags" class="ref-tags">
-    <span class="ref-tag">🏠 아파트 인테리어를 계획 중인 꼼꼼한 분</span>
-    <span class="ref-tag">📊 비교 견적이 필요한 인테리어 고객</span>
-    <span class="ref-tag">🎨 창의적 디자인·레이아웃이 필요한 분</span>
-    <span class="ref-tag">😔 타 업체 인테리어에서 실패를 겪은 분</span>
-    <span class="ref-tag">☕ 카페·요식업·오피스 오픈을 계획 중인 분</span>
+    <span class="ref-tag"><span data-lang="kr" class="active">🏠 아파트 인테리어를 계획 중인 꼼꼼한 분</span><span data-lang="en">🏠 Detail-oriented apartment renovation clients</span><span data-lang="jp">🏠 マンションリフォームを検討中の細かい方</span><span data-lang="cn">🏠 正在规划公寓装修的细心客户</span><span data-lang="mn">🏠 Орон сууцны интерьерээ төлөвлөж буй нямбай хүн</span></span>
+    <span class="ref-tag"><span data-lang="kr" class="active">📊 비교 견적이 필요한 인테리어 고객</span><span data-lang="en">📊 Clients needing competitive quotes</span><span data-lang="jp">📊 相見積もりが必要なインテリアのお客様</span><span data-lang="cn">📊 需要多家比价的室内设计客户</span><span data-lang="mn">📊 Үнийн саналыг харьцуулах шаардлагатай интерьерийн захиалагч</span></span>
+    <span class="ref-tag"><span data-lang="kr" class="active">🎨 창의적 디자인·레이아웃이 필요한 분</span><span data-lang="en">🎨 Those who need creative design & layouts</span><span data-lang="jp">🎨 クリエイティブなデザインが必要な方</span><span data-lang="cn">🎨 需要创意设计与布局的客户</span><span data-lang="mn">🎨 Бүтээлч дизайн, зохион байгуулалт хэрэгтэй хүн</span></span>
+    <span class="ref-tag"><span data-lang="kr" class="active">😔 타 업체 인테리어에서 실패를 겪은 분</span><span data-lang="en">😔 Clients who've had a bad interior experience</span><span data-lang="jp">😔 他社インテリアで失敗を経験した方</span><span data-lang="cn">😔 曾在其他公司装修中遭遇失败的客户</span><span data-lang="mn">😔 Өөр компанийн интерьерт бүтэлгүйтэл амссан хүн</span></span>
+    <span class="ref-tag"><span data-lang="kr" class="active">☕ 카페·요식업·오피스 오픈을 계획 중인 분</span><span data-lang="en">☕ Café / F&B / office opening planners</span><span data-lang="jp">☕ カフェ・飲食店・オフィス開業を計画中の方</span><span data-lang="cn">☕ 计划开设咖啡厅·餐饮·办公室的客户</span><span data-lang="mn">☕ Кафе, хоолны газар, оффис нээхээр төлөвлөж буй хүн</span></span>
   </div>
 </section>
 
@@ -677,15 +654,13 @@ body {
 
 <!-- ══════════ CONNECT ══════════ -->
 <section class="connect-sec">
-  <span id="connect-label" class="sec-label">Contact</span>
-  <h2 id="connect-title" class="sec-title light">
-    김준래 대표와<br><span class="acc">연결하기</span>
-  </h2>
+  <span id="connect-label" class="sec-label"><span data-lang="kr" class="active">Contact</span><span data-lang="en">Contact</span><span data-lang="jp">Contact</span><span data-lang="cn">联系方式</span><span data-lang="mn">Холбоо барих</span></span>
+  <h2 id="connect-title" class="sec-title light"><span data-lang="kr" class="active">김준래 대표와<br><em class="acc">연결하기</em></span><span data-lang="en">Connect with<br><em class="acc">Junrae Kim</em></span><span data-lang="jp">キム・ジュンレ代表に<br><em class="acc">つながる</em></span><span data-lang="cn">联系<br><em class="acc">金俊来代表</em></span><span data-lang="mn">Ким Жун Рэ ерөнхийлөгчтэй<br><em class="acc">холбогдох</em></span></h2>
   <div class="connect-list">
     <a class="connect-item" href="tel:01073668555">
       <div class="connect-icon ci-tel">📞</div>
       <div class="connect-info">
-        <strong id="conn1-title">전화 상담</strong>
+        <strong id="conn1-title"><span data-lang="kr" class="active">전화 상담</span><span data-lang="en">Phone Consultation</span><span data-lang="jp">電話相談</span><span data-lang="cn">电话咨询</span><span data-lang="mn">Утасны зөвлөгөө</span></strong>
         <span>010-7366-8555</span>
       </div>
       <span class="connect-arrow">›</span>
@@ -693,7 +668,7 @@ body {
     <a class="connect-item" href="https://www.moonee.co.kr" target="_blank">
       <div class="connect-icon ci-web">🌐</div>
       <div class="connect-info">
-        <strong id="conn2-title">홈페이지</strong>
+        <strong id="conn2-title"><span data-lang="kr" class="active">홈페이지</span><span data-lang="en">Website</span><span data-lang="jp">ホームページ</span><span data-lang="cn">官方网站</span><span data-lang="mn">Вэбсайт</span></strong>
         <span>www.moonee.co.kr</span>
       </div>
       <span class="connect-arrow">›</span>
@@ -701,7 +676,7 @@ body {
     <a class="connect-item" href="https://www.instagram.com/mooneedesign/" target="_blank">
       <div class="connect-icon ci-insta">📸</div>
       <div class="connect-info">
-        <strong id="conn3-title">인스타그램</strong>
+        <strong id="conn3-title"><span data-lang="kr" class="active">인스타그램</span><span data-lang="en">Instagram</span><span data-lang="jp">インスタグラム</span><span data-lang="cn">Instagram</span><span data-lang="mn">Instagram</span></strong>
         <span>@mooneedesign</span>
       </div>
       <span class="connect-arrow">›</span>
@@ -709,7 +684,7 @@ body {
     <a class="connect-item" href="https://www.youtube.com/@mooneedesign" target="_blank">
       <div class="connect-icon ci-yt">▶</div>
       <div class="connect-info">
-        <strong id="conn4-title">유튜브</strong>
+        <strong id="conn4-title"><span data-lang="kr" class="active">유튜브</span><span data-lang="en">YouTube</span><span data-lang="jp">ユーチューブ</span><span data-lang="cn">YouTube</span><span data-lang="mn">YouTube</span></strong>
         <span>@mooneedesign</span>
       </div>
       <span class="connect-arrow">›</span>
@@ -717,13 +692,22 @@ body {
     <a class="connect-item" href="https://jinjjabg-hub.github.io/MANDU/?u=mooneedesign" target="_blank">
       <div class="connect-icon ci-mandu">🥟</div>
       <div class="connect-info">
-        <strong id="conn5-title">실시간 번역 대화</strong>
+        <strong id="conn5-title"><span data-lang="kr" class="active">실시간 번역 대화</span><span data-lang="en">Real-time Translation Chat</span><span data-lang="jp">リアルタイム翻訳チャット</span><span data-lang="cn">实时翻译对话</span><span data-lang="mn">Шууд орчуулгатай чат</span></strong>
         <span>MANDU 번역 메신저</span>
       </div>
       <span class="connect-arrow">›</span>
     </a>
   </div>
 </section>
+
+<div style="padding:14px 20px 4px;text-align:center;">
+  <button id="mandu-activate-btn" onclick="activateMandu()" style="background:none;border:1px solid rgba(0,0,0,0.15);color:#888;font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;">
+    💬 본인 명함이신가요? 만두 연결하기 (1회)
+  </button>
+  <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:#888;padding:7px 0;">
+    ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
+  </div>
+</div>
 
 <!-- ══════════ FOOTER ══════════ -->
 <footer class="footer">
@@ -734,321 +718,20 @@ body {
 
 <!-- 플로팅 CTA -->
 <a id="float-cta" class="float-cta" href="tel:01073668555">
-  🏠 <span id="float-btn">지금 바로 상담</span>
+  🏠 <span id="float-btn"><span data-lang="kr" class="active">지금 바로 상담</span><span data-lang="en">Book a Consultation</span><span data-lang="jp">今すぐ相談</span><span data-lang="cn">立即咨询</span><span data-lang="mn">Одоо зөвлөгөө авах</span></span>
 </a>
 
 <!-- ══════════ 번역 데이터 ══════════ -->
 <script>
-const T = {
-  kr: {
-    "chapter-badge": "자이언츠 챕터 · 부산",
-    "hero-label": "Interior Consulting",
-    "company-acc": "MooNee", "company-rest": " design",
-    "hero-name": "김준래 대표 · 인테리어 / 실내디자인 / 3D모델링",
-    "hero-slogan": "인테리어에 두 가지 격을 담다<br>합리적인 가격, 디테일을 놓치지 않는 품격",
-    "about-label": "About",
-    "about-title": "공간이 달라지면<br><span class='acc'>삶의 질이 달라집니다</span>",
-    "about-desc": "인테리어는 단순한 시공이 아닙니다.<br>당신의 일상이 채워지는 공간을 설계하는 일입니다.<br>무늬디자인은 합리적인 가격 안에서 품격을 지킵니다.",
-    "why1-title": "<span class='acc'>신뢰</span>를 일정으로 증명하다",
-    "why1-desc": "1,000여 건의 프로젝트를 진행하면서 단 하루도 어긴 적 없는 일정 관리. 약속이 곧 실력입니다.",
-    "why2-title": "말보다는 <span class='acc'>실행</span>으로",
-    "why2-desc": "말로 설명하는 인테리어보다 직접 체감되는 결과로 증명합니다. 결과가 포트폴리오입니다.",
-    "why3-title": "공간의 <span class='acc'>마에스트로</span>",
-    "why3-desc": "디자인·시공·일정관리·사후서비스까지, 유기적인 프로세스를 통해 체계적으로 운영합니다.",
-    "about-quote": '"공간은 사람을 담는 그릇입니다.<br>그 그릇의 품격이 삶의 온도를 결정합니다." — 김준래',
-    "stat1-label": "인테리어<br>전문 경력",
-    "stat2-label": "누적<br>프로젝트 실적",
-    "stat3-label": "일정 준수율<br>(단 하루도 미준수 없음)",
-    "stat4-label": "BNI<br>자이언츠 챕터",
-    "diff-label": "Difference",
-    "diff-title": "일반 인테리어와<br><span class='acc'>무엇이 다른가?</span>",
-    "diff1-title": "<span class='acc'>20년</span>의 노하우",
-    "diff1-desc": "20년간 축적된 데이터로 변수와 시행착오까지 예측해서, 문제보다 해결을 먼저 준비합니다.",
-    "diff2-title": "시작과 끝을 <span class='acc'>함께</span>하다",
-    "diff2-desc": "설계의 시작부터 고객의 일상이 채워지는 순간의 스타일링까지, 원스톱으로 솔루션을 제안합니다.",
-    "diff3-title": "이제 상상보다 <span class='acc'>경험</span>으로",
-    "diff3-desc": "막연한 상상이 아닌 현실에 가까운 3D 시각화로 공간을 구현해, 시작 전 불안을 줄이고 완성의 기대를 높여드립니다.",
-    "diff4-title": "<span class='acc'>선택장애?</span> 해결합니다",
-    "diff4-desc": "선택의 연속인 인테리어에서 정답에 가까운 선택지만 남겨, 결정 피로와 선택장애를 해결하는 솔루션을 제시합니다.",
-    "bni-label": "BNI 프로필",
-    "bni-name": "김준래",
-    "bni-role": "무늬디자인 대표 · BNI 자이언츠 챕터",
-    "bni-tag1": "4기 의장", "bni-tag2": "자이언츠 챕터", "bni-tag3": "인테리어 전문",
-    "bni-hist-label": "BNI HISTORY",
-    "bni-hist-text": "4기 의장 · 자이언츠 챕터 · 부산",
-    "quote-label": "MOONEE PHILOSOPHY",
-    "quote-text": "인테리어에서 실패하는 이유는 단 하나,<br><span class='acc'>준비 없이 시작</span>했기 때문입니다.<br>우리는 문제보다 해결을 먼저 준비합니다.",
-    "quote-author": "— 김준래, 무늬디자인 대표",
-    "ref-label": "소개 의뢰",
-    "ref-title": "이런 분을<br><span class='acc'>소개해 주세요</span>",
-    "ref-tags": [
-      "🏠 아파트 인테리어를 계획 중인 꼼꼼한 분",
-      "📊 비교 견적이 필요한 인테리어 고객",
-      "🎨 창의적 디자인·레이아웃이 필요한 분",
-      "😔 타 업체 인테리어에서 실패를 겪은 분",
-      "☕ 카페·요식업·오피스 오픈을 계획 중인 분"
-    ],
-    "connect-label": "Contact",
-    "connect-title": "김준래 대표와<br><span class='acc'>연결하기</span>",
-    "conn1-title": "전화 상담",
-    "conn2-title": "홈페이지",
-    "conn3-title": "인스타그램",
-    "port-label": "포트폴리오",
-    "port-title": "공간이 <span class='acc'>작품</span>이 됩니다",
-    "conn4-title": "유튜브",
-    "conn5-title": "실시간 번역 대화",
-    "float-btn": "지금 바로 상담"
-  },
-  en: {
-    "chapter-badge": "Giants Chapter · Busan",
-    "hero-label": "Interior Consulting",
-    "company-acc": "MooNee", "company-rest": " design",
-    "hero-name": "Junrae Kim · Interior / Spatial Design / 3D Modeling",
-    "hero-slogan": "Two standards of excellence in one space.<br>Reasonable price. Uncompromising quality.",
-    "about-label": "About",
-    "about-title": "When space changes,<br><span class='acc'>life changes</span>",
-    "about-desc": "Interior design is more than construction.<br>It's the art of creating spaces where your life unfolds.<br>MooNee Design preserves quality within a reasonable price.",
-    "why1-title": "Proving <span class='acc'>trust</span> through deadlines",
-    "why1-desc": "Over 1,000 projects completed. Not a single deadline missed. Our promise is our portfolio.",
-    "why2-title": "Results over <span class='acc'>words</span>",
-    "why2-desc": "We don't explain what we'll do — we show you what we've done. The result is the proof.",
-    "why3-title": "Maestro of <span class='acc'>Space</span>",
-    "why3-desc": "From design and construction to scheduling and after-service — all managed as one organic process.",
-    "about-quote": '"Space is the vessel that holds a person.<br>The quality of that vessel determines the quality of life." — Junrae Kim',
-    "stat1-label": "Years of<br>expertise",
-    "stat2-label": "Cumulative<br>projects",
-    "stat3-label": "Schedule<br>compliance rate",
-    "stat4-label": "BNI<br>Giants Chapter",
-    "diff-label": "Difference",
-    "diff-title": "What sets us apart<br><span class='acc'>from ordinary firms?</span>",
-    "diff1-title": "<span class='acc'>20 Years</span> of Know-How",
-    "diff1-desc": "Two decades of accumulated data lets us anticipate variables and prepare solutions before problems arise.",
-    "diff2-title": "With you from <span class='acc'>start to finish</span>",
-    "diff2-desc": "From initial design to the moment your daily life fills the space — we offer one-stop solutions.",
-    "diff3-title": "Experience over <span class='acc'>imagination</span>",
-    "diff3-desc": "Not vague imagination, but near-reality 3D visualization. Reduce anxiety before you start; raise excitement for the finish.",
-    "diff4-title": "<span class='acc'>Decision fatigue?</span> Solved.",
-    "diff4-desc": "Interior design means endless choices. We narrow them down to only the right ones — eliminating decision fatigue.",
-    "bni-label": "BNI Profile",
-    "bni-name": "Junrae Kim",
-    "bni-role": "CEO, MooNee Design · BNI Giants Chapter",
-    "bni-tag1": "4th President", "bni-tag2": "Giants Chapter", "bni-tag3": "Interior Expert",
-    "bni-hist-label": "BNI HISTORY",
-    "bni-hist-text": "4th Period President · Giants Chapter · Busan<br><br>Proven through consistency and commitment.<br>Since joining, arriving first every weekly meeting —<br>opening every BNI session.",
-    "quote-label": "MOONEE PHILOSOPHY",
-    "quote-text": "The reason interior projects fail is simple:<br><span class='acc'>starting without preparation.</span><br>We prepare solutions before problems arise.",
-    "quote-author": "— Junrae Kim, CEO of MooNee Design",
-    "ref-label": "Referrals",
-    "ref-title": "Please introduce<br><span class='acc'>people like these</span>",
-    "ref-tags": [
-      "🏠 Detail-oriented apartment renovation clients",
-      "📊 Clients needing competitive quotes",
-      "🎨 Those who need creative design & layouts",
-      "😔 Clients who've had a bad interior experience",
-      "☕ Café / F&B / office opening planners"
-    ],
-    "connect-label": "Contact",
-    "connect-title": "Connect with<br><span class='acc'>Junrae Kim</span>",
-    "conn1-title": "Phone Consultation",
-    "conn2-title": "Website",
-    "conn3-title": "Instagram",
-    "conn4-title": "YouTube",
-    "conn5-title": "Real-time Translation Chat",
-    "port-label": "Portfolio",
-    "port-title": "Space becomes <span class='acc'>Art</span>",
-    "float-btn": "Book a Consultation"
-  }
-,
-  jp: {
-    "chapter-badge": "ジャイアンツチャプター · 釜山",
-    "hero-label": "インテリアコンサルティング",
-    "company-acc": "MooNee", "company-rest": " design",
-    "hero-name": "キム・ジュンレ代表 · インテリア / 空間デザイン / 3Dモデリング",
-    "hero-slogan": "インテリアに二つの格を込めて<br>合理的な価格、細部を妥協しない品格",
-    "about-label": "About",
-    "about-title": "空間が変われば<br><span class='acc'>人生の質が変わる</span>",
-    "about-desc": "インテリアは単なる施工ではありません。<br>あなたの日常が満たされる空間を設計することです。<br>ムーニーデザインは合理的な価格の中で品格を守ります。",
-    "why1-title": "スケジュールで<span class='acc'>信頼</span>を証明する",
-    "why1-desc": "1,000件以上のプロジェクトを進める中で、一日も納期を破ったことがありません。約束こそが実力です。",
-    "why2-title": "言葉より<span class='acc'>実行</span>で",
-    "why2-desc": "説明するインテリアより、直接体感できる結果で証明します。結果がポートフォリオです。",
-    "why3-title": "空間の<span class='acc'>マエストロ</span>",
-    "why3-desc": "デザイン・施工・スケジュール管理・アフターサービスまで、有機的なプロセスで体系的に運営します。",
-    "about-quote": '"空間は人を包む器です。<br>その器の品格が、生活の温度を決めます。" — キム・ジュンレ',
-    "stat1-label": "インテリア<br>専門経歴",
-    "stat2-label": "累計<br>プロジェクト実績",
-    "stat3-label": "スケジュール<br>遵守率",
-    "stat4-label": "BNI<br>ジャイアンツチャプター",
-    "diff-label": "Difference",
-    "diff-title": "一般的なインテリアと<br><span class='acc'>何が違うのか？</span>",
-    "diff1-title": "<span class='acc'>20年</span>のノウハウ",
-    "diff1-desc": "20年間蓄積されたデータで変数や試行錯誤まで予測し、問題より先に解決策を準備します。",
-    "diff2-title": "始まりから終わりまで<span class='acc'>共に</span>",
-    "diff2-desc": "設計の始まりから、お客様の日常が満たされる瞬間のスタイリングまで、ワンストップで提案します。",
-    "diff3-title": "想像より<span class='acc'>体験</span>で",
-    "diff3-desc": "漠然とした想像ではなく、現実に近い3Dビジュアライゼーションで空間を体感。開始前の不安を減らし、完成への期待を高めます。",
-    "diff4-title": "<span class='acc'>選択疲れ？</span> 解決します",
-    "diff4-desc": "選択の連続であるインテリアで、正解に近い選択肢だけを残し、決定疲労と選択障害を解決するソリューションを提示します。",
-    "bni-label": "BNIプロフィール",
-    "bni-name": "キム・ジュンレ",
-    "bni-role": "ムーニーデザイン代表 · BNI ジャイアンツチャプター",
-    "bni-tag1": "4期チャプタープレジデント", "bni-tag2": "ジャイアンツチャプター", "bni-tag3": "インテリア専門",
-    "bni-hist-label": "BNI HISTORY",
-    "bni-hist-text": "4期チャプタープレジデント · ジャイアンツチャプター · 釜山<br><br>継続と約束で証明します。<br>入会日から現在まで、毎週の定例会に1番乗りで到着し、<br>BNIの始まりを開いています。",
-    "quote-label": "MOONEE PHILOSOPHY",
-    "quote-text": "インテリアで失敗する理由はただ一つ、<br><span class='acc'>準備なしに始めた</span>からです。<br>私たちは問題より先に解決策を準備します。",
-    "quote-author": "— キム・ジュンレ、ムーニーデザイン代表",
-    "ref-label": "ご紹介のお願い",
-    "ref-title": "このような方を<br><span class='acc'>ご紹介ください</span>",
-    "ref-tags": [
-      "🏠 マンションリフォームを検討中の細かい方",
-      "📊 相見積もりが必要なインテリアのお客様",
-      "🎨 クリエイティブなデザインが必要な方",
-      "😔 他社インテリアで失敗を経験した方",
-      "☕ カフェ・飲食店・オフィス開業を計画中の方"
-    ],
-    "connect-label": "Contact",
-    "connect-title": "キム・ジュンレ代表に<br><span class='acc'>つながる</span>",
-    "conn1-title": "電話相談",
-    "conn2-title": "ホームページ",
-    "conn3-title": "インスタグラム",
-    "conn4-title": "ユーチューブ",
-    "conn5-title": "リアルタイム翻訳チャット",
-    "port-label": "ポートフォリオ",
-    "port-title": "空間が<span class='acc'>作品</span>になります",
-    "float-btn": "今すぐ相談"
-  },
-  cn: {
-    "chapter-badge": "巨人分会 · 釜山",
-    "hero-label": "室内设计咨询",
-    "company-acc": "MooNee", "company-rest": " design",
-    "hero-name": "金俊来代表 · 室内设计 / 空间设计 / 3D建模",
-    "hero-slogan": "将两种格调融入室内设计<br>合理价格，不妥协细节的品格",
-    "about-label": "关于我们",
-    "about-title": "空间改变了<br><span class='acc'>生活质量就改变了</span>",
-    "about-desc": "室内设计不仅仅是施工。<br>而是设计一个让您日常生活得以充实的空间。<br>MooNee Design在合理价格内坚守品格。",
-    "why1-title": "用日程证明<span class='acc'>信任</span>",
-    "why1-desc": "完成1,000余个项目，从未有过一天延期。承诺本身就是实力。",
-    "why2-title": "用<span class='acc'>行动</span>而非言语",
-    "why2-desc": "不是用语言解释室内设计，而是用亲身感受到的结果来证明。结果就是作品集。",
-    "why3-title": "空间的<span class='acc'>大师</span>",
-    "why3-desc": "从设计、施工、进度管理到售后服务，通过有机的流程体系化运营。",
-    "about-quote": '"空间是容纳人的容器。<br>容器的品格决定了生活的温度。" — 金俊来',
-    "stat1-label": "室内设计<br>专业经验",
-    "stat2-label": "累计<br>项目业绩",
-    "stat3-label": "进度<br>遵守率",
-    "stat4-label": "BNI<br>巨人分会",
-    "diff-label": "差异化",
-    "diff-title": "与普通室内设计<br><span class='acc'>有何不同？</span>",
-    "diff1-title": "<span class='acc'>20年</span>的专业积累",
-    "diff1-desc": "凭借20年积累的数据，预测变数和试错，提前准备解决方案而非等待问题出现。",
-    "diff2-title": "从始至终<span class='acc'>相伴</span>",
-    "diff2-desc": "从设计开始到客户日常生活填满空间的那一刻的风格设计，提供一站式解决方案。",
-    "diff3-title": "用<span class='acc'>体验</span>代替想象",
-    "diff3-desc": "不是模糊的想象，而是通过接近现实的3D可视化呈现空间，减少开工前的不安，提升对完成效果的期待。",
-    "diff4-title": "<span class='acc'>选择困难？</span>我们来解决",
-    "diff4-desc": "在选择不断的室内设计中，只留下最接近正确答案的选项，提供解决决策疲劳和选择困难的方案。",
-    "bni-label": "BNI简介",
-    "bni-name": "金俊来",
-    "bni-role": "MooNee Design代表 · BNI 巨人分会",
-    "bni-tag1": "第4期主席", "bni-tag2": "巨人分会", "bni-tag3": "室内设计专家",
-    "bni-hist-label": "BNI履历",
-    "bni-hist-text": "第4期主席 · 巨人分会 · 釜山<br><br>用坚持与承诺来证明。<br>从入会至今，每周例会第一个到达，<br>守护着BNI每一次的开始。",
-    "quote-label": "MOONEE PHILOSOPHY",
-    "quote-text": "室内设计失败只有一个原因，<br><span class='acc'>没有准备就开始了。</span><br>我们比问题更早准备好解决方案。",
-    "quote-author": "— 金俊来，MooNee Design代表",
-    "ref-label": "转介绍请求",
-    "ref-title": "请为我介绍<br><span class='acc'>以下类型的客户</span>",
-    "ref-tags": [
-      "🏠 正在规划公寓装修的细心客户",
-      "📊 需要多家比价的室内设计客户",
-      "🎨 需要创意设计与布局的客户",
-      "😔 曾在其他公司装修中遭遇失败的客户",
-      "☕ 计划开设咖啡厅·餐饮·办公室的客户"
-    ],
-    "connect-label": "联系方式",
-    "connect-title": "联系<br><span class='acc'>金俊来代表</span>",
-    "conn1-title": "电话咨询",
-    "conn2-title": "官方网站",
-    "conn3-title": "Instagram",
-    "conn4-title": "YouTube",
-    "conn5-title": "实时翻译对话",
-    "port-label": "作品集",
-    "port-title": "空间成为<span class='acc'>艺术</span>",
-    "float-btn": "立即咨询"
-  },
-  mn: {
-    "chapter-badge": "Жайентс дүүрэг · Бусан",
-    "hero-label": "Interior Consulting",
-    "company-acc": "MooNee", "company-rest": " design",
-    "hero-name": "Ким Жун Рэ ерөнхийлөгч · Интерьер / Дотоод дизайн / 3D загварчлал",
-    "hero-slogan": "Интерьерт хоёр төрлийн эрхэм чанарыг шингээв<br>Хямд үнэ, нарийн ширийн зүйлийг алдахгүй өндөр чанар",
-    "about-label": "Бидний тухай",
-    "about-title": "Орон зай өөрчлөгдвөл<br><span class='acc'>амьдралын чанар өөрчлөгдөнө</span>",
-    "about-desc": "Интерьер зөвхөн барилгын ажил биш.<br>Энэ бол таны өдөр тутмын амьдрал бялхах орон зайг төлөвлөх ажил юм.<br>MooNee Design хямд үнийн хүрээнд өндөр чанараа хадгалдаг.",
-    "why1-title": "Хугацаагаараа <span class='acc'>итгэлээ</span> баталгаажуулдаг",
-    "why1-desc": "1,000 гаруй төслийг гүйцэтгэхдээ нэг ч удаа хугацаа алдаагүй. Амлалт бол чадвар юм.",
-    "why2-title": "Үгээр биш <span class='acc'>үйлдлээр</span>",
-    "why2-desc": "Тайлбарлаж яриад суухаас илүү, биечлэн мэдрэгдэх үр дүнгээр баталгаажуулдаг. Үр дүн бол манай ажлын жагсаалт.",
-    "why3-title": "Орон зайн <span class='acc'>мастер</span>",
-    "why3-desc": "Дизайн, барилга угсралт, хуваарь удирдлага, борлуулалтын дараах үйлчилгээ хүртэл нэгдмэл процессоор системтэй явуулдаг.",
-    "about-quote": '"Орон зай бол хүнийг багтаасан сав юм.<br>Тэр савны эрхэм чанар амьдралын дулааныг тодорхойлдог." — Ким Жун Рэ',
-    "stat1-label": "Интерьерийн<br>мэргэжлийн туршлага",
-    "stat2-label": "Нийт хийсэн<br>төслийн тоо",
-    "stat3-label": "Хуваарь мөрдөлтийн хувь<br>(нэг ч удаа алдаагүй)",
-    "stat4-label": "BNI<br>Жайентс дүүрэг",
-    "diff-label": "Ялгаа",
-    "diff-title": "Энгийн интерьерээс<br><span class='acc'>юугаараа ялгаатай вэ?</span>",
-    "diff1-title": "<span class='acc'>20 жилийн</span> туршлага",
-    "diff1-desc": "20 жилийн турш хуримтлуулсан мэдээллээр өөрчлөлт, алдааг хүртэл урьдчилан таамаглаж, асуудлаас өмнө шийдлээ бэлдэж байдаг.",
-    "diff2-title": "Эхлэлээс төгсгөл хүртэл <span class='acc'>хамтдаа</span>",
-    "diff2-desc": "Зураг төслөөс эхлээд захиалагчийн өдөр тутмын амьдрал орон зайг дүүргэх мөч хүртэлх стайлингийг нэг дороос санал болгодог.",
-    "diff3-title": "Төсөөллөөс илүү <span class='acc'>туршлагаар</span>",
-    "diff3-desc": "Бүрхэг төсөөлөл биш, бодит байдалд ойр 3D дүрслэлээр орон зайг харуулж, эхлэхийн өмнөх түгшүүрийг багасгаж, дуусах хүлээлтийг нэмэгдүүлдэг.",
-    "diff4-title": "<span class='acc'>Сонголтын бэрхшээл?</span> Бид шийднэ",
-    "diff4-desc": "Сонголт дараалсан интерьерийн ажилд зөв хариултад хамгийн ойр сонголтуудыг л үлдээж, шийдвэр гаргах ядаргаа, сонголтын бэрхшээлийг шийддэг.",
-    "bni-label": "BNI танилцуулга",
-    "bni-name": "Ким Жун Рэ",
-    "bni-role": "MooNee Design-ийн ерөнхийлөгч · BNI Жайентс дүүрэг",
-    "bni-tag1": "4-р үеийн дарга", "bni-tag2": "Жайентс дүүрэг", "bni-tag3": "Интерьерийн мэргэжилтэн",
-    "bni-hist-label": "BNI TҮҮХ",
-    "bni-hist-text": "4-р үеийн дарга · Жайентс дүүрэг · Бусан<br><br>Тууштай байдал, амлалтаараа баталгаажуулдаг.<br>Элссэн өдрөөс өнөөг хүртэл долоо хоног бүрийн ээлжит уулзалтад хамгийн түрүүнд ирж,<br>BNI-ийн эхлэлийг нээж байна.",
-    "quote-label": "MOONEE PHILOSOPHY",
-    "quote-text": "Интерьерийн ажил бүтэлгүйтэх шалтгаан ганцхан,<br><span class='acc'>бэлтгэлгүйгээр эхэлсэн</span> явдал юм.<br>Бид асуудлаас өмнө шийдлээ бэлддэг.",
-    "quote-author": "— Ким Жун Рэ, MooNee Design-ийн ерөнхийлөгч",
-    "ref-label": "Танилцуулгын хүсэлт",
-    "ref-title": "Дараах хүмүүсийг<br><span class='acc'>танилцуулаарай</span>",
-    "ref-tags": [
-      "🏠 Орон сууцны интерьерээ төлөвлөж буй нямбай хүн",
-      "📊 Үнийн саналыг харьцуулах шаардлагатай интерьерийн захиалагч",
-      "🎨 Бүтээлч дизайн, зохион байгуулалт хэрэгтэй хүн",
-      "😔 Өөр компанийн интерьерт бүтэлгүйтэл амссан хүн",
-      "☕ Кафе, хоолны газар, оффис нээхээр төлөвлөж буй хүн"
-    ],
-    "connect-label": "Холбоо барих",
-    "connect-title": "Ким Жун Рэ ерөнхийлөгчтэй<br><span class='acc'>холбогдох</span>",
-    "conn1-title": "Утасны зөвлөгөө",
-    "conn2-title": "Вэбсайт",
-    "conn3-title": "Instagram",
-    "conn4-title": "YouTube",
-    "float-btn": "Одоо зөвлөгөө авах"
-  }
-};
+/* 다국어: 각 문구는 <span data-lang="xx"> 로 HTML 안에 있음 (셀프 수정 호환) */
 
 function setLang(lang, btn) {
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
+  if (btn) btn.classList.add('on');
   const langMap = { kr: 'ko', en: 'en', jp: 'ja', cn: 'zh', mn: 'mn' };
   document.documentElement.lang = langMap[lang] || 'ko';
-  const t = T[lang];
-  Object.keys(t).forEach(id => {
-    if (id === 'ref-tags') {
-      const wrap = document.getElementById('ref-tags');
-      if (wrap) wrap.innerHTML = t[id].map(s => `<span class="ref-tag">${s}</span>`).join('');
-    } else {
-      const el = document.getElementById(id);
-      if (el) el.innerHTML = t[id];
-    }
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
   });
 }
 
@@ -1155,5 +838,78 @@ document.querySelectorAll('.fade').forEach(el => io.observe(el));
   setInterval(() => goTo(cur+1), 4000);
 })();
 </script>
+<script>
+/* ── 만두 원클릭 연결 (카드 주인 전용) ────────────────────────── */
+async function _manduWaitFirebase(maxTries) {
+  let tries = 0;
+  while ((typeof firebase === 'undefined' || !firebase.apps || !firebase.apps.length) && tries < (maxTries || 50)) {
+    await new Promise(r => setTimeout(r, 100));
+    tries++;
+  }
+  return typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length > 0;
+}
+async function _manduFinishActivate(user) {
+  const slug = 'mooneedesign';
+  const db = firebase.firestore();
+  const existing = await db.collection('manduid_index').doc(slug).get();
+  if (existing.exists && existing.data().uid !== user.uid) {
+    const btn = document.getElementById('mandu-activate-btn');
+    if (btn) btn.style.display = 'none';
+    const done = document.getElementById('mandu-activate-done');
+    if (done) { done.textContent = 'ℹ️ 이미 연결된 명함이에요'; done.style.display = 'block'; }
+    return;
+  }
+  await db.collection('users').doc(user.uid).set({
+    uid: user.uid, displayName: user.displayName || '', photoURL: user.photoURL || '',
+    email: user.email || '', manduid: slug
+  }, { merge: true });
+  await db.collection('manduid_index').doc(slug).set({
+    uid: user.uid, createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  }, { merge: true });
+  const btn = document.getElementById('mandu-activate-btn');
+  const done = document.getElementById('mandu-activate-done');
+  if (btn) btn.style.display = 'none';
+  if (done) done.style.display = 'block';
+}
+async function activateMandu() {
+  if (!confirm('본인 명함이 맞나요?\n구글 로그인하면 이 명함으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  const btn = document.getElementById('mandu-activate-btn');
+  if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
+  const ready = await _manduWaitFirebase();
+  if (!ready) {
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 실패. 잠시 후 다시 시도해주세요.');
+    return;
+  }
+  try {
+    const auth = firebase.auth();
+    await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      sessionStorage.setItem('_manduPendingSlug', 'mooneedesign');
+      await auth.signInWithRedirect(provider);
+      return;
+    }
+    const result = await auth.signInWithPopup(provider);
+    await _manduFinishActivate(result.user);
+  } catch (e) {
+    console.error('만두 연결 실패:', e);
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 중 오류가 발생했어요.');
+  }
+}
+(async function () {
+  if (!sessionStorage.getItem('_manduPendingSlug')) return;
+  const ready = await _manduWaitFirebase();
+  sessionStorage.removeItem('_manduPendingSlug');
+  if (!ready) return;
+  try {
+    const res = await firebase.auth().getRedirectResult();
+    if (res && res.user) await _manduFinishActivate(res.user);
+  } catch (e) { console.error(e); }
+})();
+</script>
+<script src="https://jinjjabg-hub.github.io/NAMECARD/dica-edit.js" data-repo="bni-giants" data-slug="김준래" defer></script>
 </body>
 </html>

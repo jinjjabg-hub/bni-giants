@@ -118,7 +118,7 @@ body{
   font-size:52px;font-weight:900;letter-spacing:-2px;
   color:var(--white);line-height:1;margin-bottom:10px;
 }
-.hero-name span{color:var(--purple3);}
+.hero-name em{color:var(--purple3);}
 .hero-slogan{
   font-size:13px;font-weight:400;letter-spacing:.5px;
   color:var(--text);opacity:.85;line-height:1.6;
@@ -406,6 +406,9 @@ footer{
 @supports(padding-bottom:env(safe-area-inset-bottom)){
   footer{padding-bottom:calc(28px + env(safe-area-inset-bottom));}
 }
+
+[data-lang]:not(.active){display:none !important;}
+em.acc,.hero-name em{font-style:normal;}
 </style>
 </head>
 <body>
@@ -425,10 +428,10 @@ footer{
   <div class="hero-overlay"></div>
   <div class="bni-badge"><span>BNI · 자이언츠 챕터</span></div>
   <div class="hero-content">
-    <p class="hero-label" id="hero-label">방송장비 · 전광판 전문</p>
+    <p class="hero-label" id="hero-label"><span data-lang="kr" class="active">방송장비 · 전광판 전문</span><span data-lang="en">Broadcast · LED Display Expert</span><span data-lang="jp">放送機器・電光掲示板専門家</span><span data-lang="cn">广播设备 · LED显示屏专家</span><span data-lang="mn">Дуу хүрээлэн, дэлгэцийн мэргэжилтэн</span></p>
     <p class="hero-company">(주)엘로이<em>media</em></p>
-    <h1 class="hero-name" id="hero-name">박<span>성준</span></h1>
-    <p class="hero-slogan" id="hero-slogan">프로오디오 및 비디오시스템인스톨 설계 및 교육</p>
+    <h1 class="hero-name" id="hero-name"><span data-lang="kr" class="active">박<em style="color:var(--purple3)">성준</em></span><span data-lang="en">Park <em style="color:var(--purple3)">Sung-jun</em></span><span data-lang="jp">朴 <em style="color:var(--purple3)">成晙</em></span><span data-lang="cn">朴 <em style="color:var(--purple3)">成晙</em></span><span data-lang="mn">Пак <em style="color:var(--purple3)">Сон Жун</em></span></h1>
+    <p class="hero-slogan" id="hero-slogan"><span data-lang="kr" class="active">프로오디오 및 비디오시스템인스톨 설계 및 교육</span><span data-lang="en">Pro Audio & Video System Installation Design & Education</span><span data-lang="jp">プロオーディオ・映像システム設計・施工・教育</span><span data-lang="cn">专业音响及视频系统安装设计与教育</span><span data-lang="mn">Мэргэжлийн аудио, видео системийн угсралт, дизайн, сургалт</span></p>
   </div>
   <p class="hero-scroll">↓ scroll</p>
 </section>
@@ -438,42 +441,38 @@ footer{
   <div class="character-img-wrap">
     <img src="profile1.jpg" class="character-img" alt="박성준">
   </div>
-  <p class="character-intro" id="char-intro">
-    공간에 소리와 빛을 담는 전문가.<br>
-    LED부터 음향까지, 설계에서 시공까지.<br>
-    박성준 대표가 직접 책임집니다.
-  </p>
+  <p class="character-intro" id="char-intro"><span data-lang="kr" class="active">공간에 소리와 빛을 담는 전문가.<br>LED부터 음향까지, 설계에서 시공까지.<br>박성준 대표가 직접 책임집니다.</span><span data-lang="en">Expert who fills spaces with sound and light.<br>From LED to acoustics, design to installation.<br>CEO Park takes personal responsibility.</span><span data-lang="jp">空間に音と光を届ける専門家。<br>LEDから音響まで、設計から施工まで。<br>朴成晙代表が直接責任を持ちます。</span><span data-lang="cn">用声音和光填满空间的专家。<br>从LED到音响，从设计到施工。<br>朴成晙代表亲自负责。</span><span data-lang="mn">Орон зайд дуу авиа, гэрэл оруулдаг мэргэжилтэн.<br>LED-ээс дуу авиа хүртэл, дизайнаас угсралт хүртэл.<br>Захирал Пак Сон Жун өөрөө хариуцна.</span></p>
 </section>
 
 <!-- ABOUT / WHY -->
 <section class="section section-dark fade-in">
-  <div class="section-tag" id="about-tag">ABOUT</div>
-  <h2 class="section-title" id="about-title">왜 박성준인가</h2>
-  <p class="section-sub" id="about-sub">20년 현장 경험이 만든 차별화된 미디어 솔루션</p>
+  <div class="section-tag" id="about-tag"><span data-lang="kr" class="active">ABOUT</span><span data-lang="en">ABOUT</span><span data-lang="jp">ABOUT</span><span data-lang="cn">关于</span><span data-lang="mn">ТУХАЙ</span></div>
+  <h2 class="section-title" id="about-title"><span data-lang="kr" class="active">왜 박성준인가</span><span data-lang="en">Why Park Sung-jun?</span><span data-lang="jp">なぜ朴成晙なのか</span><span data-lang="cn">为什么选择朴成晙</span><span data-lang="mn">Яагаад Пак Сон Жун гэж</span></h2>
+  <p class="section-sub" id="about-sub"><span data-lang="kr" class="active">20년 현장 경험이 만든 차별화된 미디어 솔루션</span><span data-lang="en">Differentiated media solutions from 20 years of field experience</span><span data-lang="jp">20年の現場経験が生み出した差別化されたメディアソリューション</span><span data-lang="cn">20年现场经验打造的差异化媒体解决方案</span><span data-lang="mn">20 жилийн талбайн туршлагаас төрсөн ялгаатай медиа шийдэл</span></p>
   <div class="why-cards">
     <div class="why-card">
       <div class="why-num">01</div>
-      <div class="why-title" id="why1-title">카카오알파돔 · 부산항 국제여객터미널 · 부산콘서트홀 설계 시공</div>
-      <div class="why-desc" id="why1-desc">대구예술대학교 음향전공 교수 역임. 이론과 실전을 겸비한 검증된 전문가.</div>
+      <div class="why-title" id="why1-title"><span data-lang="kr" class="active">카카오알파돔 · 부산항 국제여객터미널 · 부산콘서트홀 설계 시공</span><span data-lang="en">Kakao Alphadom · Busan Port Terminal · Busan Concert Hall</span><span data-lang="jp">カカオアルファドーム・釜山港国際ターミナル トータルメディア設計施工</span><span data-lang="cn">Kakao Alphadom · 釜山港国际客运码头 整体媒体设计施工</span><span data-lang="mn">Kakao Alphadom · Бусаны олон улсын далайн боомтын терминал · Бусаны концертын танхим — угсралт, дизайн</span></div>
+      <div class="why-desc" id="why1-desc"><span data-lang="kr" class="active">대구예술대학교 음향전공 교수 역임. 이론과 실전을 겸비한 검증된 전문가.</span><span data-lang="en">Former professor of Sound Engineering, Daegu Arts University. Theory meets practice.</span><span data-lang="jp">大邱芸術大学音響工学科教授を歴任。理論と実践を兼ね備えた実証済み専門家。</span><span data-lang="cn">曾任大邱艺术大学音响工程学教授。理论与实践兼备的认证专家。</span><span data-lang="mn">Daegu Arts University-д дуу авианы мэргэжлээр багшилж байсан. Онол, практикийг хослуулсан баталгаатай мэргэжилтэн.</span></div>
     </div>
     <div class="why-card">
       <div class="why-num">02</div>
-      <div class="why-title" id="why2-title">토탈 미디어 설계 구축</div>
-      <div class="why-desc" id="why2-desc">공간에 맞춘 멀티미디어 설계(음향·영상·특수조명·LED 전광판)</div>
+      <div class="why-title" id="why2-title"><span data-lang="kr" class="active">토탈 미디어 설계 구축</span><span data-lang="en">Total Media Design & Build</span><span data-lang="jp">メディア設計・構築</span><span data-lang="cn">媒体设计与构建</span><span data-lang="mn">Медиагийн бүрэн дизайн, угсралт</span></div>
+      <div class="why-desc" id="why2-desc"><span data-lang="kr" class="active">공간에 맞춘 멀티미디어 설계(음향·영상·특수조명·LED 전광판)</span><span data-lang="en">Multi-media design: audio, video, special lighting & LED displays tailored to your space.</span><span data-lang="jp">空間に合わせたカスタムメディア設計で最適な視聴環境を実現します。</span><span data-lang="cn">针对空间的定制媒体设计，打造最佳视听环境。</span><span data-lang="mn">Орон зайд тохирсон олон медиа дизайн (дуу авиа, дүрс бичлэг, тусгай гэрэлтүүлэг, LED дэлгэц)</span></div>
     </div>
     <div class="why-card">
       <div class="why-num">03</div>
-      <div class="why-title" id="why3-title">건축음향까지 고려한 미디어 설계</div>
-      <div class="why-desc" id="why3-desc">이론이 아닌 실전 경험 기반의 솔루션 제공. 현장에서 검증된 노하우.</div>
+      <div class="why-title" id="why3-title"><span data-lang="kr" class="active">건축음향까지 고려한 미디어 설계</span><span data-lang="en">Media Design with Architectural Acoustics</span><span data-lang="jp">建築音響まで考慮したメディア設計</span><span data-lang="cn">考虑建筑声学的媒体设计</span><span data-lang="mn">Барилгын акустикийг харгалзсан медиа дизайн</span></div>
+      <div class="why-desc" id="why3-desc"><span data-lang="kr" class="active">이론이 아닌 실전 경험 기반의 솔루션 제공. 현장에서 검증된 노하우.</span><span data-lang="en">Field-proven solutions, not theory. Expertise validated on-site.</span><span data-lang="jp">理論ではなく実践経験に基づくソリューション。現場で証明されたノウハウ。</span><span data-lang="cn">基于实战经验而非理论的解决方案，现场验证的专业知识。</span><span data-lang="mn">Онол биш, талбайн бодит туршлагад суурилсан шийдэл. Талбай дээр баталгаажсан ур чадвар.</span></div>
     </div>
   </div>
-  <div class="quote-box" id="quote-text">"공간을 완성하는 것은 인테리어가 아니라 소리와 빛이다."</div>
+  <div class="quote-box" id="quote-text"><span data-lang="kr" class="active">"공간을 완성하는 것은 인테리어가 아니라 소리와 빛이다."</span><span data-lang="en">"What completes a space is not interior design, but sound and light."</span><span data-lang="jp">「空間を完成させるのはインテリアではなく、音と光だ。」</span><span data-lang="cn">「完成空间的不是室内设计，而是声音和光。」</span><span data-lang="mn">"Орон зайг төгс болгодог зүйл бол интерьер биш, харин дуу авиа, гэрэл юм."</span></div>
 </section>
 
 <!-- 통계 -->
 <section class="section section-mid fade-in">
   <div class="section-tag">CAREER</div>
-  <h2 class="section-title" id="stats-title">숫자로 보는 경력</h2>
+  <h2 class="section-title" id="stats-title"><span data-lang="kr" class="active">숫자로 보는 경력</span><span data-lang="en">Career in Numbers</span><span data-lang="jp">数字で見るキャリア</span><span data-lang="cn">数字见证经历</span><span data-lang="mn">Тоогоор харуулсан туршлага</span></h2>
   <div class="stats-grid">
     <div class="stat-card">
       <div class="stat-num">4<span class="stat-unit">년</span></div>
@@ -496,36 +495,36 @@ footer{
 
 <!-- DIFFERENCE -->
 <section class="section section-cream fade-in">
-  <div class="section-tag" id="diff-tag">DIFFERENCE</div>
-  <h2 class="section-title" id="diff-title">엘로이미디어만의 강점</h2>
-  <p class="section-sub" id="diff-sub">다른 곳과 다른 이유</p>
+  <div class="section-tag" id="diff-tag"><span data-lang="kr" class="active">DIFFERENCE</span><span data-lang="en">DIFFERENCE</span><span data-lang="jp">特徴</span><span data-lang="cn">优势</span><span data-lang="mn">ЯЛГАА</span></div>
+  <h2 class="section-title" id="diff-title"><span data-lang="kr" class="active">엘로이미디어만의 강점</span><span data-lang="en">What Makes ELROI Different</span><span data-lang="jp">エルロイメディアだけの強み</span><span data-lang="cn">ELROI媒体的独特强项</span><span data-lang="mn">ELROI Media-гийн давуу тал</span></h2>
+  <p class="section-sub" id="diff-sub"><span data-lang="kr" class="active">다른 곳과 다른 이유</span><span data-lang="en">Why we stand apart</span><span data-lang="jp">他とは違う理由</span><span data-lang="cn">与众不同的理由</span><span data-lang="mn">Бусдаас ялгарах шалтгаан</span></p>
   <div class="diff-list">
     <div class="diff-item">
       <div class="diff-icon">🏆</div>
       <div>
-        <div class="diff-title" id="diff1-title">LED 특허 5건 등록</div>
-        <div class="diff-desc" id="diff1-desc">독자적 기술력으로 차별화된 LED 솔루션을 제공합니다.</div>
+        <div class="diff-title" id="diff1-title"><span data-lang="kr" class="active">LED 특허 5건 등록</span><span data-lang="en">5 LED Patents Registered</span><span data-lang="jp">LED特許5件登録</span><span data-lang="cn">LED专利5项登记</span><span data-lang="mn">LED-ийн 5 патент бүртгүүлсэн</span></div>
+        <div class="diff-desc" id="diff1-desc"><span data-lang="kr" class="active">독자적 기술력으로 차별화된 LED 솔루션을 제공합니다.</span><span data-lang="en">Differentiated LED solutions through proprietary technology.</span><span data-lang="jp">独自技術で差別化されたLEDソリューションを提供します。</span><span data-lang="cn">以独有技术提供差异化LED解决方案。</span><span data-lang="mn">Өөрийн технологиор ялгаатай LED шийдлийг санал болгодог.</span></div>
       </div>
     </div>
     <div class="diff-item">
       <div class="diff-icon">🏛️</div>
       <div>
-        <div class="diff-title" id="diff2-title">조달쇼핑몰 등록 · 중증장애인협동조합이사 · 전자조합회원</div>
-        <div class="diff-desc" id="diff2-desc">공공 조달 납품 가능. 사회적 가치와 비즈니스를 함께 추구합니다.</div>
+        <div class="diff-title" id="diff2-title"><span data-lang="kr" class="active">조달쇼핑몰 등록 · 중증장애인협동조합이사 · 전자조합회원</span><span data-lang="en">Government Procurement · Disability Coop Director · Electronics Association</span><span data-lang="jp">調達ショッピングモール登録・重度障害者協同組合理事・電子組合会員</span><span data-lang="cn">政府采购注册 · 重度残疾人合作社理事 · 电子协会会员</span><span data-lang="mn">Төрийн худалдан авалтын дэлгүүрт бүртгэлтэй · Хөгжлийн бэрхшээлтэй иргэдийн хоршооны захирал · Электроникийн холбооны гишүүн</span></div>
+        <div class="diff-desc" id="diff2-desc"><span data-lang="kr" class="active">공공 조달 납품 가능. 사회적 가치와 비즈니스를 함께 추구합니다.</span><span data-lang="en">Certified for public procurement. Pursuing social value alongside business.</span><span data-lang="jp">公共調達対応可能。社会的価値とビジネスを共に追求します。</span><span data-lang="cn">可参与公共采购。同时追求社会价值与商业目标。</span><span data-lang="mn">Төрийн худалдан авалтад оролцох боломжтой. Нийгмийн үнэ цэнэ, бизнесийг хамт эрхэлдэг.</span></div>
       </div>
     </div>
     <div class="diff-item">
       <div class="diff-icon">🎵</div>
       <div>
-        <div class="diff-title" id="diff3-title">야마하 프로오디오 · 디지코 스페셜리스트</div>
-        <div class="diff-desc" id="diff3-desc">글로벌 브랜드 공식 총판으로 정품 장비와 A/S를 보장합니다.</div>
+        <div class="diff-title" id="diff3-title"><span data-lang="kr" class="active">야마하 프로오디오 · 디지코 스페셜리스트</span><span data-lang="en">Yamaha Pro Audio · DiGiCo Specialist</span><span data-lang="jp">ヤマハプロオーディオ・ダサンSR釜山総販</span><span data-lang="cn">雅马哈专业音响 · 多山SR釜山总代理</span><span data-lang="mn">Yamaha Pro Audio · DiGiCo мэргэжилтэн</span></div>
+        <div class="diff-desc" id="diff3-desc"><span data-lang="kr" class="active">글로벌 브랜드 공식 총판으로 정품 장비와 A/S를 보장합니다.</span><span data-lang="en">Official global brand distributor — genuine equipment and A/S guaranteed.</span><span data-lang="jp">グローバルブランド公式総販として正品機器とアフターサービスを保証。</span><span data-lang="cn">全球品牌官方总代理，保证正品设备与售后服务。</span><span data-lang="mn">Дэлхийн брэндийн албан ёсны төлөөлөгч — жинхэнэ тоног төхөөрөмж, засвар үйлчилгээг баталгаажуулна.</span></div>
       </div>
     </div>
     <div class="diff-item">
       <div class="diff-icon">📋</div>
       <div>
-        <div class="diff-title" id="diff4-title">옥외광고사</div>
-        <div class="diff-desc" id="diff4-desc">옥외광고부터 실내 미디어까지 원스톱 서비스 제공.</div>
+        <div class="diff-title" id="diff4-title"><span data-lang="kr" class="active">옥외광고사</span><span data-lang="en">Outdoor Advertising License</span><span data-lang="jp">屋外広告業者</span><span data-lang="cn">户外广告许可</span><span data-lang="mn">Гадна зар сурталчилгааны зөвшөөрөлтэй</span></div>
+        <div class="diff-desc" id="diff4-desc"><span data-lang="kr" class="active">옥외광고부터 실내 미디어까지 원스톱 서비스 제공.</span><span data-lang="en">One-stop service from outdoor to indoor media.</span><span data-lang="jp">屋外広告から室内メディアまでワンストップサービス。</span><span data-lang="cn">从户外广告到室内媒体的一站式服务。</span><span data-lang="mn">Гадна зар сурталчилгаанаас дотоод медиа хүртэл нэг цэгийн үйлчилгээ.</span></div>
       </div>
     </div>
   </div>
@@ -534,8 +533,8 @@ footer{
 <!-- PORTFOLIO -->
 <section class="portfolio-section fade-in">
   <div class="section-tag">PORTFOLIO</div>
-  <h2 class="section-title" id="port-title">실적 리스트</h2>
-  <p class="section-sub" id="port-sub">현장에서 증명된 결과물</p>
+  <h2 class="section-title" id="port-title"><span data-lang="kr" class="active">실적 리스트</span><span data-lang="en">Portfolio</span><span data-lang="jp">ポートフォリオ</span><span data-lang="cn">项目案例</span><span data-lang="mn">Гүйцэтгэсэн ажлын жагсаалт</span></h2>
+  <p class="section-sub" id="port-sub"><span data-lang="kr" class="active">현장에서 증명된 결과물</span><span data-lang="en">Results proven in the field</span><span data-lang="jp">現場で証明された実績</span><span data-lang="cn">现场证明的成果</span><span data-lang="mn">Талбай дээр баталгаажсан үр дүн</span></p>
   <div class="portfolio-slider" id="sliderWrap">
     <button class="portfolio-nav prev" onclick="slidePort(-1)">‹</button>
     <button class="portfolio-nav next" onclick="slidePort(1)">›</button>
@@ -554,13 +553,13 @@ footer{
 <!-- BNI -->
 <section class="bni-section fade-in">
   <div class="section-tag">BNI</div>
-  <h2 class="section-title" id="bni-title">BNI 자이언츠 챕터</h2>
-  <p class="section-sub" id="bni-sub">Givers Gain — 주는 자가 얻는다</p>
+  <h2 class="section-title" id="bni-title"><span data-lang="kr" class="active">BNI 자이언츠 챕터</span><span data-lang="en">BNI Giants Chapter</span><span data-lang="jp">BNI ジャイアンツチャプター</span><span data-lang="cn">BNI巨人分会</span><span data-lang="mn">BNI Giants Chapter</span></h2>
+  <p class="section-sub" id="bni-sub"><span data-lang="kr" class="active">Givers Gain — 주는 자가 얻는다</span><span data-lang="en">Givers Gain</span><span data-lang="jp">Givers Gain — 与える者が得る</span><span data-lang="cn">付出者得到 — Givers Gain</span><span data-lang="mn">Givers Gain — Өгөгч нь олж авдаг</span></p>
   <div class="bni-profile-card">
     <img src="character.png" class="bni-profile-img" alt="박성준">
     <div>
-      <div class="bni-name" id="bni-name">박성준 대표</div>
-      <div class="bni-role" id="bni-role">BNI 자이언츠 챕터 · 3기 멘토팀</div>
+      <div class="bni-name" id="bni-name"><span data-lang="kr" class="active">박성준 대표</span><span data-lang="en">CEO Park Sung-jun</span><span data-lang="jp">朴成晙代表</span><span data-lang="cn">朴成晙代表</span><span data-lang="mn">Захирал Пак Сон Жун</span></div>
+      <div class="bni-role" id="bni-role"><span data-lang="kr" class="active">BNI 자이언츠 챕터 · 3기 멘토팀</span><span data-lang="en">BNI Giants Chapter · Season 3 Mentor Team</span><span data-lang="jp">BNI ジャイアンツチャプター · 2期メンターチーム</span><span data-lang="cn">BNI巨人分会 · 第2期导师组</span><span data-lang="mn">BNI Giants Chapter · 3-р үеийн зөвлөх баг</span></div>
       <div class="bni-tags">
         <span class="bni-tag">방송장비</span>
         <span class="bni-tag">전광판</span>
@@ -573,50 +572,50 @@ footer{
     <div class="bni-history-title">BNI 활동 이력</div>
     <div class="bni-history-item">
       <div class="bni-history-dot"></div>
-      <span id="bni-hist1">BNI 자이언츠 챕터 3기 · 멘토팀</span>
+      <span id="bni-hist1"><span data-lang="kr" class="active">BNI 자이언츠 챕터 3기 · 멘토팀</span><span data-lang="en">BNI Giants Chapter Season 3 · Mentor Team</span><span data-lang="jp">BNI ジャイアンツチャプター 2期 · メンターチーム</span><span data-lang="cn">BNI巨人分会 第2期 · 导师组</span><span data-lang="mn">BNI Giants Chapter 3-р үе · Зөвлөх баг</span></span>
     </div>
   </div>
 </section>
 
 <!-- REFERRAL -->
 <section class="ref-section section fade-in">
-  <div class="section-tag" id="ref-tag">REFERRAL</div>
-  <h2 class="section-title" id="ref-title">이런 분을 소개해 주세요</h2>
-  <p class="section-sub" id="ref-sub">박성준 대표가 가장 잘 도울 수 있는 분들</p>
+  <div class="section-tag" id="ref-tag"><span data-lang="kr" class="active">REFERRAL</span><span data-lang="en">REFERRAL</span><span data-lang="jp">紹介</span><span data-lang="cn">转介绍</span><span data-lang="mn">ТАНИЛЦУУЛГА</span></div>
+  <h2 class="section-title" id="ref-title"><span data-lang="kr" class="active">이런 분을 소개해 주세요</span><span data-lang="en">Please Refer These People</span><span data-lang="jp">こんな方をご紹介ください</span><span data-lang="cn">请介绍这类客户</span><span data-lang="mn">Ийм хүмүүсийг танилцуулж өгнө үү</span></h2>
+  <p class="section-sub" id="ref-sub"><span data-lang="kr" class="active">박성준 대표가 가장 잘 도울 수 있는 분들</span><span data-lang="en">Who CEO Park can help most</span><span data-lang="jp">朴成晙代表が最もお役に立てる方</span><span data-lang="cn">朴成晙代表最能提供帮助的人群</span><span data-lang="mn">Захирал Пак Сон Жун хамгийн сайн тусалж чадах хүмүүс</span></p>
   <div class="ref-tags" id="ref-tags">
-    <span class="ref-tag">📡 미디어 구축이 필요한 기업</span>
-    <span class="ref-tag">🪧 옥외광고 전광판 필요한 기업</span>
-    <span class="ref-tag">🎯 진짜 프로 미디어 전문가가 필요한 분</span>
-    <span class="ref-tag">🏛️ 예술회관·시청·구청 관공서 주무관</span>
-    <span class="ref-tag">🏢 공공기관</span>
+    <span class="ref-tag"><span data-lang="kr" class="active">📡 미디어 구축이 필요한 기업</span><span data-lang="en">📡 Companies needing media installation</span><span data-lang="jp">📡 メディア構築が必要な企業</span><span data-lang="cn">📡 需要媒体建设的企业</span><span data-lang="mn">📡 Медиа угсралт хэрэгтэй компаниуд</span></span>
+    <span class="ref-tag"><span data-lang="kr" class="active">🪧 옥외광고 전광판 필요한 기업</span><span data-lang="en">🪧 Businesses needing outdoor LED displays</span><span data-lang="jp">🪧 屋外広告・電光掲示板が必要な企業</span><span data-lang="cn">🪧 需要户外广告LED屏的企业</span><span data-lang="mn">🪧 Гадна зар сурталчилгааны дэлгэц хэрэгтэй компаниуд</span></span>
+    <span class="ref-tag"><span data-lang="kr" class="active">🎯 진짜 프로 미디어 전문가가 필요한 분</span><span data-lang="en">🎯 Those needing a true media pro</span><span data-lang="jp">🎯 本物のメディア専門家を求める方</span><span data-lang="cn">🎯 需要真正专业媒体专家的人</span><span data-lang="mn">🎯 Жинхэнэ медиа мэргэжилтэн хэрэгтэй хүмүүс</span></span>
+    <span class="ref-tag"><span data-lang="kr" class="active">🏛️ 예술회관·시청·구청 관공서 주무관</span><span data-lang="en">🏛️ Government/arts facility managers</span><span data-lang="jp">🏛️ 文化施設・官公庁の担当者</span><span data-lang="cn">🏛️ 艺术馆·政府机构负责人</span><span data-lang="mn">🏛️ Урлагийн танхим, хотын захиргаа, дүүргийн албан хаагчид</span></span>
+    <span class="ref-tag"><span data-lang="kr" class="active">🏢 공공기관</span><span data-lang="en">🏢 Public institutions</span><span data-lang="jp">🏢 公共機関</span><span data-lang="cn">🏢 公共机构</span><span data-lang="mn">🏢 Төрийн байгууллагууд</span></span>
   </div>
 </section>
 
 <!-- SAVE -->
 <section class="save-section fade-in">
-  <button class="btn-save btn-save-contact" onclick="saveContact()">👤 <span id="btn-contact">연락처 저장</span></button>
-  <button class="btn-save btn-save-holder" onclick="shareCard()">📋 <span id="btn-holder">명함 공유하기</span></button>
-    <button class="btn-save btn-save-holder" onclick="saveToCardbook({dicaUrl:'https://jinjjabg-hub.github.io/bni-giants/박성준/',id:'elroi-parksungjun', name:'박성준', company:'(주)엘로이미디어', role:'대표', phone:'010-93192370', field:'방송장비 전광판', chapter:'자이언츠', url:window.location.href, photo:'profile1.jpg'})">📋 <span id="btn-holder">명함첩에 저장</span></button>
+  <button class="btn-save btn-save-contact" onclick="saveContact()">👤 <span id="btn-contact"><span data-lang="kr" class="active">연락처 저장</span><span data-lang="en">Save Contact</span><span data-lang="jp">連絡先を保存</span><span data-lang="cn">保存联系人</span><span data-lang="mn">Харилцагчийн мэдээлэл хадгалах</span></span></button>
+  <button class="btn-save btn-save-holder" onclick="shareCard()">📋 <span id="btn-share"><span data-lang="kr" class="active">명함 공유하기</span><span data-lang="en">Share Card</span><span data-lang="jp">名刺を共有</span><span data-lang="cn">分享名片</span><span data-lang="mn">Нэрийн хуудас хуваалцах</span></span></button>
+    <button class="btn-save btn-save-holder" onclick="saveToCardbook({dicaUrl:'https://jinjjabg-hub.github.io/bni-giants/박성준/',id:'elroi-parksungjun', name:'박성준', company:'(주)엘로이미디어', role:'대표', phone:'010-93192370', field:'방송장비 전광판', chapter:'자이언츠', url:window.location.href, photo:'profile1.jpg'})">📋 <span id="btn-holder"><span data-lang="kr" class="active">명함첩에 저장</span><span data-lang="en">Save to Card Holder</span><span data-lang="jp">名刺帳に保存</span><span data-lang="cn">保存到名片夹</span><span data-lang="mn">Нэрийн хуудасны цомогт хадгалах</span></span></button>
 </section>
 
 <!-- CONNECT -->
 <section class="connect-section fade-in">
   <div class="section-tag">CONNECT</div>
-  <h2 class="section-title" id="connect-title" style="margin-bottom:20px">연락하기</h2>
+  <h2 class="section-title" id="connect-title" style="margin-bottom:20px"><span data-lang="kr" class="active">연락하기</span><span data-lang="en">Connect</span><span data-lang="jp">お問い合わせ</span><span data-lang="cn">联系方式</span><span data-lang="mn">Холбогдох</span></h2>
   <div class="connect-grid">
     <a href="tel:010-93192370" class="connect-btn">
       <span class="connect-icon">📞</span>
-      <span class="connect-label" id="conn-phone-label">전화</span>
+      <span class="connect-label" id="conn-phone-label"><span data-lang="kr" class="active">전화</span><span data-lang="en">Call</span><span data-lang="jp">電話</span><span data-lang="cn">电话</span><span data-lang="mn">Утас</span></span>
       <span class="connect-value">010-9319-2370</span>
     </a>
     <a href="mailto:psjune97@naver.com" class="connect-btn">
       <span class="connect-icon">✉️</span>
-      <span class="connect-label" id="conn-email-label">이메일</span>
+      <span class="connect-label" id="conn-email-label"><span data-lang="kr" class="active">이메일</span><span data-lang="en">Email</span><span data-lang="jp">メール</span><span data-lang="cn">邮件</span><span data-lang="mn">Имэйл</span></span>
       <span class="connect-value">psjune97@naver.com</span>
     </a>
     <a href="http://www.elroimedia.com" target="_blank" rel="noopener" class="connect-btn">
       <span class="connect-icon">🌐</span>
-      <span class="connect-label" id="conn-web-label">홈페이지</span>
+      <span class="connect-label" id="conn-web-label"><span data-lang="kr" class="active">홈페이지</span><span data-lang="en">Website</span><span data-lang="jp">ウェブサイト</span><span data-lang="cn">官网</span><span data-lang="mn">Вэбсайт</span></span>
       <span class="connect-value">elroimedia.com</span>
     </a>
     <a href="https://instagram.com/seongjune_bass" target="_blank" rel="noopener" class="connect-btn">
@@ -632,7 +631,7 @@ footer{
     <a href="https://jinjjabg-hub.github.io/MANDU/?u=park-seongjune" target="_blank" rel="noopener" class="connect-btn">
       <span class="connect-icon">💬</span>
       <span class="connect-label">MANDU</span>
-      <span class="connect-value" id="conn-mandu-value">실시간 번역 메신저</span>
+      <span class="connect-value" id="conn-mandu-value"><span data-lang="kr" class="active">실시간 번역 메신저</span><span data-lang="en">Live Translation Chat</span><span data-lang="jp">翻訳チャット</span><span data-lang="cn">实时翻译聊天</span><span data-lang="mn">Шууд орчуулгатай чат</span></span>
     </a>
   </div>
 </section>
@@ -640,7 +639,7 @@ footer{
 <!-- QR -->
 <section class="qr-section fade-in">
   <div class="qr-wrap"><img src="qr.png" alt="QR코드"></div>
-  <p class="qr-label" id="qr-label">QR코드를 스캔하면 이 명함을 바로 볼 수 있어요</p>
+  <p class="qr-label" id="qr-label"><span data-lang="kr" class="active">QR코드를 스캔하면 이 명함을 바로 볼 수 있어요</span><span data-lang="en">Scan QR code to view this card instantly</span><span data-lang="jp">QRコードをスキャンすると名刺をすぐ見られます</span><span data-lang="cn">扫描二维码即可立即查看名片</span><span data-lang="mn">QR кодыг уншуулбал энэ нэрийн хуудсыг шууд харах боломжтой</span></p>
 </section>
 
 <div style="padding:14px 20px 4px;text-align:center;">
@@ -661,170 +660,15 @@ footer{
 
 <script>
 // ── 이름 번역 포함 T 객체 ──
-const T = {
-  kr: {
-    "hero-label": "방송장비 · 전광판 전문",
-    "hero-name": "박<span style='color:var(--purple3)'>성준</span>",
-    "hero-slogan": "프로오디오 및 비디오시스템인스톨 설계 및 교육",
-    "char-intro": "공간에 소리와 빛을 담는 전문가.<br>LED부터 음향까지, 설계에서 시공까지.<br>박성준 대표가 직접 책임집니다.",
-    "about-tag": "ABOUT", "about-title": "왜 박성준인가",
-    "about-sub": "20년 현장 경험이 만든 차별화된 미디어 솔루션",
-    "why1-title": "카카오알파돔 · 부산항 국제여객터미널 · 부산콘서트홀 설계 시공",
-    "why1-desc": "대구예술대학교 음향전공 교수 역임. 이론과 실전을 겸비한 검증된 전문가.",
-    "why2-title": "토탈 미디어 설계 구축", "why2-desc": "공간에 맞춘 멀티미디어 설계(음향·영상·특수조명·LED 전광판)",
-    "why3-title": "건축음향까지 고려한 미디어 설계", "why3-desc": "이론이 아닌 실전 경험 기반의 솔루션 제공. 현장에서 검증된 노하우.",
-    "quote-text": "\"공간을 완성하는 것은 인테리어가 아니라 소리와 빛이다.\"",
-    "stats-title": "숫자로 보는 경력",
-    "diff-tag": "DIFFERENCE", "diff-title": "엘로이미디어만의 강점", "diff-sub": "다른 곳과 다른 이유",
-    "diff1-title": "LED 특허 5건 등록", "diff1-desc": "독자적 기술력으로 차별화된 LED 솔루션을 제공합니다.",
-    "diff2-title": "조달쇼핑몰 등록 · 중증장애인협동조합이사 · 전자조합회원", "diff2-desc": "공공 조달 납품 가능. 사회적 가치와 비즈니스를 함께 추구합니다.",
-    "diff3-title": "야마하 프로오디오 · 디지코 스페셜리스트", "diff3-desc": "글로벌 브랜드 공식 총판으로 정품 장비와 A/S를 보장합니다.",
-    "diff4-title": "옥외광고사", "diff4-desc": "옥외광고부터 실내 미디어까지 원스톱 서비스 제공.",
-    "port-title": "실적 리스트", "port-sub": "현장에서 증명된 결과물",
-    "bni-title": "BNI 자이언츠 챕터", "bni-sub": "Givers Gain — 주는 자가 얻는다",
-    "bni-name": "박성준 대표", "bni-role": "BNI 자이언츠 챕터 · 3기 멘토팀",
-    "bni-hist1": "BNI 자이언츠 챕터 3기 · 멘토팀",
-    "ref-tag": "REFERRAL", "ref-title": "이런 분을 소개해 주세요", "ref-sub": "박성준 대표가 가장 잘 도울 수 있는 분들",
-    "ref-tags": ["📡 미디어 구축이 필요한 기업","🪧 옥외광고 전광판 필요한 기업","🎯 진짜 프로 미디어 전문가가 필요한 분","🏛️ 예술회관·시청·구청 관공서 주무관","🏢 공공기관"],
-    "btn-contact": "연락처 저장", "btn-holder": "명함첩에 저장",
-    "connect-title": "연락하기", "conn-phone-label": "전화", "conn-email-label": "이메일", "conn-web-label": "홈페이지", "conn-save-label": "연락처저장",
-    "conn-mandu-value": "실시간 번역 메신저",
-    "qr-label": "QR코드를 스캔하면 이 명함을 바로 볼 수 있어요"
-  },
-  en: {
-    "hero-label": "Broadcast · LED Display Expert",
-    "hero-name": "Park <span style='color:var(--purple3)'>Sung-jun</span>",
-    "hero-slogan": "Pro Audio & Video System Installation Design & Education",
-    "char-intro": "Expert who fills spaces with sound and light.<br>From LED to acoustics, design to installation.<br>CEO Park takes personal responsibility.",
-    "about-tag": "ABOUT", "about-title": "Why Park Sung-jun?",
-    "about-sub": "Differentiated media solutions from 20 years of field experience",
-    "why1-title": "Kakao Alphadom · Busan Port Terminal · Busan Concert Hall",
-    "why1-desc": "Former professor of Sound Engineering, Daegu Arts University. Theory meets practice.",
-    "why2-title": "Total Media Design & Build", "why2-desc": "Multi-media design: audio, video, special lighting & LED displays tailored to your space.",
-    "why3-title": "Media Design with Architectural Acoustics", "why3-desc": "Field-proven solutions, not theory. Expertise validated on-site.",
-    "quote-text": "\"What completes a space is not interior design, but sound and light.\"",
-    "stats-title": "Career in Numbers",
-    "diff-tag": "DIFFERENCE", "diff-title": "What Makes ELROI Different", "diff-sub": "Why we stand apart",
-    "diff1-title": "5 LED Patents Registered", "diff1-desc": "Differentiated LED solutions through proprietary technology.",
-    "diff2-title": "Government Procurement · Disability Coop Director · Electronics Association", "diff2-desc": "Certified for public procurement. Pursuing social value alongside business.",
-    "diff3-title": "Yamaha Pro Audio · DiGiCo Specialist", "diff3-desc": "Official global brand distributor — genuine equipment and A/S guaranteed.",
-    "diff4-title": "Outdoor Advertising License", "diff4-desc": "One-stop service from outdoor to indoor media.",
-    "port-title": "Portfolio", "port-sub": "Results proven in the field",
-    "bni-title": "BNI Giants Chapter", "bni-sub": "Givers Gain",
-    "bni-name": "CEO Park Sung-jun", "bni-role": "BNI Giants Chapter · Season 3 Mentor Team",
-    "bni-hist1": "BNI Giants Chapter Season 3 · Mentor Team",
-    "ref-tag": "REFERRAL", "ref-title": "Please Refer These People", "ref-sub": "Who CEO Park can help most",
-    "ref-tags": ["📡 Companies needing media installation","🪧 Businesses needing outdoor LED displays","🎯 Those needing a true media pro","🏛️ Government/arts facility managers","🏢 Public institutions"],
-    "btn-contact": "Save Contact", "btn-holder": "Save to Card Holder",
-    "connect-title": "Connect", "conn-phone-label": "Call", "conn-email-label": "Email", "conn-web-label": "Website", "conn-save-label": "Save vCard",
-    "conn-mandu-value": "Live Translation Chat",
-    "qr-label": "Scan QR code to view this card instantly"
-  },
-  jp: {
-    "hero-label": "放送機器・電光掲示板専門家",
-    "hero-name": "朴 <span style='color:var(--purple3)'>成晙</span>",
-    "hero-slogan": "プロオーディオ・映像システム設計・施工・教育",
-    "char-intro": "空間に音と光を届ける専門家。<br>LEDから音響まで、設計から施工まで。<br>朴成晙代表が直接責任を持ちます。",
-    "about-tag": "ABOUT", "about-title": "なぜ朴成晙なのか",
-    "about-sub": "20年の現場経験が生み出した差別化されたメディアソリューション",
-    "why1-title": "カカオアルファドーム・釜山港国際ターミナル トータルメディア設計施工",
-    "why1-desc": "大邱芸術大学音響工学科教授を歴任。理論と実践を兼ね備えた実証済み専門家。",
-    "why2-title": "メディア設計・構築", "why2-desc": "空間に合わせたカスタムメディア設計で最適な視聴環境を実現します。",
-    "why3-title": "建築音響まで考慮したメディア設計", "why3-desc": "理論ではなく実践経験に基づくソリューション。現場で証明されたノウハウ。",
-    "quote-text": "「空間を完成させるのはインテリアではなく、音と光だ。」",
-    "stats-title": "数字で見るキャリア",
-    "diff-tag": "特徴", "diff-title": "エルロイメディアだけの強み", "diff-sub": "他とは違う理由",
-    "diff1-title": "LED特許5件登録", "diff1-desc": "独自技術で差別化されたLEDソリューションを提供します。",
-    "diff2-title": "調達ショッピングモール登録・重度障害者協同組合理事・電子組合会員", "diff2-desc": "公共調達対応可能。社会的価値とビジネスを共に追求します。",
-    "diff3-title": "ヤマハプロオーディオ・ダサンSR釜山総販", "diff3-desc": "グローバルブランド公式総販として正品機器とアフターサービスを保証。",
-    "diff4-title": "屋外広告業者", "diff4-desc": "屋外広告から室内メディアまでワンストップサービス。",
-    "port-title": "ポートフォリオ", "port-sub": "現場で証明された実績",
-    "bni-title": "BNI ジャイアンツチャプター", "bni-sub": "Givers Gain — 与える者が得る",
-    "bni-name": "朴成晙代表", "bni-role": "BNI ジャイアンツチャプター · 2期メンターチーム",
-    "bni-hist1": "BNI ジャイアンツチャプター 2期 · メンターチーム",
-    "ref-tag": "紹介", "ref-title": "こんな方をご紹介ください", "ref-sub": "朴成晙代表が最もお役に立てる方",
-    "ref-tags": ["📡 メディア構築が必要な企業","🪧 屋外広告・電光掲示板が必要な企業","🎯 本物のメディア専門家を求める方","🏛️ 文化施設・官公庁の担当者","🏢 公共機関"],
-    "btn-contact": "連絡先を保存", "btn-holder": "名刺帳に保存",
-    "connect-title": "お問い合わせ", "conn-phone-label": "電話", "conn-email-label": "メール", "conn-web-label": "ウェブサイト", "conn-save-label": "連絡先保存",
-    "conn-mandu-value": "翻訳チャット",
-    "qr-label": "QRコードをスキャンすると名刺をすぐ見られます"
-  },
-  cn: {
-    "hero-label": "广播设备 · LED显示屏专家",
-    "hero-name": "朴 <span style='color:var(--purple3)'>成晙</span>",
-    "hero-slogan": "专业音响及视频系统安装设计与教育",
-    "char-intro": "用声音和光填满空间的专家。<br>从LED到音响，从设计到施工。<br>朴成晙代表亲自负责。",
-    "about-tag": "关于", "about-title": "为什么选择朴成晙",
-    "about-sub": "20年现场经验打造的差异化媒体解决方案",
-    "why1-title": "Kakao Alphadom · 釜山港国际客运码头 整体媒体设计施工",
-    "why1-desc": "曾任大邱艺术大学音响工程学教授。理论与实践兼备的认证专家。",
-    "why2-title": "媒体设计与构建", "why2-desc": "针对空间的定制媒体设计，打造最佳视听环境。",
-    "why3-title": "考虑建筑声学的媒体设计", "why3-desc": "基于实战经验而非理论的解决方案，现场验证的专业知识。",
-    "quote-text": "「完成空间的不是室内设计，而是声音和光。」",
-    "stats-title": "数字见证经历",
-    "diff-tag": "优势", "diff-title": "ELROI媒体的独特强项", "diff-sub": "与众不同的理由",
-    "diff1-title": "LED专利5项登记", "diff1-desc": "以独有技术提供差异化LED解决方案。",
-    "diff2-title": "政府采购注册 · 重度残疾人合作社理事 · 电子协会会员", "diff2-desc": "可参与公共采购。同时追求社会价值与商业目标。",
-    "diff3-title": "雅马哈专业音响 · 多山SR釜山总代理", "diff3-desc": "全球品牌官方总代理，保证正品设备与售后服务。",
-    "diff4-title": "户外广告许可", "diff4-desc": "从户外广告到室内媒体的一站式服务。",
-    "port-title": "项目案例", "port-sub": "现场证明的成果",
-    "bni-title": "BNI巨人分会", "bni-sub": "付出者得到 — Givers Gain",
-    "bni-name": "朴成晙代表", "bni-role": "BNI巨人分会 · 第2期导师组",
-    "bni-hist1": "BNI巨人分会 第2期 · 导师组",
-    "ref-tag": "转介绍", "ref-title": "请介绍这类客户", "ref-sub": "朴成晙代表最能提供帮助的人群",
-    "ref-tags": ["📡 需要媒体建设的企业","🪧 需要户外广告LED屏的企业","🎯 需要真正专业媒体专家的人","🏛️ 艺术馆·政府机构负责人","🏢 公共机构"],
-    "btn-contact": "保存联系人", "btn-holder": "保存到名片夹",
-    "connect-title": "联系方式", "conn-phone-label": "电话", "conn-email-label": "邮件", "conn-web-label": "官网", "conn-save-label": "保存名片",
-    "conn-mandu-value": "实时翻译聊天",
-    "qr-label": "扫描二维码即可立即查看名片"
-  },
-  mn: {
-    "hero-label": "Дуу хүрээлэн, дэлгэцийн мэргэжилтэн",
-    "hero-name": "Пак <span style='color:var(--purple3)'>Сон Жун</span>",
-    "hero-slogan": "Мэргэжлийн аудио, видео системийн угсралт, дизайн, сургалт",
-    "char-intro": "Орон зайд дуу авиа, гэрэл оруулдаг мэргэжилтэн.<br>LED-ээс дуу авиа хүртэл, дизайнаас угсралт хүртэл.<br>Захирал Пак Сон Жун өөрөө хариуцна.",
-    "about-tag": "ТУХАЙ", "about-title": "Яагаад Пак Сон Жун гэж",
-    "about-sub": "20 жилийн талбайн туршлагаас төрсөн ялгаатай медиа шийдэл",
-    "why1-title": "Kakao Alphadom · Бусаны олон улсын далайн боомтын терминал · Бусаны концертын танхим — угсралт, дизайн",
-    "why1-desc": "Daegu Arts University-д дуу авианы мэргэжлээр багшилж байсан. Онол, практикийг хослуулсан баталгаатай мэргэжилтэн.",
-    "why2-title": "Медиагийн бүрэн дизайн, угсралт", "why2-desc": "Орон зайд тохирсон олон медиа дизайн (дуу авиа, дүрс бичлэг, тусгай гэрэлтүүлэг, LED дэлгэц)",
-    "why3-title": "Барилгын акустикийг харгалзсан медиа дизайн", "why3-desc": "Онол биш, талбайн бодит туршлагад суурилсан шийдэл. Талбай дээр баталгаажсан ур чадвар.",
-    "quote-text": "\"Орон зайг төгс болгодог зүйл бол интерьер биш, харин дуу авиа, гэрэл юм.\"",
-    "stats-title": "Тоогоор харуулсан туршлага",
-    "diff-tag": "ЯЛГАА", "diff-title": "ELROI Media-гийн давуу тал", "diff-sub": "Бусдаас ялгарах шалтгаан",
-    "diff1-title": "LED-ийн 5 патент бүртгүүлсэн", "diff1-desc": "Өөрийн технологиор ялгаатай LED шийдлийг санал болгодог.",
-    "diff2-title": "Төрийн худалдан авалтын дэлгүүрт бүртгэлтэй · Хөгжлийн бэрхшээлтэй иргэдийн хоршооны захирал · Электроникийн холбооны гишүүн", "diff2-desc": "Төрийн худалдан авалтад оролцох боломжтой. Нийгмийн үнэ цэнэ, бизнесийг хамт эрхэлдэг.",
-    "diff3-title": "Yamaha Pro Audio · DiGiCo мэргэжилтэн", "diff3-desc": "Дэлхийн брэндийн албан ёсны төлөөлөгч — жинхэнэ тоног төхөөрөмж, засвар үйлчилгээг баталгаажуулна.",
-    "diff4-title": "Гадна зар сурталчилгааны зөвшөөрөлтэй", "diff4-desc": "Гадна зар сурталчилгаанаас дотоод медиа хүртэл нэг цэгийн үйлчилгээ.",
-    "port-title": "Гүйцэтгэсэн ажлын жагсаалт", "port-sub": "Талбай дээр баталгаажсан үр дүн",
-    "bni-title": "BNI Giants Chapter", "bni-sub": "Givers Gain — Өгөгч нь олж авдаг",
-    "bni-name": "Захирал Пак Сон Жун", "bni-role": "BNI Giants Chapter · 3-р үеийн зөвлөх баг",
-    "bni-hist1": "BNI Giants Chapter 3-р үе · Зөвлөх баг",
-    "ref-tag": "ТАНИЛЦУУЛГА", "ref-title": "Ийм хүмүүсийг танилцуулж өгнө үү", "ref-sub": "Захирал Пак Сон Жун хамгийн сайн тусалж чадах хүмүүс",
-    "ref-tags": ["📡 Медиа угсралт хэрэгтэй компаниуд","🪧 Гадна зар сурталчилгааны дэлгэц хэрэгтэй компаниуд","🎯 Жинхэнэ медиа мэргэжилтэн хэрэгтэй хүмүүс","🏛️ Урлагийн танхим, хотын захиргаа, дүүргийн албан хаагчид","🏢 Төрийн байгууллагууд"],
-    "btn-contact": "Харилцагчийн мэдээлэл хадгалах", "btn-holder": "Нэрийн хуудасны цомогт хадгалах",
-    "connect-title": "Холбогдох", "conn-phone-label": "Утас", "conn-email-label": "Имэйл", "conn-web-label": "Вэбсайт", "conn-save-label": "Хадгалах",
-    "conn-mandu-value": "Шууд орчуулгатай чат",
-    "qr-label": "QR кодыг уншуулбал энэ нэрийн хуудсыг шууд харах боломжтой"
-  }
-};
+/* 다국어: 각 문구는 <span data-lang="xx"> 로 HTML 안에 있음 (셀프 수정 호환) */
 
 function setLang(lang, btn) {
-  // 버튼 active 상태
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('on'));
-  btn.classList.add('on');
-  const t = T[lang];
-  if (!t) return;
-  Object.keys(t).forEach(function(id) {
-    try {
-      if (id === 'ref-tags') {
-        const wrap = document.getElementById('ref-tags');
-        if (wrap) wrap.innerHTML = t[id].map(function(s){ return '<span class="ref-tag">'+s+'</span>'; }).join('');
-      } else {
-        const el = document.getElementById(id);
-        if (el) el.innerHTML = t[id];
-      }
-    } catch(e) {}
+  if (btn) btn.classList.add('on');
+  const langMap = { kr: 'ko', en: 'en', jp: 'ja', cn: 'zh', mn: 'mn' };
+  document.documentElement.lang = langMap[lang] || 'ko';
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
   });
 }
 
@@ -1005,5 +849,6 @@ async function activateMandu() {
   });
 })();
 </script>
+<script src="https://jinjjabg-hub.github.io/NAMECARD/dica-edit.js" data-repo="bni-giants" data-slug="박성준" defer></script>
 </body>
 </html>
