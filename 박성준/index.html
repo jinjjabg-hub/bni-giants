@@ -639,12 +639,12 @@ em.acc,.hero-name em{font-style:normal;}
 <!-- QR -->
 <section class="qr-section fade-in">
   <div class="qr-wrap"><img src="qr.png" alt="QR코드"></div>
-  <p class="qr-label" id="qr-label"><span data-lang="kr" class="active">QR코드를 스캔하면 이 명함을 바로 볼 수 있어요</span><span data-lang="en">Scan QR code to view this card instantly</span><span data-lang="jp">QRコードをスキャンすると名刺をすぐ見られます</span><span data-lang="cn">扫描二维码即可立即查看名片</span><span data-lang="mn">QR кодыг уншуулбал энэ нэрийн хуудсыг шууд харах боломжтой</span></p>
+  <p class="qr-label" id="qr-label"><span data-lang="kr" class="active">QR코드를 스캔하면 이 비즈홈을 바로 볼 수 있어요</span><span data-lang="en">Scan QR code to view this card instantly</span><span data-lang="jp">QRコードをスキャンすると名刺をすぐ見られます</span><span data-lang="cn">扫描二维码即可立即查看名片</span><span data-lang="mn">QR кодыг уншуулбал энэ нэрийн хуудсыг шууд харах боломжтой</span></p>
 </section>
 
 <div style="padding:14px 20px 4px;text-align:center;">
   <button id="mandu-activate-btn" onclick="activateMandu()" style="background:none;border:1px solid rgba(0,0,0,0.15);color:#888;font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;">
-    💬 본인 명함이신가요? 만두 연결하기 (1회)
+    💬 본인 비즈홈이신가요? 만두 연결하기 (1회)
   </button>
   <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:#888;padding:7px 0;">
     ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
@@ -764,7 +764,7 @@ async function _manduFinishActivate(user) {
     const btn = document.getElementById('mandu-activate-btn');
     if (btn) btn.style.display = 'none';
     const done = document.getElementById('mandu-activate-done');
-    if (done) { done.textContent = 'ℹ️ 이미 연결된 명함이에요'; done.style.display = 'block'; }
+    if (done) { done.textContent = 'ℹ️ 이미 연결된 비즈홈이에요'; done.style.display = 'block'; }
     return;
   }
   await db.collection('users').doc(user.uid).set({
@@ -780,12 +780,12 @@ async function _manduFinishActivate(user) {
   if (done) done.style.display = 'block';
 }
 async function activateMandu() {
-  if (!confirm('본인 명함이 맞나요?\n구글 로그인하면 이 명함으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  if (!confirm('본인 비즈홈이 맞나요?\n구글 로그인하면 이 비즈홈으로 만두 DM을 받을 수 있게 연결돼요.')) return;
   const btn = document.getElementById('mandu-activate-btn');
   if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
   const ready = await _manduWaitFirebase();
   if (!ready) {
-    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
     alert('연결 실패. 잠시 후 다시 시도해주세요.');
     return;
   }
@@ -803,7 +803,7 @@ async function activateMandu() {
     await _manduFinishActivate(result.user);
   } catch (e) {
     console.error('만두 연결 실패:', e);
-    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
     alert('연결 중 오류가 발생했어요.');
   }
 }
