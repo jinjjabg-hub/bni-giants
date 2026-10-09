@@ -587,18 +587,18 @@ footer { background:#000; text-align:center; padding:24px; border-top:1px solid 
   </div>
   <div class="sec-divider"></div>
   <div class="port-grid">
-    <div class="port-item" onclick="openLb(1)"><img src="portfolio/portfolio_01.jpg" alt="1"></div>
-    <div class="port-item" onclick="openLb(2)"><img src="portfolio/portfolio_02.jpg" alt="2"></div>
-    <div class="port-item" onclick="openLb(3)"><img src="portfolio/portfolio_03.jpg" alt="3"></div>
-    <div class="port-item" onclick="openLb(4)"><img src="portfolio/portfolio_04.jpg" alt="4"></div>
-    <div class="port-item" onclick="openLb(5)"><img src="portfolio/portfolio_05.jpg" alt="5"></div>
-    <div class="port-item" onclick="openLb(6)"><img src="portfolio/portfolio_06.jpg" alt="6"></div>
-    <div class="port-item" onclick="openLb(7)"><img src="portfolio/portfolio_07.jpg" alt="7"></div>
-    <div class="port-item" onclick="openLb(8)"><img src="portfolio/portfolio_08.jpg" alt="8"></div>
-    <div class="port-item" onclick="openLb(9)"><img src="portfolio/portfolio_09.jpg" alt="9"></div>
-    <div class="port-item" onclick="openLb(10)"><img src="portfolio/portfolio_10.jpg" alt="10"></div>
-    <div class="port-item" onclick="openLb(11)"><img src="portfolio/portfolio_11.jpg" alt="11"></div>
-    <div class="port-item" onclick="openLb(12)"><img src="portfolio/portfolio_12.jpg" alt="12"></div>
+    <div class="port-item" onclick="openLb(1)"><img src="portfolio_01.jpg" alt="1"></div>
+    <div class="port-item" onclick="openLb(2)"><img src="portfolio_02.jpg" alt="2"></div>
+    <div class="port-item" onclick="openLb(3)"><img src="portfolio_03.jpg" alt="3"></div>
+    <div class="port-item" onclick="openLb(4)"><img src="portfolio_04.jpg" alt="4"></div>
+    <div class="port-item" onclick="openLb(5)"><img src="portfolio_05.jpg" alt="5"></div>
+    <div class="port-item" onclick="openLb(6)"><img src="portfolio_06.jpg" alt="6"></div>
+    <div class="port-item" onclick="openLb(7)"><img src="portfolio_07.jpg" alt="7"></div>
+    <div class="port-item" onclick="openLb(8)"><img src="portfolio_08.jpg" alt="8"></div>
+    <div class="port-item" onclick="openLb(9)"><img src="portfolio_09.jpg" alt="9"></div>
+    <div class="port-item" onclick="openLb(10)"><img src="portfolio_10.jpg" alt="10"></div>
+    <div class="port-item" onclick="openLb(11)"><img src="portfolio_11.jpg" alt="11"></div>
+    <div class="port-item" onclick="openLb(12)"><img src="portfolio_12.jpg" alt="12"></div>
   </div>
 </div>
 <!-- LIGHTBOX -->
@@ -681,7 +681,7 @@ function refSlide(dir){goRef(refIdx+dir);}
 function updateRefCnt(){document.getElementById('ref-counter').textContent=`${refIdx+1} / ${refTotal}`;}
 (()=>{let sx=0;const t=document.getElementById('ref-track');t.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;},{passive:true});t.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)refSlide(dx<0?1:-1);},{passive:true});})();
 function openLb(n){
-  document.getElementById('lb-img').src=`portfolio/portfolio_${String(n).padStart(2,'0')}.jpg`;
+  document.getElementById('lb-img').src=`portfolio_${String(n).padStart(2,'0')}.jpg`;
   document.getElementById('lb-num').textContent=`${n} / 12`;
   document.getElementById('lb').classList.add('open');
   document.body.style.overflow='hidden';
