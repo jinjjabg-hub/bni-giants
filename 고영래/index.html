@@ -20,16 +20,17 @@
 <style>
 
 :root {
-  --navy: #3a2a20;
-  --navy2: #47342a;
-  --navy3: #594133;
-  --gold: #d4a94a;
-  --gold2: #f0cf7a;
+  --navy: #c2570f;
+  --navy2: #cc6215;
+  --navy3: #a94608;
+  --gold: #ffe3a8;
+  --gold2: #fff1cc;
   --light: #fbf4e4;
-  --text-dark: #f0ece0;
-  --text-light: #2e2218;
-  --muted-dark: #d2bb8a;
-  --muted-light: #6b4f2a;
+  --text-dark: #fffaf0;
+  --text-light: #3a2410;
+  --muted-dark: #ffe9c4;
+  --muted-light: #8a4a14;
+  --on-gold: #6b2704;
 }
 
 * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
@@ -53,17 +54,17 @@ span[data-lang].active { display: inline; }
 nav {
   position: fixed; top:0; left:0; right:0; z-index:100;
   max-width: 480px; margin: 0 auto;
-  background: rgba(58,42,32,0.97);
+  background: rgba(158,66,8,0.97);
   backdrop-filter: blur(10px);
   padding: 10px 16px;
   display: flex; justify-content: space-between; align-items: center;
-  border-bottom: 1px solid rgba(201,168,76,0.25);
+  border-bottom: 1px solid rgba(255,227,168,0.25);
 }
 .nav-brand { font-size: 12px; font-weight: 700; color: var(--gold); white-space: nowrap; }
 .lang-btns { display:flex; gap:4px; }
 .lang-btn {
   padding: 5px 8px;
-  border: 1px solid rgba(201,168,76,0.35);
+  border: 1px solid rgba(255,227,168,0.35);
   background: transparent;
   color: var(--muted-dark);
   font-size: 10px; font-weight: 700;
@@ -73,7 +74,7 @@ nav {
   display: flex; align-items:center; justify-content:center;
   font-family: 'Noto Sans KR', sans-serif;
 }
-.lang-btn.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+.lang-btn.active { background: var(--gold); color: var(--on-gold); border-color: var(--gold); }
 
 /* ── HERO ── */
 .hero {
@@ -93,10 +94,10 @@ nav {
   position: absolute; inset:0;
   background: linear-gradient(
     to bottom,
-    rgba(58,42,32,0.1) 0%,
-    rgba(58,42,32,0.15) 40%,
-    rgba(58,42,32,0.75) 75%,
-    rgba(58,42,32,0.95) 100%
+    rgba(160,66,8,0.1) 0%,
+    rgba(160,66,8,0.15) 40%,
+    rgba(160,66,8,0.75) 75%,
+    rgba(160,66,8,0.95) 100%
   );
 }
 .hero-content {
@@ -106,7 +107,7 @@ nav {
 .hero-badge {
   display: inline-block;
   background: var(--gold);
-  color: var(--navy);
+  color: var(--on-gold);
   font-size: 10px; font-weight: 700;
   padding: 4px 12px; border-radius: 20px;
   margin-bottom: 10px; letter-spacing: 1.5px;
@@ -124,7 +125,7 @@ nav {
   background: var(--navy2);
   padding: 16px 20px;
   display: flex; align-items: center; gap:14px;
-  border-bottom: 1px solid rgba(201,168,76,0.12);
+  border-bottom: 1px solid rgba(255,227,168,0.12);
 }
 .profile-img {
   width: 64px; height: 64px; min-width:64px;
@@ -163,7 +164,7 @@ section { padding: 40px 20px; }
 .why-cards { display: flex; flex-direction: column; gap:14px; }
 .why-card {
   background: #fff;
-  border: 1px solid rgba(201,168,76,0.18);
+  border: 1px solid rgba(255,227,168,0.18);
   border-left: 4px solid var(--gold);
   border-radius: 10px; padding: 18px 16px;
 }
@@ -178,7 +179,7 @@ section { padding: 40px 20px; }
 .diff-grid { display: flex; flex-direction: column; gap:12px; }
 .diff-card {
   background: var(--navy3);
-  border: 1px solid rgba(201,168,76,0.12);
+  border: 1px solid rgba(255,227,168,0.12);
   border-radius: 10px; padding: 18px 16px;
 }
 .diff-card h3 { font-size: 14px; font-weight: 700; color: var(--gold); margin-bottom: 8px; line-height: 1.4; }
@@ -198,7 +199,7 @@ section { padding: 40px 20px; }
 .ref-num {
   width: 26px; height: 26px; min-width:26px;
   border-radius: 50%; background: var(--gold);
-  color: var(--navy); font-weight: 700; font-size: 12px;
+  color: var(--on-gold); font-weight: 700; font-size: 12px;
   display: flex; align-items:center; justify-content:center;
   flex-shrink: 0; margin-top: 1px;
 }
@@ -238,12 +239,12 @@ section { padding: 40px 20px; }
 .portfolio-slide img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
 .portfolio-nav { display:flex; align-items:center; justify-content:center; gap:16px; margin-top:14px; }
 .portfolio-btn {
-  background: transparent; border: 1px solid rgba(201,168,76,0.35);
+  background: transparent; border: 1px solid rgba(255,227,168,0.35);
   color: var(--gold); width: 30px; height: 30px; border-radius: 50%;
   font-size: 15px; cursor: pointer; display:flex; align-items:center; justify-content:center;
 }
 .portfolio-dots { display:flex; gap:6px; }
-.portfolio-dot { width:6px; height:6px; border-radius:50%; background: rgba(201,168,76,0.3); transition: all 0.25s; }
+.portfolio-dot { width:6px; height:6px; border-radius:50%; background: rgba(255,227,168,0.3); transition: all 0.25s; }
 .portfolio-dot.active { background: var(--gold); width:18px; border-radius:3px; }
 
 /* ── CONTACT ── */
@@ -284,9 +285,9 @@ section { padding: 40px 20px; }
   transition: all 0.15s; font-family: 'Noto Sans KR', sans-serif;
   min-height: 54px; letter-spacing: 0.3px;
 }
-.btn-primary { background: var(--gold); color: var(--navy); }
+.btn-primary { background: var(--gold); color: var(--on-gold); }
 .btn-secondary { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
-.btn-share { background: linear-gradient(135deg, #b4561a, #d9822b); color: #fff; border: none; }
+.btn-share { background: linear-gradient(135deg, #7a2e05, #983a08); color: #fff; border: none; }
 .btn:active { transform: scale(0.97); opacity: 0.9; }
 
 /* 공유 바텀시트 */
@@ -309,7 +310,7 @@ section { padding: 40px 20px; }
 /* ── FOOTER ── */
 footer {
   background: var(--navy); padding: 24px 20px;
-  text-align: center; border-top: 1px solid rgba(201,168,76,0.12);
+  text-align: center; border-top: 1px solid rgba(255,227,168,0.12);
 }
 footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
 footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.5px; }
@@ -318,7 +319,8 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 strong { font-weight: 800; }
 .about-text strong { color: var(--gold2); }
 .diff-card p strong { color: #fff; }
-h3 strong, .ref-item strong { background: linear-gradient(transparent 62%, rgba(232,137,43,0.38) 62%); }
+h3 strong { background: linear-gradient(transparent 62%, rgba(255,227,168,0.5) 62%); }
+.ref-item strong { background: linear-gradient(transparent 62%, rgba(232,137,43,0.38) 62%); }
 .hero-badge { letter-spacing: 0.3px; line-height: 1.45; font-weight: 500; border-radius: 14px; font-size: 11px; padding: 5px 12px; }
 .hero-badge strong { font-weight: 800; }
 .logo-plate { display: inline-block; background: #fffaf0; border-radius: 10px; padding: 5px 11px; box-shadow: 0 1px 5px rgba(0,0,0,0.28); line-height: 0; }
@@ -332,10 +334,10 @@ h3 strong, .ref-item strong { background: linear-gradient(transparent 62%, rgba(
 footer .company { margin-bottom: 4px; }
 footer .slogan-footer { margin-top: 8px; }
 .ref-num { background: #c2601a; color: #fff; }
-.why-card { border-left-color: #d9822b; }
-.profile-img { border: 3px solid var(--gold); box-shadow: 0 0 0 2px rgba(212,169,74,0.35); }
-.career-badge { background: #6b4f2a; }
-.contact-icon { background: #5a4130; }
+.why-card { border-left-color: #c2570f; }
+.profile-img { border: 3px solid var(--gold); box-shadow: 0 0 0 2px rgba(255,227,168,0.35); }
+.career-badge { background: #c2570f; }
+.contact-icon { background: #c2570f; }
 </style>
 </head>
 <body>
@@ -705,7 +707,7 @@ footer .slogan-footer { margin-top: 8px; }
         <div class="share-btn-icon" style="background:#e8e8e8;">🔗</div><span>링크 복사</span>
       </button>
       <button class="share-btn" onclick="shareQR()">
-        <div class="share-btn-icon" style="background:#3a2a20;">📱</div><span>QR 보기</span>
+        <div class="share-btn-icon" style="background:#c2570f;">📱</div><span>QR 보기</span>
       </button>
     </div>
     <button class="share-cancel" onclick="closeShare()">취소</button>
@@ -714,7 +716,7 @@ footer .slogan-footer { margin-top: 8px; }
 
 <div class="mandu-activate-wrap" style="padding:14px 20px 4px;text-align:center;">
   <button id="mandu-activate-btn" onclick="activateMandu()"
-    style="background:none;border:1px solid rgba(201,168,76,0.3);color:var(--muted-dark);font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
+    style="background:none;border:1px solid rgba(255,227,168,0.3);color:var(--muted-dark);font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
     <span data-lang="kr" class="active">💬 본인 비즈홈이신가요? 만두 연결하기 (1회)</span><span data-lang="en">💬 Is this your BizHome? Connect MANDU (once)</span><span data-lang="jp">💬 ご本人のビズホームですか？MANDUと連携（1回）</span><span data-lang="cn">💬 这是您的BizHome吗？连接MANDU（仅一次）</span>
   </button>
   <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:var(--gold);padding:7px 0;">
