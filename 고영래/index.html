@@ -752,13 +752,47 @@ function setLang(lang) {
     btn.classList.toggle('active', m && m[1] === lang);
   });
 }
+function showToast(msg) {
+  let t = document.getElementById('cardToast');
+  if (!t) {
+    t = document.createElement('div');
+    t.id = 'cardToast';
+    t.style.cssText = 'position:fixed;left:50%;bottom:70px;transform:translateX(-50%);max-width:88%;background:rgba(40,20,5,0.92);color:#fff;padding:12px 16px;border-radius:12px;font-size:13px;line-height:1.5;z-index:10000;text-align:center;box-shadow:0 4px 16px rgba(0,0,0,0.35);';
+    document.body.appendChild(t);
+  }
+  t.textContent = msg;
+  t.style.display = 'block';
+  clearTimeout(t._h);
+  t._h = setTimeout(() => { t.style.display = 'none'; }, 6000);
+}
 function saveContact() {
-  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:고영래\nORG:더케이부산병원\nTITLE:대표원장\nTEL:010-2578-1533\nEMAIL:koyr97@empas.com\nURL:https://jinjjabg-hub.github.io/bni-giants/%EA%B3%A0%EC%98%81%EB%9E%98/\nADR:;;부산광역시 금정구 금정로 244 선국빌딩 더케이부산병원 2층;;;;\nEND:VCARD`;
-  const blob = new Blob([vcard], {type:'text/vcard'});
+  const vcard = [
+    'BEGIN:VCARD', 'VERSION:3.0', 'FN:고영래', 'N:고;영래;;;',
+    'ORG:더케이부산병원', 'TITLE:대표원장',
+    'TEL;TYPE=CELL:010-2578-1533', 'EMAIL:koyr97@empas.com',
+    'URL:https://jinjjabg-hub.github.io/bni-giants/%EA%B3%A0%EC%98%81%EB%9E%98/',
+    'ADR;TYPE=WORK:;;부산광역시 금정구 금정로 244 선국빌딩 더케이부산병원 2층;;;;',
+    'END:VCARD'
+  ].join('\r\n') + '\r\n';
+  const ua = navigator.userAgent;
+  const isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  if (/KAKAOTALK/i.test(ua)) {
+    showToast('카카오톡 안에서는 저장이 막힐 수 있어요. 오른쪽 위 메뉴에서 "다른 브라우저로 열기"를 눌러 주세요.');
+  }
+  if (isIOS) {
+    /* 아이폰: 연락처 파일을 바로 열면 "새로운 연락처" 화면이 뜬다 */
+    window.location.href = 'data:text/x-vcard;charset=utf-8,' + encodeURIComponent(vcard);
+    return;
+  }
+  const blob = new Blob([vcard], {type: 'text/vcard;charset=utf-8'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
   a.download = '고영래.vcf';
+  a.style.display = 'none';
+  document.body.appendChild(a);
   a.click();
+  setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
+  showToast('연락처 파일(고영래.vcf)을 내려받았어요. 알림이나 다운로드 목록에서 열면 연락처에 저장돼요.');
 }
 
 /* ── 비즈홈 공유 ── */
