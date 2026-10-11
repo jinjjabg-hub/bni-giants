@@ -676,7 +676,7 @@ footer .slogan-footer { margin-top: 8px; }
       <span data-lang="jp">📞 連絡先を保存</span>
       <span data-lang="cn">📞 保存联系人</span>
     </button>
-    <button class="btn btn-secondary" onclick="saveToCardbook({id:'koh-youngrae',name:'고영래',nameEn:'Koh Youngrae',title:'대표원장',company:'더케이부산병원',phone:'010-2578-1533',email:'koyr97@empas.com',chapter:'BNI 자이언츠',bni:'',url:window.location.href})">
+    <button class="btn btn-secondary" onclick="cardbookSave()">
       <span data-lang="kr" class="active">🗂️ 카드북에 저장</span>
       <span data-lang="en">🗂️ Save to CardBook</span>
       <span data-lang="jp">🗂️ CardBookに保存</span>
@@ -752,7 +752,7 @@ function setLang(lang) {
     btn.classList.toggle('active', m && m[1] === lang);
   });
 }
-function showToast(msg) {
+function showToast(msg, ms) {
   let t = document.getElementById('cardToast');
   if (!t) {
     t = document.createElement('div');
@@ -763,7 +763,7 @@ function showToast(msg) {
   t.textContent = msg;
   t.style.display = 'block';
   clearTimeout(t._h);
-  t._h = setTimeout(() => { t.style.display = 'none'; }, 6000);
+  t._h = setTimeout(() => { t.style.display = 'none'; }, ms || 7000);
 }
 function saveContact() {
   const vcard = [
@@ -792,7 +792,33 @@ function saveContact() {
   document.body.appendChild(a);
   a.click();
   setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
-  showToast('연락처 파일(고영래.vcf)을 내려받았어요. 알림이나 다운로드 목록에서 열면 연락처에 저장돼요.');
+  showToast('연락처 파일을 내려받았어요. 화면 위 알림(또는 다운로드)에서 "고영래.vcf"를 눌러 연락처 앱으로 열고 "저장"을 눌러 주세요.', 9000);
+}
+
+
+/* ── 카드북 저장: 누르면 바로 안내를 보여 주고, 응답이 없으면 원인 힌트를 알려 준다 ── */
+(function(){
+  const _alert = window.alert;
+  window.alert = function(m){ try { showToast(String(m).replace(/\n/g,' ')); } catch(e){} try { _alert.call(window, m); } catch(e){} };
+})();
+function cardbookSave() {
+  const data = {id:'koh-youngrae',name:'고영래',nameEn:'Koh Youngrae',title:'대표원장',company:'더케이부산병원',phone:'010-2578-1533',email:'koyr97@empas.com',chapter:'BNI 자이언츠',bni:'',url:window.location.href};
+  if (typeof saveToCardbook !== 'function') {
+    showToast('카드북 연결이 아직 안 됐어요. 인터넷을 확인하고 몇 초 뒤 다시 눌러 주세요. (진단: 저장 스크립트 없음)');
+    return;
+  }
+  showToast('카드북에 저장하는 중이에요… 처음이면 구글 로그인 창이 열려요.');
+  try { saveToCardbook(data); }
+  catch (e) { showToast('저장을 시작하지 못했어요: ' + (e && e.message ? e.message : e)); return; }
+  setTimeout(function(){
+    if (document.getElementById('_cb_modal')) return;
+    const done = Array.from(document.querySelectorAll('body > div')).some(function(d){ return /저장됐어요/.test(d.innerText || ''); });
+    if (done) return;
+    let sdk = (typeof firebase !== 'undefined') ? '있음' : '없음';
+    let auth = '없음';
+    try { auth = (typeof _cbAuth !== 'undefined' && _cbAuth) ? '준비됨' : '없음'; } catch(e) {}
+    showToast('응답이 없어요. 크롬/사파리에서 열었는지, 팝업·쿠키 차단이 없는지 확인해 주세요. (진단: 구글 도구 ' + sdk + ', 로그인 ' + auth + ')');
+  }, 10000);
 }
 
 /* ── 비즈홈 공유 ── */
