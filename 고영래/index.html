@@ -769,16 +769,37 @@ function contactGuide(msg) {
   t.textContent = msg;
   setTimeout(() => { if (t.parentNode) t.remove(); }, 8000);
 }
+// 안드로이드용: 누를 때까지 남아 있는 단계 안내
+function contactSteps() {
+  const old = document.getElementById('contactSteps');
+  if (old) old.remove();
+  const m = document.createElement('div');
+  m.id = 'contactSteps';
+  m.style.cssText = "position:fixed;inset:0;z-index:100001;background:rgba(0,0,0,0.6);display:flex;align-items:flex-end;justify-content:center;font-family:'Noto Sans KR',sans-serif;";
+  m.innerHTML = '<div style="background:#fff;color:#222;width:100%;max-width:430px;border-radius:20px 20px 0 0;padding:24px 22px 32px;">'
+    + '<div style="font-size:17px;font-weight:800;margin-bottom:14px;">📞 연락처 저장 2단계</div>'
+    + '<div style="font-size:15px;line-height:1.9;">'
+    + '<b>①</b> 화면 아래나 위 알림에 뜬<br>&nbsp;&nbsp;&nbsp;&nbsp;<b style="color:#b8540c;">' + CONTACT.name + '.vcf → [열기]</b>를 누르세요<br>'
+    + '<b>②</b> 연락처 앱이 열리면 <b style="color:#b8540c;">[저장]</b> 또는 <b style="color:#b8540c;">[가져오기]</b><br>'
+    + '<span style="font-size:13px;color:#777;">"다시 다운로드?" 창이 뜨면 [다시 다운로드]를 누르세요</span></div>'
+    + '<button style="margin-top:18px;width:100%;padding:13px;border:none;border-radius:12px;background:#b8540c;color:#fff;font-size:15px;font-weight:700;">확인</button></div>';
+  m.onclick = e => { if (e.target === m || e.target.tagName === 'BUTTON') m.remove(); };
+  document.body.appendChild(m);
+}
 function saveContact() {
   const ua = navigator.userAgent;
   const vcfUrl = new URL('contact.vcf', location.href).href;
   if (/Android/i.test(ua)) {
-    const q = k => encodeURIComponent(CONTACT[k]);
-    contactGuide('📞 연락처 화면이 열리면\n오른쪽 위 [저장]을 눌러주세요');
-    location.href = 'intent:#Intent;action=android.intent.action.INSERT;type=vnd.android.cursor.dir/raw_contact;'
-      + 'S.name=' + q('name') + ';S.phone=' + q('phone') + ';S.email=' + q('email') + ';'
-      + 'S.company=' + q('company') + ';S.job_title=' + q('title') + ';'
-      + 'S.browser_fallback_url=' + encodeURIComponent(vcfUrl) + ';end';
+    // 안드로이드 브라우저는 웹에서 연락처 앱을 바로 열 수 없어서(보안 정책) 파일을 받고 열어야 한다.
+    // 매번 새 파일로 받아 "다시 다운로드?" 창이 안 뜨게 하고, 다음에 누를 곳을 단계별로 안내한다.
+    const vcf = ['BEGIN:VCARD', 'VERSION:3.0', 'N:고;영래;;;', 'FN:' + CONTACT.name, 'ORG:' + CONTACT.company,
+      'TITLE:' + CONTACT.title, 'TEL;TYPE=CELL:' + CONTACT.phone, 'EMAIL:' + CONTACT.email, 'URL:' + CARD_URL,
+      'ADR;TYPE=WORK:;;부산광역시 금정구 금정로 244 선국빌딩 더케이부산병원 2층;;;;', 'END:VCARD', ''].join('\r\n');
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([vcf], { type: 'text/x-vcard' }));
+    a.download = CONTACT.name + '.vcf';
+    document.body.appendChild(a); a.click(); a.remove();
+    contactSteps();
     return;
   }
   if (/iPhone|iPad|iPod/i.test(ua)) {
