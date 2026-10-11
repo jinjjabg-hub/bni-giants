@@ -779,9 +779,9 @@ function contactSteps() {
   m.innerHTML = '<div style="background:#fff;color:#222;width:100%;max-width:430px;border-radius:20px 20px 0 0;padding:24px 22px 32px;">'
     + '<div style="font-size:17px;font-weight:800;margin-bottom:14px;">📞 연락처 저장 2단계</div>'
     + '<div style="font-size:15px;line-height:1.9;">'
-    + '<b>①</b> 화면 아래나 위 알림에 뜬<br>&nbsp;&nbsp;&nbsp;&nbsp;<b style="color:#b8540c;">' + CONTACT.name + '.vcf → [열기]</b>를 누르세요<br>'
-    + '<b>②</b> 연락처 앱이 열리면 <b style="color:#b8540c;">[저장]</b> 또는 <b style="color:#b8540c;">[가져오기]</b><br>'
-    + '<span style="font-size:13px;color:#777;">"다시 다운로드?" 창이 뜨면 [다시 다운로드]를 누르세요</span></div>'
+    + '<b>①</b> <b style="color:#b8540c;">' + CONTACT.name + '.vcf</b> 를 누르세요<br>'
+    + '<span style="font-size:13px;color:#777;line-height:1.7;display:block;margin:2px 0 6px 22px;">"파일을 다시 다운로드?" 창이 뜨면 → 창 안의 파란 글씨 <b>' + CONTACT.name + '.vcf</b><br>창이 안 뜨면 → 화면 아래·위 알림의 <b>' + CONTACT.name + '.vcf</b></span>'
+    + '<b>②</b> 연락처 앱이 열리면 <b style="color:#b8540c;">[저장]</b></div>'
     + '<button style="margin-top:18px;width:100%;padding:13px;border:none;border-radius:12px;background:#b8540c;color:#fff;font-size:15px;font-weight:700;">확인</button></div>';
   m.onclick = e => { if (e.target === m || e.target.tagName === 'BUTTON') m.remove(); };
   document.body.appendChild(m);
