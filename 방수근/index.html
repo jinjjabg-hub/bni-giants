@@ -599,7 +599,7 @@ footer { text-align:center; padding:32px 24px 40px; background:var(--bg-dark); c
   <span data-lang="mn">SunHyang Candle · Бан Су Гын</span>
 </footer>
 
-<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011"></script>
+<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011b"></script>
 <script>
 function setLang(lang) {
   document.querySelectorAll('[data-lang]').forEach(el => {
@@ -626,6 +626,7 @@ function shareCard() {
 
 function saveContact() {
   const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:방수근\nN:방;수근;;;\nORG:선향양초(SunHyang Candle)\nTITLE:대표\nTEL;TYPE=CELL:010-3551-1983\nURL:${window.location.href}\nEND:VCARD`;
+  if (window.cbSaveContact) return cbSaveContact(vcard);
   const blob = new Blob([vcard], {type:'text/vcard'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
@@ -756,7 +757,8 @@ async function activateMandu() {
     var saveBtn = document.querySelector('.btn-primary');
     var cardBtn = document.querySelector('.btn-secondary');
     if (saveBtn) saveBtn.addEventListener('click', function(){ dicaLog('save_vcard'); });
-    if (cardBtn) cardBtn.addEventListener('click', function(){ dicaLog('save_cardbook'); });
+    // 카드북 저장은 누른 순간이 아니라 실제로 저장에 성공했을 때만 센다
+    window.addEventListener('cardbook:saved', function(){ dicaLog('save_cardbook'); });
 
     var statBtn = document.createElement('div');
     statBtn.textContent = '📊 카드 현황 보기';

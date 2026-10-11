@@ -1026,7 +1026,7 @@ section[id] { scroll-margin-top: 54px; }
   <div class="slogan-footer">Cooked as if for my own family.</div>
 </footer>
 
-<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011"></script>
+<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011b"></script>
 <script>
 function setLang(lang) {
   document.querySelectorAll('[data-lang]').forEach(el => {
@@ -1051,6 +1051,7 @@ URL:https://jinjjabg-hub.github.io/bni-giants/강라감/
 ADR;TYPE=WORK:;;부산 수영구 광안로61번길 60 3층 306호;부산;;;대한민국
 NOTE:두 개의 별도 매장을 운영합니다 — ① 광안리 마도로스(회·딱새우·스시·명품물회, 0507-1431-3950, 최대 100명/룸30명) ② 이탈리안 다이닝 엘레나(문현동, 051-638-7181, 최대 30명 단독대관)
 END:VCARD`;
+  if (window.cbSaveContact) return cbSaveContact(vcard);
   const blob = new Blob([vcard], {type:'text/vcard'});
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
@@ -1221,7 +1222,8 @@ async function activateMandu() {
     var saveBtn = document.querySelector('.btn-primary');
     var cardBtn = document.querySelector('.btn-secondary');
     if (saveBtn) saveBtn.addEventListener('click', function(){ dicaLog('save_vcard'); });
-    if (cardBtn) cardBtn.addEventListener('click', function(){ dicaLog('save_cardbook'); });
+    // 카드북 저장은 누른 순간이 아니라 실제로 저장에 성공했을 때만 센다
+    window.addEventListener('cardbook:saved', function(){ dicaLog('save_cardbook'); });
 
     var statBtn = document.createElement('div');
     statBtn.textContent = '📊 카드 현황 보기';

@@ -741,7 +741,7 @@ footer .slogan-footer { margin-top: 8px; }
   </div>
 </footer>
 
-<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011"></script>
+<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011b"></script>
 <script>
 function setLang(lang) {
   document.querySelectorAll('[data-lang]').forEach(el => {
@@ -752,67 +752,16 @@ function setLang(lang) {
     btn.classList.toggle('active', m && m[1] === lang);
   });
 }
-/* ── 연락처 저장 ──
-   웹페이지는 폰 연락처에 직접 쓸 수 없어서, 파일 다운로드 대신 폰의 연락처 화면을 바로 연다.
-   안드로이드: 연락처 앱 "새 연락처" 화면(이름·번호 채워짐) → 저장 한 번
-   아이폰: 연락처 카드 화면 → "새로운 연락처 생성" 한 번 */
-const CONTACT = { name:'고영래', phone:'010-2578-1533', email:'koyr97@empas.com', company:'더케이부산병원', title:'대표원장' };
-function contactGuide(msg) {
-  let t = document.getElementById('contactGuide');
-  if (!t) {
-    t = document.createElement('div');
-    t.id = 'contactGuide';
-    t.style.cssText = "position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:100000;width:calc(100% - 32px);max-width:400px;background:#1a3a2a;color:#fff;border-radius:14px;padding:14px 16px;box-shadow:0 8px 30px rgba(0,0,0,0.4);font-size:14px;line-height:1.6;font-family:'Noto Sans KR',sans-serif;white-space:pre-line;";
-    t.onclick = () => t.remove();
-    document.body.appendChild(t);
-  }
-  t.textContent = msg;
-  setTimeout(() => { if (t.parentNode) t.remove(); }, 8000);
-}
-// 안드로이드용: 누를 때까지 남아 있는 단계 안내
-function contactSteps() {
-  const old = document.getElementById('contactSteps');
-  if (old) old.remove();
-  const m = document.createElement('div');
-  m.id = 'contactSteps';
-  m.style.cssText = "position:fixed;inset:0;z-index:100001;background:rgba(0,0,0,0.6);display:flex;align-items:flex-end;justify-content:center;font-family:'Noto Sans KR',sans-serif;";
-  m.innerHTML = '<div style="background:#fff;color:#222;width:100%;max-width:430px;border-radius:20px 20px 0 0;padding:24px 22px 32px;">'
-    + '<div style="font-size:17px;font-weight:800;margin-bottom:14px;">📞 연락처 저장 2단계</div>'
-    + '<div style="font-size:15px;line-height:1.9;">'
-    + '<b>①</b> <b style="color:#b8540c;">' + CONTACT.name + '.vcf</b> 를 누르세요<br>'
-    + '<span style="font-size:13px;color:#777;line-height:1.7;display:block;margin:2px 0 6px 22px;">"파일을 다시 다운로드?" 창이 뜨면 → 창 안의 파란 글씨 <b>' + CONTACT.name + '.vcf</b><br>창이 안 뜨면 → 화면 아래·위 알림의 <b>' + CONTACT.name + '.vcf</b></span>'
-    + '<b>②</b> 연락처 앱이 열리면 <b style="color:#b8540c;">[저장]</b></div>'
-    + '<button style="margin-top:18px;width:100%;padding:13px;border:none;border-radius:12px;background:#b8540c;color:#fff;font-size:15px;font-weight:700;">확인</button></div>';
-  m.onclick = e => { if (e.target === m || e.target.tagName === 'BUTTON') m.remove(); };
-  document.body.appendChild(m);
-}
+/* ── 연락처 저장 ── 실제 동작(안드로이드 단계 안내·아이폰 연락처 카드)은 카드북 공통 스크립트(cbSaveContact)가 맡는다 */
 function saveContact() {
-  const ua = navigator.userAgent;
-  const vcfUrl = new URL('contact.vcf', location.href).href;
-  if (/Android/i.test(ua)) {
-    // 안드로이드 브라우저는 웹에서 연락처 앱을 바로 열 수 없어서(보안 정책) 파일을 받고 열어야 한다.
-    // 매번 새 파일로 받아 "다시 다운로드?" 창이 안 뜨게 하고, 다음에 누를 곳을 단계별로 안내한다.
-    const vcf = ['BEGIN:VCARD', 'VERSION:3.0', 'N:고;영래;;;', 'FN:' + CONTACT.name, 'ORG:' + CONTACT.company,
-      'TITLE:' + CONTACT.title, 'TEL;TYPE=CELL:' + CONTACT.phone, 'EMAIL:' + CONTACT.email, 'URL:' + CARD_URL,
-      'ADR;TYPE=WORK:;;부산광역시 금정구 금정로 244 선국빌딩 더케이부산병원 2층;;;;', 'END:VCARD', ''].join('\r\n');
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(new Blob([vcf], { type: 'text/x-vcard' }));
-    a.download = CONTACT.name + '.vcf';
-    document.body.appendChild(a); a.click(); a.remove();
-    contactSteps();
-    return;
-  }
-  if (/iPhone|iPad|iPod/i.test(ua)) {
-    contactGuide('📞 연락처 카드가 열리면\n[새로운 연락처 생성]을 눌러주세요');
-    setTimeout(() => { location.href = vcfUrl; }, 300);
-    return;
-  }
-  // PC: 파일로 내려받기
+  const vcard = ['BEGIN:VCARD', 'VERSION:3.0', 'N:고;영래;;;', 'FN:고영래', 'ORG:더케이부산병원', 'TITLE:대표원장',
+    'TEL;TYPE=CELL:010-2578-1533', 'EMAIL:koyr97@empas.com', 'URL:' + CARD_URL,
+    'ADR;TYPE=WORK:;;부산광역시 금정구 금정로 244 선국빌딩 더케이부산병원 2층;;;;', 'END:VCARD'].join('\r\n');
+  if (window.cbSaveContact) return cbSaveContact(vcard, { iosUrl: new URL('contact.vcf', location.href).href });
   const a = document.createElement('a');
-  a.href = vcfUrl;
-  a.download = CONTACT.name + '.vcf';
+  a.href = URL.createObjectURL(new Blob([vcard], { type: 'text/vcard' }));
+  a.download = '고영래.vcf';
   a.click();
-  contactGuide('📞 내려받은 ' + CONTACT.name + '.vcf 파일을 열어 연락처에 추가해주세요');
 }
 
 /* ── 비즈홈 공유 ── */
