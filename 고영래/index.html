@@ -270,6 +270,19 @@ section { padding: 40px 20px; }
 .contact-label { font-size: 10px; color: #999; }
 .contact-value { font-size: 12px; font-weight: 600; color: var(--text-light); line-height: 1.4; word-break: break-all; }
 
+/* 전체폭 항목(주소 등) — 가운데 정렬 대신 좌측 정렬 가로형으로, 빈 공간 줄이기 */
+.contact-item.wide {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 14px 16px;
+  min-height: auto;
+  gap: 12px;
+}
+.contact-item.wide .contact-icon { margin: 0; }
+.contact-item.wide .contact-text { display: flex; flex-direction: column; gap: 3px; text-align: left; }
+
 /* ── ACTION ── */
 .action { background: var(--navy2); padding: 32px 20px; }
 .btn-group { display: flex; flex-direction: column; gap:12px; }
@@ -645,19 +658,21 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
         <span data-lang="cn">实时翻译聊天</span>
       </div>
     </a>
-    <a class="contact-item" style="grid-column: 1 / -1;" href="https://map.kakao.com/link/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EA%B8%88%EC%A0%95%EA%B5%AC%20%EA%B8%88%EC%A0%95%EB%A1%9C%20244%20%EC%84%A0%EA%B5%AD%EB%B9%8C%EB%94%A9%20%EB%8D%94%EC%BC%80%EC%9D%B4%EB%B6%80%EC%82%B0%EB%B3%91%EC%9B%90%202%EC%B8%B5" target="_blank">
+    <a class="contact-item wide" style="grid-column: 1 / -1;" href="https://map.kakao.com/link/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EA%B8%88%EC%A0%95%EA%B5%AC%20%EA%B8%88%EC%A0%95%EB%A1%9C%20244%20%EC%84%A0%EA%B5%AD%EB%B9%8C%EB%94%A9%20%EB%8D%94%EC%BC%80%EC%9D%B4%EB%B6%80%EC%82%B0%EB%B3%91%EC%9B%90%202%EC%B8%B5" target="_blank">
       <div class="contact-icon">📍</div>
-      <div class="contact-label">
-        <span data-lang="kr" class="active">주소 (탭하면 지도 열림)</span>
-        <span data-lang="en">Address (tap to open map)</span>
-        <span data-lang="jp">住所（タップで地図）</span>
-        <span data-lang="cn">地址（点击打开地图）</span>
-      </div>
-      <div class="contact-value">
-        <span data-lang="kr" class="active">부산광역시 금정구 금정로 244 선국빌딩 더케이부산병원 2층</span>
-        <span data-lang="en">2F, Sunguk Bldg., 244 Geumjeong-ro, Geumjeong-gu, Busan (The K Busan Hospital)</span>
-        <span data-lang="jp">부산광역시 금정구 금정로 244 선국빌딩 더케이부산병원 2층</span>
-        <span data-lang="cn">부산광역시 금정구 금정로 244 선국빌딩 더케이부산병원 2층</span>
+      <div class="contact-text">
+        <div class="contact-label">
+          <span data-lang="kr" class="active">주소 (탭하면 지도 열림)</span>
+          <span data-lang="en">Address (tap to open map)</span>
+          <span data-lang="jp">住所（タップで地図）</span>
+          <span data-lang="cn">地址（点击打开地图）</span>
+        </div>
+        <div class="contact-value">
+          <span data-lang="kr" class="active">부산광역시 금정구 금정로 244 선국빌딩 더케이부산병원 2층</span>
+          <span data-lang="en">2F, Sunguk Bldg., 244 Geumjeong-ro, Geumjeong-gu, Busan (The K Busan Hospital)</span>
+          <span data-lang="jp">부산광역시 금정구 금정로 244 선국빌딩 더케이부산병원 2층</span>
+          <span data-lang="cn">부산광역시 금정구 금정로 244 선국빌딩 더케이부산병원 2층</span>
+        </div>
       </div>
     </a>
   </div>
