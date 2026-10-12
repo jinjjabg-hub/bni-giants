@@ -661,7 +661,7 @@ footer { background:#000; text-align:center; padding:24px; border-top:1px solid 
 </footer>
 
 </div>
-<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011b"></script>
 <script>
 function setLang(lang) {
   document.querySelectorAll('[data-lang]').forEach(el => el.classList.toggle('active', el.getAttribute('data-lang') === lang));
@@ -673,6 +673,7 @@ function shareCard() {
 }
 function saveContact() {
   const v=`BEGIN:VCARD\nVERSION:3.0\nFN:박영심\nN:박;영심;;;\nORG:크로스컬러디자인연구소\nTITLE:대표\nTEL;TYPE=CELL:010-9984-8248\nURL:https://jinjjabg-hub.github.io/bni-giants/박영심/\nEND:VCARD`;
+  if (window.cbSaveContact) return cbSaveContact(v);
   const a=document.createElement('a'); a.href=URL.createObjectURL(new Blob([v],{type:'text/vcard'})); a.download='ParkYoungsim.vcf'; a.click();
 }
 let refIdx=0; const refTotal=5;
@@ -727,7 +728,8 @@ document.addEventListener('DOMContentLoaded',()=>{initRef();});
     var saveBtn = document.querySelector('.btn-primary');
     var cardBtn = document.querySelector('.btn-secondary');
     if (saveBtn) saveBtn.addEventListener('click', function(){ dicaLog('save_vcard'); });
-    if (cardBtn) cardBtn.addEventListener('click', function(){ dicaLog('save_cardbook'); });
+    // 카드북 저장은 누른 순간이 아니라 실제로 저장에 성공했을 때만 센다
+    window.addEventListener('cardbook:saved', function(){ dicaLog('save_cardbook'); });
 
     var statBtn = document.createElement('div');
     statBtn.textContent = '📊 카드 현황 보기';
