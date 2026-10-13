@@ -787,6 +787,8 @@ function saveContact() {
     'ADR;TYPE=WORK:;;부산광역시 금정구 금정로 244 선국빌딩 더케이부산병원 2층;;;;',
     'END:VCARD'
   ].join('\r\n') + '\r\n';
+  /* 공통 연락처 저장(카드북 스크립트): 안드로이드 단계 안내·아이폰 연락처 카드. 다른 카드와 같은 방식 */
+  if (window.cbSaveContact) return cbSaveContact(vcard);
   const ua = navigator.userAgent;
   const isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
   if (/KAKAOTALK/i.test(ua)) {
