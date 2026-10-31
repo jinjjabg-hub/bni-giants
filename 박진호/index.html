@@ -10,7 +10,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://jinjjabg-hub.github.io/BNI-PIONEER-cards/박진호/">
+<meta property="og:url" content="https://jinjjabg-hub.github.io/bni-giants/박진호/">
 <style>
 :root {
   --bg-dark:  #187210;
@@ -726,7 +726,7 @@ footer {
   <button class="btn btn-out" onclick="saveContact()">
     📞 <span data-lang="kr" class="active">연락처 저장</span><span data-lang="en">Save Contact</span><span data-lang="jp">連絡先保存</span><span data-lang="cn">保存联系人</span><span data-lang="mn">Харилцагч хадгалах</span>
   </button>
-  <button class="btn btn-out" onclick="saveToCardbook({id:'parkjinho',name:'박진호',nameEn:'Park Jin-ho',title:'대표',company:'미라클',phone:'010-8111-3388',email:'jh33888@naver.com',chapter:'파이오니어',bni:'멤버',url:window.location.href})">
+  <button class="btn btn-out" onclick="saveToCardbook({id:'parkjinho',name:'박진호',nameEn:'Park Jin-ho',title:'대표',company:'미라클',phone:'010-8111-3388',email:'jh33888@naver.com',chapter:'자이언츠',bni:'멤버',url:window.location.href})">
     🗂️ <span data-lang="kr" class="active">카드북에 저장</span><span data-lang="en">Save Card</span><span data-lang="jp">名刺保存</span><span data-lang="cn">保存名片</span><span data-lang="mn">Нэрийн хуудас хадгалах</span>
   </button>
   <a href="tel:010-8111-3388" class="btn btn-dark">
@@ -811,7 +811,7 @@ function shareCard() {
 }
 
 function saveContact() {
-  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:박진호\nN:박;진호;;;\nORG:미라클\nTITLE:대표\nTEL;TYPE=CELL:010-8111-3388\nEMAIL:jh33888@naver.com\nURL:https://jinjjabg-hub.github.io/BNI-PIONEER-cards/박진호/\nEND:VCARD`;
+  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:박진호\nN:박;진호;;;\nORG:미라클\nTITLE:대표\nTEL;TYPE=CELL:010-8111-3388\nEMAIL:jh33888@naver.com\nURL:https://jinjjabg-hub.github.io/bni-giants/박진호/\nEND:VCARD`;
   if (window.cbSaveContact) return cbSaveContact(vcard);
   const blob = new Blob([vcard], {type:'text/vcard'});
   const a = document.createElement('a');
