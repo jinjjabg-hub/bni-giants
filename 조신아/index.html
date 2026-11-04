@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>조신아 | 아트뱅가드</title>
+<meta property="og:title" content="조신아 | 대표, CEO · 아트뱅가드">
+<meta property="og:description" content="Turning brands into art, spaces into global destinations. 브랜드를 예술로, 공간을 글로벌 관광명소로.">
+<meta property="og:image" content="https://jinjjabg-hub.github.io/bni-giants/%EC%A1%B0%EC%8B%A0%EC%95%84/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jinjjabg-hub.github.io/bni-giants/조신아/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<!-- 언어팩에 따라 폰트 추가: references/languages.md 참고 -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --navy: #16404d;
+  --navy2: #1d4856;
+  --navy3: #27606e;
+  --gold: #f08a76;
+  --gold2: #f7b3a2;
+  --light: #f8efe6;
+  --text-dark: #f0ece0;
+  --text-light: #1a1a2e;
+  --muted-dark: #9fcdd3;
+  --muted-light: #7a5e55;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
+html { font-size: 16px; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--navy);
+  color: var(--text-dark);
+  max-width: 480px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+[data-lang="si"] { font-family: 'Noto Sans Sinhala', sans-serif; }
+[data-lang="ur"] { font-family: 'Noto Nastaliq Urdu', serif; direction: rtl; }
+[data-lang] { display: none; }
+[data-lang].active { display: block; }
+span[data-lang].active { display: inline; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top:0; left:0; right:0; z-index:100;
+  max-width: 480px; margin: 0 auto;
+  background: rgba(22,64,77,0.97);
+  backdrop-filter: blur(10px);
+  padding: 10px 16px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid rgba(240,138,118,0.25);
+}
+.nav-brand { font-size: 12px; font-weight: 700; color: var(--gold); white-space: nowrap; }
+.lang-btns { display:flex; gap:4px; }
+.lang-btn {
+  padding: 5px 8px;
+  border: 1px solid rgba(240,138,118,0.35);
+  background: transparent;
+  color: var(--muted-dark);
+  font-size: 10px; font-weight: 700;
+  cursor: pointer; border-radius: 5px;
+  transition: all 0.2s;
+  min-width: 40px; min-height: 32px;
+  display: flex; align-items:center; justify-content:center;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.lang-btn.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+
+/* ── HERO ── */
+.hero {
+  margin-top: 54px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+.hero img.hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.hero-overlay {
+  position: absolute; inset:0;
+  background: linear-gradient(
+    to bottom,
+    rgba(22,64,77,0.1) 0%,
+    rgba(22,64,77,0.15) 40%,
+    rgba(22,64,77,0.75) 75%,
+    rgba(22,64,77,0.95) 100%
+  );
+}
+.hero-content {
+  position: absolute; bottom:0; left:0; right:0; z-index:2;
+  padding: 24px 20px 22px;
+}
+.hero-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 10px; font-weight: 700;
+  padding: 4px 12px; border-radius: 20px;
+  margin-bottom: 10px; letter-spacing: 1.5px;
+}
+.hero-name {
+  font-size: 34px; font-weight: 700;
+  color: #fff; line-height: 1.15;
+  margin-bottom: 7px; letter-spacing: -0.5px;
+}
+.hero-name [data-lang="ur"] { font-size: 26px; }
+.hero-title { font-size: 13px; color: var(--gold); opacity: 0.95; line-height: 1.5; }
+
+/* ── PROFILE ROW ── */
+.profile-row {
+  background: var(--navy2);
+  padding: 16px 20px;
+  display: flex; align-items: center; gap:14px;
+  border-bottom: 1px solid rgba(240,138,118,0.12);
+}
+.profile-img {
+  width: 64px; height: 64px; min-width:64px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  overflow: hidden; flex-shrink: 0;
+}
+.profile-img img { width:100%; height:100%; object-fit:cover; object-position: center top; }
+.profile-info h2 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.profile-info p { font-size: 12px; color: var(--muted-dark); line-height: 1.5; }
+
+/* ── 공통 섹션 ── */
+section { padding: 40px 20px; }
+.section-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 6px;
+}
+.section-title { font-size: 22px; font-weight: 700; line-height: 1.35; margin-bottom: 22px; }
+
+/* ── ABOUT ── */
+.about { background: var(--navy); }
+.about .section-title { color: #fff; }
+.slogan {
+  font-size: 15px; font-weight: 700;
+  color: var(--gold); margin-bottom: 14px;
+  font-style: italic; line-height: 1.6;
+}
+.about-text { font-size: 14px; line-height: 1.9; color: var(--text-dark); opacity: 0.85; }
+.about-text [data-lang="ur"] { font-size: 15px; line-height: 2.2; }
+
+/* ── WHY ── */
+.why { background: var(--light); }
+.why .section-label { color: var(--muted-light); }
+.why .section-title { color: var(--text-light); }
+.why-cards { display: flex; flex-direction: column; gap:14px; }
+.why-card {
+  background: #fff;
+  border: 1px solid rgba(240,138,118,0.18);
+  border-left: 4px solid var(--gold);
+  border-radius: 10px; padding: 18px 16px;
+}
+.why-card h3 { font-size: 15px; font-weight: 700; color: var(--text-light); margin-bottom: 8px; line-height: 1.4; }
+.why-card p { font-size: 13px; line-height: 1.85; color: #444; }
+.why-card p [data-lang="ur"] { font-size: 14px; line-height: 2.2; }
+.why-card p strong { color: var(--navy); font-weight: 700; }
+
+/* ── DIFFERENCE ── */
+.difference { background: var(--navy2); }
+.difference .section-title { color: #fff; }
+.diff-grid { display: flex; flex-direction: column; gap:12px; }
+.diff-card {
+  background: var(--navy3);
+  border: 1px solid rgba(240,138,118,0.12);
+  border-radius: 10px; padding: 18px 16px;
+}
+.diff-card h3 { font-size: 14px; font-weight: 700; color: var(--gold); margin-bottom: 8px; line-height: 1.4; }
+.diff-card p { font-size: 13px; line-height: 1.8; color: var(--text-dark); opacity: 0.8; }
+.diff-card p [data-lang="ur"] { font-size: 14px; line-height: 2.2; }
+
+/* ── REFERRAL ── */
+.referral { background: var(--light); }
+.referral .section-label { color: var(--muted-light); }
+.referral .section-title { color: var(--text-light); }
+.ref-list { display: flex; flex-direction: column; gap:10px; }
+.ref-item {
+  display: flex; gap:12px; align-items:flex-start;
+  background: #fff; border-radius: 10px;
+  padding: 15px 14px; border: 1px solid rgba(0,0,0,0.05);
+}
+.ref-num {
+  width: 26px; height: 26px; min-width:26px;
+  border-radius: 50%; background: var(--gold);
+  color: var(--navy); font-weight: 700; font-size: 12px;
+  display: flex; align-items:center; justify-content:center;
+  flex-shrink: 0; margin-top: 1px;
+}
+.ref-item p { font-size: 13px; line-height: 1.8; color: #333; }
+.ref-item p [data-lang="ur"] { font-size: 14px; line-height: 2.2; }
+
+/* ── CAREER ── */
+.career {
+  position: relative;
+  background-color: #f3e8de;
+}
+.career .section-label { position: relative; z-index:1; color: var(--muted-light); }
+.career .section-title { color: var(--text-light); position: relative; z-index:1; }
+.career-list { display: flex; flex-direction: column; gap:18px; position: relative; z-index:1; }
+.career-item {
+  display: flex; gap:12px; align-items:flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+.career-item:last-child { border-bottom: none; padding-bottom: 0; }
+.career-badge {
+  background: var(--navy); color: #fff;
+  font-size: 10px; font-weight: 700;
+  padding: 4px 10px; border-radius: 4px;
+  white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+}
+.career-content { background: rgba(255,255,255,0.82); border-radius: 8px; padding: 12px 14px; flex:1; }
+.career-item h3 { font-size: 14px; font-weight: 700; color: var(--text-light); margin-bottom: 7px; line-height: 1.4; }
+.career-item p { font-size: 12px; line-height: 1.85; color: #555; }
+
+/* ── PORTFOLIO (선택 섹션 — portfolio1.jpg 이상 있을 때만 사용) ── */
+.portfolio { background: var(--navy); }
+.portfolio .section-title { color: #fff; }
+.portfolio-track-wrap { overflow: hidden; border-radius: 12px; }
+.portfolio-track { display: flex; transition: transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94); }
+.portfolio-slide { min-width: 100%; aspect-ratio: 3/4; overflow: hidden; }
+.portfolio-slide img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+.portfolio-nav { display:flex; align-items:center; justify-content:center; gap:16px; margin-top:14px; }
+.portfolio-btn {
+  background: transparent; border: 1px solid rgba(240,138,118,0.35);
+  color: var(--gold); width: 30px; height: 30px; border-radius: 50%;
+  font-size: 15px; cursor: pointer; display:flex; align-items:center; justify-content:center;
+}
+.portfolio-dots { display:flex; gap:6px; }
+.portfolio-dot { width:6px; height:6px; border-radius:50%; background: rgba(240,138,118,0.3); transition: all 0.25s; }
+.portfolio-dot.active { background: var(--gold); width:18px; border-radius:3px; }
+
+/* ── CONTACT ── */
+.contact { background: var(--light); }
+.contact .section-label { color: var(--muted-light); }
+.contact .section-title { color: var(--text-light); }
+.contact-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.contact-item {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; text-align: center;
+  background: #fff; border-radius: 12px;
+  padding: 16px 10px; border: 1px solid rgba(0,0,0,0.05);
+  text-decoration: none; min-height: 100px;
+}
+.contact-item:active { transform: scale(0.97); }
+.contact-icon {
+  width: 42px; height: 42px; min-width:42px;
+  border-radius: 50%; background: var(--navy);
+  display: flex; align-items:center; justify-content:center;
+  font-size: 18px; flex-shrink: 0;
+}
+.contact-label { font-size: 10px; color: #999; }
+.contact-value { font-size: 12px; font-weight: 600; color: var(--text-light); line-height: 1.4; word-break: break-all; }
+
+/* ── ACTION ── */
+.action { background: var(--navy2); padding: 32px 20px; }
+.btn-group { display: flex; flex-direction: column; gap:12px; }
+.btn {
+  display: block; width: 100%; padding: 17px 16px;
+  border: none; border-radius: 10px;
+  font-size: 15px; font-weight: 700;
+  cursor: pointer; text-align: center;
+  transition: all 0.15s; font-family: 'Noto Sans KR', sans-serif;
+  min-height: 54px; letter-spacing: 0.3px;
+}
+.btn-primary { background: var(--gold); color: var(--navy); }
+.btn-secondary { background: transparent; border: 2px solid var(--gold); color: var(--gold); }
+.btn-share { background: linear-gradient(135deg, #2f8fa3, #49abbb); color: #fff; border: none; }
+.btn:active { transform: scale(0.97); opacity: 0.9; }
+
+/* 공유 바텀시트 */
+.share-sheet { display:none; position:fixed; inset:0; z-index:200; }
+.share-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.5); }
+.share-panel {
+  position:absolute; bottom:0; left:0; right:0;
+  max-width:480px; margin:0 auto;
+  background:#fff; border-radius:20px 20px 0 0;
+  padding:20px 20px 40px;
+}
+.share-handle { width:40px; height:4px; background:#ddd; border-radius:2px; margin:0 auto 18px; }
+.share-title { font-size:13px; color:#999; text-align:center; margin-bottom:20px; font-weight:600; }
+.share-btns { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:16px; }
+.share-btn { display:flex; flex-direction:column; align-items:center; gap:8px; background:none; border:none; cursor:pointer; padding:8px 4px; }
+.share-btn-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; }
+.share-btn span { font-size:11px; color:#333; font-weight:600; font-family:'Noto Sans KR',sans-serif; }
+.share-cancel { width:100%; padding:14px; background:#f2f2f2; border:none; border-radius:10px; font-size:15px; font-weight:700; color:#444; cursor:pointer; font-family:'Noto Sans KR',sans-serif; }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy); padding: 24px 20px;
+  text-align: center; border-top: 1px solid rgba(240,138,118,0.12);
+}
+footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
+footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.5px; }
+
+.lang-btn{min-width:34px!important;padding:5px 6px!important;font-size:10px!important}
+.lang-btns{gap:3px!important}
+.nav-brand{font-size:11px!important}
+.portfolio-slide{aspect-ratio:16/9!important;background:#0f2f3a;cursor:zoom-in}
+.portfolio-slide img{object-fit:contain!important}
+.career-badge{display:inline-block}
+.hero-badge{color:#16404d}
+.contact-icon{background:var(--navy3)}
+.contact-item.wide{grid-column:1/-1}
+</style></head>
+<body>
+<nav>
+  <div class="nav-brand"><span data-lang="kr" class="active">아트뱅가드</span><span data-lang="jp">アートバンガード</span><span data-lang="cn">ArtVanguard</span><span data-lang="en">ArtVanguard</span><span data-lang="it">ArtVanguard</span></div>
+  <div class="lang-btns">
+    <button class="lang-btn active" onclick="setLang('kr')">한국어</button>
+    <button class="lang-btn" onclick="setLang('jp')">日本語</button>
+    <button class="lang-btn" onclick="setLang('cn')">中文</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('it')">IT</button>
+  </div>
+</nav>
+<div class="hero">
+  <img class="hero-img" src="hero.png" alt="조신아">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span data-lang="kr" class="active">아트 브랜딩</span><span data-lang="jp">アートブランディング</span><span data-lang="cn">艺术品牌</span><span data-lang="en">ART BRANDING</span><span data-lang="it">ART BRANDING</span></div>
+    <div class="hero-name"><span data-lang="kr" class="active">조 신 아</span><span data-lang="jp">チョ・シナ</span><span data-lang="cn">赵 信雅</span><span data-lang="en">Jo Sin-Ah</span><span data-lang="it">Jo Sin-Ah</span></div>
+    <div class="hero-title"><span data-lang="kr" class="active">대표 · CEO · 아트뱅가드</span><span data-lang="jp">代表 · CEO · アートバンガード</span><span data-lang="cn">代表 · CEO · ArtVanguard</span><span data-lang="en">CEO · ArtVanguard</span><span data-lang="it">CEO · ArtVanguard</span></div>
+  </div>
+</div>
+<div class="profile-row">
+  <div class="profile-img"><img src="profil.png" alt="조신아"></div>
+  <div class="profile-info">
+    <h2>조신아 · Jo Sin-Ah</h2>
+    <p><span data-lang="kr" class="active">아트 브랜딩 · 브랜드 스토리 기반 예술 콘텐츠 개발</span><span data-lang="jp">アートブランディング · ブランドストーリーに基づくアートコンテンツ開発</span><span data-lang="cn">艺术品牌 · 基于品牌故事的艺术内容开发</span><span data-lang="en">Art Branding · Art content built on brand stories</span><span data-lang="it">Art Branding · Contenuti artistici basati sulla storia del brand</span></p>
+  </div>
+</div>
+<section class="about">
+  <div class="section-label">About</div>
+  <div class="slogan"><span data-lang="kr" class="active">브랜드를 예술로, 공간을 글로벌 관광명소로.</span><span data-lang="jp">ブランドをアートに、空間をグローバルな観光名所に。</span><span data-lang="cn">让品牌成为艺术，让空间成为全球旅游名所。</span><span data-lang="en">Turning brands into art, spaces into global destinations.</span><span data-lang="it">Il brand diventa arte, lo spazio una meta turistica globale.</span></div>
+  <p class="about-text"><span data-lang="kr" class="active">아트뱅가드는 사람과 브랜드가 품은 철학과 고유한 이야기를 예술로 창작하는 아트 브랜딩 기업입니다. 하나의 이야기를 작품과 음악, 아트굿즈, 공간 경험으로 확장하여 브랜드만의 차별화된 가치를 만듭니다. 나아가 지역 브랜드와 공간을 연결하는 오감형 문화예술관광 아트맵을 통해 지속 가능한 문화예술관광 생태계를 구축하고 있습니다.</span><span data-lang="jp">アートバンガードは、人とブランドが秘める哲学と固有の物語をアートとして創作するアートブランディング企業です。ひとつの物語を作品、音楽、アートグッズ、空間体験へと拡張し、ブランドだけの差別化された価値をつくります。さらに、地域ブランドと空間をつなぐ五感型の文化芸術観光アートマップを通じて、持続可能な文化芸術観光エコシステムを築いています。</span><span data-lang="cn">ArtVanguard 是一家以艺术创作人与品牌所蕴含的哲学与独特故事的艺术品牌企业。我们将一个故事拓展为作品、音乐、艺术周边与空间体验，打造品牌独有的差异化价值。同时，通过连接地区品牌与空间的五感型文化艺术旅游艺术地图，构建可持续的文化艺术旅游生态。</span><span data-lang="en">ArtVanguard is an art branding company that turns the philosophy and unique story of people and brands into art. We expand a single story into artworks, music, art goods and spatial experiences to create a brand's distinctive value. We are also building a sustainable cultural art-tourism ecosystem through five-senses art maps that connect local brands and spaces.</span><span data-lang="it">ArtVanguard è un'azienda di art branding che trasforma in arte la filosofia e la storia uniche di persone e brand. Estendiamo una storia in opere, musica, art goods ed esperienze spaziali per creare un valore distintivo. Costruiamo inoltre un ecosistema sostenibile di turismo artistico e culturale con art map a cinque sensi che collegano brand e spazi locali.</span></p>
+</section>
+<section class="why">
+  <div class="section-label">Why Us</div>
+  <div class="section-title"><span data-lang="kr" class="active">왜 아트뱅가드인가</span><span data-lang="jp">なぜアートバンガードなのか</span><span data-lang="cn">为什么选择 ArtVanguard</span><span data-lang="en">Why ArtVanguard?</span><span data-lang="it">Perché ArtVanguard</span></div>
+  <div class="why-cards"><div class="why-card"><h3><span data-lang="kr" class="active">① 브랜드의 철학과 스토리를 예술적 자산으로 개발</span><span data-lang="jp">① ブランドの哲学とストーリーを芸術的資産へ</span><span data-lang="cn">① 将品牌哲学与故事开发为艺术资产</span><span data-lang="en">① Brand philosophy and story, developed into artistic assets</span><span data-lang="it">① Filosofia e storia del brand trasformate in patrimonio artistico</span></h3><p><span data-lang="kr" class="active">디지털디자인학 박사, 예술·디자인·브랜딩 분야 <strong>17년</strong> 경력으로 브랜드의 이야기를 작품으로 만듭니다.</span><span data-lang="jp">デジタルデザイン博士。アート・デザイン・ブランディング分野<strong>17年</strong>の経験で、ブランドの物語を作品にします。</span><span data-lang="cn">数字设计学博士，凭借艺术·设计·品牌领域<strong>17年</strong>经验，将品牌故事创作成作品。</span><span data-lang="en">A Ph.D. in Digital Design with <strong>17 years</strong> in art, design and branding turns your brand story into artwork.</span><span data-lang="it">Dottorato in Digital Design e <strong>17 anni</strong> di esperienza in arte, design e branding: la storia del brand diventa opera.</span></p></div><div class="why-card"><h3><span data-lang="kr" class="active">② 작품·음악·굿즈·공간을 체험으로 연결</span><span data-lang="jp">② 作品・音楽・グッズ・空間を体験でつなぐ</span><span data-lang="cn">② 将作品·音乐·周边·空间连接为体验</span><span data-lang="en">② Artwork, music, goods and space linked into one experience</span><span data-lang="it">② Opere, musica, merchandising e spazio uniti in un'unica esperienza</span></h3><p><span data-lang="kr" class="active">그림, 음악, 이야기, 굿즈, 공간, 경험을 연결해 <strong>하나의 브랜드 세계관</strong>을 만드는 오감형 브랜드 경험입니다.</span><span data-lang="jp">絵、音楽、物語、グッズ、空間、体験をつなぎ、<strong>ひとつのブランド世界観</strong>をつくる五感型ブランド体験です。</span><span data-lang="cn">连接绘画、音乐、故事、周边、空间与体验，打造<strong>统一的品牌世界观</strong>——五感品牌体验。</span><span data-lang="en">We connect art, music, story, goods, space and experience into <strong>one brand universe</strong> — a five-senses brand experience.</span><span data-lang="it">Colleghiamo arte, musica, storia, merchandising e spazio in <strong>un unico universo di brand</strong>: un'esperienza a cinque sensi.</span></p></div><div class="why-card"><h3><span data-lang="kr" class="active">③ 고객의 기억에 남는 경험 창출</span><span data-lang="jp">③ お客様の記憶に残る体験を創出</span><span data-lang="cn">③ 创造令客户难忘的体验</span><span data-lang="en">③ Experiences customers remember</span><span data-lang="it">③ Esperienze che restano nella memoria dei clienti</span></h3><p><span data-lang="kr" class="active">해밀한의원 <strong>‘온결의 숨’</strong>처럼 작품·음악·화장품 패키지를 하나의 체험으로 통합했습니다.</span><span data-lang="jp">ヘミル韓医院<strong>「オンギョルの息」</strong>のように、作品・音楽・化粧品パッケージをひとつの体験に統合しました。</span><span data-lang="cn">如海密韩医院<strong>《温结之息》</strong>项目，将作品·音乐·化妆品包装整合为一体化体验。</span><span data-lang="en">As in the Haemil Clinic <strong>“Breath of Ongyeol”</strong> project, artwork, music and cosmetic packaging became one experience.</span><span data-lang="it">Come nel progetto <strong>«Breath of Ongyeol»</strong> per la clinica Haemil: opera, musica e packaging cosmetico in un'unica esperienza.</span></p></div></div>
+</section>
+<section class="difference">
+  <div class="section-label">Difference</div>
+  <div class="section-title"><span data-lang="kr" class="active">차별점</span><span data-lang="jp">差別化ポイント</span><span data-lang="cn">差异化优势</span><span data-lang="en">What Makes Us Different</span><span data-lang="it">Cosa ci distingue</span></div>
+  <div class="diff-grid"><div class="diff-card"><h3><span data-lang="kr" class="active">브랜드 스토리부터 작품·음악·굿즈까지 통합 개발</span><span data-lang="jp">ブランドストーリーから作品・音楽・グッズまで統合開発</span><span data-lang="cn">从品牌故事到作品·音乐·周边的一体化开发</span><span data-lang="en">From brand story to artwork, music and goods — integrated</span><span data-lang="it">Dalla storia del brand a opere, musica e merchandising: tutto integrato</span></h3><p><span data-lang="kr" class="active">해밀한의원, 퍼시픽링스코리아 ‘Dream Fairway’, 룩셈블랑제리 ‘골든 레이디 룩셈부르크’ 등 협업 사례.</span><span data-lang="jp">ヘミル韓医院、パシフィックリンクスコリア「Dream Fairway」、ルクセンブランジュリ「ゴールデン・レディ・ルクセンブルク」などの協業事例。</span><span data-lang="cn">海密韩医院、Pacific Links Korea《Dream Fairway》、Luxembourgerie《金色女神卢森堡》等合作案例。</span><span data-lang="en">Collaborations: Haemil Clinic, Pacific Links Korea “Dream Fairway”, Luxemboulangerie “Golden Lady Luxembourg”.</span><span data-lang="it">Collaborazioni: clinica Haemil, Pacific Links Korea «Dream Fairway», Luxemboulangerie «Golden Lady Luxembourg».</span></p></div><div class="diff-card"><h3><span data-lang="kr" class="active">국내외 전시 경험을 기반으로 한 예술 콘텐츠 기획</span><span data-lang="jp">国内外の展示経験に基づくアートコンテンツ企画</span><span data-lang="cn">基于国内外展览经验的艺术内容策划</span><span data-lang="en">Art content planning built on international exhibitions</span><span data-lang="it">Ideazione di contenuti artistici basata su mostre internazionali</span></h3><p><span data-lang="kr" class="active">2024 파리 · 2025 뉴욕·바르셀로나·홍콩 · 2026 로마·피렌체 전시 참여.</span><span data-lang="jp">2024 パリ・2025 ニューヨーク／バルセロナ／香港・2026 ローマ／フィレンツェ 展示参加。</span><span data-lang="cn">参加2024巴黎·2025纽约/巴塞罗那/香港·2026罗马/佛罗伦萨展览。</span><span data-lang="en">Exhibited: Paris 2024 · New York, Barcelona, Hong Kong 2025 · Rome, Florence 2026.</span><span data-lang="it">Mostre: Parigi 2024 · New York, Barcellona, Hong Kong 2025 · Roma, Firenze 2026.</span></p></div><div class="diff-card"><h3><span data-lang="kr" class="active">대학 산학협력 기반 문화예술관광 아트맵 사업 기획</span><span data-lang="jp">大学産学協力に基づく文化芸術観光アートマップ事業</span><span data-lang="cn">基于高校产学合作的文化艺术旅游艺术地图项目</span><span data-lang="en">University-partnered cultural art-tourism art map</span><span data-lang="it">Art map del turismo culturale con partnership universitaria</span></h3><p><span data-lang="kr" class="active">2026 부산여자대학교 ANCHOR사업단과 부산문화예술관광 아트맵 + 관광상품을 기획합니다.</span><span data-lang="jp">2026 釜山女子大学ANCHOR事業団と、釜山文化芸術観光アートマップ＋観光商品を企画。</span><span data-lang="cn">与2026釜山女子大学ANCHOR事业团共同策划釜山文化艺术旅游艺术地图+旅游商品。</span><span data-lang="en">With Busan Women's University ANCHOR (2026): Busan cultural art-tourism art map + tourism products.</span><span data-lang="it">Con l'Università femminile di Busan (ANCHOR, 2026): art map culturale di Busan e prodotti turistici.</span></p></div><div class="diff-card"><h3><span data-lang="kr" class="active">기업의 브랜드 스토리를 오감(五感)예술로 고객의 기억에 남겨 드립니다.</span><span data-lang="jp">企業のブランドストーリーを五感アートでお客様の記憶に残します。</span><span data-lang="cn">用五感艺术，让企业品牌故事留在客户的记忆中。</span><span data-lang="en">We make your brand story unforgettable through five-senses art.</span><span data-lang="it">Rendiamo la storia del tuo brand indimenticabile con l'arte dei cinque sensi.</span></h3><p><span data-lang="kr" class="active">Art you can see. Music you can feel.</span><span data-lang="jp">Art you can see. Music you can feel.</span><span data-lang="cn">Art you can see. Music you can feel.</span><span data-lang="en">Art you can see. Music you can feel.</span><span data-lang="it">Art you can see. Music you can feel.</span></p></div></div>
+</section>
+<section class="referral">
+  <div class="section-label">Referral</div>
+  <div class="section-title"><span data-lang="kr" class="active">이런 분을 소개해 주세요</span><span data-lang="jp">こんな方をご紹介ください</span><span data-lang="cn">请介绍这样的客户</span><span data-lang="en">Please refer people like this</span><span data-lang="it">Presentateci persone come queste</span></div>
+  <div class="ref-list"><div class="ref-item"><div class="ref-num">1</div><p><span data-lang="kr" class="active">브랜드 차별화가 필요한 기업 대표 및 사업자</span><span data-lang="jp">ブランドの差別化が必要な企業代表・事業者</span><span data-lang="cn">需要品牌差异化的企业代表及经营者</span><span data-lang="en">Business owners who need to differentiate their brand</span><span data-lang="it">Imprenditori che vogliono differenziare il proprio brand</span></p></div><div class="ref-item"><div class="ref-num">2</div><p><span data-lang="kr" class="active">공간을 문화예술관광 명소로 만들고 싶은 사업장 대표</span><span data-lang="jp">空間を文化芸術観光の名所にしたい事業所の代表</span><span data-lang="cn">希望将空间打造成文化艺术旅游名所的经营者</span><span data-lang="en">Owners who want to turn their space into a cultural art-tourism landmark</span><span data-lang="it">Titolari che vogliono fare del proprio spazio una meta culturale e turistica</span></p></div><div class="ref-item"><div class="ref-num">3</div><p><span data-lang="kr" class="active">기업 VIP 선물·아트굿즈를 기획하는 마케팅 담당자</span><span data-lang="jp">企業VIPギフト・アートグッズを企画するマーケティング担当者</span><span data-lang="cn">策划企业VIP礼品·艺术周边的营销负责人</span><span data-lang="en">Marketers planning VIP gifts and art goods</span><span data-lang="it">Responsabili marketing che pianificano regali VIP e art goods</span></p></div><div class="ref-item"><div class="ref-num">4</div><p><span data-lang="kr" class="active">문화예술관광 콘텐츠를 개발하는 공공기관·관광기관 담당자</span><span data-lang="jp">文化芸術観光コンテンツを開発する公共機関・観光機関の担当者</span><span data-lang="cn">开发文化艺术旅游内容的公共机构·旅游机构负责人</span><span data-lang="en">Public and tourism agency staff developing cultural art-tourism content</span><span data-lang="it">Referenti di enti pubblici e turistici che sviluppano contenuti culturali</span></p></div><div class="ref-item"><div class="ref-num">5</div><p><span data-lang="kr" class="active">호텔·리조트·병원·복합문화공간 운영 대표</span><span data-lang="jp">ホテル・リゾート・病院・複合文化空間の運営代表</span><span data-lang="cn">酒店·度假村·医院·复合文化空间的运营负责人</span><span data-lang="en">Operators of hotels, resorts, hospitals and cultural complexes</span><span data-lang="it">Gestori di hotel, resort, ospedali e spazi culturali polifunzionali</span></p></div></div>
+</section>
+<section class="career">
+  <div class="section-label">Career</div>
+  <div class="section-title"><span data-lang="kr" class="active">경력 및 전문 분야</span><span data-lang="jp">経歴・専門分野</span><span data-lang="cn">经历与专业领域</span><span data-lang="en">Career &amp; Expertise</span><span data-lang="it">Carriera e competenze</span></div>
+  <div class="career-list"><div class="career-item"><div class="career-badge"><span data-lang="kr" class="active">현재</span><span data-lang="jp">現在</span><span data-lang="cn">现任</span><span data-lang="en">Now</span><span data-lang="it">Oggi</span></div><div class="career-content"><h3><span data-lang="kr" class="active">아트뱅가드 대표 · NFT Artist &amp; Writer</span><span data-lang="jp">アートバンガード代表 · NFTアーティスト＆ライター</span><span data-lang="cn">ArtVanguard 代表 · NFT艺术家兼作家</span><span data-lang="en">Founder &amp; CEO, ArtVanguard · NFT Artist &amp; Writer</span><span data-lang="it">Fondatrice e CEO di ArtVanguard · NFT Artist &amp; Writer</span></h3><p><span data-lang="kr" class="active">경성대학교 디지털디자인학 박사 · 前 부산대·경성대·경남대 출강 · 英 Central Saint Martins 그래픽디자인 수료</span><span data-lang="jp">慶星大学デジタルデザイン博士 · 元 釜山大・慶星大・慶南大講師 · 英Central Saint Martins グラフィックデザイン修了</span><span data-lang="cn">庆星大学数字设计学博士 · 曾任釜山大·庆星大·庆南大讲师 · 英国Central Saint Martins平面设计结业</span><span data-lang="en">Ph.D. in Digital Design, Kyungsung Univ. · Former lecturer at Busan National, Kyungsung and Kyungnam Univ. · Central Saint Martins (UK), Graphic Design</span><span data-lang="it">Dottorato in Digital Design (Kyungsung Univ.) · Ex docente a Busan National, Kyungsung e Kyungnam · Central Saint Martins (UK), Graphic Design</span></p></div></div><div class="career-item"><div class="career-badge"><span data-lang="kr" class="active">경력</span><span data-lang="jp">経歴</span><span data-lang="cn">经历</span><span data-lang="en">Career</span><span data-lang="it">Carriera</span></div><div class="career-content"><h3><span data-lang="kr" class="active">예술·디자인·브랜딩 17년</span><span data-lang="jp">アート・デザイン・ブランディング17年</span><span data-lang="cn">艺术·设计·品牌 17年</span><span data-lang="en">17 years in art, design and branding</span><span data-lang="it">17 anni in arte, design e branding</span></h3><p><span data-lang="kr" class="active">디지털디자인학 박사 · 예술·디자인·브랜딩 분야 17년 경력</span><span data-lang="jp">デジタルデザイン博士 · アート・デザイン・ブランディング分野17年の経歴</span><span data-lang="cn">数字设计学博士 · 艺术·设计·品牌领域17年经历</span><span data-lang="en">Ph.D. in Digital Design · 17 years across art, design and branding</span><span data-lang="it">Dottorato in Digital Design · 17 anni tra arte, design e branding</span></p></div></div><div class="career-item"><div class="career-badge"><span data-lang="kr" class="active">실적</span><span data-lang="jp">実績</span><span data-lang="cn">业绩</span><span data-lang="en">Project</span><span data-lang="it">Progetto</span></div><div class="career-content"><h3><span data-lang="kr" class="active">2026 부산여자대학교 ANCHOR사업단 MOU</span><span data-lang="jp">2026 釜山女子大学ANCHOR事業団 MOU</span><span data-lang="cn">2026 釜山女子大学ANCHOR事业团 MOU</span><span data-lang="en">2026 MOU with Busan Women's Univ. ANCHOR</span><span data-lang="it">2026 MoU con Busan Women's Univ. ANCHOR</span></h3><p><span data-lang="kr" class="active">산학협력 MOU 체결 및 문화예술관광 아트맵 기획 · 국내 최초 최대 규모 체험형 해밀한의원 ‘온결의 숨’ 작품·음악·화장품 패키지 통합 프로젝트</span><span data-lang="jp">産学協力MOU締結と文化芸術観光アートマップ企画 · 国内初・最大規模の体験型ヘミル韓医院「オンギョルの息」作品・音楽・化粧品パッケージ統合プロジェクト</span><span data-lang="cn">签署产学合作MOU并策划文化艺术旅游艺术地图 · 韩国首个最大规模体验型海密韩医院《温结之息》作品·音乐·化妆品包装整合项目</span><span data-lang="en">MOU signed and cultural art-tourism art map planned · Korea's first and largest experiential project: Haemil Clinic “Breath of Ongyeol” — artwork, music and cosmetic packaging</span><span data-lang="it">MoU firmato e art map culturale pianificata · Primo e più grande progetto esperienziale in Corea: clinica Haemil «Breath of Ongyeol», opera, musica e packaging cosmetico</span></p></div></div><div class="career-item"><div class="career-badge"><span data-lang="kr" class="active">수상</span><span data-lang="jp">受賞</span><span data-lang="cn">获奖</span><span data-lang="en">Awards</span><span data-lang="it">Premi</span></div><div class="career-content"><h3><span data-lang="kr" class="active">공모전 수상</span><span data-lang="jp">公募展受賞</span><span data-lang="cn">比赛获奖</span><span data-lang="en">Competition awards</span><span data-lang="it">Premi e concorsi</span></h3><p><span data-lang="kr" class="active">2009 홍익대학교 UX디자인 은상 · 2023 한국여성작가 회화공모전 동상 · K-Artist PRIZE 특선</span><span data-lang="jp">2009 弘益大学 UXデザイン 銀賞 · 2023 韓国女性作家絵画公募展 銅賞 · K-Artist PRIZE 特選</span><span data-lang="cn">2009弘益大学UX设计银奖 · 2023韩国女性作家绘画大赛铜奖 · K-Artist PRIZE 特选</span><span data-lang="en">2009 Hongik Univ. UX Design – Silver · 2023 Korean Women Artists Painting Contest – Bronze · K-Artist PRIZE – Special Selection</span><span data-lang="it">2009 Hongik Univ. UX Design – Argento · 2023 Korean Women Artists Painting Contest – Bronzo · K-Artist PRIZE – Selezione speciale</span></p></div></div><div class="career-item"><div class="career-badge"><span data-lang="kr" class="active">전시</span><span data-lang="jp">展示</span><span data-lang="cn">展览</span><span data-lang="en">Exhibition</span><span data-lang="it">Mostre</span></div><div class="career-content"><h3><span data-lang="kr" class="active">국제 전시 참여</span><span data-lang="jp">国際展示参加</span><span data-lang="cn">参加国际展览</span><span data-lang="en">International exhibitions</span><span data-lang="it">Mostre internazionali</span></h3><p><span data-lang="kr" class="active">2024 파리 / 2025 뉴욕·바르셀로나 / 2026 로마·피렌체 등 국제 전시 참여</span><span data-lang="jp">2024 パリ / 2025 ニューヨーク・バルセロナ / 2026 ローマ・フィレンツェ など国際展示に参加</span><span data-lang="cn">参加2024巴黎 / 2025纽约·巴塞罗那 / 2026罗马·佛罗伦萨等国际展览</span><span data-lang="en">Paris 2024 / New York, Barcelona 2025 / Rome, Florence 2026 and more</span><span data-lang="it">Parigi 2024 / New York, Barcellona 2025 / Roma, Firenze 2026 e altre</span></p></div></div></div>
+</section>
+<section class="portfolio">
+  <div class="section-label">Portfolio</div>
+  <div class="section-title"><span data-lang="kr" class="active">작업 사례</span><span data-lang="jp">作品事例</span><span data-lang="cn">作品案例</span><span data-lang="en">Portfolio</span><span data-lang="it">Portfolio</span></div>
+  <div class="portfolio-track-wrap"><div class="portfolio-track" id="portfolio-track"><div class="portfolio-slide"><img src="portfolio/01.jpg" alt="portfolio 1" loading="lazy" onerror="this.parentNode.remove();window.portfolioRefresh&&window.portfolioRefresh()"></div><div class="portfolio-slide"><img src="portfolio/02.jpg" alt="portfolio 2" loading="lazy" onerror="this.parentNode.remove();window.portfolioRefresh&&window.portfolioRefresh()"></div><div class="portfolio-slide"><img src="portfolio/03.jpg" alt="portfolio 3" loading="lazy" onerror="this.parentNode.remove();window.portfolioRefresh&&window.portfolioRefresh()"></div><div class="portfolio-slide"><img src="portfolio/04.jpg" alt="portfolio 4" loading="lazy" onerror="this.parentNode.remove();window.portfolioRefresh&&window.portfolioRefresh()"></div><div class="portfolio-slide"><img src="portfolio/05.jpg" alt="portfolio 5" loading="lazy" onerror="this.parentNode.remove();window.portfolioRefresh&&window.portfolioRefresh()"></div><div class="portfolio-slide"><img src="portfolio/06.jpg" alt="portfolio 6" loading="lazy" onerror="this.parentNode.remove();window.portfolioRefresh&&window.portfolioRefresh()"></div><div class="portfolio-slide"><img src="portfolio/07.jpg" alt="portfolio 7" loading="lazy" onerror="this.parentNode.remove();window.portfolioRefresh&&window.portfolioRefresh()"></div><div class="portfolio-slide"><img src="portfolio/08.jpg" alt="portfolio 8" loading="lazy" onerror="this.parentNode.remove();window.portfolioRefresh&&window.portfolioRefresh()"></div><div class="portfolio-slide"><img src="portfolio/09.jpg" alt="portfolio 9" loading="lazy" onerror="this.parentNode.remove();window.portfolioRefresh&&window.portfolioRefresh()"></div><div class="portfolio-slide"><img src="portfolio/10.jpg" alt="portfolio 10" loading="lazy" onerror="this.parentNode.remove();window.portfolioRefresh&&window.portfolioRefresh()"></div><div class="portfolio-slide"><img src="portfolio/11.jpg" alt="portfolio 11" loading="lazy" onerror="this.parentNode.remove();window.portfolioRefresh&&window.portfolioRefresh()"></div></div></div>
+  <div class="portfolio-nav">
+    <button class="portfolio-btn" onclick="portfolioSlide(-1)">‹</button>
+    <div class="portfolio-dots" id="portfolio-dots"></div>
+    <button class="portfolio-btn" onclick="portfolioSlide(1)">›</button>
+  </div>
+</section>
+<section class="contact">
+  <div class="section-label">Contact</div>
+  <div class="section-title"><span data-lang="kr" class="active">연락하기</span><span data-lang="jp">お問い合わせ</span><span data-lang="cn">联系方式</span><span data-lang="en">Contact</span><span data-lang="it">Contatti</span></div>
+  <div class="contact-list"><a class="contact-item" href="tel:010-8407-7484"><div class="contact-icon">📞</div><div class="contact-label"><span data-lang="kr" class="active">전화</span><span data-lang="jp">電話</span><span data-lang="cn">电话</span><span data-lang="en">Phone</span><span data-lang="it">Telefono</span></div><div class="contact-value">010-8407-7484</div></a><a class="contact-item" href="mailto:Sinah.jo@gmail.com"><div class="contact-icon">✉️</div><div class="contact-label">Email</div><div class="contact-value">Sinah.jo@gmail.com</div></a><a class="contact-item" href="https://artvanguard.co.kr/" target="_blank"><div class="contact-icon">💻</div><div class="contact-label"><span data-lang="kr" class="active">홈페이지</span><span data-lang="jp">ホームページ</span><span data-lang="cn">官网</span><span data-lang="en">Website</span><span data-lang="it">Sito web</span></div><div class="contact-value">artvanguard.co.kr</div></a><a class="contact-item" href="https://www.instagram.com/art.trip_jay/" target="_blank"><div class="contact-icon">📷</div><div class="contact-label">Instagram</div><div class="contact-value">@art.trip_jay</div></a><a class="contact-item" href="https://www.youtube.com/@ArtVanguard_NFT" target="_blank"><div class="contact-icon">▶️</div><div class="contact-label">YouTube</div><div class="contact-value">@ArtVanguard_NFT</div></a><a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=jo-sinah" target="_blank"><div class="contact-icon">💬</div><div class="contact-label">MANDU</div><div class="contact-value"><span data-lang="kr" class="active">실시간 번역 메신저</span><span data-lang="jp">リアルタイム翻訳チャット</span><span data-lang="cn">实时翻译聊天</span><span data-lang="en">Live translation chat</span><span data-lang="it">Chat con traduzione live</span></div></a><a class="contact-item" href="https://marpple.shop/kr/artvanguard" target="_blank"><div class="contact-icon">🛍️</div><div class="contact-label"><span data-lang="kr" class="active">굿즈 주문 · 한국어</span><span data-lang="jp">グッズ注文 · 韓国語</span><span data-lang="cn">周边订购 · 韩语</span><span data-lang="en">Order goods · KR</span><span data-lang="it">Ordina · KR</span></div><div class="contact-value">marpple.shop/kr</div></a><a class="contact-item" href="https://marpple.shop/en/artvanguard" target="_blank"><div class="contact-icon">🛍️</div><div class="contact-label"><span data-lang="kr" class="active">굿즈 주문 · 영어</span><span data-lang="jp">グッズ注文 · 英語</span><span data-lang="cn">周边订购 · 英语</span><span data-lang="en">Order goods · EN</span><span data-lang="it">Ordina · EN</span></div><div class="contact-value">marpple.shop/en</div></a><a class="contact-item wide" href="https://marpple.shop/jp/artvanguard" target="_blank"><div class="contact-icon">🛍️</div><div class="contact-label"><span data-lang="kr" class="active">굿즈 주문 · 일본어</span><span data-lang="jp">グッズ注文 · 日本語</span><span data-lang="cn">周边订购 · 日语</span><span data-lang="en">Order goods · JP</span><span data-lang="it">Ordina · JP</span></div><div class="contact-value">marpple.shop/jp</div></a><a class="contact-item wide" href="https://map.kakao.com/link/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%B6%80%EC%82%B0%EC%A7%84%EA%B5%AC%20%EA%B0%80%EC%95%BC%EB%8C%80%EB%A1%9C%20786%2C%208%EC%B8%B5%20802%ED%98%B8" target="_blank"><div class="contact-icon">📍</div><div class="contact-label"><span data-lang="kr" class="active">주소 (탭하면 지도 열림)</span><span data-lang="jp">住所（タップで地図）</span><span data-lang="cn">地址（点击打开地图）</span><span data-lang="en">Address (tap to open map)</span><span data-lang="it">Indirizzo (tocca per la mappa)</span></div><div class="contact-value"><span data-lang="kr" class="active">부산광역시 부산진구 가야대로 786, 8층 802호</span><span data-lang="jp">韓国 釜山広域市 釜山鎮区 伽倻大路786, 8階802号</span><span data-lang="cn">韩国釜山广域市釜山镇区伽倻大路786号 8层802室</span><span data-lang="en">802, 8F, 786 Gaya-daero, Busanjin-gu, Busan, Korea</span><span data-lang="it">802, 8° piano, 786 Gaya-daero, Busanjin-gu, Busan, Corea del Sud</span></div></a></div>
+</section>
+<div class="action"><div class="btn-group">
+  <button class="btn btn-primary" onclick="saveContact()"><span data-lang="kr" class="active">📞 연락처 저장</span><span data-lang="jp">📞 連絡先を保存</span><span data-lang="cn">📞 保存联系人</span><span data-lang="en">📞 Save contact</span><span data-lang="it">📞 Salva contatto</span></button>
+  <button class="btn btn-secondary" onclick="saveToCardbook({id:'jo-sinah',name:'조신아',nameEn:'Jo Sin-Ah',title:'대표, CEO',company:'아트뱅가드',phone:'010-8407-7484',email:'Sinah.jo@gmail.com',chapter:'자이언츠',bni:'',url:window.location.href})"><span data-lang="kr" class="active">🗂️ 명함 저장 (CardBook)</span><span data-lang="jp">🗂️ 名刺を保存</span><span data-lang="cn">🗂️ 保存名片</span><span data-lang="en">🗂️ Save to CardBook</span><span data-lang="it">🗂️ Salva su CardBook</span></button>
+  <button class="btn btn-share" onclick="shareCard()"><span data-lang="kr" class="active">📤 명함 전달하기</span><span data-lang="jp">📤 名刺を共有</span><span data-lang="cn">📤 分享名片</span><span data-lang="en">📤 Share this card</span><span data-lang="it">📤 Condividi</span></button>
+</div></div>
+<!-- 공유 바텀시트 (Web Share API 미지원 브라우저 폴백) -->
+<div class="share-sheet" id="shareSheet">
+  <div class="share-backdrop" onclick="closeShare()"></div>
+  <div class="share-panel">
+    <div class="share-handle"></div>
+    <div class="share-title">명함 전달하기</div>
+    <div class="share-btns">
+      <button class="share-btn" onclick="shareKakao()">
+        <div class="share-btn-icon" style="background:#FEE500;">💬</div><span>카카오톡</span>
+      </button>
+      <button class="share-btn" onclick="shareSMS()">
+        <div class="share-btn-icon" style="background:#34c759;">✉️</div><span>문자</span>
+      </button>
+      <button class="share-btn" onclick="copyLink()">
+        <div class="share-btn-icon" style="background:#e8e8e8;">🔗</div><span>링크 복사</span>
+      </button>
+      <button class="share-btn" onclick="shareQR()">
+        <div class="share-btn-icon" style="background:#16404d;">📱</div><span>QR 보기</span>
+      </button>
+    </div>
+    <button class="share-cancel" onclick="closeShare()">취소</button>
+  </div>
+</div>
+
+<!-- 만두 연결 (카드 주인 전용, 방문자는 무시해도 되는 위치) -->
+<div class="mandu-activate-wrap" style="padding:14px 20px 4px;text-align:center;">
+  <button id="mandu-activate-btn" onclick="activateMandu()"
+    style="background:none;border:1px solid rgba(240,138,118,0.3);color:var(--muted-dark);font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
+    💬 본인 명함이신가요? 만두 연결하기 (1회)
+  </button>
+  <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:var(--gold);padding:7px 0;">
+    ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer><div class="company"><span data-lang="kr" class="active">아트뱅가드</span><span data-lang="jp">アートバンガード</span><span data-lang="cn">ArtVanguard</span><span data-lang="en">ArtVanguard</span><span data-lang="it">ArtVanguard</span></div><div class="slogan-footer">Turning brands into art, spaces into global destinations.</div></footer>
+
+<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+<script>
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('active', el.getAttribute('data-lang') === lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const m = btn.getAttribute('onclick').match(/'(\w+)'/);
+    btn.classList.toggle('active', m && m[1] === lang);
+  });
+}
+function saveContact() {
+  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:조신아\nORG:아트뱅가드\nTITLE:대표, CEO\nTEL:010-8407-7484\nEMAIL:Sinah.jo@gmail.com\nURL:https://jinjjabg-hub.github.io/bni-giants/조신아/\nADR:;;부산광역시 부산진구 가야대로 786, 8층 802호;;;;\nEND:VCARD`;
+  const blob = new Blob([vcard], {type:'text/vcard'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = '조신아.vcf';
+  a.click();
+}
+
+/* ── 명함 전달하기 ── */
+const CARD_URL = 'https://jinjjabg-hub.github.io/bni-giants/%EC%A1%B0%EC%8B%A0%EC%95%84/';
+const CARD_TITLE = '조신아 | 아트뱅가드';
+const CARD_TEXT = '브랜드를 예술로, 공간을 글로벌 관광명소로.';
+
+function shareCard() {
+  if (navigator.share) {
+    navigator.share({ title: CARD_TITLE, text: CARD_TEXT, url: CARD_URL }).catch(() => {});
+  } else {
+    document.getElementById('shareSheet').style.display = 'block';
+  }
+}
+function closeShare() { document.getElementById('shareSheet').style.display = 'none'; }
+function shareKakao() {
+  window.open('https://sharer.kakao.com/talk/friends/picker/link?app_key=&url=' + encodeURIComponent(CARD_URL), '_blank');
+  closeShare();
+}
+function shareSMS() {
+  location.href = 'sms:?body=' + encodeURIComponent(CARD_TITLE + '\n' + CARD_URL);
+  closeShare();
+}
+function copyLink() {
+  navigator.clipboard.writeText(CARD_URL).then(() => alert('링크가 복사되었습니다!')).catch(() => {
+    const t = document.createElement('textarea');
+    t.value = CARD_URL;
+    document.body.appendChild(t); t.select(); document.execCommand('copy');
+    document.body.removeChild(t);
+    alert('링크가 복사되었습니다!');
+  });
+  closeShare();
+}
+function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
+
+/* ── PORTFOLIO 자동 슬라이드 (표준: 3초 간격, 터치 스와이프, 수동 조작 시 타이머 리셋) ──
+   portfolio 섹션이 없는 명함(HTML에서 <section class="portfolio"> 삭제한 경우)에는
+   아래 코드가 아무 일도 하지 않고 조용히 종료된다. */
+(function () {
+  const track = document.getElementById('portfolio-track');
+  if (!track) return;
+  const dotsWrap = document.getElementById('portfolio-dots');
+  let idx = 0, timer = null;
+  const total = () => track.children.length;
+  function dots() {
+    dotsWrap.innerHTML = '';
+    for (let i = 0; i < total(); i++) {
+      const d = document.createElement('div');
+      d.className = 'portfolio-dot' + (i === idx ? ' active' : '');
+      d.onclick = () => { go(i); reset(); };
+      dotsWrap.appendChild(d);
+    }
+  }
+  function render() {
+    track.style.transform = `translateX(-${idx * 100}%)`;
+    dotsWrap.querySelectorAll('.portfolio-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+  }
+  function go(i) { const n = total(); if (!n) return; idx = (i + n) % n; render(); }
+  window.portfolioSlide = function (dir) { go(idx + dir); reset(); };
+  window.portfolioRefresh = function () { if (idx >= total()) idx = 0; dots(); render(); };
+  function auto() { timer = setTimeout(() => { go(idx + 1); auto(); }, 3000); }
+  function reset() { clearTimeout(timer); auto(); }
+  track.addEventListener('click', e => { const im = e.target.closest('img'); if (im) window.open(im.src, '_blank'); });
+  let startX = 0;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; clearTimeout(timer); }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) go(idx + (dx < 0 ? 1 : -1));
+    auto();
+  }, { passive: true });
+  dots(); auto();
+})();
+
+/* ── 만두 원클릭 연결 (카드 주인 전용) ──────────────────────────
+   구글 로그인 1번 → manduid_index/jo-sinah 문서에 uid 자동 등록.
+   MANDU 링크(?u=jo-sinah)는 카드 제작 시점에 이미 고정돼 있으므로
+   *아무도(송승훈 포함) 링크를 중간에서 복사·전달·붙여넣기 할 필요가 없다.*
+   save-to-cardbook.js가 이미 firebase를 로드해두므로 그걸 재사용한다. */
+async function _manduWaitFirebase(maxTries) {
+  let tries = 0;
+  while ((typeof firebase === 'undefined' || !firebase.apps || !firebase.apps.length) && tries < (maxTries || 50)) {
+    await new Promise(r => setTimeout(r, 100));
+    tries++;
+  }
+  return typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length > 0;
+}
+
+async function _manduFinishActivate(user) {
+  const slug = 'jo-sinah';
+  const db = firebase.firestore();
+
+  // 이미 다른 uid로 연결돼 있으면 덮어쓰지 않음 (실수·장난 클릭으로부터 카드 보호)
+  const existing = await db.collection('manduid_index').doc(slug).get();
+  if (existing.exists && existing.data().uid !== user.uid) {
+    const btn = document.getElementById('mandu-activate-btn');
+    if (btn) btn.style.display = 'none';
+    const done = document.getElementById('mandu-activate-done');
+    if (done) { done.textContent = 'ℹ️ 이미 연결된 명함이에요'; done.style.display = 'block'; }
+    return;
+  }
+
+  await db.collection('users').doc(user.uid).set({
+    uid: user.uid, displayName: user.displayName || '', photoURL: user.photoURL || '',
+    email: user.email || '', manduid: slug
+  }, { merge: true });
+  await db.collection('manduid_index').doc(slug).set({
+    uid: user.uid, createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  }, { merge: true });
+  const btn = document.getElementById('mandu-activate-btn');
+  const done = document.getElementById('mandu-activate-done');
+  if (btn) btn.style.display = 'none';
+  if (done) done.style.display = 'block';
+}
+
+async function activateMandu() {
+  if (!confirm('본인 명함이 맞나요?\n구글 로그인하면 이 명함으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  const btn = document.getElementById('mandu-activate-btn');
+  if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
+  const ready = await _manduWaitFirebase();
+  if (!ready) {
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 실패. 잠시 후 다시 시도해주세요.');
+    return;
+  }
+  try {
+    const auth = firebase.auth();
+    await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      sessionStorage.setItem('_manduPendingSlug', 'jo-sinah');
+      await auth.signInWithRedirect(provider);
+      return; // 리다이렉트 후 아래 즉시실행 블록에서 이어짐
+    }
+    const result = await auth.signInWithPopup(provider);
+    await _manduFinishActivate(result.user);
+  } catch (e) {
+    console.error('만두 연결 실패:', e);
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 중 오류가 발생했어요.');
+  }
+}
+
+// 모바일 리다이렉트 로그인 복귀 처리
+(async function () {
+  if (!sessionStorage.getItem('_manduPendingSlug')) return;
+  const ready = await _manduWaitFirebase();
+  sessionStorage.removeItem('_manduPendingSlug');
+  if (!ready) return;
+  try {
+    const res = await firebase.auth().getRedirectResult();
+    if (res && res.user) await _manduFinishActivate(res.user);
+  } catch (e) { console.error(e); }
+})();
+</script>
+</body>
+</html>
