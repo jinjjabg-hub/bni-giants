@@ -431,7 +431,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 <!-- FOOTER -->
 <footer><div class="company"><span data-lang="kr" class="active">아트뱅가드</span><span data-lang="jp">アートバンガード</span><span data-lang="cn">ArtVanguard</span><span data-lang="en">ArtVanguard</span><span data-lang="it">ArtVanguard</span></div><div class="slogan-footer">Turning brands into art, spaces into global destinations.</div></footer>
 
-<script src="https://jinjjabg-hub.github.io/cardbook/save-to-cardbook.js"></script>
+<script src="https://cardbook.bizmy.net/save-to-cardbook.js?v=20261011b"></script>
 <script>
 function setLang(lang) {
   document.querySelectorAll('[data-lang]').forEach(el => {
@@ -443,10 +443,23 @@ function setLang(lang) {
   });
 }
 function saveContact() {
-  const vcard = `BEGIN:VCARD\nVERSION:3.0\nFN:조신아\nORG:아트뱅가드\nTITLE:대표, CEO\nTEL:010-8407-7484\nEMAIL:Sinah.jo@gmail.com\nURL:https://jinjjabg-hub.github.io/bni-giants/조신아/\nADR:;;부산광역시 부산진구 가야대로 786, 8층 802호;;;;\nEND:VCARD`;
-  const blob = new Blob([vcard], {type:'text/vcard'});
+  // 실제 저장 동작(안드로이드: 파일 받기 / 아이폰: 연락처 카드)은 카드북 공통 스크립트의 cbSaveContact가 맡는다.
+  const vcard = [
+    'BEGIN:VCARD',
+    'VERSION:3.0',
+    'N:조;신아;;;',
+    'FN:조신아',
+    'ORG:아트뱅가드',
+    'TITLE:대표, CEO',
+    'TEL:010-8407-7484',
+    'EMAIL:Sinah.jo@gmail.com',
+    'URL:https://jinjjabg-hub.github.io/bni-giants/조신아/',
+    'ADR:;;부산광역시 부산진구 가야대로 786, 8층 802호;;;;',
+    'END:VCARD'
+  ].join('\r\n');
+  if (window.cbSaveContact) return cbSaveContact(vcard);
   const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
+  a.href = URL.createObjectURL(new Blob([vcard], {type:'text/vcard'}));
   a.download = '조신아.vcf';
   a.click();
 }
