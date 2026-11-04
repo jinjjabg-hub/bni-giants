@@ -398,22 +398,22 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   <div class="share-backdrop" onclick="closeShare()"></div>
   <div class="share-panel">
     <div class="share-handle"></div>
-    <div class="share-title"><span data-lang="kr" class="active">비즈홈 전달하기</span><span data-lang="jp">BizHomeを共有</span><span data-lang="cn">分享BizHome</span><span data-lang="en">Share this BizHome</span><span data-lang="it">Condividi BizHome</span></div>
+    <div class="share-title"><span data-lang="kr" class="active">비즈홈 전달하기</span><span data-lang="en">Share this BizHome</span><span data-lang="jp">BizHomeを共有</span><span data-lang="cn">分享BizHome</span><span data-lang="it">Condividi BizHome</span></div>
     <div class="share-btns">
       <button class="share-btn" onclick="shareKakao()">
-        <div class="share-btn-icon" style="background:#FEE500;">💬</div><span>카카오톡</span>
+        <div class="share-btn-icon" style="background:#FEE500;">💬</div><span><span data-lang="kr" class="active">카카오톡</span><span data-lang="en">KakaoTalk</span><span data-lang="jp">カカオトーク</span><span data-lang="cn">KakaoTalk</span><span data-lang="it">KakaoTalk</span></span>
       </button>
       <button class="share-btn" onclick="shareSMS()">
-        <div class="share-btn-icon" style="background:#34c759;">✉️</div><span>문자</span>
+        <div class="share-btn-icon" style="background:#34c759;">✉️</div><span><span data-lang="kr" class="active">문자</span><span data-lang="en">SMS</span><span data-lang="jp">SMS</span><span data-lang="cn">短信</span><span data-lang="it">SMS</span></span>
       </button>
       <button class="share-btn" onclick="copyLink()">
-        <div class="share-btn-icon" style="background:#e8e8e8;">🔗</div><span>링크 복사</span>
+        <div class="share-btn-icon" style="background:#e8e8e8;">🔗</div><span><span data-lang="kr" class="active">링크 복사</span><span data-lang="en">Copy link</span><span data-lang="jp">リンクをコピー</span><span data-lang="cn">复制链接</span><span data-lang="it">Copia link</span></span>
       </button>
       <button class="share-btn" onclick="shareQR()">
-        <div class="share-btn-icon" style="background:#16404d;">📱</div><span>QR 보기</span>
+        <div class="share-btn-icon" style="background:#16404d;">📱</div><span><span data-lang="kr" class="active">QR 보기</span><span data-lang="en">Show QR</span><span data-lang="jp">QRを表示</span><span data-lang="cn">显示二维码</span><span data-lang="it">Mostra QR</span></span>
       </button>
     </div>
-    <button class="share-cancel" onclick="closeShare()">취소</button>
+    <button class="share-cancel" onclick="closeShare()"><span data-lang="kr" class="active">취소</span><span data-lang="en">Cancel</span><span data-lang="jp">キャンセル</span><span data-lang="cn">取消</span><span data-lang="it">Annulla</span></button>
   </div>
 </div>
 
@@ -421,10 +421,10 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 <div class="mandu-activate-wrap" style="padding:14px 20px 4px;text-align:center;">
   <button id="mandu-activate-btn" onclick="activateMandu()"
     style="background:none;border:1px solid rgba(240,138,118,0.3);color:var(--muted-dark);font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
-    💬 본인 비즈홈이신가요? 만두 연결하기 (1회)
+    <span data-lang="kr" class="active">💬 본인 비즈홈이신가요? 만두 연결하기 (1회)</span><span data-lang="en">💬 Is this your BizHome? Connect MANDU (one time)</span><span data-lang="jp">💬 ご本人のBizHomeですか？MANDUを連携する（1回）</span><span data-lang="cn">💬 这是您本人的BizHome吗？连接MANDU（仅一次）</span><span data-lang="it">💬 Questo è il tuo BizHome? Collega MANDU (una sola volta)</span>
   </button>
   <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:var(--gold);padding:7px 0;">
-    ✅ 만두 연결 완료 — 이제 이 비즈홈으로 DM을 받을 수 있어요
+    <span data-lang="kr" class="active">✅ 만두 연결 완료 — 이제 이 비즈홈으로 DM을 받을 수 있어요</span><span data-lang="en">✅ MANDU connected — you can now receive DMs through this BizHome</span><span data-lang="jp">✅ MANDU連携が完了しました。このBizHomeでDMを受け取れます</span><span data-lang="cn">✅ MANDU已连接——现在可以通过此BizHome接收私信了</span><span data-lang="it">✅ MANDU collegato — ora puoi ricevere messaggi tramite questo BizHome</span>
   </div>
 </div>
 
@@ -443,7 +443,8 @@ function setLang(lang) {
   });
 }
 function saveContact() {
-  // 실제 저장 동작(안드로이드: 파일 받기 / 아이폰: 연락처 카드)은 카드북 공통 스크립트의 cbSaveContact가 맡는다.
+  // 실제 저장 동작(안드로이드: 파일 받기 + '이름.vcf를 누르세요' 안내 / 아이폰: 연락처 카드)은
+  // 카드북 공통 스크립트의 cbSaveContact가 맡는다. 카드에는 연락처 내용만 둔다.
   const vcard = [
     'BEGIN:VCARD',
     'VERSION:3.0',
@@ -458,13 +459,30 @@ function saveContact() {
     'END:VCARD'
   ].join('\r\n');
   if (window.cbSaveContact) return cbSaveContact(vcard);
+  // 공통 스크립트를 못 불러온 경우에만: 파일 내려받기
   const a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([vcard], {type:'text/vcard'}));
   a.download = '조신아.vcf';
   a.click();
 }
 
-/* ── 비즈홈 전달하기 ── */
+/* ── 공유하기(전달하기) ── */
+function _lang() {
+  const a = document.querySelector('.lang-btn.active');
+  const m = a && a.getAttribute('onclick').match(/'(\w+)'/);
+  return m ? m[1] : 'kr';
+}
+const _MSG = {
+  copied:  { kr:'링크가 복사되었습니다!', en:'Link copied!', jp:'リンクをコピーしました！', cn:'链接已复制！', it:'Link copiato!' },
+  confirm: { kr:'본인 비즈홈이 맞나요?\n구글 로그인하면 이 비즈홈으로 만두 DM을 받을 수 있게 연결돼요.',
+             en:'Is this your own BizHome?\nSigning in with Google connects this BizHome so you can receive MANDU DMs.',
+             jp:'ご本人のBizHomeですか？\nGoogleでログインすると、このBizHomeでMANDUのDMを受け取れるようになります。',
+             cn:'这是您本人的BizHome吗？\n使用Google登录后，即可通过此BizHome接收MANDU私信。', it:'Questo è il tuo BizHome?\nAccedendo con Google colleghi questo BizHome per ricevere i DM di MANDU.' },
+  busy:    { kr:'연결 중...', en:'Connecting...', jp:'接続中...', cn:'连接中...', it:'Connessione in corso...' },
+  fail:    { kr:'연결 실패. 잠시 후 다시 시도해주세요.', en:'Connection failed. Please try again shortly.', jp:'接続に失敗しました。しばらくしてからもう一度お試しください。', cn:'连接失败，请稍后重试。', it:'Connessione non riuscita. Riprova tra poco.' },
+  error:   { kr:'연결 중 오류가 발생했어요.', en:'An error occurred while connecting.', jp:'接続中にエラーが発生しました。', cn:'连接时出错。', it:'Si è verificato un errore durante la connessione.' }
+};
+function _m(k) { return _MSG[k][_lang()] || _MSG[k].kr; }
 const CARD_URL = 'https://jinjjabg-hub.github.io/bni-giants/%EC%A1%B0%EC%8B%A0%EC%95%84/';
 const CARD_TITLE = '조신아 | 아트뱅가드';
 const CARD_TEXT = '브랜드를 예술로, 공간을 글로벌 관광명소로.';
@@ -486,19 +504,19 @@ function shareSMS() {
   closeShare();
 }
 function copyLink() {
-  navigator.clipboard.writeText(CARD_URL).then(() => alert('링크가 복사되었습니다!')).catch(() => {
+  navigator.clipboard.writeText(CARD_URL).then(() => alert(_m('copied'))).catch(() => {
     const t = document.createElement('textarea');
     t.value = CARD_URL;
     document.body.appendChild(t); t.select(); document.execCommand('copy');
     document.body.removeChild(t);
-    alert('링크가 복사되었습니다!');
+    alert(_m('copied'));
   });
   closeShare();
 }
 function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
 
 /* ── PORTFOLIO 자동 슬라이드 (표준: 3초 간격, 터치 스와이프, 수동 조작 시 타이머 리셋) ──
-   portfolio 섹션이 없는 명함(HTML에서 <section class="portfolio"> 삭제한 경우)에는
+   portfolio 섹션이 없는 카드(HTML에서 <section class="portfolio"> 삭제한 경우)에는
    아래 코드가 아무 일도 하지 않고 조용히 종료된다. */
 (function () {
   const track = document.getElementById('portfolio-track');
@@ -559,7 +577,7 @@ async function _manduFinishActivate(user) {
     const btn = document.getElementById('mandu-activate-btn');
     if (btn) btn.style.display = 'none';
     const done = document.getElementById('mandu-activate-done');
-    if (done) { done.textContent = 'ℹ️ 이미 연결된 비즈홈이에요'; done.style.display = 'block'; }
+    if (done) { done.innerHTML = '<span data-lang="kr">ℹ️ 이미 연결된 비즈홈이에요</span><span data-lang="en">ℹ️ This BizHome is already connected</span><span data-lang="jp">ℹ️ すでに連携済みのBizHomeです</span><span data-lang="cn">ℹ️ 此BizHome已连接</span><span data-lang="it">ℹ️ Questo BizHome è già collegato</span>'; done.querySelectorAll('[data-lang]').forEach(el => el.classList.toggle('active', el.getAttribute('data-lang') === _lang())); done.style.display = 'block'; }
     return;
   }
 
@@ -573,17 +591,18 @@ async function _manduFinishActivate(user) {
   const btn = document.getElementById('mandu-activate-btn');
   const done = document.getElementById('mandu-activate-done');
   if (btn) btn.style.display = 'none';
-  if (done) done.style.display = 'block';
+  if (done) { done.style.display = 'block'; done.querySelectorAll('[data-lang]').forEach(el => el.classList.toggle('active', el.getAttribute('data-lang') === _lang())); }
 }
 
 async function activateMandu() {
-  if (!confirm('본인 비즈홈이 맞나요?\n구글 로그인하면 이 비즈홈으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  if (!confirm(_m('confirm'))) return;
   const btn = document.getElementById('mandu-activate-btn');
-  if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
+  const _btnHTML = btn ? btn.innerHTML : '';
+  if (btn) { btn.disabled = true; btn.textContent = _m('busy'); }
   const ready = await _manduWaitFirebase();
   if (!ready) {
-    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
-    alert('연결 실패. 잠시 후 다시 시도해주세요.');
+    if (btn) { btn.disabled = false; btn.innerHTML = _btnHTML; }
+    alert(_m('fail'));
     return;
   }
   try {
@@ -600,8 +619,8 @@ async function activateMandu() {
     await _manduFinishActivate(result.user);
   } catch (e) {
     console.error('만두 연결 실패:', e);
-    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
-    alert('연결 중 오류가 발생했어요.');
+    if (btn) { btn.disabled = false; btn.innerHTML = _btnHTML; }
+    alert(_m('error'));
   }
 }
 
