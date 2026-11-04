@@ -13,7 +13,8 @@
 <meta property="og:url" content="https://jinjjabg-hub.github.io/bni-giants/조신아/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <!-- 언어팩에 따라 폰트 추가: references/languages.md 참고 -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+SC:wght@400;700&display=swap" rel="stylesheet">
 <style>
 
 :root {
@@ -32,7 +33,7 @@
 * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color: transparent; }
 html { font-size: 16px; }
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Noto Sans JP','Noto Sans SC',sans-serif;
   background: var(--navy);
   color: var(--text-dark);
   max-width: 480px;
@@ -68,7 +69,7 @@ nav {
   transition: all 0.2s;
   min-width: 40px; min-height: 32px;
   display: flex; align-items:center; justify-content:center;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Noto Sans JP','Noto Sans SC',sans-serif;
 }
 .lang-btn.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
 
@@ -278,7 +279,7 @@ section { padding: 40px 20px; }
   border: none; border-radius: 10px;
   font-size: 15px; font-weight: 700;
   cursor: pointer; text-align: center;
-  transition: all 0.15s; font-family: 'Noto Sans KR', sans-serif;
+  transition: all 0.15s; font-family: 'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Noto Sans JP','Noto Sans SC',sans-serif;
   min-height: 54px; letter-spacing: 0.3px;
 }
 .btn-primary { background: var(--gold); color: var(--navy); }
@@ -300,8 +301,8 @@ section { padding: 40px 20px; }
 .share-btns { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:16px; }
 .share-btn { display:flex; flex-direction:column; align-items:center; gap:8px; background:none; border:none; cursor:pointer; padding:8px 4px; }
 .share-btn-icon { width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:26px; }
-.share-btn span { font-size:11px; color:#333; font-weight:600; font-family:'Noto Sans KR',sans-serif; }
-.share-cancel { width:100%; padding:14px; background:#f2f2f2; border:none; border-radius:10px; font-size:15px; font-weight:700; color:#444; cursor:pointer; font-family:'Noto Sans KR',sans-serif; }
+.share-btn span { font-size:11px; color:#333; font-weight:600; font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Noto Sans JP','Noto Sans SC',sans-serif; }
+.share-cancel { width:100%; padding:14px; background:#f2f2f2; border:none; border-radius:10px; font-size:15px; font-weight:700; color:#444; cursor:pointer; font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Noto Sans JP','Noto Sans SC',sans-serif; }
 
 /* ── FOOTER ── */
 footer {
@@ -320,6 +321,8 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 .hero-badge{color:#16404d}
 .contact-icon{background:var(--navy3)}
 .contact-item.wide{grid-column:1/-1}
+[data-lang="jp"]{font-family:'Pretendard Variable',Pretendard,'Noto Sans JP',sans-serif}
+[data-lang="cn"]{font-family:'Pretendard Variable',Pretendard,'Noto Sans SC',sans-serif}
 .contact-item.addr .contact-value{word-break:keep-all;font-size:11.5px}
 </style></head>
 <body>
@@ -421,7 +424,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 <!-- 만두 연결 (카드 주인 전용, 방문자는 무시해도 되는 위치) -->
 <div class="mandu-activate-wrap" style="padding:14px 20px 4px;text-align:center;">
   <button id="mandu-activate-btn" onclick="activateMandu()"
-    style="background:none;border:1px solid rgba(240,138,118,0.3);color:var(--muted-dark);font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
+    style="background:none;border:1px solid rgba(240,138,118,0.3);color:var(--muted-dark);font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Noto Sans JP','Noto Sans SC',sans-serif;">
     <span data-lang="kr" class="active">💬 본인 비즈홈이신가요? 만두 연결하기 (1회)</span><span data-lang="en">💬 Is this your BizHome? Connect MANDU (one time)</span><span data-lang="jp">💬 ご本人のBizHomeですか？MANDUを連携する（1回）</span><span data-lang="cn">💬 这是您本人的BizHome吗？连接MANDU（仅一次）</span><span data-lang="it">💬 Questo è il tuo BizHome? Collega MANDU (una sola volta)</span>
   </button>
   <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:var(--gold);padding:7px 0;">
