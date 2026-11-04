@@ -390,15 +390,15 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 </section>
 <div class="action"><div class="btn-group">
   <button class="btn btn-primary" onclick="saveContact()"><span data-lang="kr" class="active">📞 연락처 저장</span><span data-lang="jp">📞 連絡先を保存</span><span data-lang="cn">📞 保存联系人</span><span data-lang="en">📞 Save contact</span><span data-lang="it">📞 Salva contatto</span></button>
-  <button class="btn btn-secondary" onclick="saveToCardbook({id:'jo-sinah',name:'조신아',nameEn:'Jo Sin-Ah',title:'대표, CEO',company:'아트뱅가드',phone:'010-8407-7484',email:'Sinah.jo@gmail.com',chapter:'자이언츠',bni:'',url:window.location.href})"><span data-lang="kr" class="active">🗂️ 명함 저장 (CardBook)</span><span data-lang="jp">🗂️ 名刺を保存</span><span data-lang="cn">🗂️ 保存名片</span><span data-lang="en">🗂️ Save to CardBook</span><span data-lang="it">🗂️ Salva su CardBook</span></button>
-  <button class="btn btn-share" onclick="shareCard()"><span data-lang="kr" class="active">📤 명함 전달하기</span><span data-lang="jp">📤 名刺を共有</span><span data-lang="cn">📤 分享名片</span><span data-lang="en">📤 Share this card</span><span data-lang="it">📤 Condividi</span></button>
+  <button class="btn btn-secondary" onclick="saveToCardbook({id:'jo-sinah',name:'조신아',nameEn:'Jo Sin-Ah',title:'대표, CEO',company:'아트뱅가드',phone:'010-8407-7484',email:'Sinah.jo@gmail.com',chapter:'자이언츠',bni:'',url:window.location.href})"><span data-lang="kr" class="active">🗂️ 비즈홈 저장 (CardBook)</span><span data-lang="jp">🗂️ BizHomeを保存</span><span data-lang="cn">🗂️ 保存BizHome</span><span data-lang="en">🗂️ Save BizHome to CardBook</span><span data-lang="it">🗂️ Salva BizHome su CardBook</span></button>
+  <button class="btn btn-share" onclick="shareCard()"><span data-lang="kr" class="active">📤 비즈홈 전달하기</span><span data-lang="jp">📤 BizHomeを共有</span><span data-lang="cn">📤 分享BizHome</span><span data-lang="en">📤 Share this BizHome</span><span data-lang="it">📤 Condividi BizHome</span></button>
 </div></div>
 <!-- 공유 바텀시트 (Web Share API 미지원 브라우저 폴백) -->
 <div class="share-sheet" id="shareSheet">
   <div class="share-backdrop" onclick="closeShare()"></div>
   <div class="share-panel">
     <div class="share-handle"></div>
-    <div class="share-title">명함 전달하기</div>
+    <div class="share-title"><span data-lang="kr" class="active">비즈홈 전달하기</span><span data-lang="jp">BizHomeを共有</span><span data-lang="cn">分享BizHome</span><span data-lang="en">Share this BizHome</span><span data-lang="it">Condividi BizHome</span></div>
     <div class="share-btns">
       <button class="share-btn" onclick="shareKakao()">
         <div class="share-btn-icon" style="background:#FEE500;">💬</div><span>카카오톡</span>
@@ -421,10 +421,10 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 <div class="mandu-activate-wrap" style="padding:14px 20px 4px;text-align:center;">
   <button id="mandu-activate-btn" onclick="activateMandu()"
     style="background:none;border:1px solid rgba(240,138,118,0.3);color:var(--muted-dark);font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
-    💬 본인 명함이신가요? 만두 연결하기 (1회)
+    💬 본인 비즈홈이신가요? 만두 연결하기 (1회)
   </button>
   <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:var(--gold);padding:7px 0;">
-    ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
+    ✅ 만두 연결 완료 — 이제 이 비즈홈으로 DM을 받을 수 있어요
   </div>
 </div>
 
@@ -451,7 +451,7 @@ function saveContact() {
   a.click();
 }
 
-/* ── 명함 전달하기 ── */
+/* ── 비즈홈 전달하기 ── */
 const CARD_URL = 'https://jinjjabg-hub.github.io/bni-giants/%EC%A1%B0%EC%8B%A0%EC%95%84/';
 const CARD_TITLE = '조신아 | 아트뱅가드';
 const CARD_TEXT = '브랜드를 예술로, 공간을 글로벌 관광명소로.';
@@ -546,7 +546,7 @@ async function _manduFinishActivate(user) {
     const btn = document.getElementById('mandu-activate-btn');
     if (btn) btn.style.display = 'none';
     const done = document.getElementById('mandu-activate-done');
-    if (done) { done.textContent = 'ℹ️ 이미 연결된 명함이에요'; done.style.display = 'block'; }
+    if (done) { done.textContent = 'ℹ️ 이미 연결된 비즈홈이에요'; done.style.display = 'block'; }
     return;
   }
 
@@ -564,12 +564,12 @@ async function _manduFinishActivate(user) {
 }
 
 async function activateMandu() {
-  if (!confirm('본인 명함이 맞나요?\n구글 로그인하면 이 명함으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  if (!confirm('본인 비즈홈이 맞나요?\n구글 로그인하면 이 비즈홈으로 만두 DM을 받을 수 있게 연결돼요.')) return;
   const btn = document.getElementById('mandu-activate-btn');
   if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
   const ready = await _manduWaitFirebase();
   if (!ready) {
-    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
     alert('연결 실패. 잠시 후 다시 시도해주세요.');
     return;
   }
@@ -587,7 +587,7 @@ async function activateMandu() {
     await _manduFinishActivate(result.user);
   } catch (e) {
     console.error('만두 연결 실패:', e);
-    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 명함이신가요? 만두 연결하기 (1회)'; }
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
     alert('연결 중 오류가 발생했어요.');
   }
 }
