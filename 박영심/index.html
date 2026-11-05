@@ -164,7 +164,7 @@ footer { background:#000; text-align:center; padding:24px; border-top:1px solid 
 .container { max-width:430px; margin:0 auto; }
 
 /* ── 링크 로고 줄 / 주소 한 줄 (dica-namecard 2026-11-04 표준) ── */
-.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px 0; }
+.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px auto; max-width:288px; }
 .link-tile { display:block; line-height:0; border-radius:16px; overflow:hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
 .link-tile img, .link-tile svg { width:56px; height:56px; display:block; background:#fff; }
 .link-tile:active { transform: scale(0.94); }
@@ -643,6 +643,9 @@ footer { background:#000; text-align:center; padding:24px; border-top:1px solid 
       </a>
   </div>
   <div class="link-row">
+    <a class="link-tile" href="https://jinjjabg-hub.github.io/MANDU/?u=park-yeongsim" target="_blank" rel="noopener" aria-label="MANDU">
+      <img src="https://cardbook.bizmy.net/mandu-icon.png" alt="MANDU" width="56" height="56">
+    </a>
     <a class="link-tile" href="https://www.instagram.com/zerosimp1" target="_blank" rel="noopener" aria-label="Instagram">
       <svg viewBox="0 0 64 64" aria-hidden="true"><defs><radialGradient id="igGrad" cx="0.3" cy="1.07" r="1.2"><stop offset="0" stop-color="#FFD776"/><stop offset="0.25" stop-color="#F3A554"/><stop offset="0.45" stop-color="#E1306C"/><stop offset="0.75" stop-color="#C13584"/><stop offset="1" stop-color="#5851DB"/></radialGradient></defs><rect width="64" height="64" rx="16" fill="url(#igGrad)"/><rect x="14" y="14" width="36" height="36" rx="11" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="32" cy="32" r="8.5" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="43" cy="21" r="2.8" fill="#fff"/></svg>
     </a>
@@ -658,9 +661,20 @@ footer { background:#000; text-align:center; padding:24px; border-top:1px solid 
 
 <!-- ACTIONS -->
 <div class="actions-wrap">
-  <button class="btn btn-red" onclick="shareCard()">📤 <span data-lang="kr" class="active">명함 공유하기</span><span data-lang="en">Share Card</span><span data-lang="jp">名刺をシェア</span><span data-lang="cn">分享名片</span></button>
+  <button class="btn btn-red" onclick="shareCard()">📤 <span data-lang="kr" class="active">비즈홈 전달하기</span><span data-lang="en">Share this Biz Home</span><span data-lang="jp">ビズホームを共有</span><span data-lang="cn">分享商务主页</span></button>
   <button class="btn btn-out" onclick="saveContact()">📞 <span data-lang="kr" class="active">연락처 저장</span><span data-lang="en">Save Contact</span><span data-lang="jp">連絡先を保存</span><span data-lang="cn">保存联系人</span></button>
-  <button class="btn btn-out" onclick="saveToCardbook({name:'박영심',company:'크로스컬러디자인연구소',title:'대표',phone:'010-9984-8248',dicaUrl:'https://jinjjabg-hub.github.io/bni-giants/박영심/'})">🗂️ <span data-lang="kr" class="active">명함첩 저장</span><span data-lang="en">Save to CardBook</span><span data-lang="jp">名刺帳に保存</span><span data-lang="cn">保存到名片册</span></button>
+  <button class="btn btn-out" onclick="saveToCardbook({name:'박영심',company:'크로스컬러디자인연구소',title:'대표',phone:'010-9984-8248',dicaUrl:'https://jinjjabg-hub.github.io/bni-giants/박영심/'})">🗂️ <span data-lang="kr" class="active">카드북에 저장</span><span data-lang="en">Save to CardBook</span><span data-lang="jp">カードブックに保存</span><span data-lang="cn">保存到CardBook</span></button>
+</div>
+
+<!-- 만두 연결 (카드 주인 전용, 방문자는 무시해도 되는 위치) -->
+<div class="mandu-activate-wrap" style="padding:14px 20px 4px;text-align:center;">
+  <button id="mandu-activate-btn" onclick="activateMandu()"
+    style="background:none;border:1px solid rgba(201,168,76,0.3);color:var(--muted-dark,#a89060);font-size:10.5px;padding:7px 14px;border-radius:20px;cursor:pointer;font-family:'Noto Sans KR',sans-serif;">
+    💬 본인 비즈홈이신가요? 만두 연결하기 (1회)
+  </button>
+  <div id="mandu-activate-done" style="display:none;font-size:10.5px;color:var(--gold);padding:7px 0;">
+    ✅ 만두 연결 완료 — 이제 이 카드로 DM을 받을 수 있어요
+  </div>
 </div>
 
 <footer>
@@ -754,6 +768,87 @@ document.addEventListener('DOMContentLoaded',()=>{initRef();});
     };
     document.body.appendChild(statBtn);
   });
+})();
+
+/* ── 만두 원클릭 연결 (카드 주인 전용) ──────────────────────────
+   구글 로그인 1번 → manduid_index/park-yeongsim 문서에 uid 자동 등록.
+   MANDU 링크(?u=park-yeongsim)는 이미 고정돼 있으므로 아무도 링크를
+   중간에서 복사·전달·붙여넣기 할 필요가 없다. save-to-cardbook.js가
+   이미 firebase를 로드해두므로 그걸 재사용한다. */
+async function _manduWaitFirebase(maxTries) {
+  let tries = 0;
+  while ((typeof firebase === 'undefined' || !firebase.apps || !firebase.apps.length) && tries < (maxTries || 50)) {
+    await new Promise(r => setTimeout(r, 100));
+    tries++;
+  }
+  return typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length > 0;
+}
+
+async function _manduFinishActivate(user) {
+  const slug = 'park-yeongsim';
+  const db = firebase.firestore();
+
+  // 이미 다른 uid로 연결돼 있으면 덮어쓰지 않음 (실수·장난 클릭으로부터 카드 보호)
+  const existing = await db.collection('manduid_index').doc(slug).get();
+  if (existing.exists && existing.data().uid !== user.uid) {
+    const btn = document.getElementById('mandu-activate-btn');
+    if (btn) btn.style.display = 'none';
+    const done = document.getElementById('mandu-activate-done');
+    if (done) { done.textContent = 'ℹ️ 이미 연결된 비즈홈이에요'; done.style.display = 'block'; }
+    return;
+  }
+
+  await db.collection('users').doc(user.uid).set({
+    uid: user.uid, displayName: user.displayName || '', photoURL: user.photoURL || '',
+    email: user.email || '', manduid: slug
+  }, { merge: true });
+  await db.collection('manduid_index').doc(slug).set({
+    uid: user.uid, createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  }, { merge: true });
+  const btn = document.getElementById('mandu-activate-btn');
+  const done = document.getElementById('mandu-activate-done');
+  if (btn) btn.style.display = 'none';
+  if (done) done.style.display = 'block';
+}
+
+async function activateMandu() {
+  if (!confirm('본인 비즈홈이 맞나요?\n구글 로그인하면 이 비즈홈으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  const btn = document.getElementById('mandu-activate-btn');
+  if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
+  const ready = await _manduWaitFirebase();
+  if (!ready) {
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 실패. 잠시 후 다시 시도해주세요.');
+    return;
+  }
+  try {
+    const auth = firebase.auth();
+    await auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
+    const provider = new firebase.auth.GoogleAuthProvider();
+    const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isMobile) {
+      sessionStorage.setItem('_manduPendingSlug', 'park-yeongsim');
+      await auth.signInWithRedirect(provider);
+      return;
+    }
+    const result = await auth.signInWithPopup(provider);
+    await _manduFinishActivate(result.user);
+  } catch (e) {
+    console.error('만두 연결 실패:', e);
+    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
+    alert('연결 중 오류가 발생했어요.');
+  }
+}
+
+(async function () {
+  if (!sessionStorage.getItem('_manduPendingSlug')) return;
+  const ready = await _manduWaitFirebase();
+  sessionStorage.removeItem('_manduPendingSlug');
+  if (!ready) return;
+  try {
+    const res = await firebase.auth().getRedirectResult();
+    if (res && res.user) await _manduFinishActivate(res.user);
+  } catch (e) { console.error(e); }
 })();
 </script>
 </body>

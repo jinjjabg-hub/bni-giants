@@ -143,7 +143,7 @@ section { padding:40px 24px; }
 footer { text-align:center; padding:32px 24px 40px; background:var(--bg-dark); color:rgba(255,255,255,0.4); font-size:11.5px; }
 
 /* ── 링크 로고 줄 / 주소 한 줄 (dica-namecard 2026-11-04 표준) ── */
-.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px 0; }
+.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px auto; max-width:288px; }
 .link-tile { display:block; line-height:0; border-radius:16px; overflow:hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
 .link-tile img, .link-tile svg { width:56px; height:56px; display:block; background:#fff; }
 .link-tile:active { transform: scale(0.94); }
@@ -576,13 +576,13 @@ footer { text-align:center; padding:32px 24px 40px; background:var(--bg-dark); c
 <section class="sec-dark">
   <div class="btn-wrap">
     <button class="btn btn-blue" onclick="shareCard()">
-      📤 <span data-lang="kr" class="active">비즈홈 공유</span><span data-lang="en">Share Card</span><span data-lang="jp">名刺を共有</span><span data-lang="cn">分享名片</span><span data-lang="mn">Нэрийн хуудас хуваалцах</span>
+      📤 <span data-lang="kr" class="active">비즈홈 전달하기</span><span data-lang="en">Share this Biz Home</span><span data-lang="jp">ビズホームを共有</span><span data-lang="cn">分享商务主页</span><span data-lang="mn">Biz Home дамжуулах</span>
     </button>
     <button class="btn btn-out" onclick="saveContact()">
       📞 <span data-lang="kr" class="active">연락처 저장</span><span data-lang="en">Save Contact</span><span data-lang="jp">連絡先を保存</span><span data-lang="cn">保存联系方式</span><span data-lang="mn">Холбоо барих мэдээлэл хадгалах</span>
     </button>
     <button class="btn btn-out" onclick="saveToCardbook({name:'방수근', title:'대표', company:'선향양초', phone:'010-3551-1983', url:window.location.href})">
-      🗂️ <span data-lang="kr" class="active">카드북에 저장</span><span data-lang="en">Save to CardBook</span><span data-lang="jp">名刺帳に保存</span><span data-lang="cn">保存至名片夹</span><span data-lang="mn">CardBook-д хадгалах</span>
+      🗂️ <span data-lang="kr" class="active">카드북에 저장</span><span data-lang="en">Save to CardBook</span><span data-lang="jp">カードブックに保存</span><span data-lang="cn">保存到CardBook</span><span data-lang="mn">CardBook-д хадгалах</span>
     </button>
     <a href="tel:010-3551-1983" class="btn btn-blue">
       💬 <span data-lang="kr" class="active">상담 문의하기</span><span data-lang="en">Contact Us</span><span data-lang="jp">お問い合わせ</span><span data-lang="cn">咨询联系</span><span data-lang="mn">Зөвлөгөө авах</span>
