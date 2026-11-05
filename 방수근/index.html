@@ -141,6 +141,16 @@ section { padding:40px 24px; }
 
 /* FOOTER */
 footer { text-align:center; padding:32px 24px 40px; background:var(--bg-dark); color:rgba(255,255,255,0.4); font-size:11.5px; }
+
+/* ── 링크 로고 줄 / 주소 한 줄 (dica-namecard 2026-11-04 표준) ── */
+.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px 0; }
+.link-tile { display:block; line-height:0; border-radius:16px; overflow:hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+.link-tile img, .link-tile svg { width:56px; height:56px; display:block; background:#fff; }
+.link-tile:active { transform: scale(0.94); }
+.addr-line { display:flex; align-items:center; gap:10px; background:#fff; border-radius:12px; padding:12px 14px; text-decoration:none; border:1px solid rgba(0,0,0,0.05); }
+.addr-pin { font-size:18px; }
+.addr-text { flex:1; font-size:12.5px; font-weight:600; color: var(--text-light,#1a1a2e); line-height:1.5; }
+.addr-map { font-size:12px; font-weight:700; color: var(--gold,#c9a84c); white-space:nowrap; }
 </style>
 </head>
 <body>
@@ -531,13 +541,11 @@ footer { text-align:center; padding:32px 24px 40px; background:var(--bg-dark); c
     <span data-lang="cn">宣香蜡烛·制造·批发</span>
     <span data-lang="mn">SunHyang Candle · Үйлдвэрлэл · Бөөний худалдаа</span>
   </div>
-  <a href="https://jinjjabg-hub.github.io/MANDU/?u=bang-sugeun" target="_blank" class="con-item">
-    💬 <span data-lang="kr" class="active">MANDU · 실시간 번역 메신저</span>
-    <span data-lang="en">MANDU · Live Translation Chat</span>
-    <span data-lang="jp">MANDU・翻訳チャット</span>
-    <span data-lang="cn">MANDU·实时翻译聊天</span>
-    <span data-lang="mn">MANDU · Шууд орчуулгын чат</span>
-  </a>
+  <div class="link-row">
+    <a class="link-tile" href="https://jinjjabg-hub.github.io/MANDU/?u=bang-sugeun" target="_blank" rel="noopener" aria-label="MANDU">
+      <img src="https://cardbook.bizmy.net/mandu-icon.png" alt="MANDU" width="56" height="56">
+    </a>
+  </div>
 </section>
 
 <!-- PORTFOLIO -->

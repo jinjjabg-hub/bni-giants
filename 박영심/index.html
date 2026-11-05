@@ -162,6 +162,16 @@ footer { background:#000; text-align:center; padding:24px; border-top:1px solid 
 .footer-logo span { color:var(--red); }
 .footer-sub { font-size:10px; color:#444; margin-top:5px; }
 .container { max-width:430px; margin:0 auto; }
+
+/* ── 링크 로고 줄 / 주소 한 줄 (dica-namecard 2026-11-04 표준) ── */
+.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px 0; }
+.link-tile { display:block; line-height:0; border-radius:16px; overflow:hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+.link-tile img, .link-tile svg { width:56px; height:56px; display:block; background:#fff; }
+.link-tile:active { transform: scale(0.94); }
+.addr-line { display:flex; align-items:center; gap:10px; background:#fff; border-radius:12px; padding:12px 14px; text-decoration:none; border:1px solid rgba(0,0,0,0.05); }
+.addr-pin { font-size:18px; }
+.addr-text { flex:1; font-size:12.5px; font-weight:600; color: var(--text-light,#1a1a2e); line-height:1.5; }
+.addr-map { font-size:12px; font-weight:700; color: var(--gold,#c9a84c); white-space:nowrap; }
 </style>
 </head>
 <body>
@@ -627,23 +637,22 @@ footer { background:#000; text-align:center; padding:24px; border-top:1px solid 
     </div>
     <div class="sec-divider"></div>
     <div class="con-grid">
-      <a href="tel:010-9984-8248" class="con-item">
+    <a href="tel:010-9984-8248" class="con-item" style="grid-column:1/-1;">
         <div class="con-item-top"><span class="con-icon">📞</span><span class="con-label">PHONE</span></div>
         <div class="con-value">010-9984-8248</div>
       </a>
-      <a href="https://brunch.co.kr/@zerosimp" target="_blank" class="con-item">
-        <div class="con-item-top"><span class="con-icon">✍️</span><span class="con-label">BRUNCH</span></div>
-        <div class="con-value"><span data-lang="kr" class="active">브런치 스토리</span><span data-lang="en">Brunch Story</span><span data-lang="jp">ブランチストーリー</span><span data-lang="cn">博客故事</span></div>
-      </a>
-      <a href="https://www.instagram.com/zerosimp1" target="_blank" class="con-item">
-        <div class="con-item-top"><span class="con-icon">📸</span><span class="con-label">INSTAGRAM</span></div>
-        <div class="con-value">@zerosimp1</div>
-      </a>
-      <a href="https://www.threads.com/@zerosimp1" target="_blank" class="con-item">
-        <div class="con-item-top"><span class="con-icon">🧵</span><span class="con-label">THREADS</span></div>
-        <div class="con-value">@zerosimp1</div>
-      </a>
-    </div>
+  </div>
+  <div class="link-row">
+    <a class="link-tile" href="https://www.instagram.com/zerosimp1" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><radialGradient id="igGrad" cx="0.3" cy="1.07" r="1.2"><stop offset="0" stop-color="#FFD776"/><stop offset="0.25" stop-color="#F3A554"/><stop offset="0.45" stop-color="#E1306C"/><stop offset="0.75" stop-color="#C13584"/><stop offset="1" stop-color="#5851DB"/></radialGradient></defs><rect width="64" height="64" rx="16" fill="url(#igGrad)"/><rect x="14" y="14" width="36" height="36" rx="11" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="32" cy="32" r="8.5" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="43" cy="21" r="2.8" fill="#fff"/></svg>
+    </a>
+    <a class="link-tile" href="https://brunch.co.kr/@zerosimp" target="_blank" rel="noopener" aria-label="Blog">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#03C75A"/><text x="32" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="800" fill="#fff">blog</text></svg>
+    </a>
+    <a class="link-tile" href="https://www.threads.com/@zerosimp1" target="_blank" rel="noopener" aria-label="Threads">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#000"/><text x="32" y="44" text-anchor="middle" font-family="Arial,sans-serif" font-size="36" font-weight="700" fill="#fff">@</text></svg>
+    </a>
+  </div>
   </div>
 </div>
 

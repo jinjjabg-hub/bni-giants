@@ -324,6 +324,16 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 [data-lang="jp"]{font-family:'Pretendard Variable',Pretendard,'Noto Sans JP',sans-serif}
 [data-lang="cn"]{font-family:'Pretendard Variable',Pretendard,'Noto Sans SC',sans-serif}
 .contact-item.addr .contact-value{word-break:keep-all;font-size:11.5px}
+
+/* ── 링크 로고 줄 / 주소 한 줄 (dica-namecard 2026-11-04 표준) ── */
+.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px 0; }
+.link-tile { display:block; line-height:0; border-radius:16px; overflow:hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+.link-tile img, .link-tile svg { width:56px; height:56px; display:block; background:#fff; }
+.link-tile:active { transform: scale(0.94); }
+.addr-line { display:flex; align-items:center; gap:10px; background:#fff; border-radius:12px; padding:12px 14px; text-decoration:none; border:1px solid rgba(0,0,0,0.05); }
+.addr-pin { font-size:18px; }
+.addr-text { flex:1; font-size:12.5px; font-weight:600; color: var(--text-light,#1a1a2e); line-height:1.5; }
+.addr-map { font-size:12px; font-weight:700; color: var(--gold,#c9a84c); white-space:nowrap; }
 </style></head>
 <body>
 <nav>
@@ -390,7 +400,48 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 <section class="contact">
   <div class="section-label">Contact</div>
   <div class="section-title"><span data-lang="kr" class="active">연락하기</span><span data-lang="jp">お問い合わせ</span><span data-lang="cn">联系方式</span><span data-lang="en">Contact</span><span data-lang="it">Contatti</span></div>
-  <div class="contact-list"><a class="contact-item" href="tel:010-8407-7484"><div class="contact-icon">📞</div><div class="contact-label"><span data-lang="kr" class="active">전화</span><span data-lang="jp">電話</span><span data-lang="cn">电话</span><span data-lang="en">Phone</span><span data-lang="it">Telefono</span></div><div class="contact-value">010-8407-7484</div></a><a class="contact-item" href="mailto:Sinah.jo@gmail.com"><div class="contact-icon">✉️</div><div class="contact-label">Email</div><div class="contact-value">Sinah.jo@gmail.com</div></a><a class="contact-item" href="https://artvanguard.co.kr/" target="_blank"><div class="contact-icon">💻</div><div class="contact-label"><span data-lang="kr" class="active">홈페이지</span><span data-lang="jp">ホームページ</span><span data-lang="cn">官网</span><span data-lang="en">Website</span><span data-lang="it">Sito web</span></div><div class="contact-value">artvanguard.co.kr</div></a><a class="contact-item" href="https://www.instagram.com/art.trip_jay/" target="_blank"><div class="contact-icon">📷</div><div class="contact-label">Instagram</div><div class="contact-value">@art.trip_jay</div></a><a class="contact-item" href="https://www.youtube.com/@ArtVanguard_NFT" target="_blank"><div class="contact-icon">▶️</div><div class="contact-label">YouTube</div><div class="contact-value">@ArtVanguard_NFT</div></a><a class="contact-item" href="https://marpple.shop/jp/artvanguard" target="_blank"><div class="contact-icon">🛍️</div><div class="contact-label"><span data-lang="kr" class="active">굿즈 주문 · 일본어</span><span data-lang="jp">グッズ注文 · 日本語</span><span data-lang="cn">周边订购 · 日语</span><span data-lang="en">Order goods · JP</span><span data-lang="it">Ordina · JP</span></div><div class="contact-value">marpple.shop/jp</div></a><a class="contact-item" href="https://marpple.shop/kr/artvanguard" target="_blank"><div class="contact-icon">🛍️</div><div class="contact-label"><span data-lang="kr" class="active">굿즈 주문 · 한국어</span><span data-lang="jp">グッズ注文 · 韓国語</span><span data-lang="cn">周边订购 · 韩语</span><span data-lang="en">Order goods · KR</span><span data-lang="it">Ordina · KR</span></div><div class="contact-value">marpple.shop/kr</div></a><a class="contact-item" href="https://marpple.shop/en/artvanguard" target="_blank"><div class="contact-icon">🛍️</div><div class="contact-label"><span data-lang="kr" class="active">굿즈 주문 · 영어</span><span data-lang="jp">グッズ注文 · 英語</span><span data-lang="cn">周边订购 · 英语</span><span data-lang="en">Order goods · EN</span><span data-lang="it">Ordina · EN</span></div><div class="contact-value">marpple.shop/en</div></a><a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=jo-sinah" target="_blank"><div class="contact-icon">💬</div><div class="contact-label">MANDU</div><div class="contact-value"><span data-lang="kr" class="active">실시간 번역 메신저</span><span data-lang="jp">リアルタイム翻訳チャット</span><span data-lang="cn">实时翻译聊天</span><span data-lang="en">Live translation chat</span><span data-lang="it">Chat con traduzione live</span></div></a><a class="contact-item addr" href="https://map.kakao.com/link/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%B6%80%EC%82%B0%EC%A7%84%EA%B5%AC%20%EA%B0%80%EC%95%BC%EB%8C%80%EB%A1%9C%20786%2C%208%EC%B8%B5%20802%ED%98%B8" target="_blank"><div class="contact-icon">📍</div><div class="contact-label"><span data-lang="kr" class="active">주소 (탭하면 지도 열림)</span><span data-lang="jp">住所（タップで地図）</span><span data-lang="cn">地址（点击打开地图）</span><span data-lang="en">Address (tap to open map)</span><span data-lang="it">Indirizzo (tocca per la mappa)</span></div><div class="contact-value"><span data-lang="kr" class="active">부산광역시 부산진구 가야대로 786, 8층 802호</span><span data-lang="jp">韓国 釜山広域市 釜山鎮区 伽倻大路786, 8階802号</span><span data-lang="cn">韩国釜山广域市釜山镇区伽倻大路786号 8层802室</span><span data-lang="en">802, 8F, 786 Gaya-daero, Busanjin-gu, Busan, Korea</span><span data-lang="it">802, 8° piano, 786 Gaya-daero, Busanjin-gu, Busan, Corea del Sud</span></div></a></div>
+  <div class="contact-list">
+    <a class="contact-item" href="tel:010-8407-7484"><div class="contact-icon">📞</div><div class="contact-label"><span data-lang="kr" class="active">전화</span><span data-lang="jp">電話</span><span data-lang="cn">电话</span><span data-lang="en">Phone</span><span data-lang="it">Telefono</span></div><div class="contact-value">010-8407-7484</div></a>
+    <a class="contact-item" href="mailto:Sinah.jo@gmail.com"><div class="contact-icon">✉️</div><div class="contact-label">Email</div><div class="contact-value">Sinah.jo@gmail.com</div></a>
+  </div>
+  <div class="link-row">
+    <a class="link-tile" href="https://jinjjabg-hub.github.io/MANDU/?u=jo-sinah" target="_blank" rel="noopener" aria-label="MANDU">
+      <img src="https://cardbook.bizmy.net/mandu-icon.png" alt="MANDU" width="56" height="56">
+    </a>
+    <a class="link-tile" href="https://www.instagram.com/art.trip_jay/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><radialGradient id="igGrad" cx="0.3" cy="1.07" r="1.2"><stop offset="0" stop-color="#FFD776"/><stop offset="0.25" stop-color="#F3A554"/><stop offset="0.45" stop-color="#E1306C"/><stop offset="0.75" stop-color="#C13584"/><stop offset="1" stop-color="#5851DB"/></radialGradient></defs><rect width="64" height="64" rx="16" fill="url(#igGrad)"/><rect x="14" y="14" width="36" height="36" rx="11" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="32" cy="32" r="8.5" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="43" cy="21" r="2.8" fill="#fff"/></svg>
+    </a>
+    <a class="link-tile" href="https://www.youtube.com/@ArtVanguard_NFT" target="_blank" rel="noopener" aria-label="YouTube">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#FF0000"/><path d="M26 22.5v19l16.5-9.5z" fill="#fff"/></svg>
+    </a>
+    <a class="link-tile" href="https://artvanguard.co.kr/" target="_blank" rel="noopener" aria-label="Homepage">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0d1b3e"/><path d="M32 15 13 31h5.5v17h10V37h7v11h10V31H51z" fill="#fff"/></svg>
+    </a>
+    <a class="link-tile" href="https://marpple.shop/jp/artvanguard" target="_blank" rel="noopener" aria-label="Homepage">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0d1b3e"/><path d="M32 15 13 31h5.5v17h10V37h7v11h10V31H51z" fill="#fff"/></svg>
+    </a>
+    <a class="link-tile" href="https://marpple.shop/kr/artvanguard" target="_blank" rel="noopener" aria-label="Homepage">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0d1b3e"/><path d="M32 15 13 31h5.5v17h10V37h7v11h10V31H51z" fill="#fff"/></svg>
+    </a>
+    <a class="link-tile" href="https://marpple.shop/en/artvanguard" target="_blank" rel="noopener" aria-label="Homepage">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0d1b3e"/><path d="M32 15 13 31h5.5v17h10V37h7v11h10V31H51z" fill="#fff"/></svg>
+    </a>
+  </div>
+  <a class="addr-line" href="https://map.naver.com/p/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EB%B6%80%EC%82%B0%EC%A7%84%EA%B5%AC%20%EA%B0%80%EC%95%BC%EB%8C%80%EB%A1%9C%20786%2C%208%EC%B8%B5%20802%ED%98%B8" target="_blank" rel="noopener">
+    <span class="addr-pin">📍</span>
+    <span class="addr-text">
+      <span data-lang="kr" class="active">부산광역시 부산진구 가야대로 786, 8층 802호</span><span data-lang="jp">韓国 釜山広域市 釜山鎮区 伽倻大路786, 8階802号</span><span data-lang="cn">韩国釜山广域市釜山镇区伽倻大路786号 8层802室</span><span data-lang="en">802, 8F, 786 Gaya-daero, Busanjin-gu, Busan, Korea</span><span data-lang="it">802, 8° piano, 786 Gaya-daero, Busanjin-gu, Busan, Corea del Sud</span>
+    </span>
+    <span class="addr-map">
+      <span data-lang="kr" class="active">지도 ›</span>
+      <span data-lang="en">Map ›</span>
+      <span data-lang="jp">地図 ›</span>
+      <span data-lang="cn">地图 ›</span>
+      <span data-lang="si">Map ›</span>
+      <span data-lang="ur">Map ›</span>
+      <span data-lang="it">Map ›</span>
+    </span>
+  </a>
 </section>
 <div class="action"><div class="btn-group">
   <button class="btn btn-primary" onclick="saveContact()"><span data-lang="kr" class="active">📞 연락처 저장</span><span data-lang="jp">📞 連絡先を保存</span><span data-lang="cn">📞 保存联系人</span><span data-lang="en">📞 Save contact</span><span data-lang="it">📞 Salva contatto</span></button>

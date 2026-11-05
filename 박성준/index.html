@@ -409,6 +409,16 @@ footer{
 
 [data-lang]:not(.active){display:none !important;}
 em.acc,.hero-name em{font-style:normal;}
+
+/* ── 링크 로고 줄 / 주소 한 줄 (dica-namecard 2026-11-04 표준) ── */
+.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px 0; }
+.link-tile { display:block; line-height:0; border-radius:16px; overflow:hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+.link-tile img, .link-tile svg { width:56px; height:56px; display:block; background:#fff; }
+.link-tile:active { transform: scale(0.94); }
+.addr-line { display:flex; align-items:center; gap:10px; background:#fff; border-radius:12px; padding:12px 14px; text-decoration:none; border:1px solid rgba(0,0,0,0.05); }
+.addr-pin { font-size:18px; }
+.addr-text { flex:1; font-size:12.5px; font-weight:600; color: var(--text-light,#1a1a2e); line-height:1.5; }
+.addr-map { font-size:12px; font-weight:700; color: var(--gold,#c9a84c); white-space:nowrap; }
 </style>
 </head>
 <body>
@@ -613,25 +623,19 @@ em.acc,.hero-name em{font-style:normal;}
       <span class="connect-label" id="conn-email-label"><span data-lang="kr" class="active">이메일</span><span data-lang="en">Email</span><span data-lang="jp">メール</span><span data-lang="cn">邮件</span><span data-lang="mn">Имэйл</span></span>
       <span class="connect-value">psjune97@naver.com</span>
     </a>
-    <a href="http://www.elroimedia.com" target="_blank" rel="noopener" class="connect-btn">
-      <span class="connect-icon">🌐</span>
-      <span class="connect-label" id="conn-web-label"><span data-lang="kr" class="active">홈페이지</span><span data-lang="en">Website</span><span data-lang="jp">ウェブサイト</span><span data-lang="cn">官网</span><span data-lang="mn">Вэбсайт</span></span>
-      <span class="connect-value">elroimedia.com</span>
+  </div>
+  <div class="link-row">
+    <a class="link-tile" href="https://jinjjabg-hub.github.io/MANDU/?u=park-seongjune" target="_blank" rel="noopener" aria-label="MANDU">
+      <img src="https://cardbook.bizmy.net/mandu-icon.png" alt="MANDU" width="56" height="56">
     </a>
-    <a href="https://instagram.com/seongjune_bass" target="_blank" rel="noopener" class="connect-btn">
-      <span class="connect-icon">📸</span>
-      <span class="connect-label">인스타그램</span>
-      <span class="connect-value">@seongjune_bass</span>
+    <a class="link-tile" href="https://instagram.com/seongjune_bass" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><radialGradient id="igGrad" cx="0.3" cy="1.07" r="1.2"><stop offset="0" stop-color="#FFD776"/><stop offset="0.25" stop-color="#F3A554"/><stop offset="0.45" stop-color="#E1306C"/><stop offset="0.75" stop-color="#C13584"/><stop offset="1" stop-color="#5851DB"/></radialGradient></defs><rect width="64" height="64" rx="16" fill="url(#igGrad)"/><rect x="14" y="14" width="36" height="36" rx="11" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="32" cy="32" r="8.5" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="43" cy="21" r="2.8" fill="#fff"/></svg>
     </a>
-    <a href="https://share.google/maMZMhKLVkMZtJAZC" target="_blank" rel="noopener" class="connect-btn">
-      <span class="connect-icon">📍</span>
-      <span class="connect-label">엘로이샵</span>
-      <span class="connect-value">위치 보기</span>
+    <a class="link-tile" href="http://www.elroimedia.com" target="_blank" rel="noopener" aria-label="Homepage">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0d1b3e"/><path d="M32 15 13 31h5.5v17h10V37h7v11h10V31H51z" fill="#fff"/></svg>
     </a>
-    <a href="https://jinjjabg-hub.github.io/MANDU/?u=park-seongjune" target="_blank" rel="noopener" class="connect-btn">
-      <span class="connect-icon">💬</span>
-      <span class="connect-label">MANDU</span>
-      <span class="connect-value" id="conn-mandu-value"><span data-lang="kr" class="active">실시간 번역 메신저</span><span data-lang="en">Live Translation Chat</span><span data-lang="jp">翻訳チャット</span><span data-lang="cn">实时翻译聊天</span><span data-lang="mn">Шууд орчуулгатай чат</span></span>
+    <a class="link-tile" href="https://share.google/maMZMhKLVkMZtJAZC" target="_blank" rel="noopener" aria-label="Homepage">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0d1b3e"/><path d="M32 15 13 31h5.5v17h10V37h7v11h10V31H51z" fill="#fff"/></svg>
     </a>
   </div>
 </section>
