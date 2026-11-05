@@ -328,6 +328,16 @@ footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-
 .footer-logo { display:block; width:200px; max-width:70%; margin:18px auto 0; background:#fff; border-radius:12px; padding:10px 14px; }
 .footer-logo img { width:100%; height:auto; display:block; }
 footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.5px; }
+
+/* ── 링크 로고 줄 / 주소 한 줄 (dica-namecard 2026-11-04 표준) ── */
+.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px auto; max-width:288px; }
+.link-tile { display:block; line-height:0; border-radius:16px; overflow:hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+.link-tile img, .link-tile svg { width:56px; height:56px; display:block; background:#fff; }
+.link-tile:active { transform: scale(0.94); }
+.addr-line { display:flex; align-items:center; gap:10px; background:#fff; border-radius:12px; padding:12px 14px; text-decoration:none; border:1px solid rgba(0,0,0,0.05); }
+.addr-pin { font-size:18px; }
+.addr-text { flex:1; font-size:12.5px; font-weight:600; color: var(--text-light,#1a1a2e); line-height:1.5; }
+.addr-map { font-size:12px; font-weight:700; color: var(--gold,#c9a84c); white-space:nowrap; }
 </style>
 </head>
 <body>
@@ -641,44 +651,32 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <div class="contact-label">Email</div>
       <div class="contact-value">koyr97@empas.com</div>
     </a>
-    <a class="contact-item" href="http://www.thekbusan.or.kr" target="_blank">
-      <div class="contact-icon">💻</div>
-      <div class="contact-label">
-        <span data-lang="kr" class="active">홈페이지</span>
-        <span data-lang="en">Website</span>
-        <span data-lang="jp">ホームページ</span>
-        <span data-lang="cn">官网</span>
-      </div>
-      <div class="contact-value">thekbusan.or.kr</div>
+  </div>
+  <div class="link-row">
+    <a class="link-tile" href="https://jinjjabg-hub.github.io/MANDU/?u=koh-youngrae" target="_blank" rel="noopener" aria-label="MANDU">
+      <img src="https://cardbook.bizmy.net/mandu-icon.png" alt="MANDU" width="56" height="56">
     </a>
-    <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=koh-youngrae" target="_blank">
-      <div class="contact-icon">💬</div>
-      <div class="contact-label">MANDU</div>
-      <div class="contact-value">
-        <span data-lang="kr" class="active">실시간 번역 메신저</span>
-        <span data-lang="en">Live translation chat</span>
-        <span data-lang="jp">リアルタイム翻訳チャット</span>
-        <span data-lang="cn">实时翻译聊天</span>
-      </div>
-    </a>
-    <a class="contact-item wide" style="grid-column: 1 / -1;" href="https://map.kakao.com/link/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EA%B8%88%EC%A0%95%EA%B5%AC%20%EA%B8%88%EC%A0%95%EB%A1%9C%20244%20%EC%84%A0%EA%B5%AD%EB%B9%8C%EB%94%A9%20%EB%8D%94%EC%BC%80%EC%9D%B4%EB%B6%80%EC%82%B0%EB%B3%91%EC%9B%90%202%EC%B8%B5" target="_blank">
-      <div class="contact-icon">📍</div>
-      <div class="contact-text">
-        <div class="contact-label">
-          <span data-lang="kr" class="active">주소 (탭하면 지도 열림)</span>
-          <span data-lang="en">Address (tap to open map)</span>
-          <span data-lang="jp">住所（タップで地図）</span>
-          <span data-lang="cn">地址（点击打开地图）</span>
-        </div>
-        <div class="contact-value">
-          <span data-lang="kr" class="active">부산광역시 금정구 금정로 244 선국빌딩 더케이부산병원 2층</span>
-          <span data-lang="en">2F, Sunguk Bldg., 244 Geumjeong-ro, Geumjeong-gu, Busan (The K Busan Hospital)</span>
-          <span data-lang="jp">부산광역시 금정구 금정로 244 선국빌딩 더케이부산병원 2층</span>
-          <span data-lang="cn">부산광역시 금정구 금정로 244 선국빌딩 더케이부산병원 2층</span>
-        </div>
-      </div>
+    <a class="link-tile" href="http://www.thekbusan.or.kr" target="_blank" rel="noopener" aria-label="Homepage">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0d1b3e"/><path d="M32 15 13 31h5.5v17h10V37h7v11h10V31H51z" fill="#fff"/></svg>
     </a>
   </div>
+  <a class="addr-line" href="https://map.naver.com/p/search/%EB%B6%80%EC%82%B0%EA%B4%91%EC%97%AD%EC%8B%9C%20%EA%B8%88%EC%A0%95%EA%B5%AC%20%EA%B8%88%EC%A0%95%EB%A1%9C%20244%20%EC%84%A0%EA%B5%AD%EB%B9%8C%EB%94%A9%20%EB%8D%94%EC%BC%80%EC%9D%B4%EB%B6%80%EC%82%B0%EB%B3%91%EC%9B%90%202%EC%B8%B5" target="_blank" rel="noopener">
+    <span class="addr-pin">📍</span>
+    <span class="addr-text">
+      <span data-lang="kr" class="active">부산광역시 금정구 금정로 244 선국빌딩 더케이부산병원 2층</span>
+      <span data-lang="en">2F, Sunguk Bldg., 244 Geumjeong-ro, Geumjeong-gu, Busan (The K Busan Hospital)</span>
+      <span data-lang="jp">부산광역시 금정구 금정로 244 선국빌딩 더케이부산병원 2층</span>
+      <span data-lang="cn">부산광역시 금정구 금정로 244 선국빌딩 더케이부산병원 2층</span>
+    </span>
+    <span class="addr-map">
+      <span data-lang="kr" class="active">지도 ›</span>
+      <span data-lang="en">Map ›</span>
+      <span data-lang="jp">地図 ›</span>
+      <span data-lang="cn">地图 ›</span>
+      <span data-lang="si">Map ›</span>
+      <span data-lang="ur">Map ›</span>
+    </span>
+  </a>
 </section>
 
 <!-- ACTION -->
@@ -691,16 +689,16 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <span data-lang="cn">📞 保存联系人</span>
     </button>
     <button class="btn btn-secondary" onclick="saveToCardbook({id:'koh-youngrae',name:'고영래',nameEn:'KOH YOUNGRAE',title:'대표원장',company:'더케이부산병원',phone:'010-2578-1533',email:'koyr97@empas.com',chapter:'자이언츠',bni:'',url:window.location.href})">
-      <span data-lang="kr" class="active">🗂️ 카드북에 저장하기</span>
+      <span data-lang="kr" class="active">🗂️ 카드북에 저장</span>
       <span data-lang="en">🗂️ Save to CardBook</span>
-      <span data-lang="jp">🗂️ CardBookに保存</span>
+      <span data-lang="jp">🗂️ カードブックに保存</span>
       <span data-lang="cn">🗂️ 保存到CardBook</span>
     </button>
     <button class="btn btn-share" onclick="shareCard()">
       <span data-lang="kr" class="active">📤 비즈홈 전달하기</span>
-      <span data-lang="en">📤 Share this BizHome</span>
+      <span data-lang="en">📤 Share this Biz Home</span>
       <span data-lang="jp">📤 ビズホームを共有</span>
-      <span data-lang="cn">📤 分享BizHome</span>
+      <span data-lang="cn">📤 分享商务主页</span>
     </button>
   </div>
 </div>

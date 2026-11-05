@@ -431,6 +431,16 @@ body {
 
 [data-lang]:not(.active){display:none !important;}
 em.acc,.hero-name em{font-style:normal;}
+
+/* ── 링크 로고 줄 / 주소 한 줄 (dica-namecard 2026-11-04 표준) ── */
+.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px auto; max-width:288px; }
+.link-tile { display:block; line-height:0; border-radius:16px; overflow:hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+.link-tile img, .link-tile svg { width:56px; height:56px; display:block; background:#fff; }
+.link-tile:active { transform: scale(0.94); }
+.addr-line { display:flex; align-items:center; gap:10px; background:#fff; border-radius:12px; padding:12px 14px; text-decoration:none; border:1px solid rgba(0,0,0,0.05); }
+.addr-pin { font-size:18px; }
+.addr-text { flex:1; font-size:12.5px; font-weight:600; color: var(--text-light,#1a1a2e); line-height:1.5; }
+.addr-map { font-size:12px; font-weight:700; color: var(--gold,#c9a84c); white-space:nowrap; }
 </style>
 </head>
 <body>
@@ -657,7 +667,7 @@ em.acc,.hero-name em{font-style:normal;}
   <span id="connect-label" class="sec-label"><span data-lang="kr" class="active">Contact</span><span data-lang="en">Contact</span><span data-lang="jp">Contact</span><span data-lang="cn">联系方式</span><span data-lang="mn">Холбоо барих</span></span>
   <h2 id="connect-title" class="sec-title light"><span data-lang="kr" class="active">김준래 대표와<br><em class="acc">연결하기</em></span><span data-lang="en">Connect with<br><em class="acc">Junrae Kim</em></span><span data-lang="jp">キム・ジュンレ代表に<br><em class="acc">つながる</em></span><span data-lang="cn">联系<br><em class="acc">金俊来代表</em></span><span data-lang="mn">Ким Жун Рэ ерөнхийлөгчтэй<br><em class="acc">холбогдох</em></span></h2>
   <div class="connect-list">
-    <a class="connect-item" href="tel:01073668555">
+    <a class="connect-item" href="tel:01073668555" style="grid-column:1/-1;">
       <div class="connect-icon ci-tel">📞</div>
       <div class="connect-info">
         <strong id="conn1-title"><span data-lang="kr" class="active">전화 상담</span><span data-lang="en">Phone Consultation</span><span data-lang="jp">電話相談</span><span data-lang="cn">电话咨询</span><span data-lang="mn">Утасны зөвлөгөө</span></strong>
@@ -665,37 +675,19 @@ em.acc,.hero-name em{font-style:normal;}
       </div>
       <span class="connect-arrow">›</span>
     </a>
-    <a class="connect-item" href="https://www.moonee.co.kr" target="_blank">
-      <div class="connect-icon ci-web">🌐</div>
-      <div class="connect-info">
-        <strong id="conn2-title"><span data-lang="kr" class="active">홈페이지</span><span data-lang="en">Website</span><span data-lang="jp">ホームページ</span><span data-lang="cn">官方网站</span><span data-lang="mn">Вэбсайт</span></strong>
-        <span>www.moonee.co.kr</span>
-      </div>
-      <span class="connect-arrow">›</span>
+  </div>
+  <div class="link-row">
+    <a class="link-tile" href="https://jinjjabg-hub.github.io/MANDU/?u=mooneedesign" target="_blank" rel="noopener" aria-label="MANDU">
+      <img src="https://cardbook.bizmy.net/mandu-icon.png" alt="MANDU" width="56" height="56">
     </a>
-    <a class="connect-item" href="https://www.instagram.com/mooneedesign/" target="_blank">
-      <div class="connect-icon ci-insta">📸</div>
-      <div class="connect-info">
-        <strong id="conn3-title"><span data-lang="kr" class="active">인스타그램</span><span data-lang="en">Instagram</span><span data-lang="jp">インスタグラム</span><span data-lang="cn">Instagram</span><span data-lang="mn">Instagram</span></strong>
-        <span>@mooneedesign</span>
-      </div>
-      <span class="connect-arrow">›</span>
+    <a class="link-tile" href="https://www.instagram.com/mooneedesign/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><radialGradient id="igGrad" cx="0.3" cy="1.07" r="1.2"><stop offset="0" stop-color="#FFD776"/><stop offset="0.25" stop-color="#F3A554"/><stop offset="0.45" stop-color="#E1306C"/><stop offset="0.75" stop-color="#C13584"/><stop offset="1" stop-color="#5851DB"/></radialGradient></defs><rect width="64" height="64" rx="16" fill="url(#igGrad)"/><rect x="14" y="14" width="36" height="36" rx="11" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="32" cy="32" r="8.5" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="43" cy="21" r="2.8" fill="#fff"/></svg>
     </a>
-    <a class="connect-item" href="https://www.youtube.com/@mooneedesign" target="_blank">
-      <div class="connect-icon ci-yt">▶</div>
-      <div class="connect-info">
-        <strong id="conn4-title"><span data-lang="kr" class="active">유튜브</span><span data-lang="en">YouTube</span><span data-lang="jp">ユーチューブ</span><span data-lang="cn">YouTube</span><span data-lang="mn">YouTube</span></strong>
-        <span>@mooneedesign</span>
-      </div>
-      <span class="connect-arrow">›</span>
+    <a class="link-tile" href="https://www.youtube.com/@mooneedesign" target="_blank" rel="noopener" aria-label="YouTube">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#FF0000"/><path d="M26 22.5v19l16.5-9.5z" fill="#fff"/></svg>
     </a>
-    <a class="connect-item" href="https://jinjjabg-hub.github.io/MANDU/?u=mooneedesign" target="_blank">
-      <div class="connect-icon ci-mandu">🥟</div>
-      <div class="connect-info">
-        <strong id="conn5-title"><span data-lang="kr" class="active">실시간 번역 대화</span><span data-lang="en">Real-time Translation Chat</span><span data-lang="jp">リアルタイム翻訳チャット</span><span data-lang="cn">实时翻译对话</span><span data-lang="mn">Шууд орчуулгатай чат</span></strong>
-        <span>MANDU 번역 메신저</span>
-      </div>
-      <span class="connect-arrow">›</span>
+    <a class="link-tile" href="https://www.moonee.co.kr" target="_blank" rel="noopener" aria-label="Homepage">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0d1b3e"/><path d="M32 15 13 31h5.5v17h10V37h7v11h10V31H51z" fill="#fff"/></svg>
     </a>
   </div>
 </section>

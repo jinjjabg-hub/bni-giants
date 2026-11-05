@@ -298,6 +298,16 @@ footer {
 footer .company { font-size: 13px; font-weight: 700; color: var(--gold); margin-bottom: 5px; }
 footer .gov { font-size: 11px; color: var(--text-dark); opacity: 0.6; margin-bottom: 6px; line-height: 1.6; }
 footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacing: 0.5px; }
+
+/* ── 링크 로고 줄 / 주소 한 줄 (dica-namecard 2026-11-04 표준) ── */
+.link-row { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; margin:16px auto; max-width:288px; }
+.link-tile { display:block; line-height:0; border-radius:16px; overflow:hidden; box-shadow: 0 1px 4px rgba(0,0,0,0.12); }
+.link-tile img, .link-tile svg { width:56px; height:56px; display:block; background:#fff; }
+.link-tile:active { transform: scale(0.94); }
+.addr-line { display:flex; align-items:center; gap:10px; background:#fff; border-radius:12px; padding:12px 14px; text-decoration:none; border:1px solid rgba(0,0,0,0.05); }
+.addr-pin { font-size:18px; }
+.addr-text { flex:1; font-size:12.5px; font-weight:600; color: var(--text-light,#1a1a2e); line-height:1.5; }
+.addr-map { font-size:12px; font-weight:700; color: var(--gold,#c9a84c); white-space:nowrap; }
 </style>
 </head>
 <body>
@@ -752,41 +762,19 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       <div class="contact-label">Email</div>
       <div class="contact-value">achimgrim@naver.com</div>
     </a>
-    <a class="contact-item" href="https://open.kakao.com/o/sHkiYupf" target="_blank">
-      <div class="contact-icon">💛</div>
-      <div class="contact-label">KakaoTalk</div>
-      <div class="contact-value">
-        <span data-lang="kr" class="active">오픈채팅 상담</span>
-        <span data-lang="en">Open chat</span>
-        <span data-lang="jp">オープンチャット</span>
-        <span data-lang="cn">开放聊天咨询</span>
-        <span data-lang="ne">खुला च्याट</span>
-        <span data-lang="id">Open chat</span>
-        <span data-lang="mn">Онлайн чатаар зөвлөгөө</span>
-      </div>
+  </div>
+  <div class="link-row">
+    <a class="link-tile" href="https://jinjjabg-hub.github.io/MANDU/?u=jyc_kvisa" target="_blank" rel="noopener" aria-label="MANDU">
+      <img src="https://cardbook.bizmy.net/mandu-icon.png" alt="MANDU" width="56" height="56">
     </a>
-    <a class="contact-item" href="https://blog.naver.com/achimgrim" target="_blank">
-      <div class="contact-icon">🌐</div>
-      <div class="contact-label">Blog</div>
-      <div class="contact-value">blog.naver.com/achimgrim</div>
+    <a class="link-tile" href="https://instagram.com/jung_yulchae" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><defs><radialGradient id="igGrad" cx="0.3" cy="1.07" r="1.2"><stop offset="0" stop-color="#FFD776"/><stop offset="0.25" stop-color="#F3A554"/><stop offset="0.45" stop-color="#E1306C"/><stop offset="0.75" stop-color="#C13584"/><stop offset="1" stop-color="#5851DB"/></radialGradient></defs><rect width="64" height="64" rx="16" fill="url(#igGrad)"/><rect x="14" y="14" width="36" height="36" rx="11" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="32" cy="32" r="8.5" fill="none" stroke="#fff" stroke-width="4.5"/><circle cx="43" cy="21" r="2.8" fill="#fff"/></svg>
     </a>
-    <a class="contact-item" href="https://instagram.com/jung_yulchae" target="_blank">
-      <div class="contact-icon">📷</div>
-      <div class="contact-label">Instagram</div>
-      <div class="contact-value">@jung_yulchae</div>
+    <a class="link-tile" href="https://blog.naver.com/achimgrim" target="_blank" rel="noopener" aria-label="Blog">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#03C75A"/><text x="32" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="19" font-weight="800" fill="#fff">blog</text></svg>
     </a>
-    <a class="contact-item" href="https://jinjjabg-hub.github.io/MANDU/?u=jyc_kvisa" target="_blank">
-      <div class="contact-icon">💬</div>
-      <div class="contact-label">MANDU</div>
-      <div class="contact-value">
-        <span data-lang="kr" class="active">실시간 번역 메신저</span>
-        <span data-lang="en">Live translation chat</span>
-        <span data-lang="jp">リアルタイム翻訳チャット</span>
-        <span data-lang="cn">实时翻译聊天</span>
-        <span data-lang="ne">प्रत्यक्ष अनुवाद च्याट</span>
-        <span data-lang="id">Chat terjemahan langsung</span>
-        <span data-lang="mn">Бодит цагийн орчуулгатай чат</span>
-      </div>
+    <a class="link-tile" href="https://open.kakao.com/o/sHkiYupf" target="_blank" rel="noopener" aria-label="KakaoTalk Channel">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#FEE500"/><path d="M32 16c-10.5 0-19 6.6-19 14.8 0 5.3 3.6 9.9 9 12.5l-2.2 8 9.1-6c1 .1 2 .2 3.1.2 10.5 0 19-6.6 19-14.7S42.5 16 32 16z" fill="#3C1E1E"/></svg>
     </a>
   </div>
 </section>
@@ -806,20 +794,20 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <button class="btn btn-secondary" onclick="saveToCardbook({id:'jung_yulchae_kvisa',name:'정율채',nameEn:'JUNG YULCHAE',title:'대표 행정사',company:'K-VISA센터 행정사사무소',phone:'010-9828-2212',email:'achimgrim@naver.com',chapter:'BNI 자이언츠 챕터',bni:'행정사',url:window.location.href})">
       <span data-lang="kr" class="active">🗂️ 카드북에 저장</span>
       <span data-lang="en">🗂️ Save to CardBook</span>
-      <span data-lang="jp">🗂️ 名刺を保存</span>
-      <span data-lang="cn">🗂️ 保存名片</span>
-      <span data-lang="ne">🗂️ CardBook मा सुरक्षित</span>
+      <span data-lang="jp">🗂️ カードブックに保存</span>
+      <span data-lang="cn">🗂️ 保存到CardBook</span>
+      <span data-lang="ne">🗂️ CardBook मा सुरक्षित गर्नुहोस्</span>
       <span data-lang="id">🗂️ Simpan ke CardBook</span>
-      <span data-lang="mn">🗂️ Нэрийн хуудас хадгалах (CardBook)</span>
+      <span data-lang="mn">🗂️ CardBook-д хадгалах</span>
     </button>
     <button class="btn btn-share" onclick="shareCard()">
-      <span data-lang="kr" class="active">📤 비즈홈 공유</span>
-      <span data-lang="en">📤 Share this card</span>
-      <span data-lang="jp">📤 名刺を共有</span>
-      <span data-lang="cn">📤 分享名片</span>
-      <span data-lang="ne">📤 यो कार्ड सेयर गर्नुहोस्</span>
-      <span data-lang="id">📤 Bagikan kartu ini</span>
-      <span data-lang="mn">📤 Нэрийн хуудас илгээх</span>
+      <span data-lang="kr" class="active">📤 비즈홈 전달하기</span>
+      <span data-lang="en">📤 Share this Biz Home</span>
+      <span data-lang="jp">📤 ビズホームを共有</span>
+      <span data-lang="cn">📤 分享商务主页</span>
+      <span data-lang="ne">📤 Biz Home सेयर गर्नुहोस्</span>
+      <span data-lang="id">📤 Bagikan Biz Home</span>
+      <span data-lang="mn">📤 Biz Home дамжуулах</span>
     </button>
   </div>
 </div>
@@ -829,7 +817,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   <div class="share-backdrop" onclick="closeShare()"></div>
   <div class="share-panel">
     <div class="share-handle"></div>
-    <div class="share-title">비즈홈 공유</div>
+    <div class="share-title">비즈홈 전달하기</div>
     <div class="share-btns">
       <button class="share-btn" onclick="shareKakao()">
         <div class="share-btn-icon" style="background:#FEE500;">💬</div><span>카카오톡</span>
