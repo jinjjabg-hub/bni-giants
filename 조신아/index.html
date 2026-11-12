@@ -406,7 +406,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
     <a class="contact-item" href="mailto:Sinah.jo@gmail.com"><div class="contact-icon">✉️</div><div class="contact-label">Email</div><div class="contact-value">Sinah.jo@gmail.com</div></a>
   </div>
   <div class="link-row" style="max-width:272px">
-    <a class="link-tile" href="https://jinjjabg-hub.github.io/MANDU/?u=jo-sinah" target="_blank" rel="noopener" aria-label="MANDU">
+    <a class="link-tile" href="https://mandu.bizmy.net/?u=sinah_jo" target="_blank" rel="noopener" aria-label="MANDU">
       <img src="https://cardbook.bizmy.net/mandu-icon.png" alt="MANDU" width="56" height="56">
     </a>
     <a class="link-tile" href="https://www.instagram.com/art.trip_jay/" target="_blank" rel="noopener" aria-label="Instagram">
@@ -610,8 +610,8 @@ function shareQR() { window.open('qr.png', '_blank'); closeShare(); }
 })();
 
 /* ── 만두 원클릭 연결 (카드 주인 전용) ──────────────────────────
-   구글 로그인 1번 → manduid_index/jo-sinah 문서에 uid 자동 등록.
-   MANDU 링크(?u=jo-sinah)는 카드 제작 시점에 이미 고정돼 있으므로
+   구글 로그인 1번 → manduid_index/sinah_jo 문서에 uid 자동 등록.
+   MANDU 링크(?u=sinah_jo)는 카드 제작 시점에 이미 고정돼 있으므로
    *아무도(송승훈 포함) 링크를 중간에서 복사·전달·붙여넣기 할 필요가 없다.*
    save-to-cardbook.js가 이미 firebase를 로드해두므로 그걸 재사용한다. */
 async function _manduWaitFirebase(maxTries) {
@@ -624,7 +624,7 @@ async function _manduWaitFirebase(maxTries) {
 }
 
 async function _manduFinishActivate(user) {
-  const slug = 'jo-sinah';
+  const slug = 'sinah_jo';
   const db = firebase.firestore();
 
   // 이미 다른 uid로 연결돼 있으면 덮어쓰지 않음 (실수·장난 클릭으로부터 카드 보호)
@@ -667,7 +667,7 @@ async function activateMandu() {
     const provider = new firebase.auth.GoogleAuthProvider();
     const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     if (isMobile) {
-      sessionStorage.setItem('_manduPendingSlug', 'jo-sinah');
+      sessionStorage.setItem('_manduPendingSlug', 'sinah_jo');
       await auth.signInWithRedirect(provider);
       return; // 리다이렉트 후 아래 즉시실행 블록에서 이어짐
     }
