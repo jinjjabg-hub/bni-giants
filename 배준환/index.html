@@ -233,8 +233,8 @@ section { padding: 40px 20px; }
 .portfolio .section-title { color: #fff; }
 .portfolio-track-wrap { overflow: hidden; border-radius: 12px; }
 .portfolio-track { display: flex; transition: transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94); }
-.portfolio-slide { min-width: 100%; aspect-ratio: 3/4; overflow: hidden; }
-.portfolio-slide img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+.portfolio-slide { min-width: 100%; aspect-ratio: 16/9; overflow: hidden; background: var(--navy2); }
+.portfolio-slide img { width:100%; height:100%; object-fit:contain; object-position:center; display:block; }
 .portfolio-nav { display:flex; align-items:center; justify-content:center; gap:16px; margin-top:14px; }
 .portfolio-btn {
   background: transparent; border: 1px solid rgba(201,168,76,0.35);
@@ -619,6 +619,31 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
         </p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO : portfolio1.jpg~portfolio5.jpg (1920x1080 가로 16:9, 이미지 안 "AI로 생성한 콘텐츠" 표시 유지) -->
+<section class="portfolio">
+  <div class="section-label">Portfolio</div>
+  <div class="section-title">
+    <span data-lang="kr" class="active">작업 사례</span>
+    <span data-lang="en">Portfolio</span>
+    <span data-lang="jp">実績紹介</span>
+    <span data-lang="cn">作品案例</span>
+  </div>
+  <div class="portfolio-track-wrap">
+    <div class="portfolio-track" id="portfolio-track">
+      <div class="portfolio-slide"><img src="portfolio1.jpg?v=20261112" alt="줄눈 시공 전후"></div>
+      <div class="portfolio-slide"><img src="portfolio2.jpg?v=20261112" alt="변기 하단 마감 전후" loading="lazy"></div>
+      <div class="portfolio-slide"><img src="portfolio3.jpg?v=20261112" alt="시공 후 변기 하단 마감과 바닥 전경" loading="lazy"></div>
+      <div class="portfolio-slide"><img src="portfolio4.jpg?v=20261112" alt="시공 후 배수구 주변과 화장실 바닥" loading="lazy"></div>
+      <div class="portfolio-slide"><img src="portfolio5.jpg?v=20261112" alt="시공 후 변기 하단 마감과 걸레받이 마감" loading="lazy"></div>
+    </div>
+  </div>
+  <div class="portfolio-nav">
+    <button class="portfolio-btn" onclick="portfolioSlide(-1)">‹</button>
+    <div class="portfolio-dots" id="portfolio-dots"></div>
+    <button class="portfolio-btn" onclick="portfolioSlide(1)">›</button>
   </div>
 </section>
 
