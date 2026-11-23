@@ -1,0 +1,13 @@
+{
+  "name": "㈜비크레프트 | 최현민",
+  "short_name": "비크레프트",
+  "description": "병·의원 · 호텔·숙박 · 카페·프랜차이즈 상업공간 설계·시공 · 최현민 대표",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#202327",
+  "theme_color": "#202327",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"}
+  ]
+}
