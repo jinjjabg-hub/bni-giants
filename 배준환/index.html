@@ -323,12 +323,13 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 .addr-text { flex:1; font-size:12.5px; font-weight:600; color: var(--text-light,#1a1a2e); line-height:1.5; }
 .addr-map { font-size:12px; font-weight:700; color: var(--gold,#c9a84c); white-space:nowrap; }
 </style>
+<script src="../dica-i18n.js"></script>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-brand">퍼펙트라인</div>
+  <div class="nav-brand"><span data-lang="kr" class="active">퍼펙트라인</span><span data-lang="en">Perfect Line</span><span data-lang="jp">パーフェクトライン</span><span data-lang="cn">Perfect Line</span></div>
   <div class="lang-btns">
     <button class="lang-btn active" onclick="setLang('kr')">한국어</button>
     <button class="lang-btn" onclick="setLang('en')">EN</button>

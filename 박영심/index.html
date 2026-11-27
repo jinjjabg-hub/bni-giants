@@ -173,6 +173,7 @@ footer { background:#000; text-align:center; padding:24px; border-top:1px solid 
 .addr-text { flex:1; font-size:12.5px; font-weight:600; color: var(--text-light,#1a1a2e); line-height:1.5; }
 .addr-map { font-size:12px; font-weight:700; color: var(--gold,#c9a84c); white-space:nowrap; }
 </style>
+<script src="../dica-i18n.js"></script>
 </head>
 <body>
 <div class="container">
@@ -692,7 +693,7 @@ function setLang(lang) {
 }
 function shareCard() {
   if (navigator.share) { navigator.share({title:document.title, text:'박영심 대표 | 크로스컬러디자인연구소', url:window.location.href}); }
-  else { navigator.clipboard.writeText(window.location.href).then(()=>alert('링크가 복사되었습니다!')); }
+  else { navigator.clipboard.writeText(window.location.href).then(()=>alert(dicaT('링크가 복사되었습니다!'))); }
 }
 function saveContact() {
   const v=`BEGIN:VCARD\nVERSION:3.0\nFN:박영심\nN:박;영심;;;\nORG:크로스컬러디자인연구소\nTITLE:대표\nTEL;TYPE=CELL:010-9984-8248\nURL:https://jinjjabg-hub.github.io/bni-giants/박영심/\nEND:VCARD`;
@@ -755,15 +756,15 @@ document.addEventListener('DOMContentLoaded',()=>{initRef();});
     window.addEventListener('cardbook:saved', function(){ dicaLog('save_cardbook'); });
 
     var statBtn = document.createElement('div');
-    statBtn.textContent = '📊 카드 현황 보기';
+    statBtn.textContent = dicaT('📊 카드 현황 보기');
     statBtn.style.cssText = 'position:fixed;bottom:16px;right:16px;background:rgba(0,0,0,0.65);color:#fff;padding:8px 14px;border-radius:20px;font-size:12px;cursor:pointer;z-index:9999;font-family:sans-serif;box-shadow:0 2px 10px rgba(0,0,0,0.3);';
     statBtn.onclick = function(){
       statBtn.style.cursor = 'default';
-      statBtn.textContent = '불러오는 중...';
+      statBtn.textContent = dicaT('불러오는 중...');
       fetch(LOG_URL + "?action=stats&slug=" + encodeURIComponent(SLUG))
         .then(function(r){ return r.json(); })
         .then(function(d){
-          statBtn.textContent = '조회 ' + d.view + '회 · 저장 ' + d.save + '회';
+          statBtn.textContent = dicaT('조회 {0}회 · 저장 {1}회', d.view, d.save);
         });
     };
     document.body.appendChild(statBtn);
@@ -794,7 +795,7 @@ async function _manduFinishActivate(user) {
     const btn = document.getElementById('mandu-activate-btn');
     if (btn) btn.style.display = 'none';
     const done = document.getElementById('mandu-activate-done');
-    if (done) { done.textContent = 'ℹ️ 이미 연결된 비즈홈이에요'; done.style.display = 'block'; }
+    if (done) { done.textContent = dicaT('ℹ️ 이미 연결된 비즈홈이에요'); done.style.display = 'block'; }
     return;
   }
 
@@ -812,13 +813,13 @@ async function _manduFinishActivate(user) {
 }
 
 async function activateMandu() {
-  if (!confirm('본인 비즈홈이 맞나요?\n구글 로그인하면 이 비즈홈으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  if (!confirm(dicaT('본인 비즈홈이 맞나요?\n구글 로그인하면 이 비즈홈으로 만두 DM을 받을 수 있게 연결돼요.'))) return;
   const btn = document.getElementById('mandu-activate-btn');
-  if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
+  if (btn) { btn.disabled = true; btn.textContent = dicaT('연결 중...'); }
   const ready = await _manduWaitFirebase();
   if (!ready) {
-    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
-    alert('연결 실패. 잠시 후 다시 시도해주세요.');
+    if (btn) { btn.disabled = false; btn.textContent = dicaT('💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'); }
+    alert(dicaT('연결 실패. 잠시 후 다시 시도해주세요.'));
     return;
   }
   try {
@@ -835,8 +836,8 @@ async function activateMandu() {
     await _manduFinishActivate(result.user);
   } catch (e) {
     console.error('만두 연결 실패:', e);
-    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
-    alert('연결 중 오류가 발생했어요.');
+    if (btn) { btn.disabled = false; btn.textContent = dicaT('💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'); }
+    alert(dicaT('연결 중 오류가 발생했어요.'));
   }
 }
 

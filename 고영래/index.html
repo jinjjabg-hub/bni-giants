@@ -339,12 +339,13 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
 .addr-text { flex:1; font-size:12.5px; font-weight:600; color: var(--text-light,#1a1a2e); line-height:1.5; }
 .addr-map { font-size:12px; font-weight:700; color: var(--gold,#c9a84c); white-space:nowrap; }
 </style>
+<script src="../dica-i18n.js"></script>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <div class="nav-brand">더케이부산병원</div>
+  <div class="nav-brand"><span data-lang="kr" class="active">더케이부산병원</span><span data-lang="en">The K Busan Hospital</span><span data-lang="jp">ザ・ケイ釜山病院</span><span data-lang="cn">The K釜山医院</span></div>
   <div class="lang-btns">
     <button class="lang-btn active" onclick="setLang('kr')">한국어</button>
     <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -573,7 +574,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
   </div>
   <div class="career-list">
     <div class="career-item">
-      <div class="career-badge">현재</div>
+      <div class="career-badge"><span data-lang="kr" class="active">현재</span><span data-lang="en">Current</span><span data-lang="jp">現在</span><span data-lang="cn">现任</span></div>
       <div class="career-content">
         <h3>
           <span data-lang="kr" class="active">더케이부산병원 대표원장</span>
@@ -590,7 +591,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       </div>
     </div>
     <div class="career-item">
-      <div class="career-badge">경력</div>
+      <div class="career-badge"><span data-lang="kr" class="active">경력</span><span data-lang="en">Career</span><span data-lang="jp">経歴</span><span data-lang="cn">经历</span></div>
       <div class="career-content">
         <h3>
           <span data-lang="kr" class="active">춘해병원 · 온병원 · 삼광의료재단</span>
@@ -607,7 +608,7 @@ footer .slogan-footer { font-size: 11px; color: var(--muted-dark); letter-spacin
       </div>
     </div>
     <div class="career-item">
-      <div class="career-badge">자격</div>
+      <div class="career-badge"><span data-lang="kr" class="active">자격</span><span data-lang="en">License</span><span data-lang="jp">資格</span><span data-lang="cn">资格</span></div>
       <div class="career-content">
         <h3>
           <span data-lang="kr" class="active">전문의 · 의학박사</span>
@@ -832,12 +833,12 @@ function shareSMS() {
   closeShare();
 }
 function copyLink() {
-  navigator.clipboard.writeText(CARD_URL).then(() => alert('링크가 복사되었습니다!')).catch(() => {
+  navigator.clipboard.writeText(CARD_URL).then(() => alert(dicaT('링크가 복사되었습니다!'))).catch(() => {
     const t = document.createElement('textarea');
     t.value = CARD_URL;
     document.body.appendChild(t); t.select(); document.execCommand('copy');
     document.body.removeChild(t);
-    alert('링크가 복사되었습니다!');
+    alert(dicaT('링크가 복사되었습니다!'));
   });
   closeShare();
 }
@@ -906,7 +907,7 @@ async function _manduFinishActivate(user) {
     const btn = document.getElementById('mandu-activate-btn');
     if (btn) btn.style.display = 'none';
     const done = document.getElementById('mandu-activate-done');
-    if (done) { done.textContent = 'ℹ️ 이미 연결된 비즈홈이에요'; done.style.display = 'block'; }
+    if (done) { done.textContent = dicaT('ℹ️ 이미 연결된 비즈홈이에요'); done.style.display = 'block'; }
     return;
   }
 
@@ -924,13 +925,13 @@ async function _manduFinishActivate(user) {
 }
 
 async function activateMandu() {
-  if (!confirm('본인 비즈홈이 맞나요?\n구글 로그인하면 이 비즈홈으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  if (!confirm(dicaT('본인 비즈홈이 맞나요?\n구글 로그인하면 이 비즈홈으로 만두 DM을 받을 수 있게 연결돼요.'))) return;
   const btn = document.getElementById('mandu-activate-btn');
-  if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
+  if (btn) { btn.disabled = true; btn.textContent = dicaT('연결 중...'); }
   const ready = await _manduWaitFirebase();
   if (!ready) {
-    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
-    alert('연결 실패. 잠시 후 다시 시도해주세요.');
+    if (btn) { btn.disabled = false; btn.textContent = dicaT('💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'); }
+    alert(dicaT('연결 실패. 잠시 후 다시 시도해주세요.'));
     return;
   }
   try {
@@ -947,8 +948,8 @@ async function activateMandu() {
     await _manduFinishActivate(result.user);
   } catch (e) {
     console.error('만두 연결 실패:', e);
-    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
-    alert('연결 중 오류가 발생했어요.');
+    if (btn) { btn.disabled = false; btn.textContent = dicaT('💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'); }
+    alert(dicaT('연결 중 오류가 발생했어요.'));
   }
 }
 
@@ -981,15 +982,15 @@ async function activateMandu() {
     window.addEventListener('cardbook:saved', function(){ dicaLog('save_cardbook'); });
 
     var statBtn = document.createElement('div');
-    statBtn.textContent = '📊 카드 현황 보기';
+    statBtn.textContent = dicaT('📊 카드 현황 보기');
     statBtn.style.cssText = 'position:fixed;bottom:16px;right:16px;background:rgba(0,0,0,0.65);color:#fff;padding:8px 14px;border-radius:20px;font-size:12px;cursor:pointer;z-index:9999;font-family:sans-serif;box-shadow:0 2px 10px rgba(0,0,0,0.3);';
     statBtn.onclick = function(){
       statBtn.style.cursor = 'default';
-      statBtn.textContent = '불러오는 중...';
+      statBtn.textContent = dicaT('불러오는 중...');
       fetch(LOG_URL + "?action=stats&slug=" + encodeURIComponent(SLUG))
         .then(function(r){ return r.json(); })
         .then(function(d){
-          statBtn.textContent = '조회 ' + d.view + '회 · 저장 ' + d.save + '회';
+          statBtn.textContent = dicaT('조회 {0}회 · 저장 {1}회', d.view, d.save);
         });
     };
     document.body.appendChild(statBtn);

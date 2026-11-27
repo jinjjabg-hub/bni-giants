@@ -152,11 +152,12 @@ footer { text-align:center; padding:32px 24px 40px; background:var(--bg-dark); c
 .addr-text { flex:1; font-size:12.5px; font-weight:600; color: var(--text-light,#1a1a2e); line-height:1.5; }
 .addr-map { font-size:12px; font-weight:700; color: var(--gold,#c9a84c); white-space:nowrap; }
 </style>
+<script src="../dica-i18n.js"></script>
 </head>
 <body>
 
 <nav>
-  <div class="nav-brand">선향양초</div>
+  <div class="nav-brand"><span data-lang="kr" class="active">선향양초</span><span data-lang="en">SunHyang Candle</span><span data-lang="jp">SunHyang Candle</span><span data-lang="cn">SunHyang Candle</span><span data-lang="mn">SunHyang Candle</span></div>
   <div class="lang-btns">
     <button class="lang-btn active" onclick="setLang('kr')">KR</button>
     <button class="lang-btn" onclick="setLang('en')">EN</button>
@@ -627,7 +628,7 @@ function shareCard() {
     });
   } else {
     navigator.clipboard.writeText(window.location.href).then(() => {
-      alert('링크가 복사되었습니다!');
+      alert(dicaT('링크가 복사되었습니다!'));
     });
   }
 }
@@ -698,7 +699,7 @@ async function _manduFinishActivate(user) {
     const btn = document.getElementById('mandu-activate-btn');
     if (btn) btn.style.display = 'none';
     const done = document.getElementById('mandu-activate-done');
-    if (done) { done.textContent = 'ℹ️ 이미 연결된 비즈홈이에요'; done.style.display = 'block'; }
+    if (done) { done.textContent = dicaT('ℹ️ 이미 연결된 비즈홈이에요'); done.style.display = 'block'; }
     return;
   }
   await db.collection('users').doc(user.uid).set({
@@ -714,13 +715,13 @@ async function _manduFinishActivate(user) {
   if (done) done.style.display = 'block';
 }
 async function activateMandu() {
-  if (!confirm('본인 비즈홈이 맞나요?\n구글 로그인하면 이 비즈홈으로 만두 DM을 받을 수 있게 연결돼요.')) return;
+  if (!confirm(dicaT('본인 비즈홈이 맞나요?\n구글 로그인하면 이 비즈홈으로 만두 DM을 받을 수 있게 연결돼요.'))) return;
   const btn = document.getElementById('mandu-activate-btn');
-  if (btn) { btn.disabled = true; btn.textContent = '연결 중...'; }
+  if (btn) { btn.disabled = true; btn.textContent = dicaT('연결 중...'); }
   const ready = await _manduWaitFirebase();
   if (!ready) {
-    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
-    alert('연결 실패. 잠시 후 다시 시도해주세요.');
+    if (btn) { btn.disabled = false; btn.textContent = dicaT('💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'); }
+    alert(dicaT('연결 실패. 잠시 후 다시 시도해주세요.'));
     return;
   }
   try {
@@ -737,8 +738,8 @@ async function activateMandu() {
     await _manduFinishActivate(result.user);
   } catch (e) {
     console.error('만두 연결 실패:', e);
-    if (btn) { btn.disabled = false; btn.textContent = '💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'; }
-    alert('연결 중 오류가 발생했어요.');
+    if (btn) { btn.disabled = false; btn.textContent = dicaT('💬 본인 비즈홈이신가요? 만두 연결하기 (1회)'); }
+    alert(dicaT('연결 중 오류가 발생했어요.'));
   }
 }
 (async function () {
@@ -769,15 +770,15 @@ async function activateMandu() {
     window.addEventListener('cardbook:saved', function(){ dicaLog('save_cardbook'); });
 
     var statBtn = document.createElement('div');
-    statBtn.textContent = '📊 카드 현황 보기';
+    statBtn.textContent = dicaT('📊 카드 현황 보기');
     statBtn.style.cssText = 'position:fixed;bottom:16px;right:16px;background:rgba(0,0,0,0.65);color:#fff;padding:8px 14px;border-radius:20px;font-size:12px;cursor:pointer;z-index:9999;font-family:sans-serif;box-shadow:0 2px 10px rgba(0,0,0,0.3);';
     statBtn.onclick = function(){
       statBtn.style.cursor = 'default';
-      statBtn.textContent = '불러오는 중...';
+      statBtn.textContent = dicaT('불러오는 중...');
       fetch(LOG_URL + "?action=stats&slug=" + encodeURIComponent(SLUG))
         .then(function(r){ return r.json(); })
         .then(function(d){
-          statBtn.textContent = '조회 ' + d.view + '회 · 저장 ' + d.save + '회';
+          statBtn.textContent = dicaT('조회 {0}회 · 저장 {1}회', d.view, d.save);
         });
     };
     document.body.appendChild(statBtn);
